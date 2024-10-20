@@ -1,0 +1,12 @@
+table,thead td{
+	border-collapse:collapse;
+	border: 1px solid black;
+	padding-top:0;
+	padding-bottom:0;
+}
+.atbody td{
+	border: 0;
+}
+tbody td{
+	border: 1px solid black;
+}

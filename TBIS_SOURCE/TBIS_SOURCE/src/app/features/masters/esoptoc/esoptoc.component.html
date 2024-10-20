@@ -1,0 +1,157 @@
+
+
+<div  class="container">
+    <div class="table-wrapper px-0 shadow">
+       <div class="table-title title-fixed">
+         <div class="row">
+           <div class="col-sm-6">
+             <div class="table-head ms-2">
+               <div class="row">
+                 <div *ngIf="action!='view'" class="col-1 cursor" (click)="cancelAdd()">
+                   <i class="bi bi-arrow-left"></i>
+                 </div>
+                 <div *ngIf="action=='view'" class="col-1 cursor">
+                 </div>
+                 <div class="col-6 p-0">
+                   ESOP TOC
+                 </div>
+               </div>
+               
+                </div>
+           </div>
+           <div *ngIf="action=='view'" class="col-sm-6">
+             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+               <a class="btn btn-success addcss" (click)="addNew()">
+                 <i class="bi bi-plus-square"></i><span>New ESOP TOC</span>
+               </a>
+               <a><i class="bi bi-three-dots-vertical mt-1"></i></a>
+             </div>
+           </div>
+         </div>
+       </div>
+       <div class="table-content title-content">
+       <div *ngIf="action!='view'">  
+       <div class="pt-0">
+        <form class="p-3" method="post" autocomplete="off" #frm="ngForm">  
+            <div class="row g-0 badge-bg mt-2">
+            <div class="col-1 mt-1 left-badge"></div>
+            <div class="ms-3 col-6 mt-2 badge-title">ESOP TOC Details</div>
+            </div>
+
+        <div class="row mt-3"> 
+            <div class="col-md-3">
+                <div class="fS14 mb-1" >SOP Name <span  class="mandatory-color">*</span></div>      
+                <ng-select [items]="sopmasters" #sopId name="sopId"
+                    bindLabel="sopname" 
+                    bindValue="sopid" 
+                    placeholder="Select SOP"
+                    [(ngModel)]="masterData.sopId">
+                </ng-select>
+            </div>      
+            <div class="col-md-3">        
+                <label class="fS14 mb-1">Topic Name <span  class="mandatory-color">*</span></label>
+                <div>
+                <input autofocus type="text"  name="sopTopicName" #sopTopicName="ngModel"  required
+                [ngClass]="{'input-box-style2-error': sopTopicName.invalid && (sopTopicName.dirty || sopTopicName.touched)}" 
+                class="form-control" placeholder="" [(ngModel)]="masterData.sopTopicName" maxlength="250">
+                </div>
+            </div>
+                
+            <div class="col-md-3">        
+                <label class="fS14 mb-1">Topic Name Local <span  class="mandatory-color">*</span></label>
+                <div>
+                <input autofocus type="text"  name="sopTopicNameLocal" #sopTopicNameLocal="ngModel"  required
+                    [ngClass]="{'input-box-style2-error': sopTopicNameLocal.invalid && (sopTopicNameLocal.dirty || sopTopicNameLocal.touched)}" 
+                    class="form-control" placeholder="" [(ngModel)]="masterData.sopTopicNameLocal" maxlength="250">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="fS14 mb-1" >SOP Type <span  class="mandatory-color">*</span></div>      
+                <ng-select [items]="soptypes" #sopTypeid name="sopTypeid"
+                    bindLabel="soptypename" 
+                    bindValue="soptypeid" 
+                    placeholder="Select Type"
+                    [(ngModel)]="masterData.sopTypeid">
+                </ng-select>
+             </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-md-3">
+                <div class="fS14 mb-1" >SOP Source Type <span  class="mandatory-color">*</span></div>      
+                <ng-select [items]="sopsourcetypes" #sopSourceTypeid name="sopSourceTypeid"
+                    bindLabel="sopsourcetype" 
+                    bindValue="sopsourcetypeid" 
+                    placeholder="Select Source Type"
+                    [(ngModel)]="masterData.sopSourceTypeid">
+                </ng-select>
+            </div>
+
+            <div class="col-md-3">
+                <div class="fS14 mb-1" >SOP Topic Parent </div>      
+                <ng-select [items]="soptopicparents" #sopTopicParentid name="sopTopicParentid"
+                    bindLabel="soptopicname" 
+                    bindValue="soptocid" 
+                    placeholder="Select SOP Topic"
+                    [(ngModel)]="masterData.sopTopicParentid">
+                </ng-select>
+            </div>
+
+            <div class="col-md-3" *ngIf="masterData.sopTopicParentid">
+                <div class="fS14 mb-1" >SOP Topic Order <span class="mandatory-color">*</span></div>
+                <input type="number"  name="sopTopicOrder" #sopTopicOrder="ngModel"  required numbersOnly
+                [ngClass]="{'input-box-style2-error': sopTopicOrder.invalid && (sopTopicOrder.dirty || sopTopicOrder.touched)}" 
+                class="form-control" placeholder="" [(ngModel)]="masterData.sopTopicOrder" min="1" maxlength="3">
+            </div>
+
+            <div class="col-md-3">
+                <label class="fS14 mb-1">Status <span  class="mandatory-color">*</span></label>
+                <select  class="form-control form-select" name="isActive" 
+                    #isActive="ngModel"  required [ngClass]="{'input-box-style2-error': isActive.invalid && (isActive.dirty || isActive.touched)}"  
+                    [(ngModel)]="masterData.isActive" >
+                    <option  value="true">Active</option>
+                    <option  value="false">InActive</option>
+                </select>
+            </div>
+        </div>
+        <div class="row mt-3" *ngIf="masterData.sopSourceTypeid!=4">
+            <div class="col-md-3">
+                <label class="fS14 mb-1">SOP Source <span class="mandatory-color">*</span></label>
+                <div>
+                <input type="file" name="logo" class="file-input" [accept]="masterData.sopSourceTypeid==null ? '' : (masterData.sopSourceTypeid==1 || masterData.sopSourceTypeid==2) ? masterData.sopSourceTypeid==1 ? 'video/mp4,audio/mp3' : 'application/pdf' : ' .ppt,.pptx'"  #fileUpload (change)="fileChangeEvent($event)">
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <label class="fS14 mb-1">Preview Upload</label>
+            <div>
+                <img alt="logo" [src]="preview" class="preview profileImg">
+            </div>
+            </div>
+        </div>
+         </form>
+ 
+       <div class="mt-4 me-4 d-flex justify-content-end">   
+         <div class="row text-center mt-4">
+          <div class="">
+             <div class="form-group transback">
+              <button type="button"  class="btn btn-secondary footerbtncss mx-2" name="cancel" value="Cancel" (click)="cancelAdd()">Clear</button>
+              <button type="button"   class="btn btn-primary footerbtncss" name="signin" (click)="updateEsopToc()">Submit</button>
+           </div>
+          </div>
+         </div>
+       </div> 
+             </div>
+ 
+       </div>
+             <div *ngIf="action=='view'">
+               <div class="p-4">
+               <report creportid="100" #report (onEditClcked)="doAction($event)"   [events]="eventsSubject.asObservable()" [groupreport]="0"></report>
+             </div>
+             </div>
+       </div>
+     </div>
+ </div>
+ 
+  
+  

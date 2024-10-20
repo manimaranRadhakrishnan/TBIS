@@ -1,0 +1,102 @@
+<div  class="container">
+     <div class="table-wrapper px-0 shadow">
+           <div class="table-title title-fixed">
+              <div class="row">
+                 <div class="col-sm-6">
+                    <div class="table-head ms-2">
+                    <div class="row">
+                       <div *ngIf="action!='view'" class="col-1 cursor" (click)="cancelAdd()">
+                          <i class="bi bi-arrow-left"></i>
+                       </div>
+                       <div *ngIf="action=='view'" class="col-1 cursor">
+                       </div>
+                       <div class="col-6 p-0">
+                        Plants
+                       </div>
+                    </div>
+                    
+                       </div>
+                 </div>
+                 <div  *ngIf="action =='view'" class="col-sm-6">
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <a class="btn btn-success addcss" (click)="addNew()">
+                       <i class="bi bi-plus-square"></i><span>New Plant</span>
+                    </a>
+                    <a><i class="bi bi-three-dots-vertical mt-1"></i></a>
+                    </div>
+                 </div>
+              
+              </div>
+           </div>
+              <div class="table-content title-content">
+                <div *ngIf="action!='view'"> 
+                   
+                    <div class="pt-0">
+                          <form class="p-3" method="post" autocomplete="off" #frm="ngForm"> 
+                          <div class="row mt-3">    
+                            <div class="row g-0 badge-bg mt-2  mb-2">
+                               <div class="col-1 mt-1 left-badge"></div>
+                               <div class="ms-3 col-6 mt-2 badge-title">Plants Details</div>
+                            </div>
+                           <div class="col-md-3">        
+                             <label class="fS14 mb-1">Name <span  class="mandatory-color">*</span></label>
+                             <div>
+                               <input autofocus type="text"  name="plantName" #plantName="ngModel"  required
+                                [ngClass]="{'input-box-style2-error': plantName.invalid && (plantName.dirty || plantName.touched)}" 
+                                class="form-control" placeholder="" [(ngModel)]="masterData.plantName" maxlength="50">
+                             </div>
+                          </div>
+                            
+                          <div class="col-md-3">        
+                             <label class="fS14 mb-1">Short Name <span  class="mandatory-color">*</span></label>
+                             <div>
+                               <input autofocus type="text"  name="plantShortName" #plantShortName="ngModel"  required
+                                [ngClass]="{'input-box-style2-error': plantShortName.invalid && (plantShortName.dirty || plantShortName.touched)}" 
+                                class="form-control" placeholder="" [(ngModel)]="masterData.plantShortName" maxlength="4">
+                             </div>
+                          </div> 
+                          
+                         <div class="col-md-3">
+                            <label class="fS14 mb-1">Delivery Location <span  class="mandatory-color">*</span></label> 
+                            <ng-select [items]="deliverylocations" 
+                               bindLabel="dlocationname" 
+                               bindValue="dlocationid" 
+                               placeholder="Select Delivery Location"
+                               [(ngModel)]="masterData.dLocationId">
+                            </ng-select>
+                         </div>
+                         <div class="col-md-3">
+                           <label class="fS14 mb-1">Status<span  class="mandatory-color">*</span></label>
+                              <select  class="form-control form-select" name="isActive" 
+                                 #isActive="ngModel"  required [ngClass]="{'input-box-style2-error': isActive.invalid && (isActive.dirty || isActive.touched)}"  
+                                 [(ngModel)]="masterData.isActive" >
+                                 <option  value="true">Active</option>
+                                 <option  value="false">InActive</option>
+                               </select>
+                           </div>
+                       </div>
+
+                          </form>
+                          <div class="mt-4 me-4 d-flex justify-content-end">   
+                             <div class="row text-center mt-4">
+                             <div class="">
+                                <div class="form-group transback">
+              
+                                   <button type="button"  class="btn btn-secondary footerbtncss mx-2" name="cancel" value="Cancel" (click)="cancelAdd()">Clear</button>
+                                   <button type="button"   class="btn btn-primary footerbtncss" name="signin" (click)="updatePlants()">Submit</button>
+                                </div>
+                             </div>
+                             </div>
+                          </div>
+                    </div>
+              </div>
+           <div *ngIf="action=='view'">
+              <div class="p-4">
+                    <report creportid="65" #report (onEditClcked)="doAction($event)"   [events]="eventsSubject.asObservable()" [groupreport]="0"></report>
+                 </div>
+              </div>
+ </div>
+ </div>
+ </div>
+  
+ 

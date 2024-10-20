@@ -1,0 +1,157 @@
+<div  class="container">
+    <div class="table-wrapper px-0 shadow">
+      <div class="table-title title-fixed">
+        <div class="row">
+           <div class="col-sm-6">
+              <div class="table-head ms-2">
+              <div class="row">
+                <div  class="col-1 cursor">
+                </div>
+                 <div class="col-6 p-0">
+                  Picklist Status 
+                 </div>
+              </div>
+              
+                 </div>
+           </div>
+           <div  class="col-sm-6">
+              <div class="d-grid gap-2 d-md-flex justify-content-md-end align-items-center">
+                 <a class="btn btn-success addcss" (click)="openInvUploadDlg()">
+                  <i class="bi bi-plus-square"></i><span>Unload Doc No. Upload</span>
+                  </a>
+              </div>
+           </div>
+        
+        </div>
+      </div>
+      <div> 
+      <div class="table-content title-content">
+        <div class="pt-0">
+              <div class="p-4">
+                <report creportid="86" #selectedinvoicereport (onEditClcked)="doInvoiceAction($event)"   [events]="eventsSubject.asObservable()" [groupreport]="0"></report>
+                </div> 
+          </div>
+      </div>
+      </div>
+  </div>
+</div>    
+
+<div *ngIf="showInvoiceDlg" class="modal" tabindex="-1" role="dialog" style="display: block !important;" id="showInvoiceDlg">  
+  <div class="modal-dialog modal-dialog-centered" role="document"> 
+    <div class="bgDlg"></div> 
+    <div class="modal-content customheight">
+       
+      <div class="modal-header loginCusto">
+        <h5 class="modal-title fontsize16"> 
+          Invoice Details
+        </h5>
+        <button (click)="closeInvoiceDlgModel()" type="button" class="btn float-end modalclosebtn" data-dismiss="modal"> X  </button>
+         
+      </div>
+      <div class="modal-body">
+         
+        <div class="row">
+
+          <div class="col-md-12">
+            <div class="text-left">
+              <form  #form="ngForm" autocomplete="off" >
+                <div class="row mb-2">
+                    <div class="col-md-12 mb-2">        
+                      <label class="fS14 mb-1">Invoice No.<span  class="mandatory-color">*</span></label>
+                      <div>
+                        <input autofocus type="text"   name="invoiceNo" maxlength="20" #invoiceNo
+                        class="t-form-control" placeholder="Invoice No."  [(ngModel)]="invoiceData.invoiceNo">
+                      </div>
+                   </div>
+                   <div class="col-md-12 mb-2">        
+                     <label class="fS14 mb-1">eWay Bill No.<span  class="mandatory-color">*</span></label>
+                     <div>
+                       <input autofocus type="text"   name="ewayBillNo" maxlength="20" #ewayBillNo
+                       class="t-form-control" placeholder="eWay Bill No."  [(ngModel)]="invoiceData.ewayBillNo">
+                     </div>
+                  </div>
+                  <div class="col-md-12 mb-2">        
+                    <label class="fS14 mb-1">Unload No.<span  class="mandatory-color">*</span></label>
+                    <div>
+                      <input autofocus type="text"  name="consignementNo" maxlength="20" #consignementNo
+                      class="t-form-control" placeholder="Consignment No."  [(ngModel)]="invoiceData.consignementNo">
+                    </div>
+                 </div>
+                </div>
+
+              </form>
+
+                <div class="mt-2 me-4 d-flex justify-content-end">   
+                  <div class="row text-center mt-4">
+                   <div class="">
+                      <div class="form-group">
+                       <button type="button"  class="btn btn-secondary footerbtncss mx-2" name="cancel" value="Cancel" (click)="closeInvoiceDlgModel()">Clear</button>
+                       <button type="button"   class="btn btn-primary footerbtncss" name="signin" (click)="invoiceAssign(doInvoicePicklistDetailId)">Submit</button>
+                       
+                    </div>
+                   </div>
+                  </div>
+                </div> 
+                
+            </div>
+                            
+          </div>
+        </div>
+        
+      </div>
+       
+    </div>  
+  </div>
+</div> 
+
+<div *ngIf="showInvUploadDlg" class="modal" tabindex="-2" role="dialog" style="display: block !important;" id="showInvUploadDlg">  
+  <div class="modal-dialog modal-dialog-centered" role="document"> 
+    <div class="bgDlg"></div> 
+    <div class="modal-content customheight">
+        
+      <div class="modal-header loginCusto">
+        <h5 class="modal-title fontsize16"> 
+          Invoice Upload
+        </h5>
+        <button (click)="closeInvUploadModel()" type="button" class="btn float-end modalclosebtn" data-dismiss="modal"> X  </button>
+          
+      </div>
+      <div class="modal-body"  >
+          
+        <div class="row">
+
+          <div class="col-md-12">
+            <div class="text-left">
+              <form  #form="ngForm" autocomplete="off" >
+                  <div class="row mt-2">
+                      
+                  <div class="d-grid gap-2 d-md-flex justify-content-md-end align-items-center">
+                    <label class="fS14 mb-1">Upload File</label>
+                    <div>
+                      <input type="file" name="file" class="file-input"  #fileUpload (change)="fileChangeInvUploadEvent($event)">
+                    </div>    
+                  </div>
+                  </div>
+                </form>
+
+                <div class="mt-2 me-4 d-flex justify-content-end">   
+                  <div class="row text-center mt-4">
+                    <div class="">
+                      <div class="form-group">
+                        <button type="button"  class="btn btn-secondary footerbtncss mx-2" name="cancel" value="Cancel" (click)="closeInvUploadModel()">Clear</button>
+                        
+                    </div>
+                    </div>
+                  </div>
+                </div> 
+                
+            </div>
+                            
+          </div>
+        </div>
+        
+      </div>
+        
+    </div>  
+  </div>
+</div>  

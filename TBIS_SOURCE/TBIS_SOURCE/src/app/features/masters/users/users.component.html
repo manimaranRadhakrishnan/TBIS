@@ -1,0 +1,31 @@
+
+<div  class="container">
+   <div class="table-wrapper px-0 shadow">
+       <div class="table-title title-fixed">
+         <div class="row">
+           <div class="col-sm-6">
+             <div class="table-head ms-2">
+               <div class="row">
+                 <div *ngIf="action=='view'" class="col-1 cursor">
+                 </div>
+                 <div class="col-6 p-0">
+                  User Details
+                 </div>
+               </div>
+               
+                </div>
+           </div>
+         </div>
+       </div>
+       <div class="table-content title-content">
+             <div *ngIf="action=='view'">
+               <div class="p-4">
+               <report creportid="29" #report [events]="eventsSubject.asObservable()" [groupreport]="0"></report>
+             </div>
+             </div>
+       </div>
+     </div>
+   </div>
+   
+   
+   

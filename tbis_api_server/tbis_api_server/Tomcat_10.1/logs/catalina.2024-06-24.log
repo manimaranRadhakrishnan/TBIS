@@ -1,0 +1,1256 @@
+24-Jun-2024 10:46:18.415 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.1.9
+24-Jun-2024 10:46:18.419 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          May 9 2023 14:30:05 UTC
+24-Jun-2024 10:46:18.420 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.1.9.0
+24-Jun-2024 10:46:18.420 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+24-Jun-2024 10:46:18.420 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+24-Jun-2024 10:46:18.421 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+24-Jun-2024 10:46:18.421 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk-17
+24-Jun-2024 10:46:18.421 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           17.0.9+11-LTS-201
+24-Jun-2024 10:46:18.421 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+24-Jun-2024 10:46:18.421 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1
+24-Jun-2024 10:46:18.421 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1
+24-Jun-2024 10:46:18.438 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\logging.properties
+24-Jun-2024 10:46:18.438 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+24-Jun-2024 10:46:18.438 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+24-Jun-2024 10:46:18.438 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+24-Jun-2024 10:46:18.439 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+24-Jun-2024 10:46:18.439 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+24-Jun-2024 10:46:18.439 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+24-Jun-2024 10:46:18.439 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+24-Jun-2024 10:46:18.440 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+24-Jun-2024 10:46:18.443 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1
+24-Jun-2024 10:46:18.443 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1
+24-Jun-2024 10:46:18.444 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\temp
+24-Jun-2024 10:46:18.455 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [C:\Program Files\Java\jdk-17\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Python312\Scripts\;C:\Python312\;C:\Program Files\Microsoft\jdk-11.0.16.101-hotspot\bin;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Python\Python37\Scripts\;C:\Program Files\Python\Python37\;C:\Users\ASUS\Scripts\;C:\Users\ASUS\;C:\Program Files\Microsoft MPI\Bin\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\OpenSSH\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files\Microsoft SQL Server\150\DTS\Binn\;C:\Users\ASUS\Lib\site-packages\pip;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Program Files\gettext-iconv\bin;C:\Program Files\PuTTY\;C:\Program Files\Java\jdk-17\bin;C:\Program Files\GTK3-Runtime Win64\bin;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\ProgramData\chocolatey\bin;C:\Users\ASUS\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\apache-maven-3.8.8-bin\apache-maven-3.8.8\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\ASUS\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Azure Data Studio\bin;C:\Users\ASUS\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\PyCharm Community Edition 2021.2.3\bin;;D:\CHAKRAS\Drivers\flutter\bin;C:\Users\ASUS\AppData\Local\GitHubDesktop\bin;C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe;C:\ProgramData\ASUS\GitHubDesktop\bin;C:\Users\ASUS\.dotnet\tools;C:\Users\ASUS\AppData\Roaming\npm;C:\Program Files\JetBrains\DataGrip 2023.2.3\bin;;C:\Users\ASUS\AppData\Roaming\nvm;C:\Program Files\nodejs;.]
+24-Jun-2024 10:46:18.673 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8282"]
+24-Jun-2024 10:46:18.700 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [476] milliseconds
+24-Jun-2024 10:46:18.741 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+24-Jun-2024 10:46:18.742 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.9]
+24-Jun-2024 10:46:18.771 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml]
+24-Jun-2024 10:46:18.784 WARNING [main] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/tbis] in deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml] has been ignored
+24-Jun-2024 10:46:23.702 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 10:46:25.285 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml] has finished in [6,513] ms
+24-Jun-2024 10:46:25.285 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\webapps\docs]
+24-Jun-2024 10:46:25.541 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 10:46:25.543 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\webapps\docs] has finished in [258] ms
+24-Jun-2024 10:46:25.543 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\webapps\manager]
+24-Jun-2024 10:46:25.794 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 10:46:25.798 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\webapps\manager] has finished in [255] ms
+24-Jun-2024 10:46:25.799 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\webapps\ROOT]
+24-Jun-2024 10:46:26.042 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 10:46:26.045 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\webapps\ROOT] has finished in [245] ms
+24-Jun-2024 10:46:26.047 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8282"]
+24-Jun-2024 10:46:26.069 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [7369] milliseconds
+24-Jun-2024 16:13:35.051 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/tbis]
+24-Jun-2024 16:13:35.576 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml]
+24-Jun-2024 16:13:35.619 WARNING [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/tbis] in deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml] has been ignored
+24-Jun-2024 16:13:38.810 INFO [Catalina-utility-2] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 16:13:40.170 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml] has finished in [4,593] ms
+24-Jun-2024 16:15:07.038 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/tbis]
+24-Jun-2024 16:15:07.059 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml]
+24-Jun-2024 16:15:07.060 WARNING [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/tbis] in deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml] has been ignored
+24-Jun-2024 16:15:09.395 INFO [Catalina-utility-2] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 16:15:10.779 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml] has finished in [3,720] ms
+24-Jun-2024 16:15:21.731 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/tbis]
+24-Jun-2024 16:15:21.759 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml]
+24-Jun-2024 16:15:21.761 WARNING [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/tbis] in deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml] has been ignored
+24-Jun-2024 16:15:25.194 INFO [Catalina-utility-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 16:15:26.318 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml] has finished in [4,559] ms
+24-Jun-2024 16:15:48.035 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/tbis]
+24-Jun-2024 16:15:48.055 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml]
+24-Jun-2024 16:15:48.055 WARNING [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/tbis] in deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml] has been ignored
+24-Jun-2024 16:15:50.209 INFO [Catalina-utility-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 16:15:51.291 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml] has finished in [3,236] ms
+24-Jun-2024 16:16:35.300 INFO [Catalina-utility-1] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/tbis] has started
+24-Jun-2024 16:16:37.537 INFO [Catalina-utility-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 16:16:38.607 INFO [Catalina-utility-1] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/tbis] is completed
+24-Jun-2024 17:16:45.414 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/tbis]
+24-Jun-2024 17:16:45.438 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml]
+24-Jun-2024 17:16:45.440 WARNING [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/tbis] in deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml] has been ignored
+24-Jun-2024 17:16:48.200 INFO [Catalina-utility-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 17:16:49.554 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml] has finished in [4,116] ms
+24-Jun-2024 17:35:53.879 WARNING [Catalina-utility-2] org.apache.catalina.core.StandardContext.backgroundProcess Exception processing loader [WebappLoader[StandardEngine[Catalina].StandardHost[localhost].StandardContext[/tbis]]] background process
+	java.lang.IllegalStateException: java.nio.file.NoSuchFileException: D:\LIVE PROJECTS\ITBIS\tbis_api_server\tbis\web\WEB-INF\lib\mysql-connector-java-5.1.12-bin.jar
+		at org.apache.catalina.webresources.AbstractSingleArchiveResourceSet.getArchiveEntry(AbstractSingleArchiveResourceSet.java:100)
+		at org.apache.catalina.webresources.AbstractArchiveResourceSet.getResource(AbstractArchiveResourceSet.java:249)
+		at org.apache.catalina.webresources.StandardRoot.getResourceInternal(StandardRoot.java:272)
+		at org.apache.catalina.webresources.Cache.getResource(Cache.java:64)
+		at org.apache.catalina.webresources.StandardRoot.getResource(StandardRoot.java:211)
+		at org.apache.catalina.webresources.StandardRoot.getClassLoaderResource(StandardRoot.java:220)
+		at org.apache.catalina.loader.WebappClassLoaderBase.modified(WebappClassLoaderBase.java:735)
+		at org.apache.catalina.loader.WebappLoader.modified(WebappLoader.java:318)
+		at org.apache.catalina.loader.WebappLoader.backgroundProcess(WebappLoader.java:265)
+		at org.apache.catalina.core.StandardContext.backgroundProcess(StandardContext.java:5254)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1301)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1305)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1305)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1283)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+		at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.base/java.lang.Thread.run(Thread.java:842)
+	Caused by: java.nio.file.NoSuchFileException: D:\LIVE PROJECTS\ITBIS\tbis_api_server\tbis\web\WEB-INF\lib\mysql-connector-java-5.1.12-bin.jar
+		at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+		at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+		at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+		at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:53)
+		at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:38)
+		at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:199)
+		at java.base/java.nio.file.Files.readAttributes(Files.java:1851)
+		at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1429)
+		at java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:718)
+		at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:252)
+		at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:181)
+		at java.base/java.util.jar.JarFile.<init>(JarFile.java:346)
+		at org.apache.catalina.webresources.AbstractArchiveResourceSet.openJarFile(AbstractArchiveResourceSet.java:299)
+		at org.apache.catalina.webresources.AbstractSingleArchiveResourceSet.getArchiveEntry(AbstractSingleArchiveResourceSet.java:96)
+		... 20 more
+24-Jun-2024 17:36:03.900 WARNING [Catalina-utility-1] org.apache.catalina.core.StandardContext.backgroundProcess Exception processing loader [WebappLoader[StandardEngine[Catalina].StandardHost[localhost].StandardContext[/tbis]]] background process
+	java.lang.IllegalStateException: java.nio.file.NoSuchFileException: D:\LIVE PROJECTS\ITBIS\tbis_api_server\tbis\web\WEB-INF\lib\mysql-connector-java-5.1.12-bin.jar
+		at org.apache.catalina.webresources.AbstractSingleArchiveResourceSet.getArchiveEntry(AbstractSingleArchiveResourceSet.java:100)
+		at org.apache.catalina.webresources.AbstractArchiveResourceSet.getResource(AbstractArchiveResourceSet.java:249)
+		at org.apache.catalina.webresources.StandardRoot.getResourceInternal(StandardRoot.java:272)
+		at org.apache.catalina.webresources.Cache.getResource(Cache.java:64)
+		at org.apache.catalina.webresources.StandardRoot.getResource(StandardRoot.java:211)
+		at org.apache.catalina.webresources.StandardRoot.getClassLoaderResource(StandardRoot.java:220)
+		at org.apache.catalina.loader.WebappClassLoaderBase.modified(WebappClassLoaderBase.java:735)
+		at org.apache.catalina.loader.WebappLoader.modified(WebappLoader.java:318)
+		at org.apache.catalina.loader.WebappLoader.backgroundProcess(WebappLoader.java:265)
+		at org.apache.catalina.core.StandardContext.backgroundProcess(StandardContext.java:5254)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1301)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1305)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1305)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1283)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+		at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.base/java.lang.Thread.run(Thread.java:842)
+	Caused by: java.nio.file.NoSuchFileException: D:\LIVE PROJECTS\ITBIS\tbis_api_server\tbis\web\WEB-INF\lib\mysql-connector-java-5.1.12-bin.jar
+		at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+		at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+		at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+		at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:53)
+		at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:38)
+		at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:199)
+		at java.base/java.nio.file.Files.readAttributes(Files.java:1851)
+		at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1429)
+		at java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:718)
+		at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:252)
+		at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:181)
+		at java.base/java.util.jar.JarFile.<init>(JarFile.java:346)
+		at org.apache.catalina.webresources.AbstractArchiveResourceSet.openJarFile(AbstractArchiveResourceSet.java:299)
+		at org.apache.catalina.webresources.AbstractSingleArchiveResourceSet.getArchiveEntry(AbstractSingleArchiveResourceSet.java:96)
+		... 20 more
+24-Jun-2024 17:36:13.915 WARNING [Catalina-utility-1] org.apache.catalina.core.StandardContext.backgroundProcess Exception processing loader [WebappLoader[StandardEngine[Catalina].StandardHost[localhost].StandardContext[/tbis]]] background process
+	java.lang.IllegalStateException: java.nio.file.NoSuchFileException: D:\LIVE PROJECTS\ITBIS\tbis_api_server\tbis\web\WEB-INF\lib\mysql-connector-java-5.1.12-bin.jar
+		at org.apache.catalina.webresources.AbstractSingleArchiveResourceSet.getArchiveEntry(AbstractSingleArchiveResourceSet.java:100)
+		at org.apache.catalina.webresources.AbstractArchiveResourceSet.getResource(AbstractArchiveResourceSet.java:249)
+		at org.apache.catalina.webresources.StandardRoot.getResourceInternal(StandardRoot.java:272)
+		at org.apache.catalina.webresources.Cache.getResource(Cache.java:64)
+		at org.apache.catalina.webresources.StandardRoot.getResource(StandardRoot.java:211)
+		at org.apache.catalina.webresources.StandardRoot.getClassLoaderResource(StandardRoot.java:220)
+		at org.apache.catalina.loader.WebappClassLoaderBase.modified(WebappClassLoaderBase.java:735)
+		at org.apache.catalina.loader.WebappLoader.modified(WebappLoader.java:318)
+		at org.apache.catalina.loader.WebappLoader.backgroundProcess(WebappLoader.java:265)
+		at org.apache.catalina.core.StandardContext.backgroundProcess(StandardContext.java:5254)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1301)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1305)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1305)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1283)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+		at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.base/java.lang.Thread.run(Thread.java:842)
+	Caused by: java.nio.file.NoSuchFileException: D:\LIVE PROJECTS\ITBIS\tbis_api_server\tbis\web\WEB-INF\lib\mysql-connector-java-5.1.12-bin.jar
+		at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+		at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+		at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+		at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:53)
+		at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:38)
+		at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:199)
+		at java.base/java.nio.file.Files.readAttributes(Files.java:1851)
+		at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1429)
+		at java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:718)
+		at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:252)
+		at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:181)
+		at java.base/java.util.jar.JarFile.<init>(JarFile.java:346)
+		at org.apache.catalina.webresources.AbstractArchiveResourceSet.openJarFile(AbstractArchiveResourceSet.java:299)
+		at org.apache.catalina.webresources.AbstractSingleArchiveResourceSet.getArchiveEntry(AbstractSingleArchiveResourceSet.java:96)
+		... 20 more
+24-Jun-2024 17:36:23.948 WARNING [Catalina-utility-1] org.apache.catalina.core.StandardContext.backgroundProcess Exception processing loader [WebappLoader[StandardEngine[Catalina].StandardHost[localhost].StandardContext[/tbis]]] background process
+	java.lang.IllegalStateException: java.nio.file.NoSuchFileException: D:\LIVE PROJECTS\ITBIS\tbis_api_server\tbis\web\WEB-INF\lib\mysql-connector-java-5.1.12-bin.jar
+		at org.apache.catalina.webresources.AbstractSingleArchiveResourceSet.getArchiveEntry(AbstractSingleArchiveResourceSet.java:100)
+		at org.apache.catalina.webresources.AbstractArchiveResourceSet.getResource(AbstractArchiveResourceSet.java:249)
+		at org.apache.catalina.webresources.StandardRoot.getResourceInternal(StandardRoot.java:272)
+		at org.apache.catalina.webresources.Cache.getResource(Cache.java:64)
+		at org.apache.catalina.webresources.StandardRoot.getResource(StandardRoot.java:211)
+		at org.apache.catalina.webresources.StandardRoot.getClassLoaderResource(StandardRoot.java:220)
+		at org.apache.catalina.loader.WebappClassLoaderBase.modified(WebappClassLoaderBase.java:735)
+		at org.apache.catalina.loader.WebappLoader.modified(WebappLoader.java:318)
+		at org.apache.catalina.loader.WebappLoader.backgroundProcess(WebappLoader.java:265)
+		at org.apache.catalina.core.StandardContext.backgroundProcess(StandardContext.java:5254)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1301)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1305)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1305)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1283)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+		at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.base/java.lang.Thread.run(Thread.java:842)
+	Caused by: java.nio.file.NoSuchFileException: D:\LIVE PROJECTS\ITBIS\tbis_api_server\tbis\web\WEB-INF\lib\mysql-connector-java-5.1.12-bin.jar
+		at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+		at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+		at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+		at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:53)
+		at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:38)
+		at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:199)
+		at java.base/java.nio.file.Files.readAttributes(Files.java:1851)
+		at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1429)
+		at java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:718)
+		at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:252)
+		at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:181)
+		at java.base/java.util.jar.JarFile.<init>(JarFile.java:346)
+		at org.apache.catalina.webresources.AbstractArchiveResourceSet.openJarFile(AbstractArchiveResourceSet.java:299)
+		at org.apache.catalina.webresources.AbstractSingleArchiveResourceSet.getArchiveEntry(AbstractSingleArchiveResourceSet.java:96)
+		... 20 more
+24-Jun-2024 17:36:33.967 WARNING [Catalina-utility-1] org.apache.catalina.core.StandardContext.backgroundProcess Exception processing loader [WebappLoader[StandardEngine[Catalina].StandardHost[localhost].StandardContext[/tbis]]] background process
+	java.lang.IllegalStateException: java.nio.file.NoSuchFileException: D:\LIVE PROJECTS\ITBIS\tbis_api_server\tbis\web\WEB-INF\lib\mysql-connector-java-5.1.12-bin.jar
+		at org.apache.catalina.webresources.AbstractSingleArchiveResourceSet.getArchiveEntry(AbstractSingleArchiveResourceSet.java:100)
+		at org.apache.catalina.webresources.AbstractArchiveResourceSet.getResource(AbstractArchiveResourceSet.java:249)
+		at org.apache.catalina.webresources.StandardRoot.getResourceInternal(StandardRoot.java:272)
+		at org.apache.catalina.webresources.Cache.getResource(Cache.java:64)
+		at org.apache.catalina.webresources.StandardRoot.getResource(StandardRoot.java:211)
+		at org.apache.catalina.webresources.StandardRoot.getClassLoaderResource(StandardRoot.java:220)
+		at org.apache.catalina.loader.WebappClassLoaderBase.modified(WebappClassLoaderBase.java:735)
+		at org.apache.catalina.loader.WebappLoader.modified(WebappLoader.java:318)
+		at org.apache.catalina.loader.WebappLoader.backgroundProcess(WebappLoader.java:265)
+		at org.apache.catalina.core.StandardContext.backgroundProcess(StandardContext.java:5254)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1301)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1305)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1305)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1283)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+		at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.base/java.lang.Thread.run(Thread.java:842)
+	Caused by: java.nio.file.NoSuchFileException: D:\LIVE PROJECTS\ITBIS\tbis_api_server\tbis\web\WEB-INF\lib\mysql-connector-java-5.1.12-bin.jar
+		at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+		at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+		at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+		at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:53)
+		at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:38)
+		at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:199)
+		at java.base/java.nio.file.Files.readAttributes(Files.java:1851)
+		at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1429)
+		at java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:718)
+		at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:252)
+		at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:181)
+		at java.base/java.util.jar.JarFile.<init>(JarFile.java:346)
+		at org.apache.catalina.webresources.AbstractArchiveResourceSet.openJarFile(AbstractArchiveResourceSet.java:299)
+		at org.apache.catalina.webresources.AbstractSingleArchiveResourceSet.getArchiveEntry(AbstractSingleArchiveResourceSet.java:96)
+		... 20 more
+24-Jun-2024 17:36:43.978 WARNING [Catalina-utility-2] org.apache.catalina.core.StandardContext.backgroundProcess Exception processing loader [WebappLoader[StandardEngine[Catalina].StandardHost[localhost].StandardContext[/tbis]]] background process
+	java.lang.IllegalStateException: java.nio.file.NoSuchFileException: D:\LIVE PROJECTS\ITBIS\tbis_api_server\tbis\web\WEB-INF\lib\mysql-connector-java-5.1.12-bin.jar
+		at org.apache.catalina.webresources.AbstractSingleArchiveResourceSet.getArchiveEntry(AbstractSingleArchiveResourceSet.java:100)
+		at org.apache.catalina.webresources.AbstractArchiveResourceSet.getResource(AbstractArchiveResourceSet.java:249)
+		at org.apache.catalina.webresources.StandardRoot.getResourceInternal(StandardRoot.java:272)
+		at org.apache.catalina.webresources.Cache.getResource(Cache.java:64)
+		at org.apache.catalina.webresources.StandardRoot.getResource(StandardRoot.java:211)
+		at org.apache.catalina.webresources.StandardRoot.getClassLoaderResource(StandardRoot.java:220)
+		at org.apache.catalina.loader.WebappClassLoaderBase.modified(WebappClassLoaderBase.java:735)
+		at org.apache.catalina.loader.WebappLoader.modified(WebappLoader.java:318)
+		at org.apache.catalina.loader.WebappLoader.backgroundProcess(WebappLoader.java:265)
+		at org.apache.catalina.core.StandardContext.backgroundProcess(StandardContext.java:5254)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1301)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1305)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1305)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1283)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+		at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.base/java.lang.Thread.run(Thread.java:842)
+	Caused by: java.nio.file.NoSuchFileException: D:\LIVE PROJECTS\ITBIS\tbis_api_server\tbis\web\WEB-INF\lib\mysql-connector-java-5.1.12-bin.jar
+		at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+		at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+		at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+		at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:53)
+		at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:38)
+		at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:199)
+		at java.base/java.nio.file.Files.readAttributes(Files.java:1851)
+		at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1429)
+		at java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:718)
+		at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:252)
+		at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:181)
+		at java.base/java.util.jar.JarFile.<init>(JarFile.java:346)
+		at org.apache.catalina.webresources.AbstractArchiveResourceSet.openJarFile(AbstractArchiveResourceSet.java:299)
+		at org.apache.catalina.webresources.AbstractSingleArchiveResourceSet.getArchiveEntry(AbstractSingleArchiveResourceSet.java:96)
+		... 20 more
+24-Jun-2024 17:36:54.011 WARNING [Catalina-utility-2] org.apache.catalina.core.StandardContext.backgroundProcess Exception processing loader [WebappLoader[StandardEngine[Catalina].StandardHost[localhost].StandardContext[/tbis]]] background process
+	java.lang.IllegalStateException: java.nio.file.NoSuchFileException: D:\LIVE PROJECTS\ITBIS\tbis_api_server\tbis\web\WEB-INF\lib\mysql-connector-java-5.1.12-bin.jar
+		at org.apache.catalina.webresources.AbstractSingleArchiveResourceSet.getArchiveEntry(AbstractSingleArchiveResourceSet.java:100)
+		at org.apache.catalina.webresources.AbstractArchiveResourceSet.getResource(AbstractArchiveResourceSet.java:249)
+		at org.apache.catalina.webresources.StandardRoot.getResourceInternal(StandardRoot.java:272)
+		at org.apache.catalina.webresources.Cache.getResource(Cache.java:64)
+		at org.apache.catalina.webresources.StandardRoot.getResource(StandardRoot.java:211)
+		at org.apache.catalina.webresources.StandardRoot.getClassLoaderResource(StandardRoot.java:220)
+		at org.apache.catalina.loader.WebappClassLoaderBase.modified(WebappClassLoaderBase.java:735)
+		at org.apache.catalina.loader.WebappLoader.modified(WebappLoader.java:318)
+		at org.apache.catalina.loader.WebappLoader.backgroundProcess(WebappLoader.java:265)
+		at org.apache.catalina.core.StandardContext.backgroundProcess(StandardContext.java:5254)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1301)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1305)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1305)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1283)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+		at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.base/java.lang.Thread.run(Thread.java:842)
+	Caused by: java.nio.file.NoSuchFileException: D:\LIVE PROJECTS\ITBIS\tbis_api_server\tbis\web\WEB-INF\lib\mysql-connector-java-5.1.12-bin.jar
+		at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+		at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+		at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+		at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:53)
+		at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:38)
+		at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:199)
+		at java.base/java.nio.file.Files.readAttributes(Files.java:1851)
+		at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1429)
+		at java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:718)
+		at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:252)
+		at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:181)
+		at java.base/java.util.jar.JarFile.<init>(JarFile.java:346)
+		at org.apache.catalina.webresources.AbstractArchiveResourceSet.openJarFile(AbstractArchiveResourceSet.java:299)
+		at org.apache.catalina.webresources.AbstractSingleArchiveResourceSet.getArchiveEntry(AbstractSingleArchiveResourceSet.java:96)
+		... 20 more
+24-Jun-2024 17:37:04.036 WARNING [Catalina-utility-2] org.apache.catalina.core.StandardContext.backgroundProcess Exception processing loader [WebappLoader[StandardEngine[Catalina].StandardHost[localhost].StandardContext[/tbis]]] background process
+	java.lang.IllegalStateException: java.nio.file.NoSuchFileException: D:\LIVE PROJECTS\ITBIS\tbis_api_server\tbis\web\WEB-INF\lib\mysql-connector-java-5.1.12-bin.jar
+		at org.apache.catalina.webresources.AbstractSingleArchiveResourceSet.getArchiveEntry(AbstractSingleArchiveResourceSet.java:100)
+		at org.apache.catalina.webresources.AbstractArchiveResourceSet.getResource(AbstractArchiveResourceSet.java:249)
+		at org.apache.catalina.webresources.StandardRoot.getResourceInternal(StandardRoot.java:272)
+		at org.apache.catalina.webresources.Cache.getResource(Cache.java:64)
+		at org.apache.catalina.webresources.StandardRoot.getResource(StandardRoot.java:211)
+		at org.apache.catalina.webresources.StandardRoot.getClassLoaderResource(StandardRoot.java:220)
+		at org.apache.catalina.loader.WebappClassLoaderBase.modified(WebappClassLoaderBase.java:735)
+		at org.apache.catalina.loader.WebappLoader.modified(WebappLoader.java:318)
+		at org.apache.catalina.loader.WebappLoader.backgroundProcess(WebappLoader.java:265)
+		at org.apache.catalina.core.StandardContext.backgroundProcess(StandardContext.java:5254)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1301)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1305)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1305)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1283)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+		at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.base/java.lang.Thread.run(Thread.java:842)
+	Caused by: java.nio.file.NoSuchFileException: D:\LIVE PROJECTS\ITBIS\tbis_api_server\tbis\web\WEB-INF\lib\mysql-connector-java-5.1.12-bin.jar
+		at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+		at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+		at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+		at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:53)
+		at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:38)
+		at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:199)
+		at java.base/java.nio.file.Files.readAttributes(Files.java:1851)
+		at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1429)
+		at java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:718)
+		at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:252)
+		at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:181)
+		at java.base/java.util.jar.JarFile.<init>(JarFile.java:346)
+		at org.apache.catalina.webresources.AbstractArchiveResourceSet.openJarFile(AbstractArchiveResourceSet.java:299)
+		at org.apache.catalina.webresources.AbstractSingleArchiveResourceSet.getArchiveEntry(AbstractSingleArchiveResourceSet.java:96)
+		... 20 more
+24-Jun-2024 17:37:14.058 WARNING [Catalina-utility-1] org.apache.catalina.core.StandardContext.backgroundProcess Exception processing loader [WebappLoader[StandardEngine[Catalina].StandardHost[localhost].StandardContext[/tbis]]] background process
+	java.lang.IllegalStateException: java.nio.file.NoSuchFileException: D:\LIVE PROJECTS\ITBIS\tbis_api_server\tbis\web\WEB-INF\lib\mysql-connector-java-5.1.12-bin.jar
+		at org.apache.catalina.webresources.AbstractSingleArchiveResourceSet.getArchiveEntry(AbstractSingleArchiveResourceSet.java:100)
+		at org.apache.catalina.webresources.AbstractArchiveResourceSet.getResource(AbstractArchiveResourceSet.java:249)
+		at org.apache.catalina.webresources.StandardRoot.getResourceInternal(StandardRoot.java:272)
+		at org.apache.catalina.webresources.Cache.getResource(Cache.java:64)
+		at org.apache.catalina.webresources.StandardRoot.getResource(StandardRoot.java:211)
+		at org.apache.catalina.webresources.StandardRoot.getClassLoaderResource(StandardRoot.java:220)
+		at org.apache.catalina.loader.WebappClassLoaderBase.modified(WebappClassLoaderBase.java:735)
+		at org.apache.catalina.loader.WebappLoader.modified(WebappLoader.java:318)
+		at org.apache.catalina.loader.WebappLoader.backgroundProcess(WebappLoader.java:265)
+		at org.apache.catalina.core.StandardContext.backgroundProcess(StandardContext.java:5254)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1301)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1305)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1305)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1283)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+		at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.base/java.lang.Thread.run(Thread.java:842)
+	Caused by: java.nio.file.NoSuchFileException: D:\LIVE PROJECTS\ITBIS\tbis_api_server\tbis\web\WEB-INF\lib\mysql-connector-java-5.1.12-bin.jar
+		at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+		at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+		at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+		at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:53)
+		at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:38)
+		at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:199)
+		at java.base/java.nio.file.Files.readAttributes(Files.java:1851)
+		at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1429)
+		at java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:718)
+		at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:252)
+		at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:181)
+		at java.base/java.util.jar.JarFile.<init>(JarFile.java:346)
+		at org.apache.catalina.webresources.AbstractArchiveResourceSet.openJarFile(AbstractArchiveResourceSet.java:299)
+		at org.apache.catalina.webresources.AbstractSingleArchiveResourceSet.getArchiveEntry(AbstractSingleArchiveResourceSet.java:96)
+		... 20 more
+24-Jun-2024 17:37:24.073 WARNING [Catalina-utility-2] org.apache.catalina.core.StandardContext.backgroundProcess Exception processing loader [WebappLoader[StandardEngine[Catalina].StandardHost[localhost].StandardContext[/tbis]]] background process
+	java.lang.IllegalStateException: java.nio.file.NoSuchFileException: D:\LIVE PROJECTS\ITBIS\tbis_api_server\tbis\web\WEB-INF\lib\mysql-connector-java-5.1.12-bin.jar
+		at org.apache.catalina.webresources.AbstractSingleArchiveResourceSet.getArchiveEntry(AbstractSingleArchiveResourceSet.java:100)
+		at org.apache.catalina.webresources.AbstractArchiveResourceSet.getResource(AbstractArchiveResourceSet.java:249)
+		at org.apache.catalina.webresources.StandardRoot.getResourceInternal(StandardRoot.java:272)
+		at org.apache.catalina.webresources.Cache.getResource(Cache.java:64)
+		at org.apache.catalina.webresources.StandardRoot.getResource(StandardRoot.java:211)
+		at org.apache.catalina.webresources.StandardRoot.getClassLoaderResource(StandardRoot.java:220)
+		at org.apache.catalina.loader.WebappClassLoaderBase.modified(WebappClassLoaderBase.java:735)
+		at org.apache.catalina.loader.WebappLoader.modified(WebappLoader.java:318)
+		at org.apache.catalina.loader.WebappLoader.backgroundProcess(WebappLoader.java:265)
+		at org.apache.catalina.core.StandardContext.backgroundProcess(StandardContext.java:5254)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1301)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1305)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1305)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1283)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+		at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.base/java.lang.Thread.run(Thread.java:842)
+	Caused by: java.nio.file.NoSuchFileException: D:\LIVE PROJECTS\ITBIS\tbis_api_server\tbis\web\WEB-INF\lib\mysql-connector-java-5.1.12-bin.jar
+		at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+		at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+		at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+		at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:53)
+		at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:38)
+		at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:199)
+		at java.base/java.nio.file.Files.readAttributes(Files.java:1851)
+		at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1429)
+		at java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:718)
+		at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:252)
+		at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:181)
+		at java.base/java.util.jar.JarFile.<init>(JarFile.java:346)
+		at org.apache.catalina.webresources.AbstractArchiveResourceSet.openJarFile(AbstractArchiveResourceSet.java:299)
+		at org.apache.catalina.webresources.AbstractSingleArchiveResourceSet.getArchiveEntry(AbstractSingleArchiveResourceSet.java:96)
+		... 20 more
+24-Jun-2024 17:37:34.102 WARNING [Catalina-utility-2] org.apache.catalina.core.StandardContext.backgroundProcess Exception processing loader [WebappLoader[StandardEngine[Catalina].StandardHost[localhost].StandardContext[/tbis]]] background process
+	java.lang.IllegalStateException: java.nio.file.NoSuchFileException: D:\LIVE PROJECTS\ITBIS\tbis_api_server\tbis\web\WEB-INF\lib\mysql-connector-java-5.1.12-bin.jar
+		at org.apache.catalina.webresources.AbstractSingleArchiveResourceSet.getArchiveEntry(AbstractSingleArchiveResourceSet.java:100)
+		at org.apache.catalina.webresources.AbstractArchiveResourceSet.getResource(AbstractArchiveResourceSet.java:249)
+		at org.apache.catalina.webresources.StandardRoot.getResourceInternal(StandardRoot.java:272)
+		at org.apache.catalina.webresources.Cache.getResource(Cache.java:64)
+		at org.apache.catalina.webresources.StandardRoot.getResource(StandardRoot.java:211)
+		at org.apache.catalina.webresources.StandardRoot.getClassLoaderResource(StandardRoot.java:220)
+		at org.apache.catalina.loader.WebappClassLoaderBase.modified(WebappClassLoaderBase.java:735)
+		at org.apache.catalina.loader.WebappLoader.modified(WebappLoader.java:318)
+		at org.apache.catalina.loader.WebappLoader.backgroundProcess(WebappLoader.java:265)
+		at org.apache.catalina.core.StandardContext.backgroundProcess(StandardContext.java:5254)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1301)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1305)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1305)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1283)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+		at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.base/java.lang.Thread.run(Thread.java:842)
+	Caused by: java.nio.file.NoSuchFileException: D:\LIVE PROJECTS\ITBIS\tbis_api_server\tbis\web\WEB-INF\lib\mysql-connector-java-5.1.12-bin.jar
+		at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+		at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+		at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+		at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:53)
+		at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:38)
+		at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:199)
+		at java.base/java.nio.file.Files.readAttributes(Files.java:1851)
+		at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1429)
+		at java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:718)
+		at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:252)
+		at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:181)
+		at java.base/java.util.jar.JarFile.<init>(JarFile.java:346)
+		at org.apache.catalina.webresources.AbstractArchiveResourceSet.openJarFile(AbstractArchiveResourceSet.java:299)
+		at org.apache.catalina.webresources.AbstractSingleArchiveResourceSet.getArchiveEntry(AbstractSingleArchiveResourceSet.java:96)
+		... 20 more
+24-Jun-2024 17:37:44.125 WARNING [Catalina-utility-1] org.apache.catalina.core.StandardContext.backgroundProcess Exception processing loader [WebappLoader[StandardEngine[Catalina].StandardHost[localhost].StandardContext[/tbis]]] background process
+	java.lang.IllegalStateException: java.nio.file.NoSuchFileException: D:\LIVE PROJECTS\ITBIS\tbis_api_server\tbis\web\WEB-INF\lib\mysql-connector-java-5.1.12-bin.jar
+		at org.apache.catalina.webresources.AbstractSingleArchiveResourceSet.getArchiveEntry(AbstractSingleArchiveResourceSet.java:100)
+		at org.apache.catalina.webresources.AbstractArchiveResourceSet.getResource(AbstractArchiveResourceSet.java:249)
+		at org.apache.catalina.webresources.StandardRoot.getResourceInternal(StandardRoot.java:272)
+		at org.apache.catalina.webresources.Cache.getResource(Cache.java:64)
+		at org.apache.catalina.webresources.StandardRoot.getResource(StandardRoot.java:211)
+		at org.apache.catalina.webresources.StandardRoot.getClassLoaderResource(StandardRoot.java:220)
+		at org.apache.catalina.loader.WebappClassLoaderBase.modified(WebappClassLoaderBase.java:735)
+		at org.apache.catalina.loader.WebappLoader.modified(WebappLoader.java:318)
+		at org.apache.catalina.loader.WebappLoader.backgroundProcess(WebappLoader.java:265)
+		at org.apache.catalina.core.StandardContext.backgroundProcess(StandardContext.java:5254)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1301)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1305)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1305)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1283)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+		at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.base/java.lang.Thread.run(Thread.java:842)
+	Caused by: java.nio.file.NoSuchFileException: D:\LIVE PROJECTS\ITBIS\tbis_api_server\tbis\web\WEB-INF\lib\mysql-connector-java-5.1.12-bin.jar
+		at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+		at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+		at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+		at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:53)
+		at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:38)
+		at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:199)
+		at java.base/java.nio.file.Files.readAttributes(Files.java:1851)
+		at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1429)
+		at java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:718)
+		at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:252)
+		at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:181)
+		at java.base/java.util.jar.JarFile.<init>(JarFile.java:346)
+		at org.apache.catalina.webresources.AbstractArchiveResourceSet.openJarFile(AbstractArchiveResourceSet.java:299)
+		at org.apache.catalina.webresources.AbstractSingleArchiveResourceSet.getArchiveEntry(AbstractSingleArchiveResourceSet.java:96)
+		... 20 more
+24-Jun-2024 17:37:54.148 WARNING [Catalina-utility-2] org.apache.catalina.core.StandardContext.backgroundProcess Exception processing loader [WebappLoader[StandardEngine[Catalina].StandardHost[localhost].StandardContext[/tbis]]] background process
+	java.lang.IllegalStateException: java.nio.file.NoSuchFileException: D:\LIVE PROJECTS\ITBIS\tbis_api_server\tbis\web\WEB-INF\lib\mysql-connector-java-5.1.12-bin.jar
+		at org.apache.catalina.webresources.AbstractSingleArchiveResourceSet.getArchiveEntry(AbstractSingleArchiveResourceSet.java:100)
+		at org.apache.catalina.webresources.AbstractArchiveResourceSet.getResource(AbstractArchiveResourceSet.java:249)
+		at org.apache.catalina.webresources.StandardRoot.getResourceInternal(StandardRoot.java:272)
+		at org.apache.catalina.webresources.Cache.getResource(Cache.java:64)
+		at org.apache.catalina.webresources.StandardRoot.getResource(StandardRoot.java:211)
+		at org.apache.catalina.webresources.StandardRoot.getClassLoaderResource(StandardRoot.java:220)
+		at org.apache.catalina.loader.WebappClassLoaderBase.modified(WebappClassLoaderBase.java:735)
+		at org.apache.catalina.loader.WebappLoader.modified(WebappLoader.java:318)
+		at org.apache.catalina.loader.WebappLoader.backgroundProcess(WebappLoader.java:265)
+		at org.apache.catalina.core.StandardContext.backgroundProcess(StandardContext.java:5254)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1301)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1305)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1305)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1283)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+		at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.base/java.lang.Thread.run(Thread.java:842)
+	Caused by: java.nio.file.NoSuchFileException: D:\LIVE PROJECTS\ITBIS\tbis_api_server\tbis\web\WEB-INF\lib\mysql-connector-java-5.1.12-bin.jar
+		at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+		at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+		at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+		at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:53)
+		at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:38)
+		at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:199)
+		at java.base/java.nio.file.Files.readAttributes(Files.java:1851)
+		at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1429)
+		at java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:718)
+		at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:252)
+		at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:181)
+		at java.base/java.util.jar.JarFile.<init>(JarFile.java:346)
+		at org.apache.catalina.webresources.AbstractArchiveResourceSet.openJarFile(AbstractArchiveResourceSet.java:299)
+		at org.apache.catalina.webresources.AbstractSingleArchiveResourceSet.getArchiveEntry(AbstractSingleArchiveResourceSet.java:96)
+		... 20 more
+24-Jun-2024 17:38:31.474 SEVERE [main] org.apache.catalina.startup.Catalina.stopServer No shutdown port configured. Shut down server through OS signal. Server not shut down.
+24-Jun-2024 17:38:33.303 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.1.9
+24-Jun-2024 17:38:33.307 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          May 9 2023 14:30:05 UTC
+24-Jun-2024 17:38:33.307 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.1.9.0
+24-Jun-2024 17:38:33.307 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+24-Jun-2024 17:38:33.307 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+24-Jun-2024 17:38:33.308 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+24-Jun-2024 17:38:33.308 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk-17
+24-Jun-2024 17:38:33.308 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           17.0.9+11-LTS-201
+24-Jun-2024 17:38:33.308 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+24-Jun-2024 17:38:33.309 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1
+24-Jun-2024 17:38:33.309 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1
+24-Jun-2024 17:38:33.315 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\logging.properties
+24-Jun-2024 17:38:33.315 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+24-Jun-2024 17:38:33.316 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+24-Jun-2024 17:38:33.316 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+24-Jun-2024 17:38:33.316 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+24-Jun-2024 17:38:33.316 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+24-Jun-2024 17:38:33.316 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+24-Jun-2024 17:38:33.317 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+24-Jun-2024 17:38:33.317 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+24-Jun-2024 17:38:33.317 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1
+24-Jun-2024 17:38:33.317 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1
+24-Jun-2024 17:38:33.318 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\temp
+24-Jun-2024 17:38:33.349 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [C:\Program Files\Java\jdk-17\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Python312\Scripts\;C:\Python312\;C:\Program Files\Microsoft\jdk-11.0.16.101-hotspot\bin;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Python\Python37\Scripts\;C:\Program Files\Python\Python37\;C:\Users\ASUS\Scripts\;C:\Users\ASUS\;C:\Program Files\Microsoft MPI\Bin\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\OpenSSH\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files\Microsoft SQL Server\150\DTS\Binn\;C:\Users\ASUS\Lib\site-packages\pip;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Program Files\gettext-iconv\bin;C:\Program Files\PuTTY\;C:\Program Files\Java\jdk-17\bin;C:\Program Files\GTK3-Runtime Win64\bin;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\ProgramData\chocolatey\bin;C:\Users\ASUS\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\apache-maven-3.8.8-bin\apache-maven-3.8.8\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\ASUS\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Azure Data Studio\bin;C:\Users\ASUS\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\PyCharm Community Edition 2021.2.3\bin;;D:\CHAKRAS\Drivers\flutter\bin;C:\Users\ASUS\AppData\Local\GitHubDesktop\bin;C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe;C:\ProgramData\ASUS\GitHubDesktop\bin;C:\Users\ASUS\.dotnet\tools;C:\Users\ASUS\AppData\Roaming\npm;C:\Program Files\JetBrains\DataGrip 2023.2.3\bin;;C:\Users\ASUS\AppData\Roaming\nvm;C:\Program Files\nodejs;.]
+24-Jun-2024 17:38:33.572 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8282"]
+24-Jun-2024 17:38:33.595 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [456] milliseconds
+24-Jun-2024 17:38:33.639 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+24-Jun-2024 17:38:33.639 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.9]
+24-Jun-2024 17:38:33.668 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml]
+24-Jun-2024 17:38:33.684 WARNING [main] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/tbis] in deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml] has been ignored
+24-Jun-2024 17:38:36.998 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 17:38:38.654 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml] has finished in [4,985] ms
+24-Jun-2024 17:38:38.654 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\webapps\docs]
+24-Jun-2024 17:38:38.727 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 17:38:38.729 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\webapps\docs] has finished in [75] ms
+24-Jun-2024 17:38:38.729 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\webapps\manager]
+24-Jun-2024 17:38:38.798 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 17:38:38.804 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\webapps\manager] has finished in [75] ms
+24-Jun-2024 17:38:38.804 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\webapps\ROOT]
+24-Jun-2024 17:38:38.856 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 17:38:38.859 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\webapps\ROOT] has finished in [54] ms
+24-Jun-2024 17:38:38.862 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8282"]
+24-Jun-2024 17:38:38.887 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [5292] milliseconds
+24-Jun-2024 17:39:30.131 SEVERE [main] org.apache.catalina.startup.Catalina.stopServer No shutdown port configured. Shut down server through OS signal. Server not shut down.
+24-Jun-2024 17:39:31.695 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.1.9
+24-Jun-2024 17:39:31.698 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          May 9 2023 14:30:05 UTC
+24-Jun-2024 17:39:31.698 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.1.9.0
+24-Jun-2024 17:39:31.699 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+24-Jun-2024 17:39:31.699 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+24-Jun-2024 17:39:31.699 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+24-Jun-2024 17:39:31.699 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk-17
+24-Jun-2024 17:39:31.699 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           17.0.9+11-LTS-201
+24-Jun-2024 17:39:31.700 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+24-Jun-2024 17:39:31.700 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1
+24-Jun-2024 17:39:31.700 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1
+24-Jun-2024 17:39:31.707 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\logging.properties
+24-Jun-2024 17:39:31.707 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+24-Jun-2024 17:39:31.707 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+24-Jun-2024 17:39:31.707 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+24-Jun-2024 17:39:31.708 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+24-Jun-2024 17:39:31.708 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+24-Jun-2024 17:39:31.708 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+24-Jun-2024 17:39:31.708 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+24-Jun-2024 17:39:31.709 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+24-Jun-2024 17:39:31.709 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1
+24-Jun-2024 17:39:31.709 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1
+24-Jun-2024 17:39:31.710 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\temp
+24-Jun-2024 17:39:31.722 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [C:\Program Files\Java\jdk-17\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Python312\Scripts\;C:\Python312\;C:\Program Files\Microsoft\jdk-11.0.16.101-hotspot\bin;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Python\Python37\Scripts\;C:\Program Files\Python\Python37\;C:\Users\ASUS\Scripts\;C:\Users\ASUS\;C:\Program Files\Microsoft MPI\Bin\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\OpenSSH\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files\Microsoft SQL Server\150\DTS\Binn\;C:\Users\ASUS\Lib\site-packages\pip;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Program Files\gettext-iconv\bin;C:\Program Files\PuTTY\;C:\Program Files\Java\jdk-17\bin;C:\Program Files\GTK3-Runtime Win64\bin;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\ProgramData\chocolatey\bin;C:\Users\ASUS\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\apache-maven-3.8.8-bin\apache-maven-3.8.8\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\ASUS\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Azure Data Studio\bin;C:\Users\ASUS\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\PyCharm Community Edition 2021.2.3\bin;;D:\CHAKRAS\Drivers\flutter\bin;C:\Users\ASUS\AppData\Local\GitHubDesktop\bin;C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe;C:\ProgramData\ASUS\GitHubDesktop\bin;C:\Users\ASUS\.dotnet\tools;C:\Users\ASUS\AppData\Roaming\npm;C:\Program Files\JetBrains\DataGrip 2023.2.3\bin;;C:\Users\ASUS\AppData\Roaming\nvm;C:\Program Files\nodejs;.]
+24-Jun-2024 17:39:31.894 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8282"]
+24-Jun-2024 17:39:31.910 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [349] milliseconds
+24-Jun-2024 17:39:31.941 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+24-Jun-2024 17:39:31.941 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.9]
+24-Jun-2024 17:39:31.960 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml]
+24-Jun-2024 17:39:31.972 WARNING [main] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/tbis] in deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml] has been ignored
+24-Jun-2024 17:39:34.709 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 17:39:36.278 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml] has finished in [4,317] ms
+24-Jun-2024 17:39:36.279 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\webapps\docs]
+24-Jun-2024 17:39:36.528 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 17:39:36.530 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\webapps\docs] has finished in [251] ms
+24-Jun-2024 17:39:36.531 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\webapps\manager]
+24-Jun-2024 17:39:36.767 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 17:39:36.771 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\webapps\manager] has finished in [240] ms
+24-Jun-2024 17:39:36.771 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\webapps\ROOT]
+24-Jun-2024 17:39:36.990 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 17:39:36.992 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\webapps\ROOT] has finished in [221] ms
+24-Jun-2024 17:39:36.995 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8282"]
+24-Jun-2024 17:39:37.011 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [5099] milliseconds
+24-Jun-2024 17:49:50.814 SEVERE [main] org.apache.catalina.startup.Catalina.stopServer No shutdown port configured. Shut down server through OS signal. Server not shut down.
+24-Jun-2024 17:49:52.963 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.1.9
+24-Jun-2024 17:49:52.967 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          May 9 2023 14:30:05 UTC
+24-Jun-2024 17:49:52.967 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.1.9.0
+24-Jun-2024 17:49:52.967 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+24-Jun-2024 17:49:52.967 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+24-Jun-2024 17:49:52.968 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+24-Jun-2024 17:49:52.968 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk-17
+24-Jun-2024 17:49:52.968 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           17.0.9+11-LTS-201
+24-Jun-2024 17:49:52.968 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+24-Jun-2024 17:49:52.968 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1
+24-Jun-2024 17:49:52.968 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1
+24-Jun-2024 17:49:52.975 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\logging.properties
+24-Jun-2024 17:49:52.975 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+24-Jun-2024 17:49:52.975 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+24-Jun-2024 17:49:52.975 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+24-Jun-2024 17:49:52.975 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+24-Jun-2024 17:49:52.975 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+24-Jun-2024 17:49:52.976 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+24-Jun-2024 17:49:52.976 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+24-Jun-2024 17:49:52.976 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+24-Jun-2024 17:49:52.977 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1
+24-Jun-2024 17:49:52.977 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1
+24-Jun-2024 17:49:52.977 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\temp
+24-Jun-2024 17:49:52.998 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [C:\Program Files\Java\jdk-17\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Python312\Scripts\;C:\Python312\;C:\Program Files\Microsoft\jdk-11.0.16.101-hotspot\bin;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Python\Python37\Scripts\;C:\Program Files\Python\Python37\;C:\Users\ASUS\Scripts\;C:\Users\ASUS\;C:\Program Files\Microsoft MPI\Bin\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\OpenSSH\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files\Microsoft SQL Server\150\DTS\Binn\;C:\Users\ASUS\Lib\site-packages\pip;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Program Files\gettext-iconv\bin;C:\Program Files\PuTTY\;C:\Program Files\Java\jdk-17\bin;C:\Program Files\GTK3-Runtime Win64\bin;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\ProgramData\chocolatey\bin;C:\Users\ASUS\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\apache-maven-3.8.8-bin\apache-maven-3.8.8\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\ASUS\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Azure Data Studio\bin;C:\Users\ASUS\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\PyCharm Community Edition 2021.2.3\bin;;D:\CHAKRAS\Drivers\flutter\bin;C:\Users\ASUS\AppData\Local\GitHubDesktop\bin;C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe;C:\ProgramData\ASUS\GitHubDesktop\bin;C:\Users\ASUS\.dotnet\tools;C:\Users\ASUS\AppData\Roaming\npm;C:\Program Files\JetBrains\DataGrip 2023.2.3\bin;;C:\Users\ASUS\AppData\Roaming\nvm;C:\Program Files\nodejs;.]
+24-Jun-2024 17:49:53.176 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8282"]
+24-Jun-2024 17:49:53.192 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [364] milliseconds
+24-Jun-2024 17:49:53.223 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+24-Jun-2024 17:49:53.224 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.9]
+24-Jun-2024 17:49:53.243 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml]
+24-Jun-2024 17:49:53.255 WARNING [main] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/tbis] in deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml] has been ignored
+24-Jun-2024 17:49:55.989 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 17:49:57.554 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml] has finished in [4,311] ms
+24-Jun-2024 17:49:57.555 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\webapps\docs]
+24-Jun-2024 17:49:57.810 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 17:49:57.813 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\webapps\docs] has finished in [257] ms
+24-Jun-2024 17:49:57.813 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\webapps\manager]
+24-Jun-2024 17:49:58.063 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 17:49:58.070 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\webapps\manager] has finished in [257] ms
+24-Jun-2024 17:49:58.070 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\webapps\ROOT]
+24-Jun-2024 17:49:58.289 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 17:49:58.291 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\webapps\ROOT] has finished in [221] ms
+24-Jun-2024 17:49:58.296 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8282"]
+24-Jun-2024 17:49:58.312 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [5119] milliseconds
+24-Jun-2024 18:41:14.026 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/tbis]
+24-Jun-2024 18:41:14.417 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml]
+24-Jun-2024 18:41:14.443 WARNING [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/tbis] in deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml] has been ignored
+24-Jun-2024 18:42:00.929 INFO [Catalina-utility-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 18:42:02.513 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml] has finished in [48,095] ms
+24-Jun-2024 18:42:35.032 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/tbis]
+24-Jun-2024 18:42:35.053 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml]
+24-Jun-2024 18:42:35.054 WARNING [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/tbis] in deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml] has been ignored
+24-Jun-2024 18:42:37.918 INFO [Catalina-utility-2] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 18:42:39.264 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml] has finished in [4,211] ms
+24-Jun-2024 18:43:22.948 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/tbis]
+24-Jun-2024 18:43:22.969 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml]
+24-Jun-2024 18:43:22.973 SEVERE [Catalina-utility-1] org.apache.tomcat.util.digester.Digester.fatalError Parse fatal error at line [21] column [31]
+	org.xml.sax.SAXParseException; lineNumber: 21; columnNumber: 31; Attribute "validationQuery" was already specified for element "Resource".
+		at java.xml/com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:204)
+		at java.xml/com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:178)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1465)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanAttribute(XMLDocumentFragmentScannerImpl.java:1534)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(XMLDocumentFragmentScannerImpl.java:1363)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2726)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:605)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:542)
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:889)
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:825)
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1224)
+		at java.xml/com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:637)
+		at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1539)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:583)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1927)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:123)
+		at org.apache.catalina.startup.HostConfig.deployDescriptors(HostConfig.java:534)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:424)
+		at org.apache.catalina.startup.HostConfig.check(HostConfig.java:1705)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:305)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+		at org.apache.catalina.core.ContainerBase.backgroundProcess(ContainerBase.java:1102)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1301)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1305)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1283)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+		at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.base/java.lang.Thread.run(Thread.java:842)
+24-Jun-2024 18:43:22.974 SEVERE [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployDescriptor Error deploying deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml]
+	org.xml.sax.SAXParseException; lineNumber: 21; columnNumber: 31; Attribute "validationQuery" was already specified for element "Resource".
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1251)
+		at java.xml/com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:637)
+		at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1539)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:583)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1927)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:123)
+		at org.apache.catalina.startup.HostConfig.deployDescriptors(HostConfig.java:534)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:424)
+		at org.apache.catalina.startup.HostConfig.check(HostConfig.java:1705)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:305)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+		at org.apache.catalina.core.ContainerBase.backgroundProcess(ContainerBase.java:1102)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1301)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1305)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1283)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+		at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.base/java.lang.Thread.run(Thread.java:842)
+24-Jun-2024 18:43:22.982 SEVERE [Catalina-utility-1] org.apache.tomcat.util.digester.Digester.fatalError Parse fatal error at line [21] column [31]
+	org.xml.sax.SAXParseException; systemId: file:/D:/LIVE%20PROJECTS/ITBIS/tbis_api_server/Tomcat_10.1/conf/Catalina/localhost/tbis.xml; lineNumber: 21; columnNumber: 31; Attribute "validationQuery" was already specified for element "Resource".
+		at java.xml/com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:204)
+		at java.xml/com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:178)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1465)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanAttribute(XMLDocumentFragmentScannerImpl.java:1534)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(XMLDocumentFragmentScannerImpl.java:1363)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2726)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:605)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:542)
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:889)
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:825)
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1224)
+		at java.xml/com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:637)
+		at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1522)
+		at org.apache.catalina.startup.ContextConfig.processContextConfig(ContextConfig.java:736)
+		at org.apache.catalina.startup.ContextConfig.contextConfig(ContextConfig.java:680)
+		at org.apache.catalina.startup.ContextConfig.init(ContextConfig.java:950)
+		at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:315)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+		at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:423)
+		at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:137)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:173)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:683)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:658)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:713)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:641)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1927)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:123)
+		at org.apache.catalina.startup.HostConfig.deployDescriptors(HostConfig.java:534)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:424)
+		at org.apache.catalina.startup.HostConfig.check(HostConfig.java:1705)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:305)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+		at org.apache.catalina.core.ContainerBase.backgroundProcess(ContainerBase.java:1102)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1301)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1305)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1283)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+		at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.base/java.lang.Thread.run(Thread.java:842)
+24-Jun-2024 18:43:22.983 SEVERE [Catalina-utility-1] org.apache.catalina.startup.ContextConfig.processContextConfig Parse error in context.xml for [/tbis]
+	org.xml.sax.SAXParseException; systemId: file:/D:/LIVE%20PROJECTS/ITBIS/tbis_api_server/Tomcat_10.1/conf/Catalina/localhost/tbis.xml; lineNumber: 21; columnNumber: 31; Attribute "validationQuery" was already specified for element "Resource".
+		at java.xml/com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:204)
+		at java.xml/com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:178)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1465)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanAttribute(XMLDocumentFragmentScannerImpl.java:1534)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(XMLDocumentFragmentScannerImpl.java:1363)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2726)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:605)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:542)
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:889)
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:825)
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1224)
+		at java.xml/com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:637)
+		at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1522)
+		at org.apache.catalina.startup.ContextConfig.processContextConfig(ContextConfig.java:736)
+		at org.apache.catalina.startup.ContextConfig.contextConfig(ContextConfig.java:680)
+		at org.apache.catalina.startup.ContextConfig.init(ContextConfig.java:950)
+		at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:315)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+		at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:423)
+		at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:137)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:173)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:683)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:658)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:713)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:641)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1927)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:123)
+		at org.apache.catalina.startup.HostConfig.deployDescriptors(HostConfig.java:534)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:424)
+		at org.apache.catalina.startup.HostConfig.check(HostConfig.java:1705)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:305)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+		at org.apache.catalina.core.ContainerBase.backgroundProcess(ContainerBase.java:1102)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1301)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1305)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1283)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+		at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.base/java.lang.Thread.run(Thread.java:842)
+24-Jun-2024 18:43:22.984 SEVERE [Catalina-utility-1] org.apache.catalina.startup.ContextConfig.processContextConfig Occurred at line [21] column [31]
+24-Jun-2024 18:43:22.985 SEVERE [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployDescriptor Error deploying deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml]
+	java.lang.IllegalStateException: Error starting child
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:686)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:658)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:713)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:641)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1927)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:123)
+		at org.apache.catalina.startup.HostConfig.deployDescriptors(HostConfig.java:534)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:424)
+		at org.apache.catalina.startup.HostConfig.check(HostConfig.java:1705)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:305)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+		at org.apache.catalina.core.ContainerBase.backgroundProcess(ContainerBase.java:1102)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1301)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1305)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1283)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+		at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.base/java.lang.Thread.run(Thread.java:842)
+	Caused by: org.apache.catalina.LifecycleException: Failed to process either the global, per-host or context-specific context.xml file therefore the [/tbis] Context cannot be started.
+		at org.apache.catalina.startup.FailedContext.startInternal(FailedContext.java:200)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:683)
+		... 24 more
+24-Jun-2024 18:43:22.986 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml] has finished in [17] ms
+24-Jun-2024 18:44:53.069 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/tbis]
+24-Jun-2024 18:44:53.071 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml]
+24-Jun-2024 18:44:53.072 WARNING [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/tbis] in deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml] has been ignored
+24-Jun-2024 18:45:38.997 INFO [Catalina-utility-2] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 18:45:40.112 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml] has finished in [47,041] ms
+24-Jun-2024 18:46:23.479 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/tbis]
+24-Jun-2024 18:46:23.498 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml]
+24-Jun-2024 18:46:23.499 WARNING [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/tbis] in deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml] has been ignored
+24-Jun-2024 18:47:08.943 INFO [Catalina-utility-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 18:47:10.013 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml] has finished in [46,514] ms
+24-Jun-2024 18:47:20.825 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/tbis]
+24-Jun-2024 18:47:20.835 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml]
+24-Jun-2024 18:47:20.835 WARNING [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/tbis] in deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml] has been ignored
+24-Jun-2024 18:48:06.354 INFO [Catalina-utility-2] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 18:48:07.537 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml] has finished in [46,701] ms
+24-Jun-2024 18:48:18.435 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/tbis]
+24-Jun-2024 18:48:18.444 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml]
+24-Jun-2024 18:48:18.445 WARNING [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/tbis] in deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml] has been ignored
+24-Jun-2024 18:49:17.076 SEVERE [main] org.apache.catalina.startup.Catalina.stopServer No shutdown port configured. Shut down server through OS signal. Server not shut down.
+24-Jun-2024 18:49:18.592 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.1.9
+24-Jun-2024 18:49:18.595 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          May 9 2023 14:30:05 UTC
+24-Jun-2024 18:49:18.595 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.1.9.0
+24-Jun-2024 18:49:18.596 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+24-Jun-2024 18:49:18.596 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+24-Jun-2024 18:49:18.596 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+24-Jun-2024 18:49:18.596 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk-17
+24-Jun-2024 18:49:18.596 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           17.0.9+11-LTS-201
+24-Jun-2024 18:49:18.596 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+24-Jun-2024 18:49:18.596 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1
+24-Jun-2024 18:49:18.596 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1
+24-Jun-2024 18:49:18.603 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\logging.properties
+24-Jun-2024 18:49:18.603 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+24-Jun-2024 18:49:18.603 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+24-Jun-2024 18:49:18.604 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+24-Jun-2024 18:49:18.604 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+24-Jun-2024 18:49:18.604 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+24-Jun-2024 18:49:18.604 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+24-Jun-2024 18:49:18.605 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+24-Jun-2024 18:49:18.605 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+24-Jun-2024 18:49:18.605 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1
+24-Jun-2024 18:49:18.605 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1
+24-Jun-2024 18:49:18.606 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\temp
+24-Jun-2024 18:49:18.619 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [C:\Program Files\Java\jdk-17\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Python312\Scripts\;C:\Python312\;C:\Program Files\Microsoft\jdk-11.0.16.101-hotspot\bin;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Python\Python37\Scripts\;C:\Program Files\Python\Python37\;C:\Users\ASUS\Scripts\;C:\Users\ASUS\;C:\Program Files\Microsoft MPI\Bin\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\OpenSSH\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files\Microsoft SQL Server\150\DTS\Binn\;C:\Users\ASUS\Lib\site-packages\pip;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Program Files\gettext-iconv\bin;C:\Program Files\PuTTY\;C:\Program Files\Java\jdk-17\bin;C:\Program Files\GTK3-Runtime Win64\bin;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\ProgramData\chocolatey\bin;C:\Users\ASUS\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\apache-maven-3.8.8-bin\apache-maven-3.8.8\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\ASUS\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Azure Data Studio\bin;C:\Users\ASUS\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\PyCharm Community Edition 2021.2.3\bin;;D:\CHAKRAS\Drivers\flutter\bin;C:\Users\ASUS\AppData\Local\GitHubDesktop\bin;C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe;C:\ProgramData\ASUS\GitHubDesktop\bin;C:\Users\ASUS\.dotnet\tools;C:\Users\ASUS\AppData\Roaming\npm;C:\Program Files\JetBrains\DataGrip 2023.2.3\bin;;C:\Users\ASUS\AppData\Roaming\nvm;C:\Program Files\nodejs;.]
+24-Jun-2024 18:49:18.845 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8282"]
+24-Jun-2024 18:49:18.869 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [437] milliseconds
+24-Jun-2024 18:49:18.911 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+24-Jun-2024 18:49:18.911 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.9]
+24-Jun-2024 18:49:18.936 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml]
+24-Jun-2024 18:49:18.949 WARNING [main] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/tbis] in deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml] has been ignored
+24-Jun-2024 18:49:21.612 WARNING [main] java.util.ArrayList.forEach Name = mydb Property maxActive is not used in DBCP2, use maxTotal instead. maxTotal default value is 8. You have set value of "100" for "maxActive" property, which is being ignored.
+24-Jun-2024 18:49:21.612 WARNING [main] java.util.ArrayList.forEach Name = mydb Property removeAbandoned is not used in DBCP2, use one or both of removeAbandonedOnBorrow or removeAbandonedOnMaintenance instead. Both have default value set to false. You have set value of "true" for "removeAbandoned" property, which is being ignored.
+24-Jun-2024 18:49:21.613 INFO [main] java.util.ArrayList.forEach Name = mydb Ignoring unknown property: value of "30000" for "validationInterval" property
+24-Jun-2024 18:49:21.719 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 18:49:23.214 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml] has finished in [4,277] ms
+24-Jun-2024 18:49:23.214 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\webapps\docs]
+24-Jun-2024 18:49:23.465 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 18:49:23.467 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\webapps\docs] has finished in [253] ms
+24-Jun-2024 18:49:23.468 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\webapps\manager]
+24-Jun-2024 18:49:23.728 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 18:49:23.733 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\webapps\manager] has finished in [265] ms
+24-Jun-2024 18:49:23.734 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\webapps\ROOT]
+24-Jun-2024 18:49:23.951 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 18:49:23.954 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\webapps\ROOT] has finished in [220] ms
+24-Jun-2024 18:49:23.958 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8282"]
+24-Jun-2024 18:49:23.983 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [5112] milliseconds
+24-Jun-2024 18:58:46.485 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/tbis]
+24-Jun-2024 18:58:46.522 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml]
+24-Jun-2024 18:58:46.523 WARNING [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/tbis] in deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml] has been ignored
+24-Jun-2024 18:58:48.823 INFO [Catalina-utility-2] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 18:58:49.977 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml] has finished in [3,455] ms
+24-Jun-2024 18:59:59.355 SEVERE [main] org.apache.catalina.startup.Catalina.stopServer No shutdown port configured. Shut down server through OS signal. Server not shut down.
+24-Jun-2024 19:00:00.843 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.1.9
+24-Jun-2024 19:00:00.846 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          May 9 2023 14:30:05 UTC
+24-Jun-2024 19:00:00.847 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.1.9.0
+24-Jun-2024 19:00:00.847 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+24-Jun-2024 19:00:00.847 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+24-Jun-2024 19:00:00.847 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+24-Jun-2024 19:00:00.847 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk-17
+24-Jun-2024 19:00:00.848 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           17.0.9+11-LTS-201
+24-Jun-2024 19:00:00.848 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+24-Jun-2024 19:00:00.848 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1
+24-Jun-2024 19:00:00.848 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1
+24-Jun-2024 19:00:00.855 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\logging.properties
+24-Jun-2024 19:00:00.855 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+24-Jun-2024 19:00:00.855 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+24-Jun-2024 19:00:00.855 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+24-Jun-2024 19:00:00.855 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+24-Jun-2024 19:00:00.856 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+24-Jun-2024 19:00:00.856 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+24-Jun-2024 19:00:00.857 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+24-Jun-2024 19:00:00.860 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+24-Jun-2024 19:00:00.860 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1
+24-Jun-2024 19:00:00.860 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1
+24-Jun-2024 19:00:00.861 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\temp
+24-Jun-2024 19:00:00.873 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [C:\Program Files\Java\jdk-17\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Python312\Scripts\;C:\Python312\;C:\Program Files\Microsoft\jdk-11.0.16.101-hotspot\bin;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Python\Python37\Scripts\;C:\Program Files\Python\Python37\;C:\Users\ASUS\Scripts\;C:\Users\ASUS\;C:\Program Files\Microsoft MPI\Bin\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\OpenSSH\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files\Microsoft SQL Server\150\DTS\Binn\;C:\Users\ASUS\Lib\site-packages\pip;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Program Files\gettext-iconv\bin;C:\Program Files\PuTTY\;C:\Program Files\Java\jdk-17\bin;C:\Program Files\GTK3-Runtime Win64\bin;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\ProgramData\chocolatey\bin;C:\Users\ASUS\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\apache-maven-3.8.8-bin\apache-maven-3.8.8\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\ASUS\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Azure Data Studio\bin;C:\Users\ASUS\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\PyCharm Community Edition 2021.2.3\bin;;D:\CHAKRAS\Drivers\flutter\bin;C:\Users\ASUS\AppData\Local\GitHubDesktop\bin;C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe;C:\ProgramData\ASUS\GitHubDesktop\bin;C:\Users\ASUS\.dotnet\tools;C:\Users\ASUS\AppData\Roaming\npm;C:\Program Files\JetBrains\DataGrip 2023.2.3\bin;;C:\Users\ASUS\AppData\Roaming\nvm;C:\Program Files\nodejs;.]
+24-Jun-2024 19:00:01.080 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8282"]
+24-Jun-2024 19:00:01.101 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [398] milliseconds
+24-Jun-2024 19:00:01.138 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+24-Jun-2024 19:00:01.138 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.9]
+24-Jun-2024 19:00:01.157 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml]
+24-Jun-2024 19:00:01.172 WARNING [main] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/tbis] in deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml] has been ignored
+24-Jun-2024 19:00:03.852 WARNING [main] java.util.ArrayList.forEach Name = mydb Property maxActive is not used in DBCP2, use maxTotal instead. maxTotal default value is 8. You have set value of "100" for "maxActive" property, which is being ignored.
+24-Jun-2024 19:00:03.852 WARNING [main] java.util.ArrayList.forEach Name = mydb Property removeAbandoned is not used in DBCP2, use one or both of removeAbandonedOnBorrow or removeAbandonedOnMaintenance instead. Both have default value set to false. You have set value of "true" for "removeAbandoned" property, which is being ignored.
+24-Jun-2024 19:00:03.853 INFO [main] java.util.ArrayList.forEach Name = mydb Ignoring unknown property: value of "50" for "abandonWhenPercentageFull" property
+24-Jun-2024 19:00:03.853 INFO [main] java.util.ArrayList.forEach Name = mydb Ignoring unknown property: value of "30000" for "validationInterval" property
+24-Jun-2024 19:00:03.961 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 19:00:05.474 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml] has finished in [4,315] ms
+24-Jun-2024 19:00:05.475 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\webapps\docs]
+24-Jun-2024 19:00:05.723 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 19:00:05.726 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\webapps\docs] has finished in [251] ms
+24-Jun-2024 19:00:05.727 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\webapps\manager]
+24-Jun-2024 19:00:05.981 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 19:00:05.986 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\webapps\manager] has finished in [260] ms
+24-Jun-2024 19:00:05.986 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\webapps\ROOT]
+24-Jun-2024 19:00:06.212 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 19:00:06.214 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\webapps\ROOT] has finished in [228] ms
+24-Jun-2024 19:00:06.218 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8282"]
+24-Jun-2024 19:00:06.239 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [5137] milliseconds
+24-Jun-2024 19:27:53.383 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/tbis]
+24-Jun-2024 19:27:53.420 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml]
+24-Jun-2024 19:27:53.424 SEVERE [Catalina-utility-2] org.apache.tomcat.util.digester.Digester.fatalError Parse fatal error at line [18] column [16]
+	org.xml.sax.SAXParseException; lineNumber: 18; columnNumber: 16; Open quote is expected for attribute "testWhileIdle" associated with an  element type  "Resource".
+		at java.xml/com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:204)
+		at java.xml/com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:178)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1465)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLScanner.scanAttributeValue(XMLScanner.java:851)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanAttribute(XMLDocumentFragmentScannerImpl.java:1522)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(XMLDocumentFragmentScannerImpl.java:1363)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2726)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:605)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:542)
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:889)
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:825)
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1224)
+		at java.xml/com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:637)
+		at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1539)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:583)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1927)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:123)
+		at org.apache.catalina.startup.HostConfig.deployDescriptors(HostConfig.java:534)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:424)
+		at org.apache.catalina.startup.HostConfig.check(HostConfig.java:1705)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:305)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+		at org.apache.catalina.core.ContainerBase.backgroundProcess(ContainerBase.java:1102)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1301)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1305)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1283)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+		at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.base/java.lang.Thread.run(Thread.java:842)
+24-Jun-2024 19:27:53.426 SEVERE [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployDescriptor Error deploying deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml]
+	org.xml.sax.SAXParseException; lineNumber: 18; columnNumber: 16; Open quote is expected for attribute "testWhileIdle" associated with an  element type  "Resource".
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1251)
+		at java.xml/com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:637)
+		at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1539)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:583)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1927)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:123)
+		at org.apache.catalina.startup.HostConfig.deployDescriptors(HostConfig.java:534)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:424)
+		at org.apache.catalina.startup.HostConfig.check(HostConfig.java:1705)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:305)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+		at org.apache.catalina.core.ContainerBase.backgroundProcess(ContainerBase.java:1102)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1301)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1305)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1283)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+		at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.base/java.lang.Thread.run(Thread.java:842)
+24-Jun-2024 19:27:53.433 SEVERE [Catalina-utility-2] org.apache.tomcat.util.digester.Digester.fatalError Parse fatal error at line [18] column [16]
+	org.xml.sax.SAXParseException; systemId: file:/D:/LIVE%20PROJECTS/ITBIS/tbis_api_server/Tomcat_10.1/conf/Catalina/localhost/tbis.xml; lineNumber: 18; columnNumber: 16; Open quote is expected for attribute "testWhileIdle" associated with an  element type  "Resource".
+		at java.xml/com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:204)
+		at java.xml/com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:178)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1465)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLScanner.scanAttributeValue(XMLScanner.java:851)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanAttribute(XMLDocumentFragmentScannerImpl.java:1522)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(XMLDocumentFragmentScannerImpl.java:1363)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2726)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:605)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:542)
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:889)
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:825)
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1224)
+		at java.xml/com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:637)
+		at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1522)
+		at org.apache.catalina.startup.ContextConfig.processContextConfig(ContextConfig.java:736)
+		at org.apache.catalina.startup.ContextConfig.contextConfig(ContextConfig.java:680)
+		at org.apache.catalina.startup.ContextConfig.init(ContextConfig.java:950)
+		at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:315)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+		at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:423)
+		at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:137)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:173)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:683)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:658)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:713)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:641)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1927)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:123)
+		at org.apache.catalina.startup.HostConfig.deployDescriptors(HostConfig.java:534)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:424)
+		at org.apache.catalina.startup.HostConfig.check(HostConfig.java:1705)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:305)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+		at org.apache.catalina.core.ContainerBase.backgroundProcess(ContainerBase.java:1102)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1301)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1305)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1283)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+		at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.base/java.lang.Thread.run(Thread.java:842)
+24-Jun-2024 19:27:53.435 SEVERE [Catalina-utility-2] org.apache.catalina.startup.ContextConfig.processContextConfig Parse error in context.xml for [/tbis]
+	org.xml.sax.SAXParseException; systemId: file:/D:/LIVE%20PROJECTS/ITBIS/tbis_api_server/Tomcat_10.1/conf/Catalina/localhost/tbis.xml; lineNumber: 18; columnNumber: 16; Open quote is expected for attribute "testWhileIdle" associated with an  element type  "Resource".
+		at java.xml/com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:204)
+		at java.xml/com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:178)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1465)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLScanner.scanAttributeValue(XMLScanner.java:851)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanAttribute(XMLDocumentFragmentScannerImpl.java:1522)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(XMLDocumentFragmentScannerImpl.java:1363)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2726)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:605)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:542)
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:889)
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:825)
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1224)
+		at java.xml/com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:637)
+		at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1522)
+		at org.apache.catalina.startup.ContextConfig.processContextConfig(ContextConfig.java:736)
+		at org.apache.catalina.startup.ContextConfig.contextConfig(ContextConfig.java:680)
+		at org.apache.catalina.startup.ContextConfig.init(ContextConfig.java:950)
+		at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:315)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+		at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:423)
+		at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:137)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:173)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:683)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:658)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:713)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:641)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1927)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:123)
+		at org.apache.catalina.startup.HostConfig.deployDescriptors(HostConfig.java:534)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:424)
+		at org.apache.catalina.startup.HostConfig.check(HostConfig.java:1705)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:305)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+		at org.apache.catalina.core.ContainerBase.backgroundProcess(ContainerBase.java:1102)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1301)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1305)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1283)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+		at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.base/java.lang.Thread.run(Thread.java:842)
+24-Jun-2024 19:27:53.436 SEVERE [Catalina-utility-2] org.apache.catalina.startup.ContextConfig.processContextConfig Occurred at line [18] column [16]
+24-Jun-2024 19:27:53.437 SEVERE [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployDescriptor Error deploying deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml]
+	java.lang.IllegalStateException: Error starting child
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:686)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:658)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:713)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:641)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1927)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:123)
+		at org.apache.catalina.startup.HostConfig.deployDescriptors(HostConfig.java:534)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:424)
+		at org.apache.catalina.startup.HostConfig.check(HostConfig.java:1705)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:305)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+		at org.apache.catalina.core.ContainerBase.backgroundProcess(ContainerBase.java:1102)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1301)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1305)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1283)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+		at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.base/java.lang.Thread.run(Thread.java:842)
+	Caused by: org.apache.catalina.LifecycleException: Failed to process either the global, per-host or context-specific context.xml file therefore the [/tbis] Context cannot be started.
+		at org.apache.catalina.startup.FailedContext.startInternal(FailedContext.java:200)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:683)
+		... 24 more
+24-Jun-2024 19:27:53.438 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml] has finished in [18] ms
+24-Jun-2024 19:29:13.501 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/tbis]
+24-Jun-2024 19:29:13.502 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml]
+24-Jun-2024 19:29:13.503 WARNING [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/tbis] in deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml] has been ignored
+24-Jun-2024 19:29:16.338 INFO [Catalina-utility-2] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+24-Jun-2024 19:29:17.488 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml] has finished in [3,986] ms

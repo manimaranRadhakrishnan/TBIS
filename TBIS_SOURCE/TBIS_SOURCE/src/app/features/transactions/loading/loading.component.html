@@ -1,0 +1,136 @@
+
+<div  class="container">
+    <div class="table-wrapper px-0 shadow">
+       <div class="table-title title-fixed">
+         <!-- <div class="row">
+           <div class="col-sm-6">
+             <div class="table-head ms-2">
+               <div class="row">
+                 <div *ngIf="action!='view'" class="col-1 cursor" (click)="cancelAdd()">
+                   <i class="bi bi-arrow-left"></i>
+                 </div>
+                 <div class="col-6 p-0">
+                  Goods Outward
+                 </div>
+               </div>
+               
+                </div>
+           </div>
+         </div> -->
+         
+         <div class="row">
+          <div class="col-sm-6">
+             <div class="table-head ms-2">
+             <div class="row">
+                <div *ngIf="action!='view'" class="col-1 cursor" (click)="cancelAdd()">
+                  <i class="bi bi-arrow-left"></i>
+                </div>
+               <div  class="col-1 cursor">
+               </div>
+                <div class="col-6 p-0">
+                  Loading
+                </div>
+             </div>
+                </div>
+          </div>
+          <!-- <div  class="col-sm-6">
+             <div class="d-grid gap-2 d-md-flex justify-content-md-end align-items-center">
+                <a class="btn btn-success addcss" (click)="openGateEntryDlg()">
+                  <i class="bi bi-plus-square"></i><span>Upload Gate Entry</span>
+                </a>
+                <a class="btn btn-success addcss" (click)="openSrvDlg()">
+                  <i class="bi bi-plus-square"></i><span>Upload DOC</span>
+                </a>
+             </div>
+          </div> -->
+          </div>
+
+       </div>
+          <div class="table-content title-content">
+       <div *ngIf="action=='view'">
+         <div class="p-4">
+          <report creportid="98" #report (onEditClcked)="doAction($event)"   [events]="eventsSubject.asObservable()" [groupreport]="0"></report>
+       </div>
+       </div>
+ </div>
+ </div>
+ </div>
+ 
+ <div *ngIf="showGoodsVehicleDlg" class="modal" tabindex="-1" role="dialog" style="display: block !important;" id="showGoodsVehicleDlg">  
+    <div class="modal-dialog modal-dialog-centered" role="document"    > 
+      <div class="bgDlg"></div> 
+      <div class="modal-content">
+         
+        <div class="modal-header loginCusto">
+          <h5 class="modal-title fontsize16"> 
+            Loading Details
+          </h5>
+          <button (click)="closeVehicleDlgModel()" type="button" class="btn float-end modalclosebtn" data-dismiss="modal"> X  </button>
+           
+        </div>
+        <div class="modal-body"  >
+           
+            <div class="row">
+
+                <div class="col-md-12">
+                  <div class="text-left">
+                    <form  #form="ngForm" autocomplete="off" >
+                       <div class="row mt-2">
+                        <div class="col-md-12 mb-3" >        
+                          <label class="fS14 mb-1">Loading Supervisor By</label>
+                          <div>
+                            <ng-select [items]="employeeDetails" #loadingSupervisorId name="loadingSupervisorId" 
+                              bindLabel="em_name"
+                              bindValue="userid" 
+                              placeholder="Select Staff"
+                              [(ngModel)]="invoiceLoadingData.loadingSupervisorId" >
+                            </ng-select>
+                          </div>
+                         </div>
+                          <div class="col-md-12 mb-3">        
+                            <label class="fS14 mb-1">Doc Handover By</label>
+                            <div>
+                              <ng-select [items]="employeeDetails" #docHandoverId name="docHandoverId"
+                                bindLabel="em_name"
+                                bindValue="userid" 
+                                placeholder="Select Staff"
+                                [(ngModel)]="invoiceLoadingData.docHandoverId" >
+                              </ng-select>
+                            </div>
+                          </div>
+                          <div class="col-md-12 mb-3">        
+                            <label class="fS14 mb-1">Doc Audit By</label>
+                            <div>
+                              <ng-select [items]="employeeDetails" #docAuditId name="docAuditId" 
+                                bindLabel="em_name"
+                                bindValue="userid" 
+                                placeholder="Select Staff"
+                                [(ngModel)]="invoiceLoadingData.docAuditId" >
+                              </ng-select>
+                            </div>
+                           </div>
+                        </div>
+                      </form>
+      
+                      <div class="mt-2 me-4 d-flex justify-content-end">   
+                        <div class="row text-center mt-4">
+                         <div class="">
+                            <div class="form-group">
+                             <button type="button"  class="btn btn-secondary footerbtncss mx-2" name="cancel" value="Cancel" (click)="closeVehicleDlgModel()">Clear</button>
+                             <button type="button"   class="btn btn-primary footerbtncss" name="signin" (click)="invoiceLoadingAssign(doActionPicklistId)">Submit</button>
+                             
+                          </div>
+                         </div>
+                        </div>
+                      </div> 
+                      
+                  </div>
+                                  
+                </div>
+              </div>
+          
+        </div>
+         
+      </div>  
+    </div>
+  </div>

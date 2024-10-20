@@ -1,0 +1,109 @@
+<div  class="container">
+    <div class="table-wrapper px-0 shadow">
+      <div class="table-title title-fixed">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="table-head ms-2">
+              <div class="row">
+                <div *ngIf="action!='view'" class="col-1 cursor" (click)="cancelAdd()">
+                  <i class="bi bi-arrow-left"></i>
+                </div>
+                <div *ngIf="action=='view'" class="col-1 cursor">
+                </div>
+                <div class="col-6 p-0">
+                 Mail Template
+                </div>
+              </div>
+              
+               </div>
+          </div>
+          <div *ngIf="action=='view'" class="col-sm-6">
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+              <a><i class="bi bi-three-dots-vertical mt-1"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="table-content title-content">
+         <div *ngIf="action!='view'">  
+            <div class="row g-0 badge-bg mt-2">
+               <div class="col-1 mt-1 left-badge"></div>
+            <div class="ms-3 col-6 mt-2 badge-title">Mail Template Details</div>
+            </div>
+            <div class="pt-0">
+               <form class="p-3" method="post" autocomplete="off" #frm="ngForm">  
+                  <div class="row mt-3">   
+        
+                     <div class="col-md-6">        
+                        <label class="fS14 mb-1">Mail Template Name <span  class="mandatory-color">*</span></label>
+                        <div>
+                          <input autofocus type="text"  name="mailTemplatename" #mailTemplatename="ngModel"  required
+                           [ngClass]="{'input-box-style2-error': mailTemplatename.invalid && (mailTemplatename.dirty || mailTemplatename.touched)}" 
+                           class="form-control" placeholder="" [(ngModel)]="masterData.mailTemplatename" maxlength="150">
+                        </div>
+                     </div>
+                     <div class="col-md-6">
+                         <div class="fS14 mb-1">Mail Subject</div>
+                         <div>
+                          <input autofocus type="text"  name="mailSubject" #mailSubject="ngModel"  required
+                           [ngClass]="{'input-box-style2-error': mailSubject.invalid && (mailSubject.dirty || mailSubject.touched)}" 
+                           class="form-control" placeholder="" [(ngModel)]="masterData.mailSubject" maxlength="500">
+                         </div>
+                     </div>
+             
+                  </div> 
+                  <div class="row mt-3">
+                        <div class="col-md-3">
+                           <label class="fS14 mb-1">Attach Transaction Data<span  class="mandatory-color">*</span></label>
+                           <select  class="form-control form-select" name="attachData" 
+                              #attachData="ngModel"  required [ngClass]="{'input-box-style2-error': attachData.invalid && (attachData.dirty || attachData.touched)}"  
+                              [(ngModel)]="masterData.attachData" >
+                              <option  value="1">Yes</option>
+                              <option  value="0">No</option>
+                           </select>
+                        </div>
+                        <div class="col-md-3">
+                           <label class="fS14 mb-1">Active<span  class="mandatory-color">*</span></label>
+                           <select  class="form-control form-select" name="employeeStatus" 
+                              #isActive="ngModel"  required [ngClass]="{'input-box-style2-error': isActive.invalid && (isActive.dirty || isActive.touched)}"  
+                              [(ngModel)]="masterData.isActive" >
+                              <option  value="true">Active</option>
+                              <option  value="false">InActive</option>
+                           </select>
+                        </div>
+                   </div>
+                  <div class="row mt-4">
+                      <div class="col-md-12"> 
+                          <div class="fS14 mb-1">Mail Content</div>
+                          <div>
+                              <div class="NgxEditor__Wrapper">
+                              <ngx-editor-menu [editor]="editor" > </ngx-editor-menu>
+                              <ngx-editor  height="100px" minHeight="50px" [editor]="editor" name="mailContent" #mailContent="ngModel" 
+                              [ngClass]="{'input-box-style2-error': mailContent.invalid && (mailContent.dirty || mailContent.touched)}" 
+                              [(ngModel)]="masterData.mailContent" [disabled]="false" [placeholder]="'Type here...'"></ngx-editor>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+               </form>
+               <div class="mt-4 me-4 d-flex justify-content-end">   
+                  <div class="row text-center mt-4">
+                     <div class="">
+                        <div class="form-group" style="background:transparent;">
+                           <button style="margin-left:10px;" type="button"  class="btn btn-secondary footerbtncss mx-2" name="cancel" value="Cancel" (click)="cancelAdd()">Clear</button>
+                           <button type="button"   class="btn btn-primary footerbtncss" name="signin" (click)="updateMailTemplate()">Submit</button>
+                        </div>
+                     </div>
+                  </div>
+               </div> 
+            </div>
+  
+      </div>
+            <div *ngIf="action=='view'">
+              <div class="p-4">
+              <report creportid="56" #report (onEditClcked)="doAction($event)"   [events]="eventsSubject.asObservable()" [groupreport]="0"></report>
+            </div>
+            </div>
+      </div>
+    </div>
+  </div>

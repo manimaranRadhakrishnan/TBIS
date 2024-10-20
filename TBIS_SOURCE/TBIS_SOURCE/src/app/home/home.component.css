@@ -1,0 +1,30 @@
+.list-group {
+    --bs-list-group-item-padding-x:0px;
+    --bs-list-group-item-padding-y:0.3rem;
+}
+.card-body {
+    padding: 0px 10px 10px 10px;
+}
+
+.card-header i{
+position: absolute;
+right: 5%;
+top: 2%;
+font-size: 2.5rem;
+line-height: 0;
+opacity: 0.7;
+z-index: 0;
+}
+
+.sticky-top {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 990;
+}
+.card-header.bg-primary{
+    background-color: #303187 !important;
+}
+.badge.bg-primary{
+    background-color: #303187 !important;
+}

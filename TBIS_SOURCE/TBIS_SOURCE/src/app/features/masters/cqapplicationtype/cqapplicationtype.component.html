@@ -1,0 +1,138 @@
+
+<div  class="container">
+  <div class="table-wrapper px-0 shadow">
+     <div class="table-title title-fixed">
+       <div class="row">
+         <div class="col-sm-6">
+           <div class="table-head ms-2">
+             <div class="row">
+               <div *ngIf="action!='view'" class="col-1 cursor" (click)="cancelAdd()">
+                 <i class="bi bi-arrow-left"></i>
+               </div>
+               <div *ngIf="action=='view'" class="col-1 cursor">
+               </div>
+               <div class="col-6 p-0">
+                 Application Type
+               </div>
+             </div>
+             
+              </div>
+         </div>
+         <div *ngIf="action=='view'" class="col-sm-6">
+           <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+             <a class="btn btn-success addcss" (click)="addNew()">
+               <i class="bi bi-plus-square"></i><span>New Application Type</span>
+             </a>
+             <a><i class="bi bi-three-dots-vertical mt-1"></i></a>
+           </div>
+         </div>
+       </div>
+     </div>
+        <div class="table-content title-content">
+           <div *ngIf="action!='view'">  
+        
+        <div class="pt-0">
+  
+         <form class="p-3" method="post" autocomplete="off" #frm="ngForm">  
+           <div class="row g-0 badge-bg mt-2">
+              <div class="col-1 mt-1 left-badge"></div>
+              <div class="ms-3 col-6 mt-2 badge-title">Application Type</div>
+            </div>
+           <div class="row mt-3">  
+              <div class="col-md-3">        
+                <label class="fS14 mb-1">Name <span  class="mandatory-color">*</span></label>
+                <div>
+                  <input autofocus type="text"  name="cwaDesc" #cwaDesc="ngModel"  required
+                    [ngClass]="{'input-box-style2-error': cwaDesc.invalid && (cwaDesc.dirty || cwaDesc.touched)}" 
+                    class="form-control" placeholder="" [(ngModel)]="masterData.cwaDesc" maxlength="150">
+                </div>
+              </div>
+              
+        
+              <div class="col-md-3">
+                <label class="fS14 mb-1">Is Form A<span  class="mandatory-color">*</span></label>
+                <select  class="form-control form-select" name="cwaFormA" 
+                    #cwaFormA="ngModel"  required [ngClass]="{'input-box-style2-error': cwaFormA.invalid && (cwaFormA.dirty || cwaFormA.touched)}"  
+                    [(ngModel)]="masterData.cwaFormA" >
+                    <option  value="true">Yes</option>
+                    <option  value="false">No</option>
+                  </select>
+            </div>
+        
+            <div class="col-md-3">
+                <label class="fS14 mb-1">Is Form C<span  class="mandatory-color">*</span></label>
+                <select  class="form-control form-select" name="cwaFormC" 
+                    #cwaFormC="ngModel"  required [ngClass]="{'input-box-style2-error': cwaFormC.invalid && (cwaFormC.dirty || cwaFormC.touched)}"  
+                    [(ngModel)]="masterData.cwaFormC" >
+                    <option  value="true">Yes</option>
+                    <option  value="false">No</option>
+                  </select>
+            </div>
+        
+            <div class="col-md-3">
+                <label class="fS14 mb-1">Is Form I<span  class="mandatory-color">*</span></label>
+                <select  class="form-control form-select" name="cwaFormI" 
+                    #cwaFormI="ngModel"  required [ngClass]="{'input-box-style2-error': cwaFormI.invalid && (cwaFormI.dirty || cwaFormI.touched)}"  
+                    [(ngModel)]="masterData.cwaFormI" >
+                    <option  value="true">Yes</option>
+                    <option  value="false">No</option>
+                  </select>
+            </div>
+          </div>
+            
+           <div class="row mt-3">  
+        
+            <div class="col-md-3">
+                <label class="fS14 mb-1">Is Form G<span  class="mandatory-color">*</span></label>
+                <select  class="form-control form-select" name="cwaFormG" 
+                    #cwaFormG="ngModel"  required [ngClass]="{'input-box-style2-error': cwaFormG.invalid && (cwaFormG.dirty || cwaFormG.touched)}"  
+                    [(ngModel)]="masterData.cwaFormG" >
+                    <option  value="true">Yes</option>
+                    <option  value="false">No</option>
+                  </select>
+            </div>
+        
+              <div class="col-md-3">
+                  <label class="fS14 mb-1">Is Sysytem<span  class="mandatory-color">*</span></label>
+                  <select  class="form-control form-select" name="cwaIsSystem" 
+                      #cwaIsSystem="ngModel"  required [ngClass]="{'input-box-style2-error': cwaIsSystem.invalid && (cwaIsSystem.dirty || cwaIsSystem.touched)}"  
+                      [(ngModel)]="masterData.cwaIsSystem" >
+                      <option  value="true">Yes</option>
+                      <option  value="false">No</option>
+                    </select>
+              </div>
+        
+              <div class="col-md-3">
+                <label class="fS14 mb-1">Active<span  class="mandatory-color">*</span></label>
+                <select  class="form-control form-select" name="active" 
+                    #active="ngModel"  required [ngClass]="{'input-box-style2-error': active.invalid && (active.dirty || active.touched)}"  
+                    [(ngModel)]="masterData.active" >
+                    <option  value="true">Active</option>
+                    <option  value="false">InActive</option>
+                  </select>
+              </div>
+          </div>
+       </form>
+   <div class="mt-4 me-4 d-flex justify-content-end">   
+     <div class="row text-center mt-4">
+      <div class="">
+         <div class="form-group transback">
+          <button  type="button"  class="btn btn-secondary footerbtncss mx-2" name="cancel" value="Cancel" (click)="cancelAdd()">Clear</button>
+          <button type="button"   class="btn btn-primary footerbtncss" name="signin" (click)="updateApplicationTypeMaster()">Submit</button>
+       </div>
+      </div>
+     </div>
+   </div>  
+  </div>
+
+</div>
+     <div *ngIf="action=='view'">
+       <div class="p-4">
+        <report creportid="106" #report (onEditClcked)="doAction($event)"   [events]="eventsSubject.asObservable()" [groupreport]="0"></report>
+     </div>
+     </div>
+</div>
+</div>
+</div>
+
+  

@@ -1,0 +1,113 @@
+
+<div  class="container">
+   <div class="table-wrapper px-0 shadow">
+      <div class="table-title title-fixed">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="table-head ms-2">
+              <div class="row">
+                <div *ngIf="action!='view'" class="col-1 cursor" routerLink="/home">
+                  <i class="bi bi-arrow-left"></i>
+                </div>
+                <div *ngIf="action=='view'" class="col-1 cursor">
+                </div>
+                <div class="col-6 p-0">
+                  Profile Details
+                </div>
+              </div>
+              
+               </div>
+          </div>
+        </div>
+      </div>
+         <div class="table-content title-content">
+            <div *ngIf="action!='view'">  
+         
+         <div class="pt-0">
+   
+       <form  class="p-3" method="post" autocomplete="off" #frm="ngForm">  
+        
+        
+       <div class="row mt-3">       
+        <div class="row g-0 badge-bg mt-2">
+          <div class="col-1 mt-1 left-badge"></div>
+         <div class="ms-3 col-6 mt-2 badge-title">User Details</div>
+        </div>
+        <div class="col-md-3">        
+          <label class="fS14 mb-1"> User name </label>
+          <div>
+            <input autofocus type="text"  name="userName" #userName="ngModel"  required
+             [ngClass]="{'input-box-style2-error': userName.invalid && (userName.dirty || userName.touched)}" 
+             class="form-control" disabled placeholder="" [(ngModel)]="masterData.userName" maxlength="100">
+          </div>
+       </div>
+        <div class="col-md-3">
+          <label class="fS14 mb-1">Profile Image<span  class="mandatory-color">*</span></label>
+            <div>
+             <input type="file" name="profileImg" class="file-input"  #fileUpload (change)="fileChangeEvent($event)">
+          </div>
+         </div>
+         <div class="col-md-3">
+          <div>
+             <img alt="profileImg" [src]="preview" class="preview profileImg">
+           </div>
+         </div>
+   
+         
+
+         <div class="row g-0 badge-bg mt-2">
+          <div class="col-1 mt-1 left-badge"></div>
+         <div class="ms-3 col-6 mt-2 badge-title">Security Details</div>
+      </div>
+
+         <div class="row mt-3"> 
+     
+           <div class="col-md-4">        
+              <label class="fS14 mb-1">Old Password <span  class="mandatory-color">*</span></label>
+              <div>
+                <input autofocus type="password"  name="oldPassword" #oldPassword="ngModel"  required minlength="1" maxlength="200"
+                 [ngClass]="{'input-box-style2-error': oldPassword.invalid && (oldPassword.dirty || oldPassword.touched)}" 
+                 class="form-control" placeholder="" [(ngModel)]="masterData.oldPassword">
+              </div>
+           </div>
+           
+           <div class="col-md-4">        
+              <label class="fS14 mb-1">New Password <span  class="mandatory-color">*</span></label>
+              <div>
+                <input autofocus type="password"  name="newPassword" #newPassword="ngModel"  required minlength="1" maxlength="200"
+                 [ngClass]="{'input-box-style2-error': newPassword.invalid && (newPassword.dirty || newPassword.touched)}" 
+                 class="form-control" placeholder="" [(ngModel)]="masterData.newPassword">
+              </div>
+           </div>
+           
+           <div class="col-md-4">        
+              <label class="fS14 mb-1">Confirm Password <span  class="mandatory-color">*</span></label>
+              <div>
+                <input autofocus type="password"  name="confirmPassword" #confirmPassword="ngModel"  required minlength="1" maxlength="200"
+                 [ngClass]="{'input-box-style2-error': confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched)}" 
+                 class="form-control" placeholder="" [(ngModel)]="masterData.confirmPassword">
+              </div>
+           </div>
+     
+         </div>
+    </div>
+   </form>
+    <div class="mt-4 me-4 d-flex justify-content-end">   
+      <div class="row text-center mt-4">
+       <div class="">
+          <div class="form-group transback">
+           <button type="button"  class="btn btn-secondary footerbtncss mx-2" name="cancel" value="Cancel" routerLink="/home">Clear</button>
+           <button type="button"   class="btn btn-primary footerbtncss" name="signin" (click)="updatePassword()">Submit</button>
+        </div>
+       </div>
+      </div>
+    </div>  
+   </div>
+
+</div>
+
+</div>
+</div>
+</div>
+
+   

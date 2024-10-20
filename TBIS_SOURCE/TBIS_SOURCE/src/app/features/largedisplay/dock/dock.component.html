@@ -1,0 +1,86 @@
+
+<div  class="container">
+    <div class="table-wrapper px-0 shadow">
+       <div class="table-title title-fixed">
+         <div class="row">
+           <div class="col-sm-6">
+             <div class="table-head ms-2">
+               <div class="row">
+                 <div *ngIf="action!='view'" class="col-1 cursor">
+                   <i class="bi bi-arrow-left"></i>
+                 </div>
+                 <div *ngIf="action=='view'" class="col-1 cursor">
+                 </div>
+                 <div class="col-6 p-0">
+                  Dock
+                 </div>
+               </div>
+               
+                </div>
+           </div>
+         </div>
+       </div>
+          <div class="table-content title-content">
+
+       <div *ngIf="action=='view'">
+         <div class="p-4">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                <div class="row g-0 badge-bg mt-1 mb-1">
+                    <div class="col-6 badge-title d-flex align-items-center">
+                    <span class="left-badge me-3 d-block h-100"></span>
+                    <span>Dock Status</span>
+                    </div>
+                    <div class="col-6 d-flex">
+                    </div>
+                </div>
+                <div class="card shadow-lg position-relative" style="border: 1px solid #e3e3e3;height:calc(100vh - 280px);overflow-y: scroll;">
+                    <table class="tab table table-hover w-100">
+                    <thead class="sticky-top">
+                        <tr style="background: #f7f7ff;">
+                        <th colspan="2" class="text-center">TAT-GUJARAT - 4A</th>
+                        <th colspan="2" class="text-center">{{currentDate | date:'dd-MM-yyyy HH:MM:SS'}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>DOCK-NO</td>
+                            <td>{{displaydockData.udcname}}</td>
+                            <td>Customer</td>
+                            <td>{{displaydockData.customername}}</td>
+                        </tr>
+                        <tr>
+                            <td>Load/Unload Count</td>
+                            <td>{{displaydockcountData.count}}</td>
+                            <td>Status</td>
+                            <td>Free</td>
+                        </tr>
+                        <tr>
+                            <td>Start Time</td>
+                            <td>HH:MM:SS</td>
+                            <td>Duration</td>
+                            <td>0 mins</td>
+                        </tr>
+                        <tr>
+                            <td>Vehicle No</td>
+                            <td>{{displaydockData.vechicleno}}</td>
+                            <td>Incharge</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="4" class="text-center">LAST UPDATE TIME : {{displaydockData.updateddate | date:'dd-MM-yyyy HH:MM:SS'}} <i>(00)</i> Mins Before</td>
+                        </tr>
+                    </tfoot>
+                    </table>
+                </div>
+                </div>
+            </div>
+       </div>
+       </div>
+ </div>
+ </div>
+ </div>
+ 
+    

@@ -1,0 +1,129 @@
+{
+  "configVersion": 1,
+  "timestamp": 1722920028993,
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "TBISWMS",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/favicon.ico",
+        "/index.html",
+        "/main-A5HFUYTN.js",
+        "/manifest.webmanifest",
+        "/polyfills-RX4V3J3S.js",
+        "/scripts-DHXO2PDK.js",
+        "/styles-WOCG4FA7.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/assets/config.json",
+        "/assets/dist/css/bootstrap-icons.css",
+        "/assets/dist/css/bootstrap.min.css",
+        "/assets/dist/css/bootstrap.min.css.map",
+        "/assets/dist/css/fonts/bootstrap-icons.woff",
+        "/assets/dist/css/fonts/bootstrap-icons.woff2",
+        "/assets/dist/css/style.css",
+        "/assets/dist/css/toastr.css",
+        "/assets/dist/img/delete.png",
+        "/assets/dist/img/edit.png",
+        "/assets/dist/img/loading-bars.svg",
+        "/assets/dist/img/loginbg.png",
+        "/assets/dist/img/logo.png",
+        "/assets/dist/img/logo2.png",
+        "/assets/dist/img/logo_1.png",
+        "/assets/dist/img/no_img.png",
+        "/assets/dist/img/power_logo.png",
+        "/assets/dist/img/view.png",
+        "/assets/dist/js/bootstrap.bundle.min.js",
+        "/assets/dist/js/bootstrap.bundle.min.js.map",
+        "/assets/dist/js/uimain.js",
+        "/assets/icons/icon-128x128.png",
+        "/assets/icons/icon-144x144.png",
+        "/assets/icons/icon-152x152.png",
+        "/assets/icons/icon-192x192.png",
+        "/assets/icons/icon-384x384.png",
+        "/assets/icons/icon-512x512.png",
+        "/assets/icons/icon-72x72.png",
+        "/assets/icons/icon-96x96.png",
+        "/media/bootstrap-icons-3OS6HN33.woff",
+        "/media/bootstrap-icons-N7PZR6PL.woff2",
+        "/media/loginbg-Q66TS4RI.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/assets/config.json": "72f0e5c0f1a8fa0a717cc99ac3ce4d3f6ee16646",
+    "/assets/dist/css/bootstrap-icons.css": "e08dc97e4e483a5b474444764872b2495658449d",
+    "/assets/dist/css/bootstrap.min.css": "23b14ee7d38f64aac342f05edf0c0b06291b4070",
+    "/assets/dist/css/bootstrap.min.css.map": "6a5783b5e6c11ab0d897c0edfe7438308e100c99",
+    "/assets/dist/css/fonts/bootstrap-icons.woff": "a77e6a2f335f3fcb4f2930794907c88ed7de7ca1",
+    "/assets/dist/css/fonts/bootstrap-icons.woff2": "3a284b0618771f29da8eb6be900e99439253dce0",
+    "/assets/dist/css/style.css": "fc030b6149a8834f5aa0c367932485ba92c9ce4c",
+    "/assets/dist/css/toastr.css": "6d7badfc933944eea66d7713b3886eda89fb4d2c",
+    "/assets/dist/img/delete.png": "0267590b431df9eead9dd4c705629a1ebf0067e6",
+    "/assets/dist/img/edit.png": "ea5354d138719bc89d0c32b3334317eaddbe75ff",
+    "/assets/dist/img/loading-bars.svg": "ff375684eb0e7e784c03f147a29256cf8ceac438",
+    "/assets/dist/img/loginbg.png": "0ae4b0e6fdd7841e50ab622e3622d7a4257a82f8",
+    "/assets/dist/img/logo.png": "9df2fe417834baeb219b10dd4fb965a89f8698c0",
+    "/assets/dist/img/logo2.png": "b9271c11ab8f354c7c521c867dd4a2c0b41a8949",
+    "/assets/dist/img/logo_1.png": "8dc6b3866f545249604c58c116c3a773021ae6b4",
+    "/assets/dist/img/no_img.png": "bdfcb766ae234b4c43f0bc4b359a1266de24a85d",
+    "/assets/dist/img/power_logo.png": "a7a8d272c5e45f67c9af26934f02568af2efc743",
+    "/assets/dist/img/view.png": "6093ce0865e1d9e4c054fd9787b94b776da47350",
+    "/assets/dist/js/bootstrap.bundle.min.js": "bb4d5c07ede00143624addae0736aa3a55d879ec",
+    "/assets/dist/js/bootstrap.bundle.min.js.map": "683400b2bfbb4933995d78ee14d5fe3899f4555a",
+    "/assets/dist/js/uimain.js": "0d938cabea6612c1c9814eb6fec3c442b98d201c",
+    "/assets/icons/icon-128x128.png": "f912963bdc6d5a38d8f1dd0afbaab2ce8d657acb",
+    "/assets/icons/icon-144x144.png": "b155fd5f2fd5d2ea7760721063003c4cd95fd783",
+    "/assets/icons/icon-152x152.png": "eae6e0f0c8afb8aaae339e2a569b43e9238e5e6c",
+    "/assets/icons/icon-192x192.png": "15c4180454633880d98674aa7394656196c91584",
+    "/assets/icons/icon-384x384.png": "94a915751ef6c9282df9aea405ad679230631814",
+    "/assets/icons/icon-512x512.png": "1de182f76f7329dfa8f9fcdd1fdcdd695bea6a99",
+    "/assets/icons/icon-72x72.png": "aa88a6096bd973be7f6d7a5489bfa6bc2463f8c4",
+    "/assets/icons/icon-96x96.png": "7fb8f59c30ce2ff12c700321a0b39e14b3dc8f95",
+    "/favicon.ico": "9c39f434fe1261f68c5e3eefdf734630d99c5670",
+    "/index.html": "999a7b7b2267476d21a291774eb12c49da9345e6",
+    "/main-A5HFUYTN.js": "52019974fa511d16be9186c2fc6bd8f962113ee0",
+    "/manifest.webmanifest": "2a968ad9aef62aec0d35ef96fd21434191f85bf6",
+    "/media/bootstrap-icons-3OS6HN33.woff": "a77e6a2f335f3fcb4f2930794907c88ed7de7ca1",
+    "/media/bootstrap-icons-N7PZR6PL.woff2": "3a284b0618771f29da8eb6be900e99439253dce0",
+    "/media/loginbg-Q66TS4RI.png": "0ae4b0e6fdd7841e50ab622e3622d7a4257a82f8",
+    "/polyfills-RX4V3J3S.js": "6b4c4ea33aa92bce0b91df442a680ed73e4303db",
+    "/scripts-DHXO2PDK.js": "3d135b827a6342e24000c4711d6d8c2e188dc2fb",
+    "/styles-WOCG4FA7.css": "5728a35f2ab083f4ff807be2e1142f54148a14d1"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}

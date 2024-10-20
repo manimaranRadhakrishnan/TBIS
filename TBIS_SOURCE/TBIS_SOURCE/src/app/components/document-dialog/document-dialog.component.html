@@ -1,0 +1,25 @@
+<div *ngIf="message" class="modal showDL" tabindex="-1" role="dialog">  
+    <div class="modal-dialog modal-xl modal-dialog-centered" role="document" *ngIf="message?.type == 'confirm' || message?.type == 'alert'"  >  
+      <div class="modal-content">
+
+         
+        <div   class="modal-body">
+          <div class="row">
+            <div class="col-md-12 overAuto">
+             <img alt="NoDoc" [src]="imagesrc"   *ngIf="filetype=='image' || filetype=='base64'"  class="imgH"/>
+             <img alt="NoImg" [src]="base64Src"   *ngIf="filetype=='.base64'"  class="imgH"/>
+
+          </div>
+          <div class="row">
+            <div class="col-md-12 fa-pull-right">
+              <p class="confirm-button">
+                <a class="mr-2">
+                  <button class="btn btn-primary"  (click)="CloseBtn()">Close</button>
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>  
+    </div>
+</div>  

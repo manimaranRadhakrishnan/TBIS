@@ -1,0 +1,617 @@
+
+<div  class="container">
+   <div class="table-wrapper px-0 shadow">
+      <div class="table-title title-fixed">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="table-head ms-2">
+              <div class="row">
+                <div *ngIf="action!='view'" class="col-1 cursor" (click)="cancelAdd()">
+                  <i class="bi bi-arrow-left"></i>
+                </div>
+                <div *ngIf="action=='view'" class="col-1 cursor">
+                </div>
+                <div class="col-6 p-0">
+                  Parts
+                </div>
+              </div>
+              
+               </div>
+          </div>
+          <div *ngIf="action=='view'" class="col-sm-6">
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+              <a class="btn btn-success addcss" (click)="addNew()">
+                <i class="bi bi-plus-square"></i><span>New Part</span>
+              </a>
+             
+            </div>
+          </div>
+        </div>
+      </div>
+         <div class="table-content title-content">
+            <div *ngIf="action!='view'">  
+              <div class="p-0 row">
+                <form  class="p-3" method="post" autocomplete="off" #frm="ngForm">  
+                <nav>
+                  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <button class="nav-link active" id="nav-address-tab" data-bs-toggle="tab" data-bs-target="#nav-address" type="button" role="tab" aria-controls="nav-address" aria-selected="true">Part Details</button>
+                    <button class="nav-link" id="nav-space-tab" data-bs-toggle="tab" data-bs-target="#nav-space" type="button" role="tab" aria-controls="nav-space" aria-selected="false">Delivery Location</button>
+                    <button class="nav-link" id="nav-parts-tab" data-bs-toggle="tab" data-bs-target="#nav-parts" type="button" role="tab" aria-controls="nav-parts" aria-selected="false">Parts Assembly</button>
+                  </div>
+                </nav>
+
+                <div class="tab-content" id="nav-tabContent">
+                  <div class="tab-pane fade show active" id="nav-address" role="tabpanel" aria-labelledby="nav-address-tab">
+                    <div>
+                        <div class="px-3 row">       
+                          <div class="row g-0 badge-bg mt-2 mb-2">
+                            <div class="col-1 mt-1 left-badge"></div>
+                          <div class="ms-3 col-6 mt-2 badge-title">Part Details</div>
+                          </div>
+                    
+                        
+                          <div class="col-md-3">        
+                              <label class="fS14 mb-1"> Customer Part No
+                                  <span  class="mandatory-color">*</span>
+                                </label>
+                              <div>
+                                <input autofocus type="text"  name="customerPartNo" #customerPartNo="ngModel" required
+                                [ngClass]="{'input-box-style2-error': customerPartNo.invalid && (customerPartNo.dirty || customerPartNo.touched)}" 
+                                class="form-control" placeholder="" [(ngModel)]="masterData.customerPartNo" minlength="20" maxlength="20">
+                              </div>
+                          </div>
+                          <div class="col-md-3">        
+                            <label class="fS14 mb-1"> Alternate Part No
+                                <span  class="mandatory-color">*</span>
+                              </label>
+                            <div>
+                              <input autofocus type="text"  name="partNo" #partNo="ngModel"  required
+                              [ngClass]="{'input-box-style2-error': partNo.invalid && (partNo.dirty || partNo.touched)}" 
+                              class="form-control" placeholder="" [(ngModel)]="masterData.partNo" minlength="20" maxlength="20">
+                            </div>
+                        </div>
+                        
+                    
+                          <div class="col-md-6">        
+                              <label class="fS14 mb-1"> Part Description <span  class="mandatory-color">*</span> </label>
+                              <div>
+                                <input autofocus type="text"  name="partDescription" #partDescription="ngModel"  required
+                                [ngClass]="{'input-box-style2-error': partDescription.invalid && (partDescription.dirty || partDescription.touched)}" 
+                                class="form-control" placeholder="" [(ngModel)]="masterData.partDescription" maxlength="100">
+                              </div>
+                          </div>
+            
+                      </div>
+                      <div class="px-3 row"> 
+                        <div class="row g-0 badge-bg mt-2 mb-2">
+                          <div class="col-1 mt-1 left-badge"></div>
+                          <div class="ms-3 col-6 mt-2 badge-title">Part Attributes</div>
+                        </div>
+                        <div class="col-md-2">
+                          <label class="fS14 mb-1">Dispatch Type<span  class="mandatory-color">*</span></label>
+                          <select  class="form-control form-select" name="dispatchType" 
+                                #dispatchType="ngModel" required [ngClass]="{'input-box-style2-error': dispatchType.invalid && (dispatchType.dirty || dispatchType.touched)}"  
+                                [(ngModel)]="masterData.dispatchType" >
+                                <option  value="1">Finished Goods</option>
+                                <option  value="3">Child Product</option>
+                                <option  value="2">Repack</option>
+                            </select>
+                        </div>
+  
+                         
+                           
+                            <div class="col-md-2">
+                              <label class="fS14 mb-1">Required Inspection<span  class="mandatory-color">*</span></label>
+                              <select  class="form-control form-select" name="reqInspection" 
+                                    #reqInspection="ngModel" required [ngClass]="{'input-box-style2-error': reqInspection.invalid && (reqInspection.dirty || reqInspection.touched)}"  
+                                    [(ngModel)]="masterData.reqInspection" >
+                                    <option  value="true">Yes</option>
+                                    <option  value="false">No</option>
+                                </select>
+                              </div>
+                              <div class="col-md-2">
+                                <label class="fS14 mb-1">Club in Pallet<span  class="mandatory-color">*</span></label>
+                                <select  class="form-control form-select" name="loadingType" 
+                                      #loadingType="ngModel" required [ngClass]="{'input-box-style2-error': loadingType.invalid && (loadingType.dirty || loadingType.touched)}"  
+                                      [(ngModel)]="masterData.loadingType" >
+                                      <option  value="1">No</option>
+                                      <option  value="2">Club</option>
+                                </select>
+                                </div>
+  
+                              <div class="col-md-2">
+                                <div class="fS14 mb-1" >Warehouse <span  class="mandatory-color">*</span></div>      
+                                <ng-select [items]="locations" #locationId name="locationId"
+                                    bindLabel="warehousename" 
+                                    bindValue="warehousid" 
+                                    placeholder="Select Warehouse"
+                                    [(ngModel)]="masterData.locationId">
+                                </ng-select>
+                              </div>
+  
+  
+                                  <div class="col-md-2">        
+                                    <label class="fS14 mb-1">Customer <span  class="mandatory-color">*</span></label>
+                                    <div>
+                                        <ng-select [items]="customerDetails" #customerId name="customerId" 
+                                        bindLabel="customername"
+                                        bindValue="customerId" 
+                                        placeholder="Select Customer"
+                                        [(ngModel)]="masterData.customerId">
+                                    </ng-select>
+                                    </div>
+                                  </div>
+                                 <div class="col-md-2">
+                                   <label class="fS14 mb-1">Status<span  class="mandatory-color">*</span></label>
+                                   <select  class="form-control form-select" name="active" 
+                                         #active="ngModel"  required [ngClass]="{'input-box-style2-error': active.invalid && (active.dirty || active.touched)}"  
+                                         [(ngModel)]="masterData.active" >
+                                         <option  value="true">Active</option>
+                                         <option  value="false">InActive</option>
+                                     </select>
+                                   </div>
+          
+                        
+                      </div>
+                      <div class="px-3 row">
+                        <div class="row g-0 badge-bg mt-2 mb-2">
+                          <div class="col-1 mt-1 left-badge"></div>
+                          <div class="ms-3 col-6 mt-2 badge-title">Inward Packing Details</div>
+                          </div>
+                          
+                        
+                        <div class="col-md-3">
+                          <div class="fS14 mb-1" >Packing <span  class="mandatory-color">*</span></div>      
+                          <ng-select [items]="packingtype" #packingTypeId name="packingTypeId"
+                              bindLabel="packingname" 
+                              bindValue="packingtypeid" 
+                              placeholder="Select Packing"
+                              [(ngModel)]="masterData.packingTypeId">
+                          </ng-select>
+                          </div>
+                          <div class="col-md-2">        
+                            <label class="fS14 mb-1">Inward SPQ <span  class="mandatory-color">*</span></label>
+                            <div>
+                              <input autofocus type="number"  name="spq" #spq="ngModel"  required numbersOnly minlength="1" maxlength="4"
+                              [ngClass]="{'input-box-style2-error': spq.invalid && (spq.dirty || spq.touched)}" 
+                              class="form-control" placeholder="" [(ngModel)]="masterData.spq">
+                            </div>
+                         </div>
+                            <div class="col-md-1">        
+                            <label class="fS14 mb-1">BIN Qty <span  class="mandatory-color">*</span></label>
+                            <div>
+                              <input autofocus type="number"  name="binQty" #binQty="ngModel"  required numbersOnly minlength="1" maxlength="4"
+                                [ngClass]="{'input-box-style2-error': binQty.invalid && (binQty.dirty || binQty.touched)}" 
+                                class="form-control" placeholder="" [(ngModel)]="masterData.binQty">
+                            </div>
+                          </div>
+                          <div class="col-md-2">        
+                            <label class="fS14 mb-1">No.of BIN in pallet <span  class="mandatory-color">*</span></label>
+                            <div>
+                              <input autofocus type="number"  name="noOfPackingInPallet" #noOfPackingInPallet="ngModel"  required numbersOnly minlength="1" maxlength="4"
+                              [ngClass]="{'input-box-style2-error': noOfPackingInPallet.invalid && (noOfPackingInPallet.dirty || noOfPackingInPallet.touched)}" 
+                              class="form-control" placeholder="" [(ngModel)]="masterData.noOfPackingInPallet">
+                            </div>
+                          </div>
+  
+                          <div class="col-md-2">        
+                            <label class="fS14 mb-1">BIN Weight <span  class="mandatory-color">*</span></label>
+                            <div>
+                              <input autofocus type="text"  name="partWeight" #partWeight="ngModel"  required floatNumberOnly minlength="1" maxlength="7"
+                                [ngClass]="{'input-box-style2-error': partWeight.invalid && (partWeight.dirty || partWeight.touched)}" 
+                                class="form-control" placeholder="" [(ngModel)]="masterData.partWeight" decimalPlaces="3">
+                            </div>
+                          </div>
+                        
+                          <div class="col-md-2">        
+                            <label class="fS14 mb-1">BIN Stack Permit <span  class="mandatory-color">*</span></label>
+                            <div>
+                              <input autofocus type="number"  name="noOfStack" #noOfStack="ngModel"  required numbersOnly minlength="1" maxlength="4"
+                                [ngClass]="{'input-box-style2-error': noOfStack.invalid && (noOfStack.dirty || noOfStack.touched)}" 
+                                class="form-control" placeholder="" [(ngModel)]="masterData.noOfStack">
+                            </div>
+                          </div>
+  
+                        
+                       
+                      </div>
+                      <div class="px-3 row"> 
+                        <div class="row g-0 badge-bg mt-2 mb-2">
+                          <div class="col-1 mt-1 left-badge"></div>
+                          <div class="ms-3 col-6 mt-2 badge-title">Inward Pallet Details
+                          </div>
+                        </div>
+                        <div class="col-md-2">        
+                          <label class="fS14 mb-1">Length (in MM) </label> 
+                          <div>
+                            <input autofocus type="number"  name="palletLength" #palletLength="ngModel" numbersOnly
+                              class="form-control" placeholder="" [(ngModel)]="masterData.palletLength" maxlength="50">
+                          </div>
+                        </div>
+                  
+                        <div class="col-md-2">        
+                          <label class="fS14 mb-1">Width (in MM) </label> 
+                          <div>
+                            <input autofocus type="number"  name="palletWidth" #palletWidth="ngModel" numbersOnly
+                              class="form-control" placeholder="" [(ngModel)]="masterData.palletWidth" maxlength="50">
+                          </div>
+                        </div>
+  
+                        <div class="col-md-2">        
+                          <label class="fS14 mb-1">Height (in MM) </label>
+                          <div>
+                            <input autofocus type="number"  name="palletHeight" #palletHeight="ngModel" numbersOnly
+                              class="form-control" placeholder="" [(ngModel)]="masterData.palletHeight" maxlength="50">
+                          </div>
+                        </div>
+                        
+                        <div class="col-md-2">        
+                          <label class="fS14 mb-1">Weight without Part</label>
+                          <div>
+                            <input autofocus type="text"  name="palletWeight" #palletWeight="ngModel" floatNumberOnly
+                              class="form-control" placeholder="" [(ngModel)]="masterData.palletWeight" maxlength="50" decimalPlaces="3">
+                          </div>
+                        </div>
+                        <div class="col-md-2">        
+                          <label class="fS14 mb-1">Weight with Part</label>
+                          <div>
+                            <input autofocus type="text"  name="palletWeightWithPart" #palletWeightWithPart="ngModel" floatNumberOnly
+                              class="form-control" placeholder="" [(ngModel)]="masterData.palletWeightWithPart" maxlength="50" decimalPlaces="3">
+                          </div>
+                        </div>
+                        <div class="col-md-2">        
+                          <label class="fS14 mb-1">Pallet Stack Permit <span  class="mandatory-color">*</span></label>
+                          <div>
+                            <input autofocus type="number"  name="pNoOfStack" #pNoOfStack="ngModel"  required numbersOnly minlength="1" maxlength="4"
+                              [ngClass]="{'input-box-style2-error': pNoOfStack.invalid && (pNoOfStack.dirty || pNoOfStack.touched)}" 
+                              class="form-control" placeholder="" [(ngModel)]="masterData.pNoOfStack">
+                          </div>
+                        </div>
+  
+  
+                      </div>
+                      <div class="px-3 row"> 
+                        <div class="row g-0 badge-bg mt-2 mb-2">
+                          <div class="col-1 mt-1 left-badge"></div>
+                          <div class="ms-3 col-6 mt-2 badge-title">Outward Packing Details
+                          </div>
+                        </div>
+                        <div class="col-md-3">
+                          <div class="fS14 mb-1" >Outward Packing <span  class="mandatory-color">*</span></div>      
+                          <ng-select [items]="packingtype" #opackingTypeId name="onEditClcked"
+                              bindLabel="packingname" 
+                              bindValue="packingtypeid" 
+                              placeholder="Select Packing"
+                              [(ngModel)]="masterData.opackingTypeId">
+                          </ng-select>
+                        </div>
+                        <div class="col-md-2">        
+                          <label class="fS14 mb-1">Outward SPQ<span  class="mandatory-color">*</span></label>
+                          <div>
+                            <input autofocus type="number"  name="repackQty" #repackQty="ngModel"  required numbersOnly minlength="1" maxlength="4"
+                            [ngClass]="{'input-box-style2-error': repackQty.invalid && (repackQty.dirty || repackQty.touched)}" 
+                            class="form-control" placeholder="" [(ngModel)]="masterData.repackQty">
+                          </div>
+                      </div>
+                        
+                    <div class="col-md-2">        
+                      <label class="fS14 mb-1">Outward BIN Qty <span  class="mandatory-color">*</span></label>
+                      <div>
+                        <input autofocus type="number"  name="oBinQty" #oBinQty="ngModel" required numbersOnly minlength="1" maxlength="4" 
+                        [ngClass]="{'input-box-style2-error': oBinQty.invalid && (oBinQty.dirty || oBinQty.touched)}"
+                        class="form-control" placeholder="" [(ngModel)]="masterData.oBinQty">
+                      </div>
+                    </div>
+
+                    <div class="col-md-2">        
+                      <label class="fS14 mb-1">No.of BIN in pallet <span  class="mandatory-color">*</span></label>
+                      <div>
+                        <input autofocus type="number"  name="onoOfPackingInPallet" #onoOfPackingInPallet="ngModel"  required numbersOnly minlength="1" maxlength="4"
+                        [ngClass]="{'input-box-style2-error': onoOfPackingInPallet.invalid && (onoOfPackingInPallet.dirty || onoOfPackingInPallet.touched)}" 
+                        class="form-control" placeholder="" [(ngModel)]="masterData.onoOfPackingInPallet">
+                      </div>
+                    </div>
+  
+                    <div class="col-md-2">        
+                      <label class="fS14 mb-1">BIN Stack Permit <span  class="mandatory-color">*</span></label>
+                      <div>
+                        <input autofocus type="number"  name="onoOfStack" #onoOfStack="ngModel"  required numbersOnly minlength="1" maxlength="4"
+                          [ngClass]="{'input-box-style2-error': onoOfStack.invalid && (onoOfStack.dirty || onoOfStack.touched)}" 
+                          class="form-control" placeholder="" [(ngModel)]="masterData.onoOfStack">
+                      </div>
+                    </div>
+                       
+                      </div>
+                      <div class="px-3 row"> 
+                        <div class="row g-0 badge-bg mt-2 mb-2">
+                          <div class="col-1 mt-1 left-badge"></div>
+                          <div class="ms-3 col-6 mt-2 badge-title">Outward Pallet Details
+                          </div>
+                        </div>
+                        <div class="col-md-2">        
+                          <label class="fS14 mb-1">Length (in MM) </label> 
+                          <div>
+                            <input autofocus type="number"  name="opalletLength" #opalletLength="ngModel" numbersOnly
+                              class="form-control" placeholder="" [(ngModel)]="masterData.opalletLength" maxlength="50">
+                          </div>
+                        </div>
+                  
+                        <div class="col-md-2">        
+                          <label class="fS14 mb-1">Width (in MM) </label> 
+                          <div>
+                            <input autofocus type="number"  name="opalletWidth" #opalletWidth="ngModel" numbersOnly
+                              class="form-control" placeholder="" [(ngModel)]="masterData.opalletWidth" maxlength="50">
+                          </div>
+                        </div>
+      
+                        <div class="col-md-2">        
+                          <label class="fS14 mb-1">Height (in MM) </label>
+                          <div>
+                            <input autofocus type="number"  name="opalletHeight" #opalletHeight="ngModel" numbersOnly
+                              class="form-control" placeholder="" [(ngModel)]="masterData.opalletHeight" maxlength="50">
+                          </div>
+                        </div>
+                        
+                        <div class="col-md-2">        
+                          <label class="fS14 mb-1">Weight without Part</label>
+                          <div>
+                            <input autofocus type="text"  name="opalletWeight" #opalletWeight="ngModel" floatNumberOnly
+                              class="form-control" placeholder="" [(ngModel)]="masterData.opalletWeight" maxlength="50" decimalPlaces="3">
+                          </div>
+                        </div>
+                        <div class="col-md-2">        
+                          <label class="fS14 mb-1">Weight with Part</label>
+                          <div>
+                            <input autofocus type="text"  name="opalletWeightWithProduct" #opalletWeightWithProduct="ngModel" floatNumberOnly
+                              class="form-control" placeholder="" [(ngModel)]="masterData.opalletWeightWithProduct" maxlength="50" decimalPlaces="3">
+                          </div>
+                        </div>
+  
+                      </div>
+                   </div>
+                      <div class="mt-4 me-4 d-flex justify-content-end">   
+                        <div class="row text-center mt-4">
+                        <div class="">
+                            <div class="form-group" style="background:transparent;">
+                            <button style="margin-left:10px;" type="button" class="btn btn-secondary footerbtncss mx-2" name="cancel" value="Cancel" (click)="cancelAdd()">Clear</button>
+                            <button type="button" class="btn btn-primary footerbtncss" name="signin" (click)="updatePartMaster()">Submit</button>
+                          </div>
+                        </div>
+                        </div>
+                      </div>  
+                    </div>
+                  <div class="tab-pane fade" id="nav-space" role="tabpanel" aria-labelledby="nav-space-tab">
+                    <div class="container p-0" id="spacelist">
+                      <div class="">
+                        <div class="row g-0">
+                          <div class="col">
+                            <div class="table-head ms-2">   
+                              <div class="row g-0 badge-bg mt-2 mb-2 h-100">
+                                 <div class="col-6 badge-title d-flex align-items-center">
+                                    <span class="left-badge me-3 d-block h-100"></span>
+                                    <span>Delivery Location</span>
+                                 </div>
+                                 <div class="col-6 d-flex" *ngIf="masterData.partId>0">
+                                  <button  type="button" class="btn btn-secondary footerbtncss me-2 ms-auto my-1"
+                                  name="addspace" value="Cancel" (click)="showDelivery()">Add Delivery Location</button>
+                                 </div>
+                              </div>       
+                           
+                               </div>
+                          </div>
+                         
+                        </div>
+                      </div>
+                     <div class="card shadow-lg position-relative ofCont">
+                        <table class="tab table table-hover w-100">
+                           <thead class="sticky-top top-0">
+                            <tr class="trBack">    
+                                 <th>Delivery Location</th>
+                                 <th>Plan Name</th>
+                                 <th>Dock Name</th>
+                                 <th>Action</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr *ngFor="let prt of partDeliveryLocationDetails;index as i">
+                                 <td class="py-2">{{ prt.dlocationname }}</td>
+                                 <td class="py-2">{{ prt.plantname }}</td>
+                                 <td class="py-2">{{ prt.dockname  }}</td>
+                                 <td class="py-2"><img src="assets/dist/img/delete.png" alt="" class="mb-2 ms-1"
+                                       (click)="removeDeliveryLocation(prt.partdeliverydockid)"></td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                    </div>
+                    
+                    
+                  </div>  
+
+                  <div class="tab-pane fade" id="nav-parts" role="tabpanel" aria-labelledby="nav-parts-tab">
+                    <div class="container p-0" id="spacelist">
+                      <div class="">
+                        <div class="row g-0">
+                          <div class="col">
+                            <div class="table-head ms-2">   
+                              <div class="row g-0 badge-bg mt-2 mb-2 h-100">
+                                 <div class="col-6 badge-title d-flex align-items-center">
+                                    <span class="left-badge me-3 d-block h-100"></span>
+                                    <span>Assembly Parts Details</span>
+                                 </div>
+                                 <div class="col-6 d-flex" *ngIf="masterData.partId>0">
+                                  <button  type="button" class="btn btn-secondary footerbtncss me-2 ms-auto my-1"
+                                  name="addspace" value="Cancel" (click)="showAssembly()">Add Assembly Parts</button>
+                                 </div>
+                              </div>       
+                           
+                               </div>
+                          </div>
+                         
+                        </div>
+                      </div>
+                     <div class="card shadow-lg position-relative ofCont">
+                        <table class="tab table table-hover w-100">
+                           <thead class="sticky-top top-0">
+                            <tr class="trBack">    
+                                 <th>Part Name</th>
+                                 <th>SPQ</th>
+                                 <th>Action</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr *ngFor="let prt of partAssemblyDetails;index as i">
+                                 <td class="py-2">{{ prt.assemblypartname }}</td>
+                                 <td class="py-2">{{ prt.qty }}</td>
+                                 <td class="py-2"><img src="assets/dist/img/delete.png" alt="" class="mb-2 ms-1"
+                                       (click)="removePartAssembly(prt.partassemblyid)"></td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                    </div>
+                </div>
+
+          
+               </div>
+              </form>
+              </div>
+            </div>
+            <div *ngIf="action=='view'">
+                <div class="p-4">
+                  <report creportid="42" #report (onEditClcked)="doAction($event)"   [events]="eventsSubject.asObservable()" [groupreport]="0"></report>
+                </div>
+            </div>
+        </div>
+</div>
+</div>
+
+
+<div *ngIf="showPartAssemblyDlg" class="modal" tabindex="-1" role="dialog" style="display: block !important;" id="showPartAssemblyDlg">  
+  <div class="modal-dialog   modal-dialog-centered" role="document"> 
+    <div class="bgDlg"></div> 
+    <div class="modal-content customheight">
+      <div class="modal-header loginCusto">
+        <h5 class="modal-title fontsize16"> 
+        Part Assembly Details
+        </h5>
+        <button (click)="closeAssemblyDlg()" type="button" class="btn float-end modalclosebtn" data-dismiss="modal">X</button>
+         
+      </div>
+      <div class="modal-body"  >
+         
+        <div class="row">
+
+          <div class="col-md-12">
+            <div class="text-left" >
+
+                <div class="col-md-12">
+                  <div class="fS14 mb-1" >Part Name <span  class="mandatory-color">*</span></div>      
+                  <ng-select [items]="finishgoodsparts" #assemblyPartname name="assemblyPartname"
+                      bindLabel="partno" 
+                      bindValue="partno" 
+                      placeholder="Select Parts"
+                      [(ngModel)]="partAssemblyData.assemblyPartname">
+                  </ng-select>
+                </div>
+
+                <!-- <div class="col-md-12 mt-1">
+                  <div class="fS14 mb-1" >Part Name</div>
+                  <input autofocus type="text"  name="assemblyPartname" #assemblyPartname="ngModel"  required
+                  [ngClass]="{'input-box-style2-error': assemblyPartname.invalid && (assemblyPartname.dirty || assemblyPartname.touched)}" 
+                  class="form-control" placeholder="" [(ngModel)]="partAssemblyData.assemblyPartname" maxlength="30">
+               </div> -->
+
+               <div class="col-md-12 mt-1">
+                  <div class="fS14 mb-1" >Qty</div>
+                  <input autofocus type="number"  name="qty" #qty="ngModel"  required
+                  [ngClass]="{'input-box-style2-error': qty.invalid && (qty.dirty || qty.touched)}" 
+                  class="form-control" placeholder="" [(ngModel)]="partAssemblyData.qty" max="1" max="99999">
+               </div>
+
+                  <div class="mt-4 me-4 d-flex justify-content-end">   
+                    <div class="row text-center mt-4">
+                    <div class="">
+                       <div class="form-group transback">
+                          <button type="button"  class="btn btn-secondary footerbtncss mx-2" name="cancel" value="Cancel" (click)="closeAssemblyDlg()">Cancel</button>
+                          <button type="button"  class="btn btn-primary footerbtncss" name="spaceallocation" (click)="updateAssemblyParts()">Ok</button>
+                       </div>
+                    </div>
+                    </div>
+                 </div>
+            </div>        
+          </div>
+        </div>
+        
+      </div>
+       
+    </div>  
+  </div>
+</div> 
+
+
+<div *ngIf="showPartDLocationDlg" class="modal" tabindex="-1" role="dialog" style="display: block !important;" id="showPartDLocationDlg">  
+  <div class="modal-dialog   modal-dialog-centered" role="document"> 
+    <div class="bgDlg"></div> 
+    <div class="modal-content customheight">
+      <div class="modal-header loginCusto">
+        <h5 class="modal-title fontsize16"> 
+        Delivery Location Details
+        </h5>
+        <button (click)="closePartDLocationDlg()" type="button" class="btn float-end modalclosebtn" data-dismiss="modal">X</button>
+         
+      </div>
+      <div class="modal-body"  >
+         
+        <div class="row">
+
+          <div class="col-md-12">
+            <div class="text-left" >
+              
+
+              <div class="col-md-12 mt-1">
+                  <div class="fS14 mb-1" >Delivery Location</div>
+                  <ng-select [items]="deliverylocations" #dLocationId name= "dLocationId"
+                     bindLabel="dlocationname"
+                     bindValue="dlocationid" 
+                     placeholder="Select Location"
+                     [(ngModel)]="partlocationData.dLocationId">
+               </ng-select>
+               </div>
+               <div class="col-md-12 mt-1">
+                <div class="fS14 mb-1" >Plant Name</div>
+                <ng-select [items]="deliveryPlantsDDL" #plantId name= "plantId"
+                   bindLabel="plantname"
+                   bindValue="plantid" 
+                   placeholder="Select Plant"
+                   [(ngModel)]="partlocationData.plantId">
+             </ng-select>
+             </div>
+             <div class="col-md-12 mt-1">
+              <div class="fS14 mb-1" >Dock Name</div>
+              <ng-select [items]="deliveryDocksDDL" #plantDockId name= "plantDockId"
+                 bindLabel="dockname"
+                 bindValue="ddockid" 
+                 placeholder="Select Dock"
+                 [(ngModel)]="partlocationData.plantDockId">
+               </ng-select>
+           </div>
+                  <div class="mt-4 me-4 d-flex justify-content-end">   
+                    <div class="row text-center mt-4">
+                    <div class="">
+                       <div class="form-group transback">
+                          <button type="button"  class="btn btn-secondary footerbtncss mx-2" name="cancel" value="Cancel" (click)="closePartDLocationDlg()">Cancel</button>
+                          <button type="button"  class="btn btn-primary footerbtncss" name="spaceallocation" (click)="updateDeliveryLocations()">Ok</button>
+                       </div>
+                    </div>
+                    </div>
+                 </div>
+            </div>        
+          </div>
+        </div>
+        
+      </div>
+       
+    </div>  
+  </div>
+</div> 

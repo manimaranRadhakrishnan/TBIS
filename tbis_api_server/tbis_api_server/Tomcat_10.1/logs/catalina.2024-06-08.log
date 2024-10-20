@@ -1,0 +1,4 @@
+08-Jun-2024 11:29:12.721 INFO [Catalina-utility-2] org.apache.catalina.loader.WebappClassLoaderBase.modified One or more JARs have been modified in the web application [/tbis]
+08-Jun-2024 11:29:12.737 INFO [Catalina-utility-2] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/tbis] has started
+08-Jun-2024 11:29:18.404 INFO [Catalina-utility-2] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+08-Jun-2024 11:29:19.990 INFO [Catalina-utility-2] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/tbis] is completed

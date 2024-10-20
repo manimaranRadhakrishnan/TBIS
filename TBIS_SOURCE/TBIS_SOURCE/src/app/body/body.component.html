@@ -1,0 +1,73 @@
+<div id="body" class="body" [ngClass]="getBodyClass()">
+      <header id="header" class="header fixed-top d-flex align-items-center" *ngIf="isLogIn">
+        <div class="d-flex align-items-center justify-content-between">
+          <b  class="logo d-flex align-items-center">
+            <img src="assets/dist/img/logo.png" class="ms-3" alt="">
+          </b>
+        </div>
+         
+            <nav class="header-nav ms-auto">
+              <ul class="list-group list-group-horizontal  border-0">
+                <li class="list-group-item border-0 w-150">
+                    <ng-select [items]="userLocations" #selectedLocation name="selectedLocation"
+                    bindLabel="locationname"
+                    bindValue="locationid" 
+                    placeholder="Select Location"
+                    [(ngModel)]="selectedLocationId" (change)="changeLocation()">
+                  </ng-select>
+                </li>
+                <li class="list-group-item  border-0 w-150">
+                  <ng-select [items]="userSublocations" #selectedSubLocation name="selectedSubLocation" 
+                    bindLabel="sublocationname" 
+                    bindValue="sublocationid" 
+                    placeholder="Select Sublocation"
+                    [(ngModel)]="selectedSubLocationId" (change)="changeSubLocation()">
+                  </ng-select>
+                </li>
+                <li class="list-group-item  border-0 w-150">
+                  <ng-select [items]="userDocks" #selectedDock name="selectedDock"
+                  bindLabel="udcname" 
+                  bindValue="udc_id" 
+                  placeholder="Select Dock"
+                  [(ngModel)]="selectedDockId">
+                </ng-select>
+             
+                </li>
+               
+                <li class="list-group-item  border-0 dropdown pe-3">
+                  <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                    <img [src]="profileImage" alt="Profile" class="rounded-circle">
+                    <span class="d-none d-md-block dropdown-toggle ps-2">{{userName}}</span>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+                    <li class="dropdown-header">
+                      <h6>{{userName}}</h6>
+                      <span>{{userEmail}} </span>
+                    </li>
+                    <li>
+                      <hr class="dropdown-divider">
+                    </li>
+        
+                    <li>
+                      <a class="dropdown-item d-flex align-items-center" routerLink="/profile">
+                        <i class="bi bi-person"></i>
+                        <span>My Profile</span>
+                      </a>
+                    </li>
+                    <li>
+                      <hr class="dropdown-divider">
+                    </li>
+                    <li>
+                      <a class="dropdown-item d-flex align-items-center" routerLink="/logout">
+                        <i class="bi bi-box-arrow-right"></i>
+                        <span>Sign Out</span>
+                      </a>
+                    </li>
+                  </ul><!-- End Profile Dropdown Items -->
+                </li><!-- End Profile Nav -->
+        
+              </ul>
+            </nav><!-- End Icons Navigation -->
+      </header>
+        <router-outlet></router-outlet>
+</div>

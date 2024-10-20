@@ -1,0 +1,811 @@
+
+<div  class="container">
+    <div class="table-wrapper px-0 shadow">
+       <div class="table-title title-fixed">
+         <div class="row">
+           <div class="col-sm-6">
+             <div class="table-head ms-2">
+               <div class="row">
+                 <!-- <div *ngIf="action!='view'" class="col-1 cursor">
+                   <i class="bi bi-arrow-left"></i>
+                 </div> -->
+                 <div *ngIf="action=='view'" class="col-1 cursor">
+                 </div>
+                 <div class="col-6 p-0">
+                  Form Entry (Form {{formIdFromRoute}})
+                 </div>
+               </div>
+               
+                </div>
+           </div>
+         </div>
+       </div>
+          <div class="table-content title-content">
+
+       <div *ngIf="action=='view'">
+            <div class="p-0 row">
+                <form  class="p-3" method="post" autocomplete="off" #frm="ngForm">                 
+                    <div>  
+                        <div *ngIf="enableFormA || enableFormC || enableFormI || enableFormG" class="px-3 mb-3 row">
+                            <div class="row g-0 badge-bg mt-2 mb-2">
+                                <div class="col-1 mt-1 left-badge"></div>
+                                <div class="ms-3 col-6 mt-2 badge-title">Application Detail</div>
+                            </div>
+
+                            <div class="col-md-3 mb-3">        
+                                <label class="fS14 mb-1">Form Date</label>
+                                <div>
+                                    <input autofocus type="date" name="formDate" #formDate="ngModel"  required readonly
+                                    class="form-control" placeholder="" [(ngModel)]="masterData.formDate" >
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 mb-3">
+                                <div class="fS14 mb-1" >Warehouse </div>      
+                                <ng-select [items]="warehouseList" #warehouseId name="warehouseId"
+                                    bindLabel="warehousename" 
+                                    bindValue="warehousid" 
+                                    placeholder="Select Warehouse"
+                                    [(ngModel)]="masterData.warehouseId">
+                                </ng-select>
+                            </div>
+
+                            <div class="col-md-3 mb-3">        
+                                <label class="fS14 mb-1">Serial No</label>
+                                <div>
+                                    <input autofocus type="text"  name="serialNo" #serialNo="ngModel"  required readonly
+                                    class="form-control" placeholder="" [(ngModel)]="masterData.serialNo" maxlength="100">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <div class="fS14 mb-1" >Division <span  class="mandatory-color">*</span></div>      
+                                <ng-select [items]="divisionList" #divisionId name="divisionId"
+                                    bindLabel="divisionname" 
+                                    bindValue="divisionid" 
+                                    placeholder="Select Division"
+                                    [(ngModel)]="masterData.divisionId">
+                                </ng-select>
+                            </div>
+                            <div class="col-md-6 mb-3">        
+                                <label class="fS14 mb-1">Applicant Name <span  class="mandatory-color">*</span></label>
+                                <div>
+                                    <input autofocus type="text"  name="applicantName" #applicantName="ngModel"  required
+                                    [ngClass]="{'input-box-style2-error': applicantName.invalid && (applicantName.dirty || applicantName.touched)}" 
+                                    class="form-control" placeholder="" [(ngModel)]="masterData.applicantName" maxlength="150">
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="fS14 mb-1" >Branch <span  class="mandatory-color">*</span></div>      
+                                <ng-select [items]="baranchList" #branchId name="branchId"
+                                    bindLabel="branchname" 
+                                    bindValue="branchid" 
+                                    placeholder="Select Branch"
+                                    [(ngModel)]="masterData.branchId">
+                                </ng-select>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="fS14 mb-1">Application Date<span  class="mandatory-color">*</span></div>
+                                <div>
+                                <input autofocus type="date" id="applicationDate" name="applicationDate" #applicationDate="ngModel"  required
+                                [ngClass]="{'input-box-style2-error': applicationDate.invalid && (applicationDate.dirty || applicationDate.touched)}" 
+                                class="form-control"  [(ngModel)]="masterData.applicationDate" maxlength="100">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div *ngIf="enableFormA || enableFormI || enableFormC || enableFormG" class="px-3 mb-3 row">
+                            <div class="row g-0 badge-bg mt-2 mb-2">
+                                <div class="col-1 mt-1 left-badge"></div>
+                                <div class="ms-3 col-6 mt-2 badge-title">Subject Matter for Approval</div>
+                            </div>
+                            <div *ngIf="enableFormA || enableFormI || enableFormC || enableFormG" class="col-md-12 mb-3">        
+                                <label class="fS14 mb-1">Application Relating to (* please mention the appropriate Matter given in footnote)<span  class="mandatory-color">*</span></label>
+                                <div>
+                                    <ng-select [items]="appRelatingList" #appRelatingId name="appRelatingId"
+                                        bindLabel="apprelatingname" 
+                                        bindValue="apprelatingid" 
+                                        placeholder="Select Application Relating to"
+                                        [(ngModel)]="masterData.appRelatingId">
+                                    </ng-select>
+                                </div>
+                            </div>
+                            <div *ngIf="enableFormC" class="col-md-12 mb-3">
+                                <div class="fS14 mb-1">Other HR matters(If any) <span  class="mandatory-color">*</span></div> 
+                                <div>
+                                    <textarea rows="3" id="otherHrMatters" name="otherHrMatters" #otherHrMatters="ngModel"  required
+                                    [ngClass]="{'input-box-style2-error': otherHrMatters.invalid && (otherHrMatters.dirty || otherHrMatters.touched)}" 
+                                    class="form-control"  [(ngModel)]="masterData.otherHrMatters" maxlength="950"></textarea>
+                                </div>
+                            </div>
+                            <div *ngIf="enableFormC || enableFormG" class="col-md-12 mb-3">
+                                <div class="fS14 mb-1">Brief description of the Matter/Contract to be approved <span  class="mandatory-color">*</span></div> 
+                                <div>
+                                    <textarea rows="3" id="aprvMatterDesc" name="aprvMatterDesc" #aprvMatterDesc="ngModel"  required
+                                    [ngClass]="{'input-box-style2-error': aprvMatterDesc.invalid && (aprvMatterDesc.dirty || aprvMatterDesc.touched)}" 
+                                    class="form-control"  [(ngModel)]="masterData.aprvMatterDesc" maxlength="950"></textarea>
+                                </div>
+                            </div>
+                            <div *ngIf="enableFormC" class="col-md-12 mb-3">
+                                <div class="fS14 mb-1">Financial Implication of the Matter/Contract to be approved <span  class="mandatory-color">*</span></div> 
+                                <div>
+                                    <textarea rows="3" id="financeImpMatter" name="financeImpMatter" #financeImpMatter="ngModel"  required
+                                    [ngClass]="{'input-box-style2-error': financeImpMatter.invalid && (financeImpMatter.dirty || financeImpMatter.touched)}" 
+                                    class="form-control"  [(ngModel)]="masterData.financeImpMatter" maxlength="950"></textarea>
+                                </div>
+                            </div>
+                            <div *ngIf="enableFormC || enableFormG" class="col-md-12 mb-3">
+                                <div class="fS14 mb-1" >Any other Points <span  class="mandatory-color">*</span></div> 
+                                <div>
+                                    <textarea rows="3" id="anyOtherPtsMatter" name="anyOtherPtsMatter" #anyOtherPtsMatter="ngModel"  required
+                                    [ngClass]="{'input-box-style2-error': anyOtherPtsMatter.invalid && (anyOtherPtsMatter.dirty || anyOtherPtsMatter.touched)}" 
+                                    class="form-control"  [(ngModel)]="masterData.anyOtherPtsMatter" maxlength="950"></textarea>
+                                </div>
+                            </div>
+                            <div *ngIf="enableFormA || enableFormI" class="col-md-12 mb-3">        
+                                <label class="fS14 mb-1">Type of Transaction in this case (use separate application for different type of transaction)<span  class="mandatory-color">*</span></label>
+                                <div>
+                                    <ng-select [items]="typeOfTransList" #typeOfTransId name="typeOfTransId"
+                                        bindLabel="typeoftransname" 
+                                        bindValue="typeoftransid" 
+                                        placeholder="Select Type of Transaction in this case"
+                                        [(ngModel)]="masterData.typeOfTransId">
+                                    </ng-select>
+                                </div>
+                            </div>
+                            <div *ngIf="enableFormA || enableFormI" class="col-md-12 mb-3">        
+                                <label class="fS14 mb-1">Fixed Asset Category/Description<span  class="mandatory-color">*</span></label>
+                                <div>
+                                    <ng-select [items]="assetCatList" #assetCatId name="assetCatId"
+                                        bindLabel="assetcatname" 
+                                        bindValue="assetcatid" 
+                                        placeholder="Select Fixed Asset Category/Description"
+                                        [(ngModel)]="masterData.assetCatId">
+                                    </ng-select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div *ngIf="enableFormG" class="px-3 mb-3 row">
+                            <div class="row g-0 badge-bg mt-2 mb-2">
+                                <div class="col-1 mt-1 left-badge"></div>
+                                <div class="ms-3 col-6 mt-2 badge-title">Brief  Description of the Matter / Contract to be approved</div>
+                            </div>
+                            <div class="col-md-3 mb-3">        
+                                <label class="fS14 mb-1">Duration of Work/Contract <span class="mandatory-color">*</span></label>
+                                <div>
+                                    <input autofocus type="text"  name="durationOfWork" #durationOfWork="ngModel"  required
+                                    [ngClass]="{'input-box-style2-error': durationOfWork.invalid && (durationOfWork.dirty || durationOfWork.touched)}" 
+                                    class="form-control" placeholder="" [(ngModel)]="masterData.durationOfWork" maxlength="15">
+                                </div>
+                            </div>
+                            <div class="col-md-12 mb-3">
+                                <div class="fS14 mb-1" >Scope of Work/Contract  (give details below) <span  class="mandatory-color">*</span></div> 
+                                <div>
+                                    <textarea rows="3" id="scopeOfWork" name="scopeOfWork" #scopeOfWork="ngModel"  required
+                                    [ngClass]="{'input-box-style2-error': scopeOfWork.invalid && (scopeOfWork.dirty || scopeOfWork.touched)}" 
+                                    class="form-control"  [(ngModel)]="masterData.scopeOfWork" maxlength="950"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div *ngIf="enableFormG" class="px-3 mb-3 row">
+                            <div class="row g-0 badge-bg mt-2 mb-2">
+                                <div class="col-1 mt-1 left-badge"></div>
+                                <div class="ms-3 col-6 mt-2 badge-title">Financial Implication of the Matter / Contract to be approved</div>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <div class="fS14 mb-1" >Type of this Matter/Contract <span  class="mandatory-color">*</span></div>      
+                                <ng-select [items]="typeOfContractList" #typeOfContractId name="typeOfContractId"
+                                    bindLabel="typeofcontractname" 
+                                    bindValue="typeofcontractid" 
+                                    placeholder="Select Type"
+                                    [(ngModel)]="masterData.typeOfContractId">
+                                </ng-select>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label class="fS14 mb-1">Is this already Budgeted for ?<span  class="mandatory-color">*</span></label>
+                                <select  class="form-control form-select" name="isAlreadyBudgetFor" 
+                                        #isAlreadyBudgetFor="ngModel" required [ngClass]="{'input-box-style2-error': isAlreadyBudgetFor.invalid && (isAlreadyBudgetFor.dirty || isAlreadyBudgetFor.touched)}"  
+                                        [(ngModel)]="masterData.isAlreadyBudgetFor" >
+                                        <option value="">-NA-</option>
+                                        <option value="true">Yes</option>
+                                        <option value="false">No</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label class="fS14 mb-1">Taxes & Duties to whose Account ? <span  class="mandatory-color">*</span></label>
+                                <select  class="form-control form-select" name="taxDutiyAccount" 
+                                        #taxDutiyAccount="ngModel" required [ngClass]="{'input-box-style2-error': taxDutiyAccount.invalid && (taxDutiyAccount.dirty || taxDutiyAccount.touched)}"  
+                                        [(ngModel)]="masterData.taxDutiyAccount" >
+                                        <option value="1">TBIS</option>
+                                        <option value="2">Contracting Party</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3 mb-3"></div>
+                            <div class="col-md-3 mb-3">        
+                                <label class="fS14 mb-1">Total Amount of Budgeted <span class="mandatory-color">*</span></label>
+                                <div>
+                                    <input autofocus type="text"  name="totalAmountBudgeted" #totalAmountBudgeted="ngModel"  required
+                                    [ngClass]="{'input-box-style2-error': totalAmountBudgeted.invalid && (totalAmountBudgeted.dirty || totalAmountBudgeted.touched)}" 
+                                    class="form-control" placeholder="" [(ngModel)]="masterData.totalAmountBudgeted" maxlength="15">
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-3">        
+                                <label class="fS14 mb-1">Total Amount of Approved <span class="mandatory-color">*</span></label>
+                                <div>
+                                    <input autofocus type="text"  name="totalAmountApproved" #totalAmountApproved="ngModel"  required
+                                    [ngClass]="{'input-box-style2-error': totalAmountApproved.invalid && (totalAmountApproved.dirty || totalAmountApproved.touched)}" 
+                                    class="form-control" placeholder="" [(ngModel)]="masterData.totalAmountApproved" maxlength="15">
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-3">        
+                                <label class="fS14 mb-1">Gross Profit % (Budgeted) <span class="mandatory-color">*</span></label>
+                                <div>
+                                    <input autofocus type="text"  name="grossProfitBudgeted" #grossProfitBudgeted="ngModel"  required
+                                    [ngClass]="{'input-box-style2-error': grossProfitBudgeted.invalid && (grossProfitBudgeted.dirty || grossProfitBudgeted.touched)}" 
+                                    class="form-control" placeholder="" [(ngModel)]="masterData.grossProfitBudgeted" maxlength="15">
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-3">        
+                                <label class="fS14 mb-1">Gross Profit % (Approved) <span class="mandatory-color">*</span></label>
+                                <div>
+                                    <input autofocus type="text"  name="grossProfitApproved" #grossProfitApproved="ngModel"  required
+                                    [ngClass]="{'input-box-style2-error': grossProfitApproved.invalid && (grossProfitApproved.dirty || grossProfitApproved.touched)}" 
+                                    class="form-control" placeholder="" [(ngModel)]="masterData.grossProfitApproved" maxlength="15">
+                                </div>
+                            </div>
+                            <div class="col-md-12 mb-3">
+                                <div class="fS14 mb-1" >Payment Terms: (In case of Expenses) <span  class="mandatory-color">*</span></div> 
+                                <div>
+                                    <textarea rows="3" id="paymentTerms" name="paymentTerms" #paymentTerms="ngModel"  required
+                                    [ngClass]="{'input-box-style2-error': paymentTerms.invalid && (paymentTerms.dirty || paymentTerms.touched)}" 
+                                    class="form-control"  [(ngModel)]="masterData.paymentTerms" maxlength="950"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-12 mb-3">
+                                <div class="fS14 mb-1" >Any other points relating to Financial Impact <span  class="mandatory-color">*</span></div> 
+                                <div>
+                                    <textarea rows="3" id="relatedFinancialImpact" name="relatedFinancialImpact" #relatedFinancialImpact="ngModel"  required
+                                    [ngClass]="{'input-box-style2-error': relatedFinancialImpact.invalid && (relatedFinancialImpact.dirty || relatedFinancialImpact.touched)}" 
+                                    class="form-control"  [(ngModel)]="masterData.relatedFinancialImpact" maxlength="950"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div *ngIf="enableFormG" class="px-3 mb-3 row">
+                            <div class="row g-0 badge-bg mt-2 mb-2">
+                                <div class="col-1 mt-1 left-badge"></div>
+                                <div class="ms-3 col-6 mt-2 badge-title">Documents Enclosed with this Application:  (Please specify)</div>
+                            </div>
+                            <div class="col-md-12 mb-3">        
+                                <div>
+                                    <table class="table">
+                                        <thead class="top-0">
+                                            <tr class="trBack">
+                                                <td class="text-center">S.No</td>
+                                                <td class="text-center">Document Name</td>
+                                                <td class="text-center">Action</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="text-center"></td>
+                                                <td class="text-center">
+                                                    <input autofocus type="text"  name="contractDocName" #contractDocName 
+                                                    class="t-form-control" placeholder=""  maxlength="150" [(ngModel)]="masterData.contractDoc.contractDocName" >
+                                                </td>
+                                                <td class="text-center"><button type="button" class="btn btn-primary btn-sm footerbtncss" name="confirm" (click)="updateContractDocItems()">Add</button></td>
+                                            </tr>
+
+                                            <tr *ngFor="let acd of contractDocCardDetails;index as i" class="atbody">
+                                                <td class="text-center">{{i+1}}</td>
+                                                <td class="text-center">{{acd.contractDocName}}</td>
+                                                <td class="text-center"><img src="assets/dist/img/delete.png" alt="" class="mb-2 ms-1" (click)="removeContractDocValue(i)"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div *ngIf="enableFormA || enableFormI" class="px-3 mb-3 row">
+                            <div class="row g-0 badge-bg mt-2 mb-2">
+                                <div class="col-1 mt-1 left-badge"></div>
+                                <div class="ms-3 col-6 mt-2 badge-title">Acquisition Details</div>
+                            </div>
+                            <div *ngIf="enableFormA || enableFormI" class="col-md-12 mb-3">
+                                <div class="fS14 mb-1" >Reasons/Requirements for Acquisition/Disposal/Renovation/Repairment <span  class="mandatory-color">*</span></div> 
+                                <div>
+                                    <textarea rows="3" id="reasonForAsset" name="reasonForAsset" #reasonForAsset="ngModel"  required
+                                    [ngClass]="{'input-box-style2-error': reasonForAsset.invalid && (reasonForAsset.dirty || reasonForAsset.touched)}" 
+                                    class="form-control"  [(ngModel)]="masterData.reasonForAsset" maxlength="950"></textarea>
+                                </div>
+                            </div>
+                            <div *ngIf="enableFormA || enableFormI" class="col-md-3 mb-3">
+                                <label class="fS14 mb-1">is it budgeted for?<span  class="mandatory-color">*</span></label>
+                                <select  class="form-control form-select" name="isBudgetFor" 
+                                        #isBudgetFor="ngModel" required [ngClass]="{'input-box-style2-error': isBudgetFor.invalid && (isBudgetFor.dirty || isBudgetFor.touched)}"  
+                                        [(ngModel)]="masterData.isBudgetFor" >
+                                        <option  value="true">Yes</option>
+                                        <option  value="false">No</option>
+                                </select>
+                            </div>
+                            <div *ngIf="enableFormA || enableFormI && (masterData.isBudgetFor=='true')" class="col-md-3 mb-3" >        
+                                <label class="fS14 mb-1">Budget Amount <span class="mandatory-color">*</span></label>
+                                <div>
+                                    <input autofocus type="text"  name="budgetAmount" #budgetAmount="ngModel"  required
+                                    [ngClass]="{'input-box-style2-error': budgetAmount.invalid && (budgetAmount.dirty || budgetAmount.touched)}" 
+                                    class="form-control" placeholder="" [(ngModel)]="masterData.budgetAmount" maxlength="15">
+                                </div>
+                            </div>
+                            <div *ngIf="enableFormA || enableFormI" class="col-md-3 mb-3">        
+                                <label class="fS14 mb-1">Approval Amount <span class="mandatory-color">*</span></label>
+                                <div>
+                                    <input autofocus type="text"  name="approvalAmount" #approvalAmount="ngModel"  required
+                                    [ngClass]="{'input-box-style2-error': approvalAmount.invalid && (approvalAmount.dirty || approvalAmount.touched)}" 
+                                    class="form-control" placeholder="" [(ngModel)]="masterData.approvalAmount" maxlength="15">
+                                </div>
+                            </div>
+                            <div *ngIf="enableFormI" class="col-md-12 mb-3">        
+                                <label class="fS14 mb-1">Is it a Special case(if not as per IT Asset Guideline)?<span  class="mandatory-color">*</span></label>
+                                <div>
+                                    <ng-select [items]="itAssetGuidelineList" #itAssetGuidelineId name="itAssetGuidelineId"
+                                        bindLabel="itassetguidelinename" 
+                                        bindValue="itassetguidelineid" 
+                                        placeholder="Select"
+                                        [(ngModel)]="masterData.itAssetGuidelineId">
+                                    </ng-select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div *ngIf="enableFormA || enableFormC || enableFormG || enableFormI" class="px-3 mb-3 row">
+                            <div class="row g-0 badge-bg mt-2 mb-2">
+                                <div class="col-1 mt-1 left-badge"></div>
+                                <div class="ms-3 col-6 mt-2 badge-title">Asset Details</div>
+                            </div>
+                            <div *ngIf="enableFormA || enableFormC || enableFormG || enableFormI" class="col-md-3 mb-3">        
+                                <label class="fS14 mb-1">Group Head Name <span class="mandatory-color">*</span></label>
+                                <div>
+                                    <input autofocus type="text"  name="groupHeadName" #groupHeadName="ngModel"  required
+                                    [ngClass]="{'input-box-style2-error': groupHeadName.invalid && (groupHeadName.dirty || groupHeadName.touched)}" 
+                                    class="form-control" placeholder="" [(ngModel)]="masterData.groupHeadName" maxlength="150">
+                                </div>
+                            </div>
+                            <div *ngIf="enableFormA" class="col-md-12 mb-3">        
+                                <div>
+                                    <table class="table">
+                                        <thead class="top-0">
+                                            <tr class="trBack">
+                                                <td colspan="3" rowspan="2" class="text-center align-middle">Asset Description <br>(Use additional sheet if required)</td>
+                                                <td rowspan="2" class="text-center align-middle">Quantity</td>
+                                                <td colspan="2" rowspan="2" class="text-center align-middle">Quotation Value<br>(For Acquisition)/<br>Book Value (For Disposal etc.)<br>(INR)</td>
+                                                <td colspan="3" class="text-center">Depreciation (INR)</td>
+                                                <td rowspan="2" class="text-center align-middle">Action</td>
+                                            </tr>
+                                            <tr class="trBack">
+                                                <td class="text-center">No of Years</td>
+                                                <td class="text-center">Annual</td>
+                                                <td class="text-center">Monthly</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td colspan="3" class="text-center">
+                                                    <input autofocus type="text"  name="assetDataDesc" #assetDataDesc 
+                                                    class="t-form-control" placeholder=""  maxlength="150" [(ngModel)]="masterData.asset.assetDataDesc" >
+                                                </td>
+                                                <td class="text-center">
+                                                    <input autofocus type="text"  name="assetDataQty" #assetDataQty 
+                                                    class="t-form-control" placeholder=""  maxlength="15" [(ngModel)]="masterData.asset.assetDataQty" >
+                                                </td>
+                                                <td colspan="2" class="text-center">
+                                                    <input autofocus type="text"  name="assetDataQuoteValue" #assetDataQuoteValue 
+                                                    class="t-form-control" placeholder=""  maxlength="15" [(ngModel)]="masterData.asset.assetDataQuoteValue" >
+                                                </td>
+                                                <td class="text-center">
+                                                    <input autofocus type="number"  name="assetDataYear" #assetDataYear onKeyPress="if(this.value.length>=3) return false;"
+                                                    class="t-form-control" placeholder="" min="0" max="999" [(ngModel)]="masterData.asset.assetDataYear" >
+                                                </td>
+                                                <td class="text-center">
+                                                    <!-- <input autofocus type="text"  name="assetDataAnnual" #assetDataAnnual 
+                                                    class="t-form-control" placeholder="" readonly disabled maxlength="15" [(ngModel)]="masterData.asset.assetDataAnnual" > -->
+                                                </td>
+                                                <td class="text-center">
+                                                    <!-- <input autofocus type="text"  name="assetDataMonthly" #assetDataMonthly 
+                                                    class="t-form-control" placeholder="" readonly disabled maxlength="15" [(ngModel)]="masterData.asset.assetDataMonthly" > -->
+                                                </td>
+                                                <td class="text-center"><button type="button" class="btn btn-primary btn-sm footerbtncss" name="confirm" (click)="updateAssetItems()">Add</button></td>
+                                            </tr>
+
+                                            <tr *ngFor="let acd of assetCardDetails;index as i" class="atbody">
+                                                <td colspan="3" class="text-center">{{acd.assetDataDesc}}</td>
+                                                <td class="text-center">{{acd.assetDataQty}}</td>
+                                                <td colspan="2" class="text-center">{{acd.assetDataQuoteValue}}</td>
+                                                <td class="text-center">{{acd.assetDataYear}}</td>
+                                                <td class="text-center">{{acd.assetDataAnnual|number : '1.0-2'}}</td>
+                                                <td class="text-center">{{acd.assetDataMonthly|number : '1.0-2'}}</td>
+                                                <td class="text-center"><img src="assets/dist/img/delete.png" alt="" class="mb-2 ms-1" (click)="removeAssetValue(i)"></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td colspan="3" class="text-center">Total</td>
+                                                <td class="text-center">{{masterData.assetDataQtyTotal}}</td>
+                                                <td colspan="2" class="text-center">{{masterData.assetDataQuoteValueTotal}}</td>
+                                                <td class="text-center"></td>
+                                                <td class="text-center">{{masterData.assetDataAnnualTotal|number : '1.0-2'}}</td>
+                                                <td class="text-center">{{masterData.assetDataMonthlyTotal|number : '1.0-2'}}</td>
+                                                <td class="text-center"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            
+                            <div *ngIf="enableFormI" class="col-md-12 mb-3">        
+                                <div>
+                                    <table class="table">
+                                        <thead class="top-0">
+                                            <tr class="trBack">
+                                                <td colspan="3" rowspan="2" class="text-center align-middle">Asset Description <br>(Use additional sheet if required)</td>
+                                                <td colspan="2" rowspan="2" class="text-center align-middle">Quotation Value<br>(For Acquisition)/<br>Book Value (For Disposal etc.)<br>(INR)</td>
+                                                <td colspan="3" class="text-center">Depreciation (INR)</td>
+                                                <td rowspan="2" class="text-center align-middle">Action</td>
+                                            </tr>
+                                            <tr class="trBack">
+                                                <td class="text-center">No of Years</td>
+                                                <td class="text-center">Annual</td>
+                                                <td class="text-center">Monthly</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td colspan="3" class="text-center">
+                                                    <input autofocus type="text"  name="assetDataDescFI" #assetDataDescFI 
+                                                    class="t-form-control" placeholder=""  maxlength="150" [(ngModel)]="masterData.assetFI.assetDataDescFI" >
+                                                </td>
+                                                <td colspan="2" class="text-center">
+                                                    <input autofocus type="text"  name="assetDataQuoteValueFI" #assetDataQuoteValueFI 
+                                                    class="t-form-control" placeholder=""  maxlength="15" [(ngModel)]="masterData.assetFI.assetDataQuoteValueFI" >
+                                                </td>
+                                                <td class="text-center">
+                                                    <input autofocus type="number"  name="assetDataYearFI" #assetDataYearFI onKeyPress="if(this.value.length>=3) return false;"
+                                                    class="t-form-control" placeholder="" min="0" max="999" [(ngModel)]="masterData.assetFI.assetDataYearFI" >
+                                                </td>
+                                                <td class="text-center">
+                                                    <!-- <input autofocus type="text"  name="assetDataAnnual" #assetDataAnnual 
+                                                    class="t-form-control" placeholder="" readonly disabled maxlength="15" [(ngModel)]="masterData.asset.assetDataAnnual" > -->
+                                                </td>
+                                                <td class="text-center">
+                                                    <!-- <input autofocus type="text"  name="assetDataMonthly" #assetDataMonthly 
+                                                    class="t-form-control" placeholder="" readonly disabled maxlength="15" [(ngModel)]="masterData.asset.assetDataMonthly" > -->
+                                                </td>
+                                                <td class="text-center"><button type="button" class="btn btn-primary btn-sm footerbtncss" name="confirm" (click)="updateAssetItemsFormITwo()">Add</button></td>
+                                            </tr>
+
+                                            <tr *ngFor="let acd of assetCardDetailsFI;index as i" class="atbody">
+                                                <td colspan="3" class="text-center">{{acd.assetDataDescFI}}</td>
+                                                <td colspan="2" class="text-center">{{acd.assetDataQuoteValueFI}}</td>
+                                                <td class="text-center">{{acd.assetDataYearFI}}</td>
+                                                <td class="text-center">{{acd.assetDataAnnualFI|number : '1.0-2'}}</td>
+                                                <td class="text-center">{{acd.assetDataMonthlyFI|number : '1.0-2'}}</td>
+                                                <td class="text-center"><img src="assets/dist/img/delete.png" alt="" class="mb-2 ms-1" (click)="removeAssetValueFormITwo(i)"></td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div *ngIf="enableFormI" class="col-md-3 mb-3">        
+                                <label class="fS14 mb-1">Department Head Name <span class="mandatory-color">*</span></label>
+                                <div>
+                                    <input autofocus type="text"  name="deptHeadName" #deptHeadName="ngModel"  required
+                                    [ngClass]="{'input-box-style2-error': deptHeadName.invalid && (deptHeadName.dirty || deptHeadName.touched)}" 
+                                    class="form-control" placeholder="" [(ngModel)]="masterData.deptHeadName" maxlength="150">
+                                </div>
+                            </div>
+                            <div *ngIf="enableFormI" class="col-md-12 mb-3">        
+                                <div>
+                                    <table class="table">
+                                        <thead class="top-0">
+                                            <tr class="trBack">
+                                                <td colspan="3" rowspan="2" class="text-center align-middle">Asset Description <br>(Use additional sheet if required)</td>
+                                                <td rowspan="2" class="text-center align-middle">Quantity</td>
+                                                <td colspan="2" rowspan="2" class="text-center align-middle">Quotation Value<br>(For Acquisition)/<br>Book Value (For Disposal etc.)<br>(INR)</td>
+                                                <td colspan="3" class="text-center">Depreciation (INR)</td>
+                                                <td rowspan="2" class="text-center align-middle">Action</td>
+                                            </tr>
+                                            <tr class="trBack">
+                                                <td class="text-center">No of Years</td>
+                                                <td class="text-center">Annual</td>
+                                                <td class="text-center">Monthly</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td colspan="3" class="text-center">
+                                                    <input autofocus type="text"  name="assetDataDescI" #assetDataDescI 
+                                                    class="t-form-control" placeholder=""  maxlength="150" [(ngModel)]="masterData.assetI.assetDataDescI" >
+                                                </td>
+                                                <td class="text-center">
+                                                    <input autofocus type="text"  name="assetDataQtyI" #assetDataQtyI 
+                                                    class="t-form-control" placeholder=""  maxlength="15" [(ngModel)]="masterData.assetI.assetDataQtyI" >
+                                                </td>
+                                                <td colspan="2" class="text-center">
+                                                    <input autofocus type="text"  name="assetDataQuoteValueI" #assetDataQuoteValueI 
+                                                    class="t-form-control" placeholder=""  maxlength="15" [(ngModel)]="masterData.assetI.assetDataQuoteValueI" >
+                                                </td>
+                                                <td class="text-center">
+                                                    <input autofocus type="number"  name="assetDataYearI" #assetDataYearI onKeyPress="if(this.value.length>=3) return false;"
+                                                    class="t-form-control" placeholder="" min="0" max="999" [(ngModel)]="masterData.assetI.assetDataYearI" >
+                                                </td>
+                                                <td class="text-center">
+                                                    <!-- <input autofocus type="text"  name="assetDataAnnual" #assetDataAnnual 
+                                                    class="t-form-control" placeholder="" readonly disabled maxlength="15" [(ngModel)]="masterData.asset.assetDataAnnual" > -->
+                                                </td>
+                                                <td class="text-center">
+                                                    <!-- <input autofocus type="text"  name="assetDataMonthly" #assetDataMonthly 
+                                                    class="t-form-control" placeholder="" readonly disabled maxlength="15" [(ngModel)]="masterData.asset.assetDataMonthly" > -->
+                                                </td>
+                                                <td class="text-center"><button type="button" class="btn btn-primary btn-sm footerbtncss" name="confirm" (click)="updateAssetItemsFormI()">Add</button></td>
+                                            </tr>
+
+                                            <tr *ngFor="let acd of assetCardDetailsI;index as i" class="atbody">
+                                                <td colspan="3" class="text-center">{{acd.assetDataDescI}}</td>
+                                                <td class="text-center">{{acd.assetDataQtyI}}</td>
+                                                <td colspan="2" class="text-center">{{acd.assetDataQuoteValueI}}</td>
+                                                <td class="text-center">{{acd.assetDataYearI}}</td>
+                                                <td class="text-center">{{acd.assetDataAnnualI|number : '1.0-2'}}</td>
+                                                <td class="text-center">{{acd.assetDataMonthlyI|number : '1.0-2'}}</td>
+                                                <td class="text-center"><img src="assets/dist/img/delete.png" alt="" class="mb-2 ms-1" (click)="removeAssetValueFormI(i)"></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td colspan="3" class="text-center">Total</td>
+                                                <td class="text-center">{{masterData.assetDataQtyTotalI}}</td>
+                                                <td colspan="2" class="text-center">{{masterData.assetDataQuoteValueTotalI}}</td>
+                                                <td class="text-center"></td>
+                                                <td class="text-center">{{masterData.assetDataAnnualTotalI|number : '1.0-2'}}</td>
+                                                <td class="text-center">{{masterData.assetDataMonthlyTotalI|number : '1.0-2'}}</td>
+                                                <td class="text-center"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div> 
+                        
+                        <div *ngIf="enableFormA || enableFormI || enableFormG" class="px-3 mb-3 row">
+                            <div class="row g-0 badge-bg mt-2 mb-2">
+                                <div class="col-1 mt-1 left-badge"></div>
+                                <div class="ms-3 col-6 mt-2 badge-title">Advisory Comments</div>
+                            </div>
+                            <div class="col-md-12 mb-3">        
+                                <div>
+                                    <table class="table">
+                                        <thead class="top-0">
+                                            <tr class="trBack">
+                                                <td class="text-center">Designation</td>
+                                                <td class="text-center">Date</td>
+                                                <td class="text-center">Name</td>
+                                                <td class="text-center">Signature</td>
+                                                <td colspan="3" class="text-center">Comments</td>
+                                                <td class="text-center">Action</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="text-center">
+                                                    <ng-select [items]="advDesignationList" #advDesignation name="advDesignation"
+                                                        bindLabel="designationname" 
+                                                        bindValue="designationid" 
+                                                        placeholder="Select Designation"
+                                                        [(ngModel)]="masterData.advisor.advDesignation">
+                                                    </ng-select>
+                                                    <!-- <input autofocus type="text"  name="advDesignation" #advDesignation 
+                                                    class="t-form-control" placeholder=""  maxlength="150" [(ngModel)]="masterData.advisor.advDesignation" > -->
+                                                </td>
+                                                <td class="text-center">
+                                                    <input autofocus type="date"  name="advDate" #advDate 
+                                                    class="t-form-control" placeholder=""  maxlength="150" [(ngModel)]="masterData.advisor.advDate" >
+                                                </td>
+                                                <td class="text-center">
+                                                    <input autofocus type="text"  name="advName" #advName 
+                                                    class="t-form-control" placeholder=""  maxlength="150" [(ngModel)]="masterData.advisor.advName" >
+                                                </td>
+                                                <td class="text-center">
+                                                    <input autofocus type="text"  name="advSign" #advSign 
+                                                    class="t-form-control" placeholder=""  maxlength="150" [(ngModel)]="masterData.advisor.advSign" >
+                                                </td>
+                                                <td colspan="3" class="text-center">
+                                                    <textarea rows="3" id="advComment" name="advComment" #advComment="ngModel"  required
+                                                    [ngClass]="{'input-box-style2-error': advComment.invalid && (advComment.dirty || advComment.touched)}" 
+                                                    class="form-control"  [(ngModel)]="masterData.advisor.advComment" maxlength="950"></textarea>
+            
+                                                    <!-- <div class="NgxEditor__Wrapper">
+                                                        <ngx-editor-menu [editor]="editorAdvisorComment" > </ngx-editor-menu>
+                                                        <ngx-editor height="100px" minHeight="50px" [editor]="editorAdvisorComment" name="advComment" #advComment="ngModel" 
+                                                            maxlength="950" [(ngModel)]="masterData.advisor.advComment" [disabled]="false" [placeholder]="'Type here...'"></ngx-editor>
+                                                    </div> -->
+                                                </td>
+                                                <td class="text-center"><button type="button" class="btn btn-primary btn-sm footerbtncss" name="confirm" (click)="updateAdvisorItems()">Add</button></td>
+                                            </tr>
+
+                                            <tr *ngFor="let acd of advisorCardDetails;index as i" class="atbody">
+                                                <td class="text-center">{{acd.advDesignation}}</td>
+                                                <td class="text-center">{{acd.advDate}}</td>
+                                                <td class="text-center">{{acd.advName}}</td>
+                                                <td class="text-center">{{acd.advSign}}</td>
+                                                <td colspan="3" class="text-center">{{acd.advComment}}</td>
+                                                <td class="text-center"><img src="assets/dist/img/delete.png" alt="" class="mb-2 ms-1" (click)="removeAdvisorValue(i)"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div> 
+                        
+                        <div *ngIf="enableFormA || enableFormC || enableFormI || enableFormG" class="px-3 mb-3 row">
+                            <div class="row g-0 badge-bg mt-2 mb-2">
+                                <div class="col-1 mt-1 left-badge"></div>
+                                <div class="ms-3 col-6 mt-2 badge-title">Verification Comments</div>
+                            </div>
+                            <div class="col-md-12 mb-3">        
+                                <div>
+                                    <table class="table">
+                                        <thead class="top-0">
+                                            <tr class="trBack">
+                                                <td class="text-center">Designation</td>
+                                                <td class="text-center">Date</td>
+                                                <td class="text-center">Name</td>
+                                                <td class="text-center">Signature</td>
+                                                <td colspan="3" class="text-center">Comments</td>
+                                                <td class="text-center">Action</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="text-center">
+                                                    <ng-select [items]="vfyDesignationList" #vfyDesignation name="vfyDesignation"
+                                                        bindLabel="designationname" 
+                                                        bindValue="designationid" 
+                                                        placeholder="Select Designation"
+                                                        [(ngModel)]="masterData.verify.vfyDesignation">
+                                                    </ng-select>
+                                                </td>
+                                                <td class="text-center">
+                                                    <input autofocus type="date"  name="vfyDate" #vfyDate 
+                                                    class="t-form-control" placeholder=""  maxlength="150" [(ngModel)]="masterData.verify.vfyDate" >
+                                                </td>
+                                                <td class="text-center">
+                                                    <input autofocus type="text"  name="vfyName" #vfyName 
+                                                    class="t-form-control" placeholder=""  maxlength="150" [(ngModel)]="masterData.verify.vfyName" >
+                                                </td>
+                                                <td class="text-center">
+                                                    <input autofocus type="text"  name="vfySign" #vfySign 
+                                                    class="t-form-control" placeholder=""  maxlength="150" [(ngModel)]="masterData.verify.vfySign" >
+                                                </td>
+                                                <td colspan="3" class="text-center">
+                                                    <textarea rows="3" id="vfyComment" name="vfyComment" #vfyComment="ngModel"  required
+                                                    [ngClass]="{'input-box-style2-error': vfyComment.invalid && (vfyComment.dirty || vfyComment.touched)}" 
+                                                    class="form-control"  [(ngModel)]="masterData.verify.vfyComment" maxlength="950"></textarea>
+            
+                                                    <!-- <div class="NgxEditor__Wrapper">
+                                                        <ngx-editor-menu [editor]="editorVerifyComment" > </ngx-editor-menu>
+                                                        <ngx-editor height="100px" minHeight="50px" [editor]="editorVerifyComment" name="vfyComment" #vfyComment="ngModel" 
+                                                            maxlength="950" [(ngModel)]="masterData.verify.vfyComment" [disabled]="false" [placeholder]="'Type here...'"></ngx-editor>
+                                                    </div> -->
+                                                </td>
+                                                <td class="text-center"><button type="button" class="btn btn-primary btn-sm footerbtncss" name="confirm" (click)="updateVerifyItems()">Add</button></td>
+                                            </tr>
+
+                                            <tr *ngFor="let acd of verifyCardDetails;index as i" class="atbody">
+                                                <td class="text-center">{{acd.vfyDesignation}}</td>
+                                                <td class="text-center">{{acd.vfyDate}}</td>
+                                                <td class="text-center">{{acd.vfyName}}</td>
+                                                <td class="text-center">{{acd.vfySign}}</td>
+                                                <td colspan="3" class="text-center">{{acd.vfyComment}}</td>
+                                                <td class="text-center"><img src="assets/dist/img/delete.png" alt="" class="mb-2 ms-1" (click)="removeVerifyValue(i)"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            
+                        </div> 
+                        
+                        <div *ngIf="enableFormA || enableFormC || enableFormI || enableFormG" class="px-3 mb-3 row">
+                            <div class="row g-0 badge-bg mt-2 mb-2">
+                                <div class="col-1 mt-1 left-badge"></div>
+                                <div class="ms-3 col-6 mt-2 badge-title">APPROVALS & COMMENTS</div>
+                            </div>
+                            <div class="col-md-12 mb-3">        
+                                <div>
+                                    <table class="table">
+                                        <thead class=" top-0">
+                                            <tr class="trBack">
+                                                <td class="text-center">Designation</td>
+                                                <td class="text-center">Date</td>
+                                                <td class="text-center">Name</td>
+                                                <td class="text-center">Signature</td>
+                                                <td colspan="3" class="text-center">Comments</td>
+                                                <td class="text-center">Action</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="text-center">
+                                                    <ng-select [items]="apvDesignationList" #apvDesignation name="apvDesignation"
+                                                        bindLabel="designationname" 
+                                                        bindValue="designationid" 
+                                                        placeholder="Select Designation"
+                                                        [(ngModel)]="masterData.approval.apvDesignation">
+                                                    </ng-select>
+                                                </td>
+                                                <td class="text-center">
+                                                    <input autofocus type="date"  name="apvDate" #apvDate 
+                                                    class="t-form-control" placeholder=""  maxlength="150" [(ngModel)]="masterData.approval.apvDate" >
+                                                </td>
+                                                <td class="text-center">
+                                                    <input autofocus type="text"  name="apvName" #apvName 
+                                                    class="t-form-control" placeholder=""  maxlength="150" [(ngModel)]="masterData.approval.apvName" >
+                                                </td>
+                                                <td class="text-center">
+                                                    <input autofocus type="text"  name="apvSign" #apvSign 
+                                                    class="t-form-control" placeholder=""  maxlength="150" [(ngModel)]="masterData.approval.apvSign" >
+                                                </td>
+                                                <td colspan="3" class="text-center">
+                                                    <textarea rows="3" id="apvComment" name="apvComment" #apvComment="ngModel"  required
+                                                    [ngClass]="{'input-box-style2-error': apvComment.invalid && (apvComment.dirty || apvComment.touched)}" 
+                                                    class="form-control"  [(ngModel)]="masterData.approval.apvComment" maxlength="950"></textarea>
+            
+                                                    <!-- <div class="NgxEditor__Wrapper">
+                                                        <ngx-editor-menu [editor]="editorApprovalComment" > </ngx-editor-menu>
+                                                        <ngx-editor height="100px" minHeight="50px" [editor]="editorApprovalComment" name="apvComment" #apvComment="ngModel" 
+                                                            maxlength="950" [(ngModel)]="masterData.approval.apvComment" [disabled]="false" [placeholder]="'Type here...'"></ngx-editor>
+                                                    </div> -->
+                                                </td>
+                                                <td class="text-center"><button type="button" class="btn btn-primary btn-sm footerbtncss" name="confirm" (click)="updateApprovalItems()">Add</button></td>
+                                            </tr>
+
+                                            <tr *ngFor="let acd of approvalCardDetails;index as i" class="atbody">
+                                                <td class="text-center">{{acd.apvDesignation}}</td>
+                                                <td class="text-center">{{acd.apvDate}}</td>
+                                                <td class="text-center">{{acd.apvName}}</td>
+                                                <td class="text-center">{{acd.apvSign}}</td>
+                                                <td colspan="3" class="text-center">{{acd.apvComment}}</td>
+                                                <td class="text-center"><img src="assets/dist/img/delete.png" alt="" class="mb-2 ms-1" (click)="removeApprovalValue(i)"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            
+                        </div> 
+
+                        <div class="row mt-4 me-4">
+                            <div class="d-flex justify-content-end">   
+                                <div class="row text-center mt-4">
+                                <div class="">
+                                <div class="form-group transback">
+                                    <!-- <button type="button" class="btn btn-secondary footerbtncss mx-2" name="cancel" value="Cancel" (click)="cancelAdd()">Clear</button> -->
+                                    <button type="button" class="btn btn-primary footerbtncss" name="signin" (click)="updateSubmitForm()">Submit</button>
+                                </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+       </div>
+ </div>
+ </div>
+ </div>
+ 
+    

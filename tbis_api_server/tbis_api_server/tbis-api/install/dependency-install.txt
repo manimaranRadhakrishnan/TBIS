@@ -1,0 +1,2 @@
+mvn org.apache.maven.plugins:maven-install-plugin:2.3.1:install-file -Dfile=libs/cissolbase.jar -DgroupId=com.cissol.core -DartifactId=cissol-base -Dversion=1.0.0 -Dpackaging=jar -DlocalRepositoryPath=libs
+mvn org.apache.maven.plugins:maven-install-plugin:2.3.1:install-file -Dfile=libs/hiq_tomcat_interface.jar -DgroupId=com.cissol.core -DartifactId=tomcat-interface -Dversion=1.0.0 -Dpackaging=jar -DlocalRepositoryPath=libs

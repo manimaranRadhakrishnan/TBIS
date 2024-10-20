@@ -1,0 +1,65 @@
+
+<div  class="container">
+    <h4 class="text-white">FIFO-Board</h4>
+    <div class="table-wrapper px-0 shadow">
+        <div class="p-3">
+            <div class="row d-flex alig-items-right">
+                <div class="col-md-3 align-items-center">
+                    <label>Customer<span  class="mandatory-color">*</span></label>
+                      <ng-select [items]="customerDetails" #customerId name="customerId" 
+                        bindLabel="customername"
+                        bindValue="customerId" 
+                        placeholder="Select Customer"
+                        [(ngModel)]="selectedCustomerId" (change)="getCustomerSpace(selectedCustomerId,selectedFifoType)">
+                      </ng-select>
+                  
+                </div>
+                <div class="col-md-3">
+                    <label>Usage Type<span  class="mandatory-color">*</span></label>
+                    <select  class="form-control form-select" name="selectedFifoType" 
+                         [(ngModel)]="selectedFifoType" (change)="getCustomerSpace(selectedCustomerId,selectedFifoType)">
+                        <option  value="7">Before Inspection</option>
+                        <option  value="8">Good Stock</option>
+                      </select>
+                       </div>
+              
+            </div>
+    
+            
+    
+          </div>
+    <div class="table-content title-content">
+       <div *ngIf="action=='view'">
+          <div class="p-1">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                <div class="card shadow-lg position-relative" style="border: 1px solid #e3e3e3;height:calc(100vh - 280px);overflow-y: scroll;">
+                    <table class="tab table table-hover w-100" style="overflow: auto;">
+                    <thead class="sticky-top">
+                        <tr>
+                            <th class="">Part No</th>
+                            <th class="text-center">Stock</th>
+                            <th>Allocation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let spaceDetail of customerSpaceDetails;index as i">
+                            <td class="text-left">{{spaceDetail.toLineSpaceName}}<br>{{spaceDetail.fromLineSpaceName}}</td>
+                            <td class="text-center">{{spaceDetail.stock}}</td>
+                            <td class="text-center">
+                                <span class="fifobins" *ngFor='let in of counter(spaceDetail.allocatedBins) ;let i = index'>
+                                    <i class="bi bi-lock" *ngIf="getAllocatedSpace(spaceDetail.allocatedBins,spaceDetail.lastFilledSpace,spaceDetail.usedSpace,i)"></i>
+                                    <i class="bi bi-lock" style="visibility: hidden" *ngIf="!getAllocatedSpace(spaceDetail.allocatedBins,spaceDetail.lastFilledSpace,spaceDetail.usedSpace,i)"></i>
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                    </table>
+                </div>
+                </div>
+            </div>
+          </div>
+       </div>
+ </div>
+    </div>
+</div>

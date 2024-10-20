@@ -1,0 +1,216 @@
+
+
+<div  class="container">
+   <div class="table-wrapper px-0">
+      <div class="table-title title-fixed">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="table-head ms-2">
+              <div class="row">
+                <div *ngIf="action!='view'" class="col-1 cursor" (click)="cancelAdd()">
+                  <i class="bi bi-arrow-left"></i>
+                </div>
+                <div *ngIf="action=='view'" class="col-1 cursor">
+                </div>
+                <div class="col-6 p-0">
+                  Line Space
+                </div>
+              </div>
+              
+               </div>
+          </div>
+          <div *ngIf="action=='view'" class="col-sm-6">
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+              <a class="btn btn-success addcss" (click)="addNew()">
+                <i class="bi bi-plus-square"></i><span>New Space</span>
+              </a>
+              <a><i class="bi bi-three-dots-vertical mt-1"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+         <div class="table-content title-content">
+            <div *ngIf="action!='view'">  
+           <div class="row g-0 badge-bg mt-2">
+             <div class="col-1 mt-1 left-badge"></div>
+            <div class="ms-3 col-6 mt-2 badge-title">Line Space Details</div>
+         </div>
+         <div class="pt-0">
+            <form class="p-3" method="post" autocomplete="off" #frm="ngForm">  
+               <div class="row mt-3">  
+                  <div class="col-md-3">
+                     <div class="fS14 mb-1" >Sublocation <span  class="mandatory-color">*</span></div>      
+                     <ng-select [items]="sublocations" #subLocationId name="subLocationId"
+                         bindLabel="sublocationname" 
+                         bindValue="sublocationid" 
+                         placeholder="Select Sublocation"
+                         [(ngModel)]="masterData.subLocationId">
+                     </ng-select>
+                  </div>
+
+                  <div class="col-md-3">        
+                     <label class="fS14 mb-1"> Space Code <span  class="mandatory-color">*</span></label>
+                     <div>
+                     <input autofocus type="text"  name="lineSpaceCode" #lineSpaceCode="ngModel"  required
+                        [ngClass]="{'input-box-style2-error': lineSpaceCode.invalid && (lineSpaceCode.dirty || lineSpaceCode.touched)}" 
+                        class="form-control" placeholder="" [(ngModel)]="masterData.lineSpaceCode" maxlength="3">
+                     </div>
+                  </div> 
+                  <div class="col-md-3">
+                     <label class="fS14 mb-1">Usage<span  class="mandatory-color">*</span></label>
+                     <ng-select [items]="usageArea" #lineUsageId name="lineUsageId"
+                     bindLabel="usagename" 
+                     bindValue="usageid" 
+                     placeholder="Select Sublocation"
+                     [(ngModel)]="masterData.lineUsageId">
+                 </ng-select>
+                  </div>
+
+                  <div class="col-md-3">
+                     <label class="fS14 mb-1">Active<span  class="mandatory-color">*</span></label>
+                     <select  class="form-control form-select" name="active" 
+                         #active="ngModel"  required [ngClass]="{'input-box-style2-error': active.invalid && (active.dirty || active.touched)}"  
+                         [(ngModel)]="masterData.isActive" >
+                         <option  value="true">Active</option>
+                         <option  value="false">InActive</option>
+                       </select>
+                  </div>
+               </div>
+               <div class="row mt-3">  
+                  <div class="row g-0 badge-bg mt-2">
+                     <div class="col-1 mt-1 left-badge"></div>
+                     <div class="ms-3 col-6 mt-2 badge-title">Space Details</div>
+                   </div>
+
+                   <div class="col-md-2">        
+                     <label class="fS14 mb-1"> Length <span  class="mandatory-color">*</span></label>
+                     <div>
+                     <input autofocus type="number"  name="lineLength" #lineLength="ngModel"  required onKeyPress="if(this.value.length>=10) return false;"
+                        [ngClass]="{'input-box-style2-error': lineLength.invalid && (lineLength.dirty || lineLength.touched)}" 
+                        class="form-control" placeholder="" [(ngModel)]="masterData.lineLength" maxlength="10">
+                     </div>
+                  </div>
+                  <div class="col-md-2">        
+                     <label class="fS14 mb-1"> Width <span  class="mandatory-color">*</span></label>
+                     <div>
+                     <input autofocus type="number"  name="lineWidth" #lineWidth="ngModel"  required numbersOnly onKeyPress="if(this.value.length>=10) return false;"
+                        [ngClass]="{'input-box-style2-error': lineWidth.invalid && (lineWidth.dirty || lineWidth.touched)}" 
+                        class="form-control" placeholder="" [(ngModel)]="masterData.lineWidth" maxlength="10">
+                     </div>
+                  </div>
+                  <div class="col-md-2">        
+                     <label class="fS14 mb-1">Height <span  class="mandatory-color">*</span></label>
+                     <div>
+                       <input autofocus type="number"  name="lineHeight" #lineHeight="ngModel"  required numbersOnly onKeyPress="if(this.value.length>=10) return false;"
+                        [ngClass]="{'input-box-style2-error': lineHeight.invalid && (lineHeight.dirty || lineHeight.touched)}" 
+                        class="form-control" placeholder="" [(ngModel)]="masterData.lineHeight" maxlength="10">
+                     </div>
+                  </div>  
+                  <div class="col-md-2">        
+                     <label class="fS14 mb-1">Area in M2<span  class="mandatory-color">*</span></label>
+                     <div>
+                       <input  type="number"  name="areaM2" #areaM2="ngModel" disabled="true"
+                        class="form-control" placeholder="" [(ngModel)]="masterData.areaM2" maxlength="10">
+                     </div>
+                  </div>  
+                  <div class="col-md-2">        
+                     <label class="fS14 mb-1">Area in M3 <span  class="mandatory-color">*</span></label>
+                     <div>
+                       <input  type="number"  name="areaM3" #areaM3="ngModel"  disabled="true"
+                        class="form-control" placeholder="" [(ngModel)]="masterData.areaM3" maxlength="10">
+                     </div>
+                  </div>                  
+               </div>
+               <div class="row mt-3">
+                   
+            <div class="row g-0 badge-bg mt-2">
+               <div class="col-1 mt-1 left-badge"></div>
+               <div class="ms-3 col-6 mt-2 badge-title">Part Storage Area</div>
+             </div>
+               <div class="col-md-3">        
+                 <label class="fS14 mb-1"> Length  <span  class="mandatory-color">*</span></label>
+                 <div>
+                   <input autofocus type="text"  name="goodStockAreaLength" #goodStockAreaLength="ngModel"  required
+                    [ngClass]="{'input-box-style2-error': goodStockAreaLength.invalid && (goodStockAreaLength.dirty || goodStockAreaLength.touched)}" 
+                    class="form-control" placeholder="" [(ngModel)]="masterData.goodStockAreaLength" maxlength="10">
+                 </div>
+              </div>
+         
+              <div class="col-md-3">        
+                 <label class="fS14 mb-1"> Width <span  class="mandatory-color">*</span></label>
+                 <div>
+                   <input autofocus type="text"  name="goodStockAreaWidth" #goodStockAreaWidth="ngModel"  required
+                    [ngClass]="{'input-box-style2-error': goodStockAreaWidth.invalid && (goodStockAreaWidth.dirty || goodStockAreaWidth.touched)}" 
+                    class="form-control" placeholder="" [(ngModel)]="masterData.goodStockAreaWidth" maxlength="10">
+                 </div>
+              </div>
+            </div>
+            <div class="row mt-3">
+                
+             <div class="row g-0 badge-bg mt-2">
+               <div class="col-1 mt-1 left-badge"></div>
+               <div class="ms-3 col-6 mt-2 badge-title">Before Inspection Area</div>
+               <div class="ms-3 col-5 mt-2 badge-title">After Inspection Area</div>
+            </div>
+            
+            <div class="col-md-3">        
+               <label class="fS14 mb-1"> Length<span  class="mandatory-color">*</span></label>
+               <div>
+                 <input autofocus type="text"  name="beforeInspectionAreaLength" #beforeInspectionAreaLength="ngModel"  required
+                  [ngClass]="{'input-box-style2-error': beforeInspectionAreaLength.invalid && (beforeInspectionAreaLength.dirty || beforeInspectionAreaLength.touched)}" 
+                  class="form-control" placeholder="" [(ngModel)]="masterData.beforeInspectionAreaLength" maxlength="10">
+               </div>
+            </div>
+              <div class="col-md-3">        
+                 <label class="fS14 mb-1">Width<span  class="mandatory-color">*</span></label>
+                 <div>
+                   <input autofocus type="text"  name="beforeInspectionAreaWidth" #beforeInspectionAreaWidth="ngModel"  required
+                    [ngClass]="{'input-box-style2-error': beforeInspectionAreaWidth.invalid && (beforeInspectionAreaWidth.dirty || beforeInspectionAreaWidth.touched)}" 
+                    class="form-control" placeholder="" [(ngModel)]="masterData.beforeInspectionAreaWidth" maxlength="10">
+                 </div>
+              </div>
+              
+              <div class="col-md-3">        
+               <label class="fS14 mb-1"> Length <span  class="mandatory-color">*</span></label>
+               <div>
+                 <input autofocus type="text"  name="afterInspectionAreaLength" #afterInspectionAreaLength="ngModel"  required
+                  [ngClass]="{'input-box-style2-error': afterInspectionAreaLength.invalid && (afterInspectionAreaLength.dirty || afterInspectionAreaLength.touched)}" 
+                  class="form-control" placeholder="" [(ngModel)]="masterData.afterInspectionAreaLength" maxlength="10">
+               </div>
+            </div>
+         
+         
+              <div class="col-md-3">        
+                 <label class="fS14 mb-1"> Width <span  class="mandatory-color">*</span></label>
+                 <div>
+                   <input autofocus type="text"  name="afterInspectionAreaWidth" #afterInspectionAreaWidth="ngModel"  required
+                    [ngClass]="{'input-box-style2-error': afterInspectionAreaWidth.invalid && (afterInspectionAreaWidth.dirty || afterInspectionAreaWidth.touched)}" 
+                    class="form-control" placeholder="" [(ngModel)]="masterData.afterInspectionAreaWidth" maxlength="10">
+                 </div>
+              </div>
+                 
+               </div>
+            </form>
+         <div class="mt-4 me-4 d-flex justify-content-end">   
+           <div class="row text-center mt-4">
+            <div class="">
+               <div class="form-group transback">
+                <button type="button"  class="btn btn-secondary footerbtncss mx-2" name="cancel" value="Cancel" (click)="cancelAdd()">Clear</button>
+                <button type="button"   class="btn btn-primary footerbtncss" name="signin" (click)="updateLineSpace()">Submit</button>
+             </div>
+            </div>
+           </div>
+         </div> 
+      </div>
+
+</div>
+      <div *ngIf="action=='view'">
+        <div class="p-4">
+        <report creportid="48" #report (onEditClcked)="doAction($event)" [events]="eventsSubject.asObservable()" [groupreport]="0"></report>
+      </div>
+      </div>
+</div>
+</div>
+</div>
+
+

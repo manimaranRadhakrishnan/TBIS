@@ -1,0 +1,57 @@
+<div class="logincontainer">
+<div class="login-page bg-light">
+      
+          <div class="col-md-7">
+
+          </div>
+             
+                      <div class="col-md-5 align-items-center">
+                        <div class="px-5">
+                          <div class="card h-100 shadow-sm px-5 card-width">
+          
+                            <div class="">
+                              <h1 class="head-main-1"><img alt="logo"src="assets/dist/img/logo.png" class="logo-height"></h1>
+                            </div>
+                            <div class="py-2">
+                              <h1 class="head-main-2">Login</h1>
+                              <p class="para-main-1 my-1">Use your credentials to access your account.</p>
+                            </div>
+                              <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate autocomplete="off" class="row g-1">
+                              <div class="col-12 py-1">
+                                <label class="tertiary-color py-1" for="username">Username<span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                  <div class="input-group-text"><i class="bi bi-person-fill"></i></div>
+                                  <input type="text" type="email" id="username" name="username" [(ngModel)]="form.username" #username="ngModel" class="form-control" placeholder="Enter Username" autofocus="autofocus" autocomplete="off">
+                                </div>
+                              </div>
+                              <div class="col-12 py-1">
+                                <label class="tertiary-color py-1" for="usepasswordrname">Password<span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                  <div class="input-group-text"><i class="bi bi-lock-fill"></i></div>
+                                  <input type="password" id="usepasswordrname" name="password" [(ngModel)]="form.password" #password="ngModel" class="form-control" placeholder="Enter Password" data-rule-required="true" autocomplete="off">
+                                </div>
+                              </div>
+                              <div class="col-sm-4">
+                              </div>
+                              <div class="col-sm-8 py-2"> <a href="#" class="float-end link-color">Forgot Password?</a> </div>
+                              <div class="col-12 py-2">
+                                  <button type="submit" class="btn  px-4 float-end  w-100">LOGIN <i
+                                      class="bi bi-arrow-right"></i></button>
+                              </div>
+                            </form>
+                            <div class="text-center pt-3">
+                              <span class="para-pw-1">Powered by</span>
+                              <span class="para-pw-2"><img alt="powerlogo" src="assets/dist/img/power_logo.png"></span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+             
+              
+</div>
+</div>
+        
+        
+        
+        
+        

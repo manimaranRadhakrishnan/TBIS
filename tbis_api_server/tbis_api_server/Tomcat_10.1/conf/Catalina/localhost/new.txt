@@ -1,0 +1,69 @@
+
+color:
+
+color:red,green,white
+
+alignment:
+
+ text-align:start,center,end,left,right,justify,
+ 
+------simple selector--------:
+ universal selector *{}
+ element selector p{}
+ id selector #name{}
+ class selector .name{}
+ grouping selector h1,h2,h3{} 
+ element class selector h1.name{}
+ 
+ ------Combinator selector-----:
+	desantant selector div(space)P{}
+	child selector div>p{}
+	adjacent siblings selector div+p{}
+	genaral siblings element div ~p
+	
+ -----------pseudo-clasess selector:---------
+   Anchor Pseudo-classes:
+     a:link{}
+	 a:visited{}
+	 a:hover{}
+	 a:active{}
+   pseudo classes and html classes:
+     a.name:hover{}
+   Hover on <div>:
+     div:hover {}
+   simple tooltip hover:
+	 div:hover p {}
+   first-child pseudo classes:
+      p:first-child{}
+   first-child i selector:	  
+      p:first-child i {}
+ ------pseudo element selector:------
+   ::first-line pseudo element select:
+        p::first-line{}
+   :: first-letter pseudo selector:
+        p::first-letter{}   
+   Pseudo-elements and HTML Classes:
+       p.name::first-letter{}
+   ::before pseudo -element selector:
+       p::before{}   
+    ::after pseudo -element selector:
+       p::after{}
+	 
+   
+   
+ ------------------Color-----------------
+ bg color:
+	background-color:red 
+ text color:
+    color:red
+ RGB
+ HEX
+ HSL
+
+background-color:red
+background-image:url()
+background-repeate:url()
+ 
+	
+	
+	

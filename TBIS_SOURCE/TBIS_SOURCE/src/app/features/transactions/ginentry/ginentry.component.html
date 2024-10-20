@@ -1,0 +1,528 @@
+<div  class="container">
+    <div class="table-wrapper px-0 shadow">
+      <div class="table-title title-fixed">
+        <div class="row">
+          <div class="col-sm-6">
+             <div class="table-head ms-2">
+             <div class="row">
+                <div *ngIf="action!='view'" class="col-1 cursor" (click)="cancelAdd()">
+                   <i class="bi bi-arrow-left"></i>
+                </div>
+                <div *ngIf="action=='view'" class="col-1 cursor">
+                </div>
+                <div class="col-6 p-0">
+                Goods Inward
+                </div>
+             </div>
+             
+                </div>
+          </div>
+          <div *ngIf="action=='view'" class="col-sm-6">
+             <div class="d-grid gap-2 d-md-flex justify-content-md-end align-items-center">
+              
+             </div>
+          </div>
+       
+       </div>
+      </div>
+      <div *ngIf="action!='view'"> 
+      <div class="table-content title-content">
+        <div class="pt-0">
+               <nav>
+                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                   <button class="nav-link active" id="nav-info-tab" data-bs-toggle="tab" data-bs-target="#nav-info" type="button" role="tab" aria-controls="nav-info" aria-selected="true">ASN Info</button>
+                   <button class="nav-link" id="nav-parts-tab" data-bs-toggle="tab" data-bs-target="#nav-parts" type="button" role="tab" aria-controls="nav-parts" aria-selected="false">Parts Details</button>
+                   <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">History</button>
+                 </div>
+               </nav>
+               <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="nav-info" role="tabpanel" aria-labelledby="nav-info-tab">
+                    <div class="row px-2">
+                       <form class="p-1" method="post" autocomplete="off" #frm="ngForm"> 
+                        <div class="row px-3 mb-2">   
+                          <div class="row g-0 badge-bg mt-0 mb-2">
+                            <div class="col-1 mt-1 left-badge"></div>
+                            <div class="ms-3 col-6 mt-2 badge-title">ASN Information</div>
+                         </div>
+                          <div class="col-md-2">        
+                            <label class="fS14 mb-1">Supply Date<span  class="mandatory-color">*</span></label>
+                            <div>
+                              <input autofocus type="date"  tabindex="1"  #supplyDate  name="supplyDate" disabled="true"
+                               class="form-control" placeholder=""  [(ngModel)]="masterData.supplyDate">
+                            </div>
+                         </div>
+        
+                         <div class="col-md-2">        
+                          <label class="fS14 mb-1"> Supply Time<span  class="mandatory-color">*</span></label>
+                          <div>
+                            <input autofocus type="time"  tabindex="2"  #supplyTime name="supplyTime"  disabled="true"
+                             class="form-control" placeholder="" [(ngModel)]="masterData.supplyTime">
+                          </div>
+                         </div>
+        
+                         <div class="col-md-2">        
+                          <label class="fS14 mb-1">SubLocation</label>
+                          <div>
+                            <input  type="text"  name="location" disabled="true"
+                             class="form-control" placeholder="" maxlength="100" [(ngModel)]="masterData.subLocationShortCode">
+                          </div>
+                         </div>
+        
+                         <div class="col-md-2">        
+                          <label class="fS14 mb-1">Unload Dock</label>
+                          <div>
+                            <input  type="text"  name="subLocationShortCode" disabled="true"
+                             class="form-control" placeholder="" maxlength="100" [(ngModel)]="masterData.dockName">
+                          </div>
+                         </div>
+                         <div class="col-md-4">        
+                          <label class="fS14 mb-1">Customer</label>
+                          <div>
+                            <input type="text"  tabindex="8"  #customerName  disabled="true"
+                             class="form-control" placeholder="" maxlength="100" [(ngModel)]="masterData.customerName">
+                          </div>
+                         </div>
+                        </div>
+
+                        <div class="row px-3 mb-2">
+                          <div class="row g-0 badge-bg mt-0 mb-2">
+                             <div class="col-1 mt-1 left-badge"></div>
+                             <div class="ms-3 col-6 mt-2 badge-title">Vehicle Details</div>
+                          </div>
+                           <div class="col-md-2">        
+                            <label class="fS14 mb-1">Vehicle No <span  class="mandatory-color">*</span></label>
+                            <div>
+                              <input autofocus type="text"  tabindex="3"  name="vehicleno" disabled="true"
+                               class="form-control" placeholder="" maxlength="100" [(ngModel)]="masterData.vechicleNo">
+                            </div>
+                           </div>
+                          
+                           <div class="col-md-2">        
+                            <label class="fS14 mb-1">Transfer Mode <span class="mandatory-color">*</span></label>
+                            <div>
+                              <select autofocus tabindex="4" class="form-control " name="directorTransit" [(ngModel)]="masterData.directorTransit" disabled="true">
+                                <option  value="true">Direct</option>
+                                <option  value="false">Transit</option>
+                              </select>
+                            </div>
+                           </div>
+                           <!-- <div class="col-md-2">        
+                            <label class="fS14 mb-1">Transfer WareHouse<span  class="mandatory-color">*</span></label>
+                            <div>
+                              <ng-select [items]="transitLocations" #transitLocationId name="transitLocationId" disabled="true"
+                                bindLabel="warehousename"
+                                bindValue="warehousid" 
+                                placeholder="Warehouse Name"
+                                [(ngModel)]="masterData.transitLocationId">
+                            </ng-select>
+                            </div>
+                           </div> -->
+                           <div class="col-md-3">        
+                            <label class="fS14 mb-1">Driver Name</label>
+                            <div>
+                              <input autofocus type="text"  tabindex="5"  name="driverName"  disabled="true"
+                              class="form-control" placeholder="" maxlength="100" [(ngModel)]="masterData.driverName">
+                            </div>
+                            
+                           </div>
+                           <div class="col-md-3">        
+                            <label class="fS14 mb-1">Driver Mobile</label>
+                            <div>
+                              <input autofocus type="text"  tabindex="6"  name="driverMobile" disabled="true"
+                               class="form-control" placeholder="" maxlength="100" [(ngModel)]="masterData.driverMobile">
+                            </div>
+                           
+                           </div>
+                          
+                        </div>
+                        <div class="row px-3 mb-2">
+                          <div class="row g-0 badge-bg mt-0 mb-2">
+                             <div class="col-1 mt-1 left-badge"></div>
+                             <div class="ms-3 col-6 mt-2 badge-title">Dispatch Document Details</div>
+                          </div>
+                           <div class="col-md-3">        
+                            <label class="fS14 mb-1">Delivery Note No</label>
+                            <div>
+                              <input  type="text"  tabindex="7"  name="deliveryNoteNo" disabled="true"
+                               class="form-control" placeholder="" maxlength="12" [(ngModel)]="masterData.deliveryNoteNo">
+                            </div>
+                           </div>
+                           <div class="col-md-3">        
+                            <label class="fS14 mb-1">Invoice No</label>
+                            <div>
+                              <input  type="text"  tabindex="7"  name="invoiceNo" disabled="true"
+                               class="form-control" placeholder="" maxlength="12" [(ngModel)]="masterData.invoiceNo">
+                            </div>
+                           </div>
+                           <div class="col-md-3">        
+                            <label class="fS14 mb-1">Eway-Bill No</label>
+                            <div>
+                              <input  type="text"  tabindex="8"  name="ewayBillNo"  disabled="true"
+                              class="form-control" placeholder="" maxlength="12" [(ngModel)]="masterData.ewayBillNo">
+                            </div>
+                           </div>
+                           <div class="col-md-3">        
+                            <button *ngIf="action!='show'" type="button"   class="btn btn-primary footerbtncss" name="confirm" (click)="showInsident()">Abnormal Shipment Received</button>
+                           </div>
+                          
+
+                        </div>
+                       
+                      </form>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="nav-parts" role="tabpanel" aria-labelledby="nav-parts-tab">
+                  <div class="row px-2">
+                    <div class="p-1"> 
+                     <div class="row px-3 mb-2">   
+                       <div class="row g-0 badge-bg">
+                          <div class="col-1 mt-1 left-badge"></div>
+                          <div class="ms-3 col-6 mt-2 badge-title">ASN Part Details</div>
+                       </div>
+                      
+                      
+        <div class="card shadow-lg position-relative ofCont">
+          <table class="tab table">
+            <thead class="sticky-top top-0">
+                    <tr *ngIf="action!='show'">                      
+                      <th class="t-w-150" id="tpartNo">Scan</th>
+                      <th class="t-w-200" id="tpartDesc">
+                        <input *ngIf="scannedPartDetails == null || scannedPartDetails.length ==0" autofocus type="text" #scannedValueCtl 
+                                 class="t-form-control" placeholder="" [(ngModel)]="scannedValue"  (keydown)="parseAndAddCard($event)">
+                      </th>
+                      <th class="t-w-100" id="tpartasnqty">BIN Scanned</th>
+                      <th class="t-w-50" id="tpartansbin"></th>
+                      <th class="t-w-100"id="tpartasnpallet">Pallet Scanned</th>
+                      <th class="t-w-50" id="treceiveqty"></th>
+                      <th class="t-w-75" id="treceivebin"></th>
+                      <!-- <th class="t-w-75" id="treceivepallet"></th> -->
+                      <th class="t-w-75" id="trdock"></th>
+                      <th class="t-w-100" id="trmoveto"></th>
+                      <th class="t-w-100" id="trlinespace"></th>
+                    </tr>
+
+                   <tr class="trBack">                      
+                        <th class="t-w-100">Part No</th>
+                        <th class="t-w-200">Part Desc</th>
+                        <th class="t-w-75">Qty</th>
+                        <th class="t-w-75">BINs</th>
+                        <th class="t-w-75">Pallet</th>
+                        <th class="t-w-100">Received QTY</th>
+                        <th class="t-w-100">Received BIN</th>
+                        <!-- <th class="t-w-100">Received Pallet</th> -->
+                        <th class="t-w-100">Dock</th>
+                        <th class="t-w-100">Move To</th>
+                        <th class="t-w-100">Line Space</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let scannedDetail of scannedPartDetails;index as i">
+                        <td>{{ scannedDetail.partNo }}</td>
+                        <td>{{ scannedDetail.partName }}</td>
+                        <td>{{ scannedDetail.asnQty }}</td>
+                        <td>{{ scannedDetail.asnBinQty }}</td>
+                        <td>{{ scannedDetail.palletNumber }}</td>
+                        <td>{{ scannedDetail.qty }}</td>
+                        <td>{{ scannedDetail.requestedBinQty }}</td>
+                        <!-- <td></td> -->
+                        <td>{{ scannedDetail.subLocationShortCode }}</td>
+                        <td class="t-w-75">
+                          <span *ngIf="!scannedDetail.moveToOverflowLocation">
+                            {{ scannedDetail.lineSpaceConfig.partSpaceName}}
+                            <br/>
+                          {{ scannedDetail.lineSpaceConfig.fromLineNo}}-{{ scannedDetail.lineSpaceConfig.toLineNo}}
+                          {{ scannedDetail.lineSpaceConfig.fromCol}}-{{ scannedDetail.lineSpaceConfig.toCol}}
+                          </span>
+                        </td>
+                        <td class="t-w-75">
+                          <span *ngIf="scannedDetail.moveToOverflowLocation">
+                            Overflow Location
+                            </span>
+                            <span *ngIf="!scannedDetail.moveToOverflowLocation">
+                              {{scannedDetail.lineSpaceConfig.lineUsageName}}
+                              </span>  
+                          </td> 
+                      </tr>
+                    </tbody>
+                  </table>   
+                  <div class="row px-3">
+                    <div class="mt-2 me-4 d-flex justify-content-end">   
+                      <div class="row text-center mt-4">
+                      <div class="">
+                          <div class="form-group transback">
+                            <button *ngIf="action!='show'" type="button"   class="btn btn-primary footerbtncss" name="movepart" (click)="updateAsn(false)">Move</button>
+                        </div>
+                      </div>
+                      </div>
+                    </div> 
+                  </div>
+                <table class="tab table">
+                  <thead class="sticky-top top-0">
+                         <tr class="trBack">                      
+                              <th class="t-w-100">Part No</th>
+                              <th class="t-w-200">Part Desc</th>
+                              <th class="t-w-75">Qty</th>
+                              <th class="t-w-75">BINs</th>
+                              <th class="t-w-75">Pallet</th>
+                              <th class="t-w-100">Received QTY</th>
+                              <th class="t-w-100">Received BIN</th>
+                              <!-- <th class="t-w-100">Received Pallet</th> -->
+                              <th class="t-w-100">Dock</th>
+                              <th class="t-w-100">Move To</th>
+                              <th class="t-w-100">Line Space</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr *ngFor="let scannedDetail of ginScannedPartDetails;index as i">
+                              <td>{{ scannedDetail.partNo }}</td>
+                              <td>{{ scannedDetail.partName }}</td>
+                              <td>{{ scannedDetail.asnQty }}</td>
+                              <td>{{ scannedDetail.asnBinQty }}</td>
+                              <td>{{ scannedDetail.palletNumber }}</td>
+                              <td>{{ scannedDetail.qty }}</td>
+                              <td>{{ scannedDetail.requestedBinQty }}</td>
+                              <!-- <td></td> -->
+                              <td>{{ scannedDetail.subLocationShortCode }}</td>
+                              <td class="t-w-75">
+                                <span *ngIf="!scannedDetail.moveToOverflowLocation">
+                                  {{ scannedDetail.lineSpaceConfig.partSpaceName}}
+                                  <br/>
+                                {{ scannedDetail.lineSpaceConfig.fromLineNo}}-{{ scannedDetail.lineSpaceConfig.toLineNo}}
+                                {{ scannedDetail.lineSpaceConfig.fromCol}}-{{ scannedDetail.lineSpaceConfig.toCol}}
+                                </span>
+                              </td>
+                              <td class="t-w-75">
+                                <span *ngIf="scannedDetail.moveToOverflowLocation">
+                                  Overflow Location
+                                  </span>
+                                  <span *ngIf="!scannedDetail.moveToOverflowLocation">
+                                    {{scannedDetail.lineSpaceConfig.lineUsageName}}
+                                    </span>  
+                                </td> 
+                            </tr>
+                          </tbody>
+                        </table>   
+                </div>
+
+                    </div>
+                    </div>
+                  </div>
+                  <div class="row px-3">
+                    <div class="me-4 d-flex justify-content-end">   
+                      <div class="row text-center">
+                      <div class="">
+                          <div class="form-group transback">
+                            <button *ngIf="action!='show'" type="button"   class="btn btn-primary footerbtncss" name="confirm" (click)="checkAbnormalPalletScan()">Submit</button>
+                        </div>
+                      </div>
+                      </div>
+                    </div> 
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                  <div class="row px-2">  
+                    <div class="p-1">
+                      <div class="row px-3 mb-2"> 
+                       <div class="row g-0 badge-bg">
+                          <div class="col-1 mt-1 left-badge"></div>
+                          <div class="ms-3 col-6 mt-2 badge-title">History</div>
+                       </div>
+
+                       <div class="card shadow-lg position-relative ofCont">
+                        <table class="tab table">
+                          <thead class="sticky-top top-0">
+                              <tr class="trBack">                      
+                                  <th class="t-w-100">Part No</th>
+                                  <th class="t-w-200">Part Desc</th>
+                                  <th class="t-w-75">Qty</th>
+                                  <th class="t-w-75">BINs</th>
+                                  <th class="t-w-75">Pallet</th>
+                                  <th class="t-w-100">Received QTY</th>
+                                  <th class="t-w-100">Received BIN</th>
+                                  <!-- <th class="t-w-100">Received Pallet</th> -->
+                                  <th class="t-w-100">Dock</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr *ngFor="let scannedDetail of scannedPartDetails;index as i">
+                                  <td>{{ scannedDetail.partNo }}</td>
+                                  <td>{{ scannedDetail.partName }}</td>
+                                  <td>{{ scannedDetail.asnQty }}</td>
+                                  <td>{{ scannedDetail.asnBinQty }}</td>
+                                  <td>{{ scannedDetail.palletNumber }}</td>
+                                  <td>{{ scannedDetail.qty }}</td>
+                                  <td>{{ scannedDetail.requestedBinQty }}</td>
+                                  <!-- <td></td> -->
+                                  <td>{{ scannedDetail.subLocationShortCode }}</td>
+                                </tr>
+                            </tbody>
+                          </table>   
+                      </div>
+
+                      </div>
+                      <div class="row px-3 mb-2"> 
+                        <div class="row g-0 badge-bg">
+                           <div class="col-1 mt-1 left-badge"></div>
+                           <div class="ms-3 col-6 mt-2 badge-title">Asn Incident Log History</div>
+                        </div>
+ 
+                        <div class="card shadow-lg position-relative ofCont">
+                         <table class="tab table">
+                           <thead class="sticky-top top-0">
+                               <tr class="trBack">                      
+                                   <th class="t-w-100">Incident Name</th>
+                                   <th class="t-w-75">Comments</th>
+                                   <th class="t-w-100">Document Image</th>
+                                 </tr>
+                               </thead>
+                               <tbody>
+                                 <tr *ngFor="let ail of asnIncidentLogDetails;index as i">
+                                   <td>{{ ail.incidentname }}</td>
+                                   <td>{{ ail.scwcomments }}</td>
+                                   <!-- <td>{{ail.documentpath}}</td> -->
+                                   <td>
+                                    <div class="splash-title">
+                                      <img alt="loading" src="{{ail.documentpath}}" width="64" height="64" />
+                                    </div>
+                                   </td>
+                                 </tr>
+                             </tbody>
+                           </table>   
+                       </div>
+ 
+                       </div>
+                    </div>
+                  </div>
+                </div>
+              </div>    
+          </div>
+      </div>
+      </div>
+      <div *ngIf="action=='view'">
+      <div class="p-4">
+      <report creportid="55" defaultparam="status" [defaultparamvalue]=rptParam #report (onEditClcked)="doAction($event)"   [events]="eventsSubject.asObservable()" [groupreport]="0"></report>
+    </div>
+     </div>
+  </div>
+</div>    
+<div *ngIf="showInsidentDialog" class="modal" tabindex="-1" role="dialog" style="display: block !important;" id="showInsidentDialog">  
+  <div class="modal-dialog   modal-dialog-centered" role="document"    > 
+    <div class="bgDlg"></div> 
+    <div class="modal-content customheight">
+      <div class="modal-header loginCusto">
+        <h5 class="modal-title fontsize16"> 
+          Abnormal Shipment
+        </h5>
+        <button (click)="closeInsidentModel()" type="button" class="btn float-end modalclosebtn" data-dismiss="modal" data-target="#showInsidentDialog"> X  </button>
+         
+      </div>
+      <div class="modal-body"  >
+         
+        <div class="row">
+
+          <div class="col-md-12">
+            <div class="text-left" >
+              <form #form="ngForm" autocomplete="off" >
+               <div class="col-md-12">
+                  <div class="fS14 mb-1" >Abnormal Items <span  class="mandatory-color">*</span></div>
+                  <ng-select [items]="insidents"
+                     bindLabel="incidentname"
+                     bindValue="incidentid" 
+                     placeholder="Select Items"
+                     [(ngModel)]="abnormalDetails.incidentId">
+                  </ng-select>
+               </div>
+
+               <div class="col-md-12 mt-1">
+                  <div class="fS14 mb-1" >Comments</div>
+                  <input autofocus type="text"  name="scwComments" #scwComments="ngModel"  required 
+                  [ngClass]="{'input-box-style2-error': scwComments.invalid && (scwComments.dirty || scwComments.touched)}" 
+                  class="form-control" placeholder="" [(ngModel)]="abnormalDetails.scwComments" maxlength="100">
+               </div>
+               <div class="col-md-12 mt-2">
+                  <div class="fS14 mb-1" >Support Document <span  class="mandatory-color">*</span></div>
+                  <input type="file" name="logo" class="file-input"  #fileUpload (change)="fileChangeEvent($event)">
+               </div>
+               
+               <div class="col-md-12 mt-2">
+                <div>
+                   <img alt="logo" [src]="preview" class="preview profileImg">
+                </div>
+              </div>
+
+              </form>
+                  <div class="mt-4 me-4 d-flex justify-content-end">   
+                    <div class="row text-center mt-4">
+                    <div class="">
+                       <div class="form-group transback">
+     
+                          <button type="button"  class="btn btn-secondary footerbtncss mx-2" name="cancel" value="Cancel" (click)="closeInsidentModel()">Cancel</button>
+                          <button type="button"   class="btn btn-primary footerbtncss" name="signin" (click)="updateIncident()">Ok</button>
+                       </div>
+                    </div>
+                    </div>
+                 </div>
+            </div>
+                            
+          </div>
+        </div>
+        
+      </div>
+       
+    </div>  
+  </div>
+</div> 
+
+  
+<div *ngIf="showCheckAbnormalDialog" class="modal" tabindex="-2" role="dialog" style="display: block !important;" id="showCheckAbnormalDialog">  
+  <div class="modal-dialog  modal-dialog-centered" role="document"    > 
+    <div class="bgDlg"></div> 
+    <div class="modal-content customheight">
+      <div class="modal-header loginCusto">
+        <h5 class="modal-title fontsize16"> 
+          Confirm
+        </h5>
+        <button (click)="closeCheckAbnormalModel()" type="button" class="btn float-end modalclosebtn" data-dismiss="modal" data-target="#showInsidentDialog"> X  </button>
+         
+      </div>
+      <div class="modal-body"  >
+         
+        <div class="row">
+
+          <div class="col-md-12">
+            <div class="text-left" >
+              <form #form="ngForm" autocomplete="off" >
+                
+               <div class="col-md-12 mt-1">
+                  <div class="fs-6 mb-1" >The Total assigned pallet is mismatched with the Total scanned pallet.<br><br>Enter reason to submit?</div>
+               </div>
+
+               <div class="col-md-12 mt-3">
+                  <div class="fS14 mb-1" >Comments</div>
+                  <input autofocus type="text"  name="abnComments" #abnComments="ngModel"  required 
+                  [ngClass]="{'input-box-style2-error': abnComments.invalid && (abnComments.dirty || abnComments.touched)}" 
+                  class="form-control" placeholder="" [(ngModel)]="masterData.abnComments" maxlength="100">
+               </div>
+
+              </form>
+                  <div class="mt-4 me-4 d-flex justify-content-end">   
+                    <div class="row text-center mt-4">
+                    <div class="">
+                       <div class="form-group transback">
+     
+                          <button type="button"  class="btn btn-secondary footerbtncss mx-2" name="cancel" value="Cancel" (click)="closeCheckAbnormalModel()">Cancel</button>
+                          <button type="button"   class="btn btn-primary footerbtncss" name="signin" (click)="updateAsn(true)">Submit</button>
+                       </div>
+                    </div>
+                    </div>
+                 </div>
+            </div>
+                            
+          </div>
+        </div>
+        
+      </div>
+       
+    </div>  
+  </div>
+</div> 

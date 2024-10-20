@@ -1,0 +1,60 @@
+.mat-mdc-table tfoot, .mat-mdc-table thead  {
+  background: #F7F7FF !important;
+}
+
+.mat-mdc-cell {
+  border-bottom-color: var(--mat-table-row-item-outline-color, rgba(0, 0, 0, 0.12));
+  border-bottom-width: var(--mat-table-row-item-outline-width, 1px);
+  border-bottom-style: solid;
+  letter-spacing: var(--mat-table-row-item-label-text-tracking);
+  line-height: inherit;
+  font-size: 11px !important;
+  font-weight: 600;
+  padding: .25rem .25rem;
+}
+.mat-mdc-table {
+  table-layout: fixed !important; 
+}
+.wrapperp{
+  margin-left:auto;
+  margin-right:auto;
+  height:auto; 
+  width:auto;
+}
+.inner1{
+  float:left; 
+}
+.inner2{
+  float:left; 
+  clear: left;
+  padding-top: 12px;
+} 
+
+.border-less-input {
+  border: 0px !important;
+}
+
+.border-less-input:focus {
+  box-shadow: 0 0;
+}
+
+.mat-mdc-header-cell {
+  vertical-align: top;
+}
+
+.mat-mdc-header-cell input {
+  font-size: 11px;
+}
+
+.table-header-bg {
+  // background: linear-gradient(0deg, white 50%, white 50%, transparent 50%) !important;
+  background: linear-gradient(180deg, #f7f7ff 50%, white 50%) !important
+}
+
+.mat-sort-header-arrow {
+  margin-top: 6px !important;
+}
+
+.mat-sort-header-container {
+  align-items: start !important;
+}

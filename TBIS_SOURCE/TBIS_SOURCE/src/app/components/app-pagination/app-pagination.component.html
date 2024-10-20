@@ -1,0 +1,12 @@
+<nav aria-label="page navigation example">  
+    <ul class="pagination float-end mx-3"> 
+      
+      <li>Rows per page : <select  id="selectItemCount"  class="form-control-sm mx-2" (change)="RefreshList($event)" name="listcount" (ngModel)="listcount"><option value="5">5</option><option value="10">10</option><option value="25" selected>25</option><option value="50">50</option><option value="100">100</option></select></li>
+  
+      <li class="page-item"  (click)="onClickPage(activePage>1?activePage - 1:1,'previous')"><a class="page-link" href="javascript:void(0);">&laquo;</a></li>  
+
+      <li class="page-item" [ngClass]="{'active': activePage === item}" *ngFor="let item of pages" (click)="onClickPage(item,'current')"><a class="page-link" href="javascript:void(0);">{{item}}</a></li>  
+      <li class="page-item" (click)="onClickPage(activePage + 1,'next')"><a class="page-link" href="javascript:void(0);">&raquo;</a></li>  
+    </ul>  
+    
+  </nav> 

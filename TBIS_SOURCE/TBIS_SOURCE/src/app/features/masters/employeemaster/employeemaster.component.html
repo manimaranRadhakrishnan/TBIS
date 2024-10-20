@@ -1,0 +1,176 @@
+<div  class="container">
+    <div class="table-wrapper px-0 shadow">
+      <div class="table-title title-fixed">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="table-head ms-2">
+              <div class="row">
+                <div *ngIf="action!='view'" class="col-1 cursor" (click)="cancelAdd()">
+                  <i class="bi bi-arrow-left"></i>
+                </div>
+                <div *ngIf="action=='view'" class="col-1 cursor">
+                </div>
+                <div class="col-6 p-0">
+                 Employee
+                </div>
+              </div>
+              
+               </div>
+          </div>
+          <div *ngIf="action=='view'" class="col-sm-6">
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+              <a class="btn btn-success addcss" (click)="addNew()">
+                <i class="bi bi-plus-square"></i><span>New Employee</span>
+              </a>
+              <a><i class="bi bi-three-dots-vertical mt-1"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="table-content title-content">
+         <div *ngIf="action!='view'">  
+            <div class="row g-0 badge-bg mt-2">
+               <div class="col-1 mt-1 left-badge"></div>
+            <div class="ms-3 col-6 mt-2 badge-title">Employee Details</div>
+            </div>
+            <div class="pt-0">
+               <nav>
+                  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <button class="nav-link active" id="nav-info-tab" data-bs-toggle="tab" data-bs-target="#nav-info" type="button" role="tab" aria-controls="nav-info" aria-selected="true">Employee Info</button>
+                    <button class="nav-link" id="nav-parts-tab" data-bs-toggle="tab" data-bs-target="#nav-parts" type="button" role="tab" aria-controls="nav-parts" aria-selected="false">Location Details</button>
+                  </div>
+                </nav>
+                <div class="tab-content" id="nav-tabContent">
+                  <div class="tab-pane fade show active" id="nav-info" role="tabpanel" aria-labelledby="nav-info-tab">
+                     <form class="p-3" method="post" autocomplete="off" #frm="ngForm">  
+                        <div class="row mt-3">       
+                           <div class="col-md-3">        
+                              <label class="fS14 mb-1">Employee name <span  class="mandatory-color">*</span></label>
+                              <div>
+                              <input autofocus type="text"  name="employeeName" #employeeName="ngModel"  required
+                                 [ngClass]="{'input-box-style2-error': employeeName.invalid && (employeeName.dirty || employeeName.touched)}" 
+                                 class="form-control" placeholder="Employee name" [(ngModel)]="masterData.employeeName" maxlength="100">
+                              </div>
+                           </div>
+                           <div class="col-md-3">        
+                              <label class="fS14 mb-1">Department<span  class="mandatory-color">*</span></label>
+                              <div>
+                              <input autofocus type="text"  name="address1" #address1="ngModel"  required
+                                 [ngClass]="{'input-box-style2-error': address1.invalid && (address1.dirty || address1.touched)}" 
+                                 class="form-control" placeholder="Department" [(ngModel)]="masterData.address1" maxlength="100">
+                              </div>
+                           </div>
+                           <div class="col-md-3">        
+                              <label class="fS14 mb-1">Designation <span  class="mandatory-color">*</span></label>
+                              <div>
+                                 <input autofocus type="text"  name="city" #city="ngModel"  required
+                                 [ngClass]="{'input-box-style2-error': city.invalid && (city.dirty || city.touched)}" 
+                                 class="form-control" placeholder="Designation" [(ngModel)]="masterData.city" maxlength="50">
+                              </div>
+                           </div>
+                        </div>
+      
+      
+                        <div class="row mt-3">
+                           <div class="col-md-3">        
+                              <label class="fS14 mb-1">Email <span  class="mandatory-color">*</span></label>
+                              <div>
+                                 <input autofocus type="email"  name="email" #email="ngModel"  required
+                                 [ngClass]="{'input-box-style2-error': email.invalid && (email.dirty || email.touched)}" 
+                                 class="form-control" placeholder="Email" [(ngModel)]="masterData.email" maxlength="100">
+                              </div>
+                           </div>
+                           <div class="col-md-3">        
+                              <label class="fS14 mb-1">Mobile <span  class="mandatory-color">*</span></label>
+                              <div>
+                                 <input autofocus type="text"  name="mobileNo" #mobileNo="ngModel"  required numbersOnly
+                                 [ngClass]="{'input-box-style2-error': mobileNo.invalid && (mobileNo.dirty || mobileNo.touched)}" 
+                                 class="form-control" placeholder="Mobile" [(ngModel)]="masterData.mobileNo" maxlength="10">
+                              </div>
+                           </div>
+                           <div class="col-md-3">
+                              <div class="fS14 mb-1" >Employee Role</div>      
+                              <select class="form-select" name="roleId" aria-label="Role" [(ngModel)]="masterData.roleId">
+                              <option *ngFor="let e of employeeroles" [value]="e.role_id">{{e.role_name}}</option>
+                              </select>
+                           </div>
+      
+                           
+                        </div>   
+                        <div class="row mt-3">
+                           <div class="col-md-3">
+                              <label class="fS14 mb-1">Logo<span  class="mandatory-color">*</span></label>
+                                <div>
+                                 <input type="file" name="logo" class="file-input"  #fileUpload (change)="fileChangeEvent($event)">
+                              </div>
+                             </div>
+                             <div class="col-md-3">
+                              <div>
+                                 <img alt="logo" [src]="preview" class="preview profileImg">
+                               </div>
+                             </div>
+                        </div>
+                        <div class="row mt-3">
+                           <div class="col-md-3">
+                              <label class="fS14 mb-1">Active<span  class="mandatory-color">*</span></label>
+                              <select  class="form-control form-select" name="employeeStatus" 
+                                 #employeeStatus="ngModel"  required [ngClass]="{'input-box-style2-error': employeeStatus.invalid && (employeeStatus.dirty || employeeStatus.touched)}"  
+                                 [(ngModel)]="masterData.employeeStatus" >
+                                 <option  value="Active">Active</option>
+                                 <option  value="InActive">InActive</option>
+                              </select>
+                           </div>
+                        </div>
+                     </form>        
+
+                  </div>
+                  <div class="tab-pane fade" id="nav-parts" role="tabpanel" aria-labelledby="nav-parts-tab">
+                    <div class="row px-3">
+                     <!-- <div class="mt-2 me-4 d-flex justify-content-end">   
+                        <div class="row text-center mt-4">
+                        <div class="">
+                            <div class="form-group transback">
+                              <button type="button"   class="btn btn-primary footerbtncss" name="clearparts" (click)="clearSelectedLocations()">Clear Selected Locations</button>
+                            </div>
+                        </div>
+                        </div>
+                      </div>   -->
+                      <div class="p-4">
+                        <report creportid="70" #userlocation  defaultparam="empuserid" [defaultparamvalue]="masterData.userId"  (onEditClcked)="selectDock($event)"   [events]="eventsSubject.asObservable()" [groupreport]="0"></report>
+                       </div>                
+                      <!-- <div class="mt-2 me-4 d-flex justify-content-end">   
+                        <div class="row text-center mt-4">
+                        <div class="">
+                            <div class="form-group transback">
+                              <button *ngIf="action!='show'" type="button"   class="btn btn-primary footerbtncss" name="confirm" (click)="updateLocationMap()">Submit</button>
+                          </div>
+                        </div>
+                        </div>
+                      </div>  -->
+                    </div>
+                  </div>
+                </div> 
+               <div class="mt-4 me-4 d-flex justify-content-end">   
+                  <div class="row text-center mt-4">
+                     <div class="">
+                        <div class="form-group transback">
+                           <button type="button"  class="btn btn-secondary footerbtncss mx-2" name="cancel" value="Cancel" (click)="cancelAdd()">Clear</button>
+                           <button type="button"   class="btn btn-primary footerbtncss" name="signin" (click)="updateEmpMaster()">Submit</button>
+                        </div>
+                     </div>
+                  </div>
+               </div> 
+            </div>
+  
+      </div>
+            <div *ngIf="action=='view'">
+              <div class="p-4">
+              <report creportid="30" #report (onEditClcked)="doAction($event)"   [events]="eventsSubject.asObservable()" [groupreport]="0"></report>
+            </div>
+            </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  

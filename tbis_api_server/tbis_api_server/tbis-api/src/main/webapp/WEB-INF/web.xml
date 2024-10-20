@@ -1,0 +1,912 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+  Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+
+<!DOCTYPE web-app
+    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+    "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+
+
+    <!-- General description of your web application -->
+
+    <display-name>Base</display-name>
+    <description>
+    </description>
+
+    <session-config>
+      <session-timeout>-1</session-timeout>    <!-- 30 minutes -->
+    </session-config>
+
+<welcome-file-list>
+  <welcome-file>index.do</welcome-file>
+</welcome-file-list>
+<resource-ref>
+    <description>Database Connection</description>
+    <res-ref-name>jdbc/mydb</res-ref-name>
+    <res-type>javax.sql.DataSource</res-type>
+    <res-auth>Container</res-auth>
+</resource-ref>
+<display-name>Base</display-name>
+  <servlet>
+    <servlet-name>BasicServices</servlet-name>
+    <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+    <init-param>
+      <param-name>jersey.config.server.provider.packages</param-name>
+      <param-value>com.cissol.core.services.resource,com.cissol.inventory.resource</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>BasicServices</servlet-name>
+    <url-pattern>/service/*</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>initServlet</servlet-name>
+    <servlet-class>com.cissol.core.servlet.InitProjectServlet</servlet-class>
+    <init-param>
+      <param-name>context</param-name>
+      <param-value>/inventory</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+
+  <servlet>
+    <servlet-name>ajax</servlet-name>
+    <servlet-class>com.cissol.core.servlet.AjaxServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>ajax</servlet-name>
+    <url-pattern>/ajax.view</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>dataImportSave</servlet-name>
+    <servlet-class>com.cissol.core.di.DataSave</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>dataImportSave</servlet-name>
+    <url-pattern>/dataImportSave.servlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>dataImport</servlet-name>
+    <servlet-class>com.cissol.core.di.DataImportServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>dataImport</servlet-name>
+    <url-pattern>/dataImport.servlet</url-pattern>
+  </servlet-mapping>
+    
+  <servlet>
+    <servlet-name>invoice</servlet-name>
+    <jsp-file>/pages/invoice.jsp</jsp-file>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>invoice</servlet-name>
+    <url-pattern>/invoice.do</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>SalesOrder</servlet-name>
+    <jsp-file>/pages/salesOrder.jsp</jsp-file>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>SalesOrder</servlet-name>
+    <url-pattern>/salesOrder.do</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>SalesReturn</servlet-name>
+    <jsp-file>/pages/salesReturn.jsp</jsp-file>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>SalesReturn</servlet-name>
+    <url-pattern>/salesReturn.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>purchase</servlet-name>
+    <jsp-file>/pages/purchase.jsp</jsp-file>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>purchase</servlet-name>
+    <url-pattern>/purchase.do</url-pattern>
+  </servlet-mapping>
+
+<servlet>
+    <servlet-name>grn</servlet-name>
+    <jsp-file>/pages/grn.jsp</jsp-file>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>grn</servlet-name>
+    <url-pattern>/grn.do</url-pattern>
+  </servlet-mapping>
+
+      <servlet>
+    <servlet-name>physicalStockConversion</servlet-name>
+    <jsp-file>/pages/physicalStockConversion.jsp</jsp-file>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>physicalStockConversion</servlet-name>
+    <url-pattern>/physicalStockConversion.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>transferOut</servlet-name>
+    <jsp-file>/pages/transferOut.jsp</jsp-file>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>transferOut</servlet-name>
+    <url-pattern>/transferOut.do</url-pattern>
+  </servlet-mapping>
+
+    <servlet>
+    <servlet-name>locationTransferOut</servlet-name>
+    <jsp-file>/pages/locationTransferOut.jsp</jsp-file>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>locationTransferOut</servlet-name>
+    <url-pattern>/locationTransferOut.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>stockinward</servlet-name>
+    <jsp-file>/pages/stockinward.jsp</jsp-file>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>stockinward</servlet-name>
+    <url-pattern>/stockinward.do</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>openingstock</servlet-name>
+    <jsp-file>/pages/openingstock.jsp</jsp-file>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>openingstock</servlet-name>
+    <url-pattern>/openingstock.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>purchaseOrder</servlet-name>
+    <jsp-file>/pages/purchaseOrder.jsp</jsp-file>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>purchaseOrder</servlet-name>
+    <url-pattern>/purchaseOrder.do</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>purchaseReturn</servlet-name>
+    <jsp-file>/pages/purchaseReturn.jsp</jsp-file>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>purchaseReturn</servlet-name>
+    <url-pattern>/purchaseReturn.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>wastage</servlet-name>
+    <jsp-file>/pages/wastage.jsp</jsp-file>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>wastage</servlet-name>
+    <url-pattern>/wastage.do</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>index</servlet-name>
+    <jsp-file>/pages/index.jsp</jsp-file>
+  </servlet>
+
+  <servlet>
+    <servlet-name>billReceipts</servlet-name>
+    <jsp-file>/pages/billReceipts.jsp</jsp-file>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>billReceipts</servlet-name>
+    <url-pattern>/billReceipts.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>billPayments</servlet-name>
+    <jsp-file>/pages/billPayments.jsp</jsp-file>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>billPayments</servlet-name>
+    <url-pattern>/billPayments.do</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>expenses</servlet-name>
+    <jsp-file>/pages/expenseEntry.jsp</jsp-file>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>expenses</servlet-name>
+    <url-pattern>/expenseEntry.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>uploadTest</servlet-name>
+    <jsp-file>/pages/uploadTest.jsp</jsp-file>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>uploadTest</servlet-name>
+    <url-pattern>/uploadTest.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>customerOutstanding</servlet-name>
+    <jsp-file>/pages/customerOutstanding.jsp</jsp-file>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>customerOutstanding</servlet-name>
+    <url-pattern>/customerOutstanding.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>supplierOutstanding</servlet-name>
+    <jsp-file>/pages/supplierOutstanding.jsp</jsp-file>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>supplierOutstanding</servlet-name>
+    <url-pattern>/supplierOutstanding.do</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>customerDetail</servlet-name>
+    <jsp-file>/pages/customerDetail.jsp</jsp-file>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>customerDetail</servlet-name>
+    <url-pattern>/customerDetail.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>supplierDetail</servlet-name>
+    <jsp-file>/pages/supplierDetail.jsp</jsp-file>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>supplierDetail</servlet-name>
+    <url-pattern>/supplierDetail.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>godownTransfer</servlet-name>
+    <jsp-file>/pages/godownTransfer.jsp</jsp-file>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>godownTransfer</servlet-name>
+    <url-pattern>/godownTransfer.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>godownTransferin</servlet-name>
+    <jsp-file>/pages/godownstockinward.jsp</jsp-file>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>godownTransferin</servlet-name>
+    <url-pattern>/godownTransferin.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>dashboard</servlet-name>
+    <jsp-file>/pages/dashboard.jsp</jsp-file>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>dashboard</servlet-name>
+    <url-pattern>/dashboard.do</url-pattern>
+  </servlet-mapping>
+  
+  <!-- Masters  -->
+  <servlet>
+    <servlet-name>employeeMaster</servlet-name>
+    <jsp-file>/pages/employeeMaster.jsp</jsp-file>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>employeeMaster</servlet-name>
+    <url-pattern>/employeeMaster.do</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>roleMaster</servlet-name>
+    <jsp-file>/pages/roleMaster.jsp</jsp-file>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>roleMaster</servlet-name>
+    <url-pattern>/roleMaster.do</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>product</servlet-name>
+    <jsp-file>/pages/product.jsp</jsp-file>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>product</servlet-name>
+    <url-pattern>/product.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>productGroup</servlet-name>
+    <jsp-file>/pages/productGroup.jsp</jsp-file>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>productGroup</servlet-name>
+    <url-pattern>/productGroup.do</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>productAttribute</servlet-name>
+    <jsp-file>/pages/productAttribute.jsp</jsp-file>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>productAttribute</servlet-name>
+    <url-pattern>/productAttribute.do</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>productComposition</servlet-name>
+    <jsp-file>/pages/productComposition.jsp</jsp-file>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>productComposition</servlet-name>
+    <url-pattern>/productComposition.do</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>productAdditions</servlet-name>
+    <jsp-file>/pages/productAdditions.jsp</jsp-file>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>productAdditions</servlet-name>
+    <url-pattern>/productAdditions.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>manufacturer</servlet-name>
+    <jsp-file>/pages/manufacturer.jsp</jsp-file>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>manufacturer</servlet-name>
+    <url-pattern>/manufacturer.do</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>category</servlet-name>
+    <jsp-file>/pages/category.jsp</jsp-file>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>category</servlet-name>
+    <url-pattern>/category.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>supplier</servlet-name>
+    <jsp-file>/pages/supplier.jsp</jsp-file>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>supplier</servlet-name>
+    <url-pattern>/supplier.do</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>supplierItems</servlet-name>
+    <jsp-file>/pages/supplierProductMaster.jsp</jsp-file>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>supplierItems</servlet-name>
+    <url-pattern>/supplierItem.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>customer</servlet-name>
+    <jsp-file>/pages/customer.jsp</jsp-file>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>customer</servlet-name>
+    <url-pattern>/customer.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>branch</servlet-name>
+    <jsp-file>/pages/branch.jsp</jsp-file>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>branch</servlet-name>
+    <url-pattern>/branch.do</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>location</servlet-name>
+    <jsp-file>/pages/locationMaster.jsp</jsp-file>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>location</servlet-name>
+    <url-pattern>/locationMaster.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>table</servlet-name>
+    <jsp-file>/pages/tableMaster.jsp</jsp-file>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>table</servlet-name>
+    <url-pattern>/tableMaster.do</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>offers</servlet-name>
+    <jsp-file>/pages/offers.jsp</jsp-file>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>offers</servlet-name>
+    <url-pattern>/offers.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>customerProduct</servlet-name>
+    <jsp-file>/pages/customerProductMaster.jsp</jsp-file>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>customerProduct</servlet-name>
+    <url-pattern>/customerProductMaster.do</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>supplierProduct</servlet-name>
+    <jsp-file>/pages/supplierProductMaster.jsp</jsp-file>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>supplierProduct</servlet-name>
+    <url-pattern>/supplierProductMaster.do</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>customerType</servlet-name>
+    <jsp-file>/pages/customerType.jsp</jsp-file>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>customerType</servlet-name>
+    <url-pattern>/customerType.do</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>supplierType</servlet-name>
+    <jsp-file>/pages/supplierType.jsp</jsp-file>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>supplierType</servlet-name>
+    <url-pattern>/supplierType.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>units</servlet-name>
+    <jsp-file>/pages/units.jsp</jsp-file>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>units</servlet-name>
+    <url-pattern>/units.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>transporter</servlet-name>
+    <jsp-file>/pages/transporter.jsp</jsp-file>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>transporter</servlet-name>
+    <url-pattern>/transporter.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>hamali</servlet-name>
+    <jsp-file>/pages/hamali.jsp</jsp-file>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>hamali</servlet-name>
+    <url-pattern>/hamali.do</url-pattern>
+  </servlet-mapping>
+  
+  <!-- Masters end -->
+  <servlet>
+    <servlet-name>index</servlet-name>
+    <jsp-file>/pages/index.jsp</jsp-file>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>index</servlet-name>
+    <url-pattern>/index.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>logout</servlet-name>
+    <servlet-class>org.apache.jsp.pages.logout_jsp</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>logout</servlet-name>
+    <url-pattern>/logout.do</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>dataImportView</servlet-name>
+    <jsp-file>/pages/dataImport.jsp</jsp-file>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>dataImportView</servlet-name>
+    <url-pattern>/dataImport.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>fileUploadServlet</servlet-name>
+    <servlet-class>com.cissol.core.servlet.FileUploadServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>fileUploadServlet</servlet-name>
+    <url-pattern>/fileUploadServlet.servlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>fileDownloadServlet</servlet-name>
+    <servlet-class>com.cissol.core.servlet.FileDownloadServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>fileDownloadServlet</servlet-name>
+    <url-pattern>/fileDownloadServlet.servlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>report</servlet-name>
+    <jsp-file>/pages/reports.jsp</jsp-file>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>report</servlet-name>
+    <url-pattern>/report.do</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>stockreport</servlet-name>
+    <jsp-file>/pages/stockReport.jsp</jsp-file>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>stockreport</servlet-name>
+    <url-pattern>/stockReport.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>unitConversion</servlet-name>
+    <jsp-file>/pages/conversionValue.jsp</jsp-file>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>unitConversion</servlet-name>
+    <url-pattern>/unitConversion.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>binMaster</servlet-name>
+    <jsp-file>/pages/binMaster.jsp</jsp-file>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>binMaster</servlet-name>
+    <url-pattern>/binMaster.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>shelfMaster</servlet-name>
+    <jsp-file>/pages/shelfMaster.jsp</jsp-file>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>shelfMaster</servlet-name>
+    <url-pattern>/shelfMaster.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>adminConfig</servlet-name>
+    <jsp-file>/pages/configuration.jsp</jsp-file>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>adminConfig</servlet-name>
+    <url-pattern>/adminConfig.do</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>sessionClosing</servlet-name>
+    <jsp-file>/pages/SessionClosing.jsp</jsp-file>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>sessionClosing</servlet-name>
+    <url-pattern>/sessionClosing.do</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>quickSessionClosing</servlet-name>
+    <jsp-file>/pages/QuickSessionClosing.jsp</jsp-file>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>quickSessionClosing</servlet-name>
+    <url-pattern>/quickSessionClosing.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>opCashConsolidatedPrint</servlet-name>
+    <jsp-file>/pages/OPCashConsolidatedPrint.jsp</jsp-file>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>opCashConsolidatedPrint</servlet-name>
+    <url-pattern>/opCashConsolidatedPrint.do</url-pattern>
+  </servlet-mapping>
+
+    <servlet>
+    <servlet-name>ledger</servlet-name>
+    <jsp-file>/pages/ledger.jsp</jsp-file>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>ledger</servlet-name>
+    <url-pattern>/ledger.do</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>journalEntry</servlet-name>
+    <jsp-file>/pages/journalEntry.jsp</jsp-file>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>journalEntry</servlet-name>
+    <url-pattern>/journalEntry.do</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>dayEnd</servlet-name>
+    <jsp-file>/pages/dayEnd.jsp</jsp-file>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>dayEnd</servlet-name>
+    <url-pattern>/dayEnd.do</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>ledgerReport</servlet-name>
+    <jsp-file>/pages/ledgerReport.jsp</jsp-file>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>ledgerReport</servlet-name>
+    <url-pattern>/ledgerReport.do</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>physicalStockUpdate</servlet-name>
+    <jsp-file>/pages/physicalStockUpdate.jsp</jsp-file>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>physicalStockUpdate</servlet-name>
+    <url-pattern>/physicalStockUpdate.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>screenAttributes</servlet-name>
+    <jsp-file>/pages/screenAttributes.jsp</jsp-file>
+  </servlet>
+    
+  <servlet-mapping>
+    <servlet-name>screenAttributes</servlet-name>
+    <url-pattern>/screenAttributes.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>stockInwardReport</servlet-name>
+    <jsp-file>/pages/stockInwardReport.jsp</jsp-file>
+  </servlet>
+    
+  <servlet-mapping>
+    <servlet-name>stockInwardReport</servlet-name>
+    <url-pattern>/stockInwardReport.do</url-pattern>
+  </servlet-mapping>
+   <servlet>
+    <servlet-name>mfrwisepurchaseReport</servlet-name>
+    <jsp-file>/pages/mfrwisepurchaseReport.jsp</jsp-file>
+  </servlet>
+    
+  <servlet-mapping>
+    <servlet-name>mfrwisepurchaseReport</servlet-name>
+    <url-pattern>/mfrwisepurchaseReport.do</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>genericMaster</servlet-name>
+    <jsp-file>/pages/genericMaster.jsp</jsp-file>
+  </servlet>
+    
+  <servlet-mapping>
+    <servlet-name>genericMaster</servlet-name>
+    <url-pattern>/genericMaster.do</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>professionalProductMaster</servlet-name>
+    <jsp-file>/pages/professionalProductMaster.jsp</jsp-file>
+  </servlet>
+    
+  <servlet-mapping>
+    <servlet-name>professionalProductMaster</servlet-name>
+    <url-pattern>/professionalProductMaster.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>tallyExport</servlet-name>
+    <jsp-file>/pages/tallyExport.jsp</jsp-file>
+  </servlet>
+   
+  <servlet-mapping>
+    <servlet-name>tallyExport</servlet-name>
+    <url-pattern>/tallyExport.do</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>hsnEntry</servlet-name>
+    <jsp-file>/pages/hsnEntry.jsp</jsp-file>
+  </servlet>
+   
+  <servlet-mapping>
+    <servlet-name>hsnEntry</servlet-name>
+    <url-pattern>/hsnEntry.do</url-pattern>
+  </servlet-mapping>
+  
+  <filter>
+    <filter-name>UserFilter</filter-name>
+    <filter-class>
+        com.cissol.core.filter.UserFilter
+    </filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>UserFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+    <security-role>
+    <description>Admin User</description>
+    <role-name>admin</role-name>
+  </security-role>
+  <security-role>
+    <description>Normal User</description>
+    <role-name>normal</role-name>
+  </security-role>
+  <security-constraint>
+    <!-- web-resource-collection>
+      <web-resource-name>Authentication1</web-resource-name>
+      <url-pattern>*.html</url-pattern>
+      <http-method>GET</http-method>
+      <http-method>POST</http-method>
+      <http-method>PUT</http-method>
+    </web-resource-collection-->
+    <web-resource-collection>
+      <web-resource-name>Authentication2</web-resource-name>
+      <url-pattern>*.do</url-pattern>
+      <http-method>GET</http-method>
+      <http-method>POST</http-method>
+      <http-method>PUT</http-method>
+    </web-resource-collection>
+    <web-resource-collection>
+     <web-resource-name>Authentication3</web-resource-name>
+      <url-pattern>*.view</url-pattern>
+      <http-method>GET</http-method>
+      <http-method>POST</http-method>
+      <http-method>PUT</http-method>
+    </web-resource-collection>
+    <web-resource-collection>
+      <web-resource-name>Authentication4</web-resource-name>
+      <url-pattern>*.jsp</url-pattern>
+      <http-method>GET</http-method>
+      <http-method>POST</http-method>
+      <http-method>PUT</http-method>
+    </web-resource-collection>
+    <web-resource-collection>
+    <web-resource-name>Authentication5</web-resource-name>
+      <url-pattern>/touchbill/*</url-pattern>
+      <http-method>GET</http-method>
+      <http-method>POST</http-method>
+      <http-method>PUT</http-method>
+    </web-resource-collection>    
+    <!--web-resource-collection>
+      <web-resource-name>Authentication5</web-resource-name>
+      <url-pattern>/base/*</url-pattern>
+      <http-method>GET</http-method>
+      <http-method>POST</http-method>
+      <http-method>PUT</http-method>
+    </web-resource-collection>  -->    
+    <auth-constraint>
+      <role-name>admin</role-name>
+      <role-name>normal</role-name>
+      <role-name>*</role-name>
+    </auth-constraint>
+  </security-constraint>
+  <login-config>
+    <auth-method>FORM</auth-method>
+    <form-login-config>
+      <form-login-page>/pages/login.jsp</form-login-page>
+	  <form-error-page>/pages/login.jsp?error=Invalid Username and Password (or) Login Expired</form-error-page>
+    </form-login-config>
+  </login-config>
+</web-app>

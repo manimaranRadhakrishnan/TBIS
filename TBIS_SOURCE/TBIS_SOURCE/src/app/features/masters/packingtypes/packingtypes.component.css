@@ -1,0 +1,10 @@
+.input-group-text {
+    padding: 2px 6px !important;
+    border-radius: 0 !important;
+    border-bottom-right-radius: 0.375rem !important;
+    border-top-right-radius: 0.375rem !important;
+}
+
+.input-group>.form-control{
+    height: 36px;
+}

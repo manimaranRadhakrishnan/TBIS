@@ -1,0 +1,458 @@
+<div  class="container">
+    <div class="table-wrapper px-0 shadow">
+      <div class="table-title title-fixed">
+        <div class="row">
+           <div class="col-sm-6">
+              <div class="table-head ms-2">
+              <div class="row">
+                 <div *ngIf="action!='view'" class="col-1 cursor" (click)="cancelAdd()">
+                    <i class="bi bi-arrow-left"></i>
+                 </div>
+                 <div *ngIf="action=='view'" class="col-1 cursor">
+                 </div>
+                 <div class="col-10 p-0">
+                   ASN Entry {{this.masterData.asnNo}}
+                 </div>
+              </div>
+              
+                 </div>
+           </div>
+           <div *ngIf="action=='view'" class="col-sm-6">
+              <div class="d-grid gap-2 d-md-flex justify-content-md-end align-items-center" *ngIf="userRoleId=='3'">
+                 <a class="btn btn-success addcss" (click)="addNew()">
+                    <!-- <i class="bi bi-plus-square"></i><span>New</span> -->
+                 </a>
+              </div>
+           </div>
+        
+        </div>
+      </div>
+      <div *ngIf="action!='view'"> 
+      <div class="table-content title-content">
+        <div class="pt-0">
+               <nav>
+                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                   <button class="nav-link " [ngClass]="{'active': showTab==1}"  id="nav-info-tab" data-bs-toggle="tab" data-bs-target="#nav-info" type="button" role="tab" aria-controls="nav-info" aria-selected="true" (click)="moveParts(1)">ASN Info</button>
+                   <button class="nav-link" [ngClass]="{'active': showTab==2}" id="nav-parts-tab" data-bs-toggle="tab" data-bs-target="#nav-parts" type="button" role="tab" aria-controls="nav-parts" aria-selected="false" (click)="moveParts(2)">Part Details</button>
+                   <button class="nav-link" [ngClass]="{'active': showTab==3}" id="nav-allocation-tab" data-bs-toggle="tab" data-bs-target="#nav-allocation" type="button" role="tab" aria-controls="nav-allocation" aria-selected="false" (click)="moveParts(3)">Pallet Space Details</button>
+                 </div>
+               </nav>
+               <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade " [ngClass]="{'show active': showTab==1}" id="nav-info" role="tabpanel" aria-labelledby="nav-info-tab">
+                    <div class="row px-2">
+                       <form class="p-1" method="post" autocomplete="off" #frm="ngForm"> 
+                        <div class="row px-3 mb-2">   
+                          <div class="row g-0 badge-bg mt-0 mb-2">
+                            <div class="col-1 mt-1 left-badge"></div>
+                            <div class="ms-3 col-6 mt-2 badge-title">ASN Information</div>
+                         </div>
+                          <div class="col-md-2">        
+                            <label class="fS14 mb-1">Supply Date<span  class="mandatory-color">*</span></label>
+                            <div>
+                              <input autofocus type="date"  tabindex="1"  #supplyDate  name="supplyDate" [disabled]="masterData.asnId>0"
+                               class="form-control" placeholder=""  [(ngModel)]="masterData.supplyDate">
+                            </div>
+                         </div>
+        
+                         <div class="col-md-2">        
+                          <label class="fS14 mb-1"> Supply Time<span  class="mandatory-color">*</span></label>
+                          <div>
+                            <input autofocus type="time"  tabindex="2"  #supplyTime name="supplyTime"  [disabled]="masterData.asnId>0"
+                             class="form-control" placeholder="" [(ngModel)]="masterData.supplyTime">
+                          </div>
+                         </div>
+        
+                         <div class="col-md-2">        
+                          <label class="fS14 mb-1">SubLocation</label>
+                          <div>
+                            <input  type="text"  name="location" disabled="true"
+                             class="form-control" placeholder="" maxlength="100" [(ngModel)]="masterData.subLocationShortCode">
+                          </div>
+                         </div>
+        
+                         <div class="col-md-2">        
+                          <label class="fS14 mb-1">Unload Dock</label>
+                          <div>
+                            <input  type="text"  name="subLocationShortCode" disabled="true"
+                             class="form-control" placeholder="" maxlength="100" [(ngModel)]="masterData.dockName">
+                          </div>
+                         </div>
+                         <div class="col-md-4">        
+                          <label class="fS14 mb-1">Customer</label>
+                          <div>
+                            <input type="text"  tabindex="8"  #customerName  disabled="true"
+                             class="form-control" placeholder="" maxlength="100" [(ngModel)]="masterData.customerName">
+                          </div>
+                         </div>
+                        </div>
+
+                        <div class="row px-3 mb-2">
+                          <div class="row g-0 badge-bg mt-0 mb-2">
+                             <div class="col-1 mt-1 left-badge"></div>
+                             <div class="ms-3 col-6 mt-2 badge-title">Vehicle Details</div>
+                          </div>
+                           <div class="col-md-2">        
+                            <label class="fS14 mb-1">Vehicle No <span  class="mandatory-color">*</span></label>
+                            <div>
+                            <ng-select [items]="vehicleDet" #vehicleno name="vehicleno" 
+                                bindLabel="vehicleno"
+                                bindValue="vehicleno" 
+                                placeholder="Vehicel"
+                                [(ngModel)]="masterData.vechicleNo">
+                            </ng-select>
+
+                              <!-- <input autofocus type="text"  tabindex="3"  name="vehicleno" [disabled]="masterData.asnStatus!='2' || userRoleId!='4'"
+                               class="form-control" placeholder="" maxlength="12" [(ngModel)]="masterData.vechicleNo"> -->
+                            </div>
+                           </div>
+                           <div class="col-md-2">        
+                            <label class="fS14 mb-1">Transfer Mode <span class="mandatory-color">*</span></label>
+                            <div>
+                              <select autofocus tabindex="4" class="form-control form-select" name="directorTransit" [(ngModel)]="masterData.directorTransit" [disabled]="masterData.asnId=='0' || userRoleId!='4'">
+                                <option  value="true">Direct</option>
+                                <option  value="false">Transit</option>
+                              </select>
+                            </div>
+                           </div>
+                           <div class="col-md-2">        
+                            <label class="fS14 mb-1">Transfer WareHouse<span  class="mandatory-color">*</span></label>
+                            <div>
+                              <ng-select [items]="transitLocations" #transitLocationId name="transitLocationId" [disabled]="masterData.directorTransit==true"
+                                bindLabel="warehousename"
+                                bindValue="warehousid" 
+                                placeholder="Warehouse Name"
+                                [(ngModel)]="masterData.transitLocationId">
+                            </ng-select>
+                            </div>
+                           </div>
+                           <div class="col-md-3">        
+                            <label class="fS14 mb-1">Driver Name</label>
+                            <div>
+                              <input autofocus type="text"  tabindex="5"  name="driverName"  [disabled]="masterData.asnId=='0' || userRoleId!='4'"
+                              class="form-control" placeholder="" maxlength="25" [(ngModel)]="masterData.driverName">
+                            </div>
+                            
+                           </div>
+                           <div class="col-md-3">        
+                            <label class="fS14 mb-1">Driver Mobile</label>
+                            <div>
+                              <input autofocus type="text"  tabindex="6"  name="driverMobile" [disabled]="masterData.asnId=='0' || userRoleId!='4'" numbersOnly
+                               class="form-control" placeholder="" maxlength="10" [(ngModel)]="masterData.driverMobile">
+                            </div>
+                           
+                           </div>
+
+                           <div class="col-md-2">        
+                            <label class="fS14 mb-1">Vehicle Size <span  class="mandatory-color">*</span></label>
+                            <div>
+                              {{masterData.vehicleInfo.vehiclesize}}
+                            </div>
+                           </div>
+                           <div class="col-md-2">        
+                            <label class="fS14 mb-1">Vehicle Capacity <span class="mandatory-color">*</span></label>
+                            <div>
+                              {{masterData.vehicleInfo.vehiclecapacity}}
+                            </div>
+                           </div>
+                           <div class="col-md-2">        
+                            <label class="fS14 mb-1">Licence Validity<span  class="mandatory-color">*</span></label>
+                            <div>
+                              {{masterData.vehicleInfo.licencexpiry}}
+                            </div>
+                           </div>
+                           <div class="col-md-3">        
+                            <label class="fS14 mb-1">Fitness Validity</label>
+                            <div>
+                              {{masterData.vehicleInfo.fitnessexpiry}}
+                            </div>
+                            
+                           </div>
+                           <div class="col-md-2">        
+                            <label class="fS14 mb-1">Move To</label>
+                            <div>
+                              <select autofocus tabindex="7" class="form-control form-select" name="processId" [(ngModel)]="masterData.processId" [disabled]="masterData.stockMovedFromDock=='1'">
+                                <option  value="7">Before Inspection</option>   
+                                <option  value="8">FG Storage Area</option>
+                              </select>
+                            </div>
+                           </div>
+                        </div>
+                        <div class="row px-3 mb-2">
+                          <div class="row g-0 badge-bg mt-0 mb-2">
+                             <div class="col-1 mt-1 left-badge"></div>
+                             <div class="ms-3 col-6 mt-2 badge-title">Dispatch Document Details</div>
+                          </div>
+                           <div class="col-md-3">        
+                            <label class="fS14 mb-1">Delivery Note No</label>
+                            <div>
+                              <input autofocus type="text"  tabindex="7"  name="deliveryNoteNo" [disabled]="masterData.asnStatus!='5'||userRoleId!='3'"
+                               class="form-control" placeholder="" maxlength="12" [(ngModel)]="masterData.deliveryNoteNo">
+                            </div>
+                           </div>
+                           <div class="col-md-3">        
+                            <label class="fS14 mb-1">Invoice No</label>
+                            <div>
+                              <input autofocus type="text" tabindex="7"  name="invoiceNo" [disabled]="masterData.asnStatus!='5'||userRoleId!='3'"
+                               class="form-control" placeholder="" maxlength="12" [(ngModel)]="masterData.invoiceNo">
+                            </div>
+                           </div>
+                           <div class="col-md-3">        
+                            <label class="fS14 mb-1">Eway-Bill No</label>
+                            <div>
+                              <input autofocus type="text"  tabindex="8"  name="ewayBillNo"  [disabled]="masterData.asnStatus!='5'|| userRoleId!='3'"
+                              class="form-control" placeholder="" maxlength="12" [(ngModel)]="masterData.ewayBillNo">
+                            </div>
+                           </div>
+                           <div class="col-md-3">        
+                            <label class="fS14 mb-1">Delivery/RGP No</label>
+                            <div>
+                              <input autofocus type="text"  tabindex="8"  name="ewayBillNo"  [disabled]="masterData.asnStatus!='5'|| userRoleId!='3'"
+                              class="form-control" placeholder="" maxlength="12" [(ngModel)]="masterData.rgpNo">
+                            </div>
+                           </div>
+                        </div>
+                        <div class="row px-3">
+                          <div class="mt-2 me-4 d-flex justify-content-end">   
+                            <div class="row text-center mt-4">
+                            <div class="">
+                                <div class="form-group transback">
+                                  <button  type="button"  class="btn btn-secondary footerbtncss mx-2" name="cancel" value="Cancel" (click)="moveParts(2)" >Next</button>
+                              </div>
+                            </div>
+                            </div>
+                          </div> 
+                        </div>
+                       
+                      </form>
+                    </div>
+                </div>
+                <div class="tab-pane fade" [ngClass]="{'show active': showTab==2}" id="nav-parts" role="tabpanel" aria-labelledby="nav-parts-tab">
+                  <div class="row px-2">
+                    <div class="p-1"> 
+                     <div class="row px-3 mb-2">   
+                       <div class="row g-0 badge-bg">
+                          <div class="col-1 mt-1 left-badge"></div>
+                          <div class="ms-3 col-6 mt-2 badge-title">ASN Part Details</div>                          
+                       </div>
+                   
+        <div class="card shadow-lg position-relative ofCont">
+          <!-- <table class="table">
+                  <thead class="sticky-top top-0">
+                    <tr class="trBack">                      
+                        <th class="t-w-150">Part No</th>
+                        <th class="t-w-200">Part Desc</th>
+                        <th class="t-w-75">SPQ</th>
+                        <th class="t-w-75">QTY</th>
+                        <th class="t-w-75">Package Type</th>
+                        <th class="t-w-75">Bins/Pallet</th>
+                        <th class="t-w-75">Move To</th>
+                        <th class="t-w-75">Space Allocation</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let scannedDetail of savedCardDetails;index as i">
+                        <td class="t-w-150">{{ scannedDetail.partNo }}</td>
+                        <td class="t-w-200">{{ scannedDetail.partName }}</td>
+                        <td class="t-w-75">{{ scannedDetail.spq }}</td>
+                        <td class="t-w-75">{{ scannedDetail.qty }}</td>
+                        <td class="t-w-75">{{ scannedDetail.binQty }}-{{ scannedDetail.packingShortName }}</td>
+                        <td class="t-w-75">{{scannedDetail.noOfPackingInPallet}}</td>
+                        <td class="t-w-200" *ngIf="masterData.stockMovedFromDock=='0'">                              
+                          <select autofocus tabindex="4" class="form-control form-select" name="moveToId" [(ngModel)]="scannedDetail.processId">
+                            <option  value="9">Before Inspection</option>   
+                            <option  value="11">Good Stock</option>
+                          </select>
+                        </td>
+                        <td class="t-w-200" *ngIf="masterData.stockMovedFromDock=='1'">                              
+                          Moved
+                        </td>
+                        <td class="t-w-75"><img src="assets/dist/img/view.png"  alt="" class="mb-2 ms-1" (click)="showSpaceAllocation(i)"></td>
+                      </tr>
+                    </tbody>
+                  </table>    -->
+                  <table class="table">
+                    <thead class="sticky-top top-0">
+                      <tr class="trBack">                      
+                          <th class="t-w-150">Part No</th>
+                          <th class="t-w-200">Part Desc</th>
+                          <th class="t-w-75">SPQ</th>
+                          <th class="t-w-75">QTY</th>
+                          <th class="t-w-75">Package Type</th>
+                          <th class="t-w-75">BINs/Pallet</th>
+                          <th class="t-w-75">Move To</th>
+                          <th class="t-w-75" *ngIf="masterData.processId=='8'">Space Allocation</th>  
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let scannedDetail of savedCardDetails;index as i">
+                          <td class="t-w-150">{{ scannedDetail.partNo }}</td>
+                          <td class="t-w-200">{{ scannedDetail.partName }}</td>
+                          <td class="t-w-75">{{ scannedDetail.spq }}</td>
+                          <td class="t-w-75">{{ scannedDetail.qty }}</td>
+                          <td class="t-w-75">{{ scannedDetail.binQty }}-{{ scannedDetail.packingShortName }}</td>
+                          <td class="t-w-75">{{scannedDetail.noOfPackingInPallet}}</td>
+                          <td class="t-w-200" *ngIf="masterData.stockMovedFromDock=='0'">                              
+                            <span *ngIf="masterData.processId=='8'">FG Storage Area</span>
+                            <span *ngIf="masterData.processId=='7'">Before Inspection</span>
+                          </td>
+                          <td class="t-w-200" *ngIf="masterData.stockMovedFromDock=='1'">                              
+                            Moved
+                          </td>
+                          <td class="t-w-75" *ngIf="masterData.processId=='8'"><img src="assets/dist/img/view.png"  alt="" class="mb-2 ms-1" (click)="showSpaceAllocation(i)"></td>  
+                        </tr>
+                      </tbody>
+                    </table>
+                </div>
+
+                    </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane fade" [ngClass]="{'show active': showTab==3}" id="nav-allocation" role="tabpanel" aria-labelledby="nav-allocation-tab">
+                  <div class="row px-2">
+                    <div class="p-1"> 
+                     <div class="row px-3 mb-2">   
+                       <div class="row g-0 badge-bg">
+                          <div class="col-1 mt-1 left-badge"></div>
+                          <div class="ms-3 col-6 mt-2 badge-title">
+                            <div class="row">
+                            <div class="col-1 cursor" (click)="moveParts(2)">
+                              <i class="bi bi-arrow-left"></i>
+                           </div>          
+                           <div class="col-6">
+                            Space Details
+                          </div>
+                        </div>
+                          </div>                          
+                       </div>
+                       <div class="row px-3 mb-2">
+                        <div class="row g-0 badge-bg mt-0 mb-2">
+                           <div class="col-1 mt-1 left-badge"></div>
+                           <div class="ms-3 col-6 mt-2 badge-title">Part Details</div>
+                        </div>
+                        <div class="row" *ngIf="masterData.processId=='8'">
+                         <div class="col-md-3">        
+                          <label class="fS14 mb-1">Part No</label>
+                          <div>
+                            <input autofocus type="text"  name="partNo" disabled
+                             class="form-control" placeholder="" [(ngModel)]="selectedPartDetail.partNo">
+                          </div>
+                         </div>
+                         <div class="col-md-3">        
+                          <label class="fS14 mb-1">Part Name</label>
+                          <div>
+                            <input autofocus type="text" name="partName" disabled
+                             class="form-control" placeholder="" [(ngModel)]="selectedPartDetail.partName">
+                          </div>
+                         </div>
+                         <div class="col-md-3">        
+                          <label class="fS14 mb-1">BINs</label>
+                          <div>
+                            <input autofocus type="text"  name="requestedQty"  disabled
+                            class="form-control" placeholder="" [(ngModel)]="selectedPartDetail.binQty">
+                          </div>
+                         </div>
+                         <div class="col-md-3">        
+                          <label class="fS14 mb-1">Qty</label>
+                          <div>
+                            <input autofocus type="text" name="asnQty"  disabled
+                            class="form-control" placeholder="" [(ngModel)]="selectedPartDetail.qty">
+                          </div>
+                         </div> 
+                        </div>
+                      </div>
+
+                        <div class="card shadow-lg position-relative ofCont">
+                          <table class="table" *ngIf="masterData.processId=='7'">
+                            <thead class="sticky-top top-0">
+                              <tr class="trBack">                      
+                                  <th class="t-w-150">Pallet No</th>
+                                  <th class="t-w-200">Scan Code</th>
+                                  <th class="t-w-75">Move To</th>
+                                  <th class="t-w-75">Space Allocation</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr *ngFor="let scannedDetail of palletSpaceAllocationDetails;index as i">
+                                  <td class="t-w-150">{{ scannedDetail.palletNumber }}</td>
+                                  <td class="t-w-200">{{ scannedDetail.palletScanCode }}</td>
+                                  <td class="t-w-75">Before Inspection</td>
+                                  <td class="t-w-75">{{ scannedDetail.lineSpaceConfig.partSpaceName}}
+                                    <br/>
+                                  {{ scannedDetail.lineSpaceConfig.fromLineNo}}-{{ scannedDetail.lineSpaceConfig.toLineNo}}
+                                  {{ scannedDetail.lineSpaceConfig.fromCol}}-{{ scannedDetail.lineSpaceConfig.toCol}}
+                                  </td>                          
+                                </tr>
+                              </tbody>
+                            </table>     
+        
+                          <table class="table" *ngIf="masterData.processId=='8'">
+                          <thead class="sticky-top top-0">
+                            <tr class="trBack">                      
+                                <th class="t-w-200">Code</th>
+                                <th class="t-w-75">Line</th>
+                                <th class="t-w-75">Rack</th>
+                                <th class="t-w-75">Compartment</th>
+                                <th class="t-w-75">Move To</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr *ngFor="let spaceDetail of spaceAllocationDetails;index as i">
+                                <td class="t-w-200">{{ spaceDetail.scanData }}</td>
+                                <td class="t-w-75">
+                                  <span *ngIf="!spaceDetail.moveToOverflowLocation">
+                                    {{ spaceDetail.lineSpaceConfig.partSpaceName}}
+                                    <br/>
+                                  {{ spaceDetail.lineSpaceConfig.fromLineNo}}-{{ spaceDetail.lineSpaceConfig.toLineNo}}
+                                  {{ spaceDetail.lineSpaceConfig.fromCol}}-{{ spaceDetail.lineSpaceConfig.toCol}}
+                                  </span>
+                                </td>
+                                <td class="t-w-75">
+                                    <span *ngIf="!spaceDetail.moveToOverflowLocation">
+                                      {{ spaceDetail.lineSpaceConfig.lineRackCode}}
+                                      </span>
+                                </td>
+                                <td class="t-w-75">
+                                  <span *ngIf="!spaceDetail.moveToOverflowLocation">
+                                    {{ spaceDetail.lineSpaceConfig.lineRackCompartmentName}}
+                                    </span>
+                                </td>
+                                <td class="t-w-75">
+                                  <span *ngIf="spaceDetail.moveToOverflowLocation">
+                                    Overflow Location
+                                    </span>
+                                    <span *ngIf="!spaceDetail.moveToOverflowLocation">
+                                      {{spaceDetail.lineSpaceConfig.lineUsageName}}
+                                      </span>  
+                                  </td>                                
+                              </tr>
+                            </tbody>
+                          </table>   
+                        </div>
+                        <div class="row px-3">
+                          <div class="mt-2 me-4 d-flex justify-content-end">   
+                            <div class="row text-center mt-4">
+                            <div class="">
+                                <div class="form-group transback">
+                                  <button type="button"   class="btn btn-primary footerbtncss" name="confirm" (click)="updateAsn()">Submit</button>
+                              </div>
+                            </div>
+                            </div>
+                          </div> 
+                        </div>      
+                    </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>    
+          </div>
+      </div>
+      </div>
+      <div *ngIf="action=='view'">
+      <div class="p-4">
+      <report creportid="55" defaultparam="status" [defaultparamvalue]=rptParam #report (onEditClcked)="doAction($event)"   [events]="eventsSubject.asObservable()" [groupreport]="0"></report>
+    </div>
+     </div>
+  </div>
+</div>    

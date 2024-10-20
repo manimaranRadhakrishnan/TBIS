@@ -1,0 +1,1685 @@
+
+
+<div  class="container">
+     <div class="table-wrapper px-0 shadow">
+             <div class="table-title title-fixed">
+                <div class="row">
+                   <div class="col-sm-6">
+                      <div class="table-head ms-2">
+                      <div class="row">
+                         <div *ngIf="action!='view'" class="col-1 cursor" (click)="cancelAdd()">
+                            <i class="bi bi-arrow-left"></i>
+                         </div>
+                         <div *ngIf="action=='view'" class="col-1 cursor">
+                         </div>
+                         <div class="col-6 p-0">
+                           Customer
+                         </div>
+                      </div>
+                      
+                         </div>
+                   </div>
+                   <div *ngIf="action=='view'" class="col-sm-6">
+                      <div class="d-grid gap-2 d-md-flex justify-content-md-end align-items-center">
+                         <a class="btn btn-success addcss" (click)="addNew()">
+                            <i class="bi bi-plus-square"></i><span>New Customer</span>
+                         </a>
+                      </div>
+                   </div>
+                
+                </div>
+             </div>
+             <div *ngIf="action!='view'"> 
+                <div class="table-content title-content">
+                      <div class="pt-0">
+                            <form class="p-3" method="post" autocomplete="off" #frm="ngForm">  
+                               <div class="p-0 row">
+                                  <nav>
+                                     <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                       <button class="nav-link active" id="nav-address-tab" data-bs-toggle="tab" data-bs-target="#nav-address" type="button" role="tab" aria-controls="nav-address" aria-selected="true">Customer Info</button>
+                                       <button class="nav-link" id="nav-contract-tab" data-bs-toggle="tab" data-bs-target="#nav-contract" type="button" role="tab" aria-controls="nav-contract" aria-selected="false">Contracts</button>
+                                       <button class="nav-link" id="nav-space-tab" data-bs-toggle="tab" data-bs-target="#nav-space" type="button" role="tab" aria-controls="nav-space" aria-selected="false">Line Space</button>
+                                       <button class="nav-link" id="nav-rack-tab" data-bs-toggle="tab" data-bs-target="#nav-rack" type="button" role="tab" aria-controls="nav-rack" aria-selected="false">Line Rack</button>
+                                       <button class="nav-link" id="nav-parts-tab" data-bs-toggle="tab" data-bs-target="#nav-parts" type="button" role="tab" aria-controls="nav-parts" aria-selected="false">Parts</button>
+                                       <button class="nav-link" id="nav-compaddress-tab" data-bs-toggle="tab" data-bs-target="#nav-compaddress" type="button" role="tab" aria-controls="nav-compaddress" aria-selected="false">Address</button>
+                                       <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Contacts</button>
+                                       <button class="nav-link" id="nav-document-tab" data-bs-toggle="tab" data-bs-target="#nav-document" type="button" role="tab" aria-controls="nav-document" aria-selected="false">Documents</button>
+                                       <button class="nav-link" id="nav-software-tab" data-bs-toggle="tab" data-bs-target="#nav-software" type="button" role="tab" aria-controls="nav-software" aria-selected="false">Softwares</button>
+                                       <button class="nav-link" id="nav-manpower-tab" data-bs-toggle="tab" data-bs-target="#nav-manpower" type="button" role="tab" aria-controls="nav-manpower" aria-selected="false">Manpower Details</button>
+                                     </div>
+                                   </nav>
+                                   <div class="tab-content" id="nav-tabContent">
+                                    <div class="tab-pane fade show active" id="nav-address" role="tabpanel" aria-labelledby="nav-address-tab">
+                                       
+                                    <div>  
+                                     <div class="mb-3 row">
+                                        <div class="row g-0 badge-bg mt-2 mb-2">
+                                           <div class="col-1 mt-1 left-badge"></div>
+                                           <div class="ms-3 col-6 mt-2 badge-title">Customer Details</div>
+                                        </div>
+       
+                                        <div class="col-sm-8">        
+                                        <label class="fS14 mb-1"> Customer Name  <span  class="mandatory-color">*</span></label>
+                                        <div>
+                                        <input autofocus type="text"  name="customerName" #customerName="ngModel"  required
+                                           [ngClass]="{'input-box-style2-error': customerName.invalid && (customerName.dirty || customerName.touched)}" 
+                                           class="form-control" placeholder="" [(ngModel)]="masterData.customerName" maxlength="100">
+                                        </div>
+                                        </div> 
+                                        
+                                        <div class="col-md-3">        
+                                           <label class="fS14 mb-1"> Customer Code  <span  class="mandatory-color">*</span></label>
+                                           <div>
+                                              <input autofocus type="text"  name="customerErpCode" #customerErpCode="ngModel"  required
+                                              [ngClass]="{'input-box-style2-error': customerErpCode.invalid && (customerErpCode.dirty || customerErpCode.touched)}" 
+                                              class="form-control" placeholder="" [(ngModel)]="masterData.customerErpCode" maxlength="5">
+                                           </div>
+                                        </div>
+                                     </div> 
+                                     <div class="mb-3 row">
+                                        <div class="row g-0 badge-bg mt-2 mb-2">
+                                           <div class="col-1 mt-1 left-badge"></div>
+                                           <div class="ms-3 col-6 mt-2 badge-title">User Details</div>
+                                        </div>  
+                                        <div class="col-md-3">        
+                                           <label class="fS14 mb-1"> Email <span  class="mandatory-color">*</span></label>
+                                           <div>
+                                              <input autofocus type="email"  name="email" #email="ngModel"  required [disabled]="isDisabled"
+                                              [ngClass]="{'input-box-style2-error': email.invalid && (email.dirty || email.touched)}" 
+                                              class="form-control" placeholder="" [(ngModel)]="masterData.email" maxlength="255">
+                                           </div>
+                                        </div>   
+          
+                                        <div class="col-md-3">        
+                                        <label class="fS14 mb-1"> Mobile <span  class="mandatory-color">*</span></label>
+                                        <div>
+                                           <input autofocus type="text"  name="phone" #phone="ngModel"  required numbersOnly [disabled]="isDisabled" 
+                                           [ngClass]="{'input-box-style2-error': phone.invalid && (phone.dirty || phone.touched)}" 
+                                           class="form-control" placeholder="" [(ngModel)]="masterData.phone" maxlength="10">
+                                        </div>
+                                     </div>
+                                     <div class="col-md-3">
+                                        <label class="fS14 mb-1">Logo<span  class="mandatory-color">*</span></label>
+                                        <div>
+                                           <input type="file" name="logo" class="file-input"  #fileUpload (change)="fileChangeEvent($event)">
+                                        </div>
+                                     </div>
+                                     <div class="col-md-3">
+                                        <div>
+                                           <img alt="logo" [src]="preview" class="preview profileImg">
+                                        </div>
+                                     </div>
+                                     </div>   
+                                       <div class="row mb-3">
+                                           <div class="row g-0 badge-bg mt-2 mb-2">
+                                              <div class="col-1 mt-1 left-badge"></div>
+                                              <div class="ms-3 col-6 mt-2 badge-title">Address Details</div>
+                                           </div>
+                                             <div class="col-md-3">        
+                                                <label class="fS14 mb-1">Address <span class="mandatory-color">*</span></label>
+                                                <div>
+                                                <input autofocus type="text"  name="address" #address="ngModel"  required
+                                                   [ngClass]="{'input-box-style2-error': address.invalid && (address.dirty || address.touched)}" 
+                                                   class="form-control" placeholder="" [(ngModel)]="masterData.address" maxlength="255">
+                                                </div>
+                                             </div>
+               
+                                             <div class="col-md-3">        
+                                                <label class="fS14 mb-1"> City <span  class="mandatory-color">*</span></label>
+                                                <div>
+                                                   <input autofocus type="text"  name="city" #city="ngModel"  required
+                                                   [ngClass]="{'input-box-style2-error': city.invalid && (city.dirty || city.touched)}" 
+                                                   class="form-control" placeholder="" [(ngModel)]="masterData.city" maxlength="50">
+                                                </div>
+                                             </div>
+               
+                                             <div class="col-md-3">        
+                                                <label class="fS14 mb-1"> District <span  class="mandatory-color">*</span></label>
+                                                <div>
+                                                   <input autofocus type="text"  name="district" #district="ngModel"  required
+                                                   [ngClass]="{'input-box-style2-error': district.invalid && (district.dirty || district.touched)}" 
+                                                   class="form-control" placeholder="" [(ngModel)]="masterData.district" maxlength="50">
+                                                </div>
+                                             </div>
+               
+                                             <div class="col-md-3">        
+                                                <label class="fS14 mb-1"> State <span  class="mandatory-color">*</span></label>
+                                                <div>
+                                                   <input autofocus type="text"  name="state" #state="ngModel"  required
+                                                   [ngClass]="{'input-box-style2-error': state.invalid && (state.dirty || state.touched)}" 
+                                                   class="form-control" placeholder="" [(ngModel)]="masterData.state" maxlength="50">
+                                                </div>
+                                             </div>
+                                        </div>
+                                        <div class="row">     
+                                             <div class="col-md-3">        
+                                                <label class="fS14 mb-1"> Latitude </label>
+                                                <div>
+                                                   <input autofocus type="text"  name="lat" #lat="ngModel"  required
+                                                   [ngClass]="{'input-box-style2-error': lat.invalid && (lat.dirty || lat.touched)}" 
+                                                   class="form-control" placeholder="" [(ngModel)]="masterData.lat" maxlength="50">
+                                                </div>
+                                             </div>
+               
+                                             <div class="col-md-3">        
+                                                <label class="fS14 mb-1"> Longitude </label>
+                                                <div>
+                                                   <input autofocus type="text"  name="lang" #lang="ngModel"  required
+                                                   [ngClass]="{'input-box-style2-error': lang.invalid && (lang.dirty || lang.touched)}" 
+                                                   class="form-control" placeholder="" [(ngModel)]="masterData.lang" maxlength="50">
+                                                </div>
+                                             </div>
+                                             <div class="col-md-3">        
+                                               <label class="fS14 mb-1"> GST No. <span  class="mandatory-color">*</span></label>
+                                               <div>
+                                                  <input autofocus type="text"  name="gstIn" #gstIn="ngModel"  required
+                                                  [ngClass]="{'input-box-style2-error': gstIn.invalid && (gstIn.dirty || gstIn.touched)}" 
+                                                  class="form-control" placeholder="" [(ngModel)]="masterData.gstIn" maxlength="20">
+                                               </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                              <div class="fS14 mb-1" >Location <span  class="mandatory-color">*</span></div>      
+                                              <ng-select [items]="locations" #locationId name="locationId"
+                                                  bindLabel="locationname" 
+                                                  bindValue="locationid" 
+                                                  placeholder="Select Location"
+                                                  [(ngModel)]="masterData.locationId">
+                                              </ng-select>
+                                            </div>
+                                       </div>
+                                       <div class="row mt-2"> 
+                                           <div class="col-md-3">
+                                              <div class="fS14 mb-1" >Sublocation <span  class="mandatory-color">*</span></div>      
+                                              <ng-select [items]="sublocations" #primarySubLocationId name="primarySubLocationId"
+                                                 bindLabel="sublocationname" 
+                                                 bindValue="sublocationid" 
+                                                 placeholder="Select Sublocation"
+                                                 [(ngModel)]="masterData.primarySubLocationId">
+                                              </ng-select>
+                                           </div>
+                                           <div class="col-md-3">
+                                              <div class="fS14 mb-1" >Unload Dock <span  class="mandatory-color">*</span></div>      
+                                              <ng-select [items]="unloaddocs" #primaryDockId name="primaryDockId"
+                                                 bindLabel="udcname" 
+                                                 bindValue="udc_id" 
+                                                 placeholder="Select Unload Dock"
+                                                 [(ngModel)]="masterData.primaryDockId">
+                                              </ng-select>
+                                           </div>
+                                           <div class="col-md-3">
+                                              <div class="fS14 mb-1" >Barcode Configuration <span  class="mandatory-color">*</span></div>      
+                                              <ng-select [items]="customerCards" #barCodeConfigId name="barCodeConfigId"
+                                                    bindLabel="cardname"
+                                                    bindValue="cardid" 
+                                                    placeholder="Select Sublocation"
+                                                    [(ngModel)]="masterData.barCodeConfigId">
+                                              </ng-select>
+                                            
+                                           </div>
+                                           <div class="col-md-3">
+                                             <label class="fS14 mb-1">Club with Other Vehicle<span  class="mandatory-color">*</span></label>
+                                             <select  class="form-control form-select" name="vehicleType" 
+                                                   #vehicleType="ngModel" required [ngClass]="{'input-box-style2-error': vehicleType.invalid && (vehicleType.dirty || vehicleType.touched)}"  
+                                                   [(ngModel)]="masterData.vehicleType" >
+                                                   <option  value="1">YES</option>
+                                                   <option  value="0">NO</option>
+                                             </select>
+                                           </div>
+                                           <div class="col-md-3 mt-2">        
+                                             <label class="fS14 mb-1"> TAT (in Hrs) <span  class="mandatory-color">*</span></label>
+                                             <div>
+                                                <input type="text"  name="tatinMin" #tatinMin="ngModel"  required numbersOnly
+                                                [ngClass]="{'input-box-style2-error': tatinMin.invalid && (tatinMin.dirty || tatinMin.touched)}" 
+                                                class="form-control" placeholder="TAT Mins" [(ngModel)]="masterData.tatinMin" maxlength="4">
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div class="row">
+                                          <div class="mt-4 me-4 d-flex justify-content-end">   
+                                             <div class="row text-center mt-4">
+                                             <div class="">
+                                                <div class="form-group transback">
+                                                   <button type="button" class="btn btn-secondary footerbtncss mx-2" name="cancel" value="Cancel" (click)="cancelAdd()">Clear</button>
+                                                   <button type="button" class="btn btn-primary footerbtncss" name="signin" (click)="updateCustomer()">Submit</button>
+                                                </div>
+                                             </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>  
+                                    
+                                    </div>
+ 
+                                    <div class="tab-pane fade" id="nav-space" role="tabpanel" aria-labelledby="nav-space-tab">
+                                      <div class="container p-0" id="spacelist">
+                                        <div class="">
+                                          <div class="row g-0">
+                                            <div class="col">
+                                              <div class="table-head ms-2">   
+                                                <div class="row g-0 badge-bg mt-2 mb-2 h-100">
+                                                   <div class="col-6 badge-title d-flex align-items-center">
+                                                      <span class="left-badge me-3 d-block h-100"></span>
+                                                      <span>Line Space Information</span>
+                                                   </div>
+                                                   <div class="col-6 d-flex" *ngIf="masterData.customerId>0">
+                                                    <!-- <button  type="button" class="btn btn-secondary footerbtncss me-2 ms-auto my-1"
+                                                    name="addspace" value="Cancel" (click)="showSpace()">Add Line Space</button> -->
+                                                   </div>
+                                                </div>       
+                                             
+                                                 </div>
+                                            </div>
+                                           
+                                          </div>
+                                        </div>
+                                       <div style="display:none;" class="card shadow-lg position-relative ofCont">
+                                          <table class="tab table table-hover w-100">
+                                             <thead class="sticky-top top-0">
+                                              <tr class="trBack">    
+                                                   <th>Sublocation Name</th>
+                                                   <th>Line Space Code</th>
+                                                   <th>Start Position</th>
+                                                   <th>End Position</th>
+                                                   <th>Actions</th>
+                                                </tr>
+                                             </thead>
+                                             <tbody>
+                                                <tr *ngFor="let prt of customerSpaceDetails;index as i">
+                                                   <td class="py-2">{{ prt.sublocationshortcode }}</td>
+                                                   <td class="py-2">{{ prt.linespacecode }}</td>
+                                                   <td class="py-2">{{ prt.startcol }}</td>
+                                                   <td class="py-2">{{ prt.endcol }}</td>
+                                                   <td class="py-2"><img src="assets/dist/img/delete.png" alt="" class="mb-2 ms-1"
+                                                         (click)="removeSpace(prt.customerlinespaceid,prt.linespaceid)"></td>
+                                                </tr>
+                                             </tbody>
+                                          </table>
+                                       </div>
+                                       <div class="card shadow-lg position-relative">
+                                          <div class="row space-tableholder">
+                                             <table class="tab table w-100">
+                                               <tbody>
+                                             <tr *ngFor="let row of spaceDetails">
+                                               <td class="t-w-150 spacemaster" *ngFor="let col of row.columns" [style.background-color]="col.isChecked?'#888':col.colorCode" 
+                                                (mousedown)="down(col,$event)"  (mouseenter)="onMouseEnter($event)"
+                                                   (mouseover)="over(col,$event)" data-bs-toggle="tooltip" data-bs-placement="top" title="{{col.lineUsageName}}&#013;{{col.partName}}"
+                                                   (mouseup)="up(col,$event)" [style]="col.spaceName?'':'pointer-events:none'"
+                                                   ondragstart="return false;" ondrop="return false;" (contextmenu)="showCustomerDetail(col,$event)" >
+                                                         <span>{{col.spaceName}}</span>
+                                               </td>
+                                             </tr>
+                                             </tbody>
+                                           </table>
+                                          </div>
+                                       </div>
+                                       <div class="row mt-4">
+                                          <!-- <div class="col-md-3 d-flex">
+                                             <div class="color-pallet me-4" style="background-color: #ffffff"></div>Not Mapped
+                                          </div> -->
+                                          <!-- <div class="col-md-3 d-flex">
+                                             <div class="color-pallet me-4" style="background-color: #F3A1B3"></div>Receving/Staging
+                                          </div> -->
+                                          <div class="col-md-3 d-flex">
+                                             <div class="color-pallet me-4" style="background-color: #E4C9F1"></div>Empty Bin Storage
+                                          </div>
+                                          <div class="col-md-3 d-flex">
+                                             <div class="color-pallet me-4" style="background-color: #FFE32F"></div>Preparation/Assembly
+                                          </div>
+                                          <div class="col-md-3 d-flex">
+                                             <div class="color-pallet me-4" style="background-color: #29B82F"></div>Fork Lift Movement
+                                          </div>
+                                          <div class="col-md-3 d-flex">
+                                             <div class="color-pallet me-4" style="background-color: #A7E8E8"></div>Overflow Storage
+                                          </div>
+                                       </div>
+                                       <div class="row mt-2">
+                                          <div class="col-md-3 d-flex">
+                                             <div class="color-pallet me-4" style="background-color: #C9F4C1"></div>Before Inspection
+                                          </div>
+                                          <div class="col-md-3 d-flex">
+                                             <div class="color-pallet me-4" style="background-color: #369225"></div>FG Part Storage
+                                          </div>
+                                          <div class="col-md-3 d-flex">
+                                             <div class="color-pallet me-4" style="background-color: #EE1313"></div>NG Area
+                                          </div>
+                                          <div class="col-md-3 d-flex">
+                                             <div class="color-pallet me-4" style="background-color: #F3ACF1"></div>Hold Area
+                                          </div>
+                                       </div>
+                                       <div class="row mt-2">
+                                          <div class="col-md-3 d-flex">
+                                             <div class="color-pallet me-4" style="background-color: #F3DA74"></div>Document Storage
+                                          </div>
+                                          <div class="col-md-3 d-flex">
+                                             <div class="color-pallet me-4" style="background-color: #F8F4E1"></div>Customer Area
+                                          </div>
+                                          <!-- <div class="col-md-3 d-flex">
+                                             <div class="color-pallet me-4" style="background-color: #543310"></div>Not For Usage
+                                          </div> -->
+                                          <!-- <div class="col-md-3 d-flex">
+                                             <div class="color-pallet me-4" style="background-color: #335BFF"></div>Office Area
+                                          </div> -->
+                                       </div>
+                                      </div>
+                                    </div>
+
+                                    <div class="tab-pane fade" id="nav-rack" role="tabpanel" aria-labelledby="nav-rack-tab">
+                                       <div class="container p-0" id="racklist">
+                                         <div class="">
+                                           <div class="row g-0">
+                                             <div class="col">
+                                               <div class="table-head ms-2">   
+                                                 <div class="row g-0 badge-bg mt-2 mb-2 h-100">
+                                                    <div class="col-6 badge-title d-flex align-items-center">
+                                                       <span class="left-badge me-3 d-block h-100"></span>
+                                                       <span>Line Rack Information</span>
+                                                    </div>
+                                                    <div class="col-6 d-flex" *ngIf="masterData.customerId>0">
+                                                     <button  type="button" class="btn btn-secondary footerbtncss me-2 ms-auto my-1"
+                                                     name="addrack" value="Cancel" (click)="showRack()">Add Line Rack</button>
+                                                    </div>
+                                                 </div>       
+                                              
+                                                  </div>
+                                             </div>
+                                            
+                                           </div>
+                                         </div>
+                                        <div style="display: none;" class="card shadow-lg position-relative ofCont">
+                                           <table class="tab table table-hover w-100">
+                                              <thead class="sticky-top top-0">
+                                               <tr class="trBack">    
+                                                    <th>Line Rack Code</th>
+                                                    <th>Actions</th>
+                                                 </tr>
+                                              </thead>
+                                              <tbody>
+                                                 <tr *ngFor="let prt of customerRackDetails;index as i">
+                                                    <td class="py-2">{{ prt.linerackcode }}</td>
+                                                    <td class="py-2"><img src="assets/dist/img/delete.png" alt="" class="mb-2 ms-1"
+                                                          (click)="removeRack(prt.customerlinerackid,prt.linerackid)"></td>
+                                                 </tr>
+                                              </tbody>
+                                           </table>
+                                        </div>
+                                        <div class="card shadow-lg position-relative">
+                                           <div class="p-4">
+                                              <report creportid="81" defaultparam="customerid" [defaultparamvalue]="masterData.customerId"  #linerackreport (onEditClcked)="doLineRackAction($event)"   [events]="eventsSubject.asObservable()" [groupreport]="0"></report>
+                                           </div>
+                                        </div>
+                                       </div>
+                                     </div>
+ 
+                                    <div class="tab-pane fade" id="nav-parts" role="tabpanel" aria-labelledby="nav-parts-tab">
+                                      <div class="container p-0" id="partslist">
+                                        <div class="">
+                                          <div class="row g-0">
+                                            <div class="col">
+                                              <div class="table-head ms-2">   
+                                                <div class="row g-0 badge-bg mt-2 mb-2 h-100">
+                                                   <div class="col-6 badge-title d-flex align-items-center">
+                                                      <span class="left-badge me-3 d-block h-100"></span>
+                                                      <span> Parts Information</span>
+                                                   </div>
+                                                   <!-- <div class="col-6 d-flex" *ngIf="masterData.customerId>0">
+                                                    <button  type="button" class="btn btn-secondary footerbtncss me-2 ms-auto my-1"
+                                                    name="cancel" value="Cancel" (click)="showParts()">Add Parts</button>
+                                                   </div> -->
+                                                </div>       
+                                             
+                                                 </div>
+                                            </div>
+                                           
+                                          </div>
+                                        </div>
+                                       <div style="display:none;" class="card shadow-lg position-relative ofCont">
+                                          <table class="tab table table-hover w-100">
+                                             <thead class="sticky-top top-0">
+                                              <tr class="trBack">    
+                                                   <th>Part Code</th>
+                                                   <th>OEM Part Code</th>
+                                                   <th>Part Name</th>
+                                                   <th>Sub Location</th>
+                                                   <th>Line Space</th>
+                                                   <th>Volume</th>
+                                                   <th>Actions</th>
+                                                </tr>
+                                             </thead>
+                                             <tbody>
+                                                <tr *ngFor="let prt of customerPartDetails;index as i">
+                                                   <td class="py-2">{{ prt.partno }}</td>
+                                                   <td class="py-2">{{ prt.customerpartcode }}</td>
+                                                   <td class="py-2">{{ prt.partdescription }}</td>
+                                                   <td class="py-2">{{ prt.sublocationshortcode }}</td>
+                                                   <td class="py-2">{{ prt.linespacecode }}</td>
+                                                   <td class="py-2">{{ prt.maxqty }}</td>
+                                                   <td class="py-2"><img src="assets/dist/img/delete.png" alt="" class="mb-2 ms-1"
+                                                         (click)="removeParts(prt.customerpartid,prt.partid)"></td>
+                                                </tr>
+                                             </tbody>
+                                          </table>
+                                       </div>
+                                       <div class="card shadow-lg position-relative">
+                                          <div class="p-4">
+                                             <report creportid="54" defaultparam="customerid" [defaultparamvalue]="masterData.customerId"  #customerpartreport (onEditClcked)="doCustomerPartAction($event)"   [events]="eventsSubject.asObservable()" [groupreport]="0"></report>
+                                          </div>
+                                       </div>
+                                      </div>
+                                    </div>
+         
+                                     <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                     
+                                       <div class="container p-0" id="contactlist">
+                                        <div class="row g-0 badge-bg mt-2 mb-2 h-100">
+                                           <div class="col-6 badge-title d-flex align-items-center">
+                                              <span class="left-badge me-3 d-block h-100"></span>
+                                              <span>Contacts</span>
+                                           </div>
+                                           <div class="col-6 d-flex" *ngIf="masterData.customerId>0">
+                                              <button  type="button" class="btn btn-secondary footerbtncss me-2 ms-auto my-1"
+                                                 name="cancel" value="Cancel" (click)="showContacts()">Add Contacts</button>
+                                           </div>
+                                        </div>
+         
+                                         <div style="display: none;" class="card shadow-lg position-relative ofCont">
+                                             <table class="tab table table-hover w-100">
+                                                <thead class="sticky-top top-0">
+                                                 <tr class="trBack">              
+                                                   <th>Contact Name</th>
+                                                   <th>Department</th>
+                                                   <th>Email</th>
+                                                   <th>Mobile</th>
+                                                   <th>Mail</th>
+                                                   <th>SMS</th>
+                                                   <th>Actions</th>
+                                                   </tr>
+                                                </thead>
+                                                <tbody>
+                                                   <tr *ngFor="let cond of customerContactDetails;index as i">
+                                                   <td class="py-2">{{ cond.contactpersonname }}</td>
+                                                   <td class="py-2">{{ cond.departmentname }}</td>
+                                                   <td class="py-2">{{ cond.contactemail }}</td>
+                                                   <td class="py-2">{{ cond.contactmobile }}</td>
+                                                   <td class="py-2">{{ cond.ismail }}</td>
+                                                   <td class="py-2">{{ cond.issms }}</td>
+                                                   <td class="py-2"><img src="assets/dist/img/delete.png" alt="" class="mb-2 ms-1" (click)="removeContacts(cond.contactid)"></td>
+                                                   </tr>
+                                                </tbody>
+                                             </table>
+                                         </div>
+                                         <div class="card shadow-lg position-relative">
+                                            <div class="p-4">
+                                               <report creportid="78" extraparams="entityid={{masterData.customerId}}&entitytypeid=1"  #customercontactreport (onEditClcked)="doContactAction($event)"   [events]="eventsSubject.asObservable()" [groupreport]="0"></report>
+                                            </div>
+                                         </div>
+                                       </div>
+                                     </div>
+                                     
+                                     <div class="tab-pane fade" id="nav-contract" role="tabpanel" aria-labelledby="nav-contract-tab">
+                     
+                                        <div class="container p-0" id="contractlist">
+                                         <div class="row g-0 badge-bg mt-2 mb-2 h-100">
+                                            <div class="col-6 badge-title d-flex align-items-center">
+                                               <span class="left-badge me-3 d-block h-100"></span>
+                                               <span>Contracts</span>
+                                            </div>
+                                            <div class="col-6 d-flex" *ngIf="masterData.customerId>0">
+                                               <button  type="button" class="btn btn-secondary footerbtncss me-2 ms-auto my-1"
+                                                  name="cancel" value="Cancel" (click)="showContracts()">Add Contracts</button>
+                                            </div>
+                                         </div>
+          
+                                          <div style="display: none;" class="card shadow-lg position-relative ofCont">
+                                              <table class="tab table table-hover w-100">
+                                                 <thead class="sticky-top top-0">
+                                                    <tr class="trBack">                
+                                                    <th>Contract No.</th>
+                                                    <th>Po No.</th>
+                                                    <th>Start Date</th>
+                                                    <th>End Date</th>
+                                                    <th>Actions</th>
+                                                    </tr>
+                                                 </thead>
+                                                 <tbody>
+                                                    <tr *ngFor="let cond of customerContractDetails;index as i">
+                                                    <td class="py-2">{{ cond.contractno }}</td>
+                                                    <td class="py-2">{{ cond.pono }}</td>
+                                                    <td class="py-2">{{ cond.startdate|date:'dd-MM-Y' }}</td>
+                                                    <td class="py-2">{{ cond.enddate|date:'dd-MM-Y' }}</td>
+                                                    <td class="py-2"><img src="assets/dist/img/delete.png" alt="" class="mb-2 ms-1" (click)="removeContracts(cond.contractid)"></td>
+                                                    </tr>
+                                                 </tbody>
+                                              </table>
+                                          </div>
+                                          <div class="card shadow-lg position-relative">
+                                             <div class="p-4">
+                                                <report creportid="74" extraparams="entityid={{masterData.customerId}}&entitytypeid=1"  #customercontractreport (onEditClcked)="doContractAction($event)"   [events]="eventsSubject.asObservable()" [groupreport]="0"></report>
+                                             </div>
+                                          </div>
+                                        </div>
+                                      </div>
+ 
+                                      <div class="tab-pane fade" id="nav-document" role="tabpanel" aria-labelledby="nav-document-tab">
+                     
+                                        <div class="container p-0" id="documentlist">
+                                         <div class="row g-0 badge-bg mt-2 mb-2 h-100">
+                                            <div class="col-6 badge-title d-flex align-items-center">
+                                               <span class="left-badge me-3 d-block h-100"></span>
+                                               <span>Documents</span>
+                                            </div>
+                                            <div class="col-6 d-flex" *ngIf="masterData.customerId>0">
+                                               <button  type="button" class="btn btn-secondary footerbtncss me-2 ms-auto my-1"
+                                                  name="cancel" value="Cancel" (click)="showDocuments()">Add Documents</button>
+                                            </div>
+                                         </div>
+          
+                                          <div style="display: none;" class="card shadow-lg position-relative ofCont">
+                                              <table class="tab table table-hover w-100">
+                                                 <thead class="sticky-top top-0">
+                                                    <tr class="trBack">                
+                                                    <th>Document No.</th>
+                                                    <th>Document Type</th>
+                                                    <th>Valid From</th>
+                                                    <th>Valid to</th>
+                                                    <th>Actions</th>
+                                                    </tr>
+                                                 </thead>
+                                                 <tbody>
+                                                    <tr *ngFor="let cond of customerDocumentDetails;index as i">
+                                                    <td class="py-2">{{ cond.documentno }}</td>
+                                                    <td class="py-2">{{ cond.documentname }}</td>
+                                                    <td class="py-2">{{ cond.validfrom|date:'dd-MM-Y' }}</td>
+                                                    <td class="py-2">{{ cond.validto|date:'dd-MM-Y' }}</td>
+                                                    <td class="py-2"><img src="assets/dist/img/delete.png" alt="" class="mb-2 ms-1" (click)="removeDocuments(cond.documentid)"></td>
+                                                    </tr>
+                                                 </tbody>
+                                              </table>
+                                          </div>
+                                          <div class="card shadow-lg position-relative">
+                                             <div class="p-4">
+                                                <report creportid="72" extraparams="entityid={{masterData.customerId}}&entitytypeid=1"  #customerdocumentreport (onEditClcked)="doDocumentAction($event)"   [events]="eventsSubject.asObservable()" [groupreport]="0"></report>
+                                             </div>
+                                          </div>
+                                        </div>
+                                      </div>
+ 
+                                      <div class="tab-pane fade" id="nav-software" role="tabpanel" aria-labelledby="nav-software-tab">
+                     
+                                        <div class="container p-0" id="softwarelist">
+                                         <div class="row g-0 badge-bg mt-2 mb-2 h-100">
+                                            <div class="col-6 badge-title d-flex align-items-center">
+                                               <span class="left-badge me-3 d-block h-100"></span>
+                                               <span>Softwares</span>
+                                            </div>
+                                            <div class="col-6 d-flex" *ngIf="masterData.customerId>0">
+                                               <button  type="button" class="btn btn-secondary footerbtncss me-2 ms-auto my-1"
+                                                  name="cancel" value="Cancel" (click)="showSoftwares()">Add Softwares</button>
+                                            </div>
+                                         </div>
+          
+                                          <div style="display: none;" class="card shadow-lg position-relative ofCont">
+                                              <table class="tab table table-hover w-100">
+                                                 <thead class="sticky-top top-0">
+                                                    <tr class="trBack">                
+                                                    <th>Software Name</th>
+                                                    <th>Software Url</th>
+                                                    <th>Software Username</th>
+                                                    <th>Actions</th>
+                                                    </tr>
+                                                 </thead>
+                                                 <tbody>
+                                                    <tr *ngFor="let cond of customerSoftwareDetails;index as i">
+                                                    <td class="py-2">{{ cond.softwarename }}</td>
+                                                    <td class="py-2">{{ cond.softwareurl }}</td>
+                                                    <td class="py-2">{{ cond.softwareusername }}</td>
+                                                    <td class="py-2"><img src="assets/dist/img/delete.png" alt="" class="mb-2 ms-1" (click)="removeSoftwares(cond.softwareid)"></td>
+                                                    </tr>
+                                                 </tbody>
+                                              </table>
+                                          </div>
+                                          <div class="card shadow-lg position-relative">
+                                             <div class="p-4">
+                                                <report creportid="79" defaultparam="customerid" [defaultparamvalue]="masterData.customerId"  #customersoftwarereport (onEditClcked)="doSoftwareAction($event)"   [events]="eventsSubject.asObservable()" [groupreport]="0"></report>
+                                             </div>
+                                          </div>
+                                        </div>
+                                      </div>
+ 
+                                      <div class="tab-pane fade" id="nav-compaddress" role="tabpanel" aria-labelledby="nav-compaddress-tab">
+                     
+                                        <div class="container p-0" id="compaddresslist">
+                                         <div class="row g-0 badge-bg mt-2 mb-2 h-100">
+                                            <div class="col-6 badge-title d-flex align-items-center">
+                                               <span class="left-badge me-3 d-block h-100"></span>
+                                               <span>Address</span>
+                                            </div>
+                                            <div class="col-6 d-flex" *ngIf="masterData.customerId>0">
+                                               <button  type="button" class="btn btn-secondary footerbtncss me-2 ms-auto my-1"
+                                                  name="cancel" value="Cancel" (click)="showAddress()">Add Address</button>
+                                            </div>
+                                         </div>
+          
+                                          <div style="display: none;" class="card shadow-lg position-relative ofCont">
+                                              <table class="tab table table-hover w-100">
+                                                 <thead class="sticky-top top-0">
+                                                    <tr class="trBack"> 
+                                                    <th>Address Type</th>               
+                                                    <th>Address</th>
+                                                    <th>City</th>
+                                                    <th>District</th>
+                                                    <th>State</th>
+                                                    <th>Actions</th>
+                                                    </tr>
+                                                 </thead>
+                                                 <tbody>
+                                                    <tr *ngFor="let cond of customerCompAddressDetails;index as i">
+                                                    <td class="py-2">{{ cond.addresstype }}</td>
+                                                    <td class="py-2">{{ cond.address }}</td>
+                                                    <td class="py-2">{{ cond.city }}</td>
+                                                    <td class="py-2">{{ cond.district }}</td>
+                                                    <td class="py-2">{{ cond.state }}</td>
+                                                    <td class="py-2"><img src="assets/dist/img/delete.png" alt="" class="mb-2 ms-1" (click)="removeAddress(cond.addressid)"></td>
+                                                    </tr>
+                                                 </tbody>
+                                              </table>
+                                          </div>
+                                          <div class="card shadow-lg position-relative">
+                                             <div class="p-4">
+                                                <report creportid="77" extraparams="entityid={{masterData.customerId}}&entitytypeid=1"  #customeraddressreport (onEditClcked)="doAddressAction($event)"   [events]="eventsSubject.asObservable()" [groupreport]="0"></report>
+                                             </div>
+                                          </div>
+                                        </div>
+                                      </div>
+ 
+                                      <div class="tab-pane fade" id="nav-manpower" role="tabpanel" aria-labelledby="nav-manpower-tab">
+                     
+                                        <div class="container p-0" id="manpowerlist">
+                                         <div class="row g-0 badge-bg mt-2 mb-2 h-100">
+                                            <div class="col-6 badge-title d-flex align-items-center">
+                                               <span class="left-badge me-3 d-block h-100"></span>
+                                               <span>Manpower</span>
+                                            </div>
+                                            <div class="col-6 d-flex" *ngIf="masterData.customerId>0">
+                                               <button  type="button" class="btn btn-secondary footerbtncss me-2 ms-auto my-1"
+                                                  name="cancel" value="Cancel" (click)="showManpowers()">Add Manpower</button>
+                                            </div>
+                                         </div>
+          
+                                          <div style="display: none;" class="card shadow-lg position-relative ofCont">
+                                              <table class="tab table table-hover w-100">
+                                                 <thead class="sticky-top top-0">
+                                                    <tr class="trBack">                
+                                                    <th>Manpower Details</th>
+                                                    <th>Shift A</th>
+                                                    <th>Shift B</th>
+                                                    <th>Total Head</th>
+                                                    <th>Actions</th>
+                                                    </tr>
+                                                 </thead>
+                                                 <tbody>
+                                                    <tr *ngFor="let cond of customerManpowerDetails;index as i">
+                                                    <td class="py-2">{{ cond.manpowerdetail }}</td>
+                                                    <td class="py-2">{{ cond.shifta }}</td>
+                                                    <td class="py-2">{{ cond.shiftb }}</td>
+                                                    <td class="py-2">{{cond.shifta*1 + cond.shiftb*1 }}</td>
+                                                    <td class="py-2"><img src="assets/dist/img/delete.png" alt="" class="mb-2 ms-1" (click)="removeManpowers(cond.manpowerid)"></td>
+                                                    </tr>
+                                                 </tbody>
+                                              </table>
+                                          </div>
+                                          <div class="card shadow-lg position-relative">
+                                             <div class="p-4">
+                                                <report creportid="80" defaultparam="customerid" [defaultparamvalue]="masterData.customerId"  #customermanpowerreport (onEditClcked)="doManpowerAction($event)"   [events]="eventsSubject.asObservable()" [groupreport]="0"></report>
+                                             </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    
+                                   </div>
+                               </div>   
+                            </form>
+                      </div>
+                </div>
+             </div>
+             <div *ngIf="action=='view'">
+                <div class="p-4">
+                      <report creportid="32" #report (onEditClcked)="doAction($event)"   [events]="eventsSubject.asObservable()" [groupreport]="0"></report>
+                   </div>
+             </div>
+    </div>
+ </div>
+    
+ <div *ngIf="showContactsDialog" class="modal" tabindex="-1" role="dialog" style="display: block !important;" id="showContactsDialog">  
+   <div class="modal-dialog  modal-dialog-centered" role="document"    > 
+     <div class="bgDlg"></div> 
+     <div class="modal-content customheight">
+        
+       <div class="modal-header loginCusto">
+         <h5 class="modal-title fontsize16"> 
+           Customer Contacts
+         </h5>
+         <button (click)="closeContactsModel()" type="button" class="btn float-end modalclosebtn" data-dismiss="modal">X</button>
+          
+       </div>
+       <div class="modal-body"  >
+          
+         <div class="row">
+ 
+           <div class="col-md-12">
+             <div class="text-left">
+               <form  #form="ngForm" autocomplete="off" >
+                   <div class="row mt-3">  
+                      <div class="col-md-12 mb-2">        
+                         <label class="fS14 mb-1">Contact Person Name <span  class="mandatory-color">*</span></label>
+                         <div>
+                            <input autofocus type="text" name="contactPersonName" #contactPersonName="ngModel"  required
+                            [ngClass]="{'input-box-style2-error': contactPersonName.invalid && (contactPersonName.dirty || contactPersonName.touched)}" 
+                            class="form-control" placeholder="" [(ngModel)]="contactData.contactPersonName" maxlength="50">
+                         </div>
+                      </div> 
+ 
+                      <div class="col-md-12 mb-2">        
+                         <label class="fS14 mb-1">Department <span  class="mandatory-color">*</span></label>
+                         <div>
+                            <input autofocus type="text" name="departmentName" #departmentName="ngModel"  required
+                            [ngClass]="{'input-box-style2-error': departmentName.invalid && (departmentName.dirty || departmentName.touched)}" 
+                            class="form-control" placeholder="" [(ngModel)]="contactData.departmentName" maxlength="50">
+                         </div>
+                      </div>
+                
+                      <div class="col-md-12  mb-2">     
+                         <label class="fS14 mb-1">Contact Email <span class="mandatory-color">*</span></label>
+                         <div>
+                         <input autofocus type="email" name="contactEmail" #contactEmail="ngModel"  required
+                            [ngClass]="{'input-box-style2-error': contactEmail.invalid && (contactEmail.dirty || contactEmail.touched)}" 
+                            class="form-control" placeholder="" [(ngModel)]="contactData.contactEmail" maxlength="255">
+                         </div>
+                      </div>
+ 
+                      <div class="col-md-12 mb-2">       
+                         <label class="fS14 mb-1">Contact Mobile <span  class="mandatory-color">*</span></label>
+                         <div>
+                            <input autofocus type="text" name="contactMobile" #contactMobile="ngModel"  required numbersOnly
+                            [ngClass]="{'input-box-style2-error': contactMobile.invalid && (contactMobile.dirty || contactMobile.touched)}" 
+                            class="form-control" placeholder="" [(ngModel)]="contactData.contactMobile" maxlength="10">
+                         </div>
+                      </div>
+                      
+                      <div class="col-md-6 mb-2">
+                         <label class="fS14 mb-1">Send SMS<span  class="mandatory-color">*</span></label>
+                         <select  class="form-control form-select" name="isSms" 
+                            #isSms="ngModel"  required [ngClass]="{'input-box-style2-error': isSms.invalid && (isSms.dirty || isSms.touched)}"  
+                            [(ngModel)]="contactData.isSms" >
+                            <option  value="true">Yes</option>
+                            <option  value="false">No</option>
+                         </select>
+                      </div>
+               
+                      <div class="col-md-6 mb-2">
+                         <label class="fS14 mb-1">Send Mail<span  class="mandatory-color">*</span></label>
+                         <select  class="form-control form-select" name="isMail" 
+                            #isMail="ngModel"  required [ngClass]="{'input-box-style2-error': isMail.invalid && (isMail.dirty || isMail.touched)}"  
+                            [(ngModel)]="contactData.isMail" >
+                            <option  value="true">Yes</option>
+                            <option  value="false">No</option>
+                         </select>
+                      </div>
+ 
+                   </div>
+                 </form>
+ 
+                 <div class="mt-2 me-4 d-flex justify-content-end">   
+                   <div class="row text-center mt-4">
+                    <div class="">
+                       <div class="form-group">
+                        <button type="button"  class="btn btn-secondary footerbtncss mx-2" name="cancel" value="Cancel" (click)="closeContactsModel()">Clear</button>
+                        <button type="button"   class="btn btn-primary footerbtncss" name="signin" (click)="updateCustomerContact()">Submit</button>
+                     </div>
+                    </div>
+                   </div>
+                 </div> 
+                 
+             </div>
+                             
+           </div>
+         </div>
+         
+       </div>
+        
+     </div>  
+   </div>
+ </div> 
+ 
+ <div *ngIf="showContractsDialog" class="modal" tabindex="-1" role="dialog" style="display: block !important;" id="showContractsDialog">  
+    <div class="modal-dialog   modal-dialog-centered" role="document"    > 
+      <div class="bgDlg"></div> 
+      <div class="modal-content customheight">
+         
+        <div class="modal-header loginCusto">
+          <h5 class="modal-title fontsize16"> 
+            Customer Contracts
+          </h5>
+          <button (click)="closeContractsModel()" type="button" class="btn float-end modalclosebtn" data-dismiss="modal"> X  </button>
+           
+        </div>
+        <div class="modal-body"  >
+           
+          <div class="row">
+  
+            <div class="col-md-12">
+              <div class="text-left">
+                <form  #form="ngForm" autocomplete="off" >
+                   <div class="row mt-2">
+                      <input type="hidden" name="contractNo" #contractNo="ngModel" [(ngModel)]="contractData.contractNo">
+ 
+                      <div class="col-md-6 mb-2">
+                         <div class="fS14 mb-1">Agreement Start Date <span  class="mandatory-color">*</span></div>
+                         <div>
+                            <input autofocus type="date" id="startDate" name="startDate" #startDate="ngModel"  required
+                            [ngClass]="{'input-box-style2-error': startDate.invalid && (startDate.dirty || startDate.touched)}" 
+                            class="form-control"  [(ngModel)]="contractData.startDate" maxlength="100">
+                         </div>
+                      </div>
+              
+                      <div class="col-md-6 mb-2">
+                         <div class="fS14 mb-1">agrmt. Terminate Date <span  class="mandatory-color">*</span></div>
+                         <div>
+                            <input autofocus type="date" id="endDate" name="endDate" #endDate="ngModel"  required
+                            [ngClass]="{'input-box-style2-error': endDate.invalid && (endDate.dirty || endDate.touched)}" 
+                            class="form-control"  [(ngModel)]="contractData.endDate" maxlength="100">
+                         </div>
+                      </div>
+            
+                      <div class="col-md-12 mb-2">        
+                         <label class="fS14 mb-1">Signed Off from Customer side <span  class="mandatory-color">*</span></label>
+                         <div>
+                            <input autofocus type="text"  name="customerSignOff" #customerSignOff="ngModel"  required
+                            [ngClass]="{'input-box-style2-error': customerSignOff.invalid && (customerSignOff.dirty || customerSignOff.touched)}" 
+                            class="form-control" placeholder="" [(ngModel)]="contractData.customerSignOff" maxlength="150">
+                         </div>
+                      </div>
+                      
+                      <div class="col-md-12 mb-2">        
+                         <label class="fS14 mb-1">Signed Off from TBIS side <span  class="mandatory-color">*</span></label>
+                         <div>
+                            <ng-select [items]="employeeDetails" #tbisSignOff name="tbisSignOff" 
+                                 bindLabel="em_name"
+                                 bindValue="userid" 
+                                 placeholder="Select Staff"
+                                 [(ngModel)]="contractData.tbisSignOff">
+                             </ng-select>
+                         </div>
+                      </div>
+                      
+                      <div class="col-md-12 mb-2">        
+                         <label class="fS14 mb-1">Warehouse Space Size Allotted (&#13217;) <span  class="mandatory-color">*</span></label>
+                         <div>
+                            <input autofocus type="text"  name="warehouseSpace" #warehouseSpace="ngModel"  required numbersOnly
+                            [ngClass]="{'input-box-style2-error': warehouseSpace.invalid && (warehouseSpace.dirty || warehouseSpace.touched)}" 
+                            class="form-control" placeholder="" [(ngModel)]="contractData.warehouseSpace" maxlength="5">
+                         </div>
+                      </div>
+                      
+                      <div class="col-md-12 mb-2">        
+                         <label class="fS14 mb-1">PO No. <span  class="mandatory-color">*</span></label>
+                         <div>
+                            <input autofocus type="text"  name="poNo" #poNo="ngModel"  required
+                            [ngClass]="{'input-box-style2-error': poNo.invalid && (poNo.dirty || poNo.touched)}" 
+                            class="form-control" placeholder="" [(ngModel)]="contractData.poNo" maxlength="20">
+                         </div>
+                      </div>
+ 
+                      <div class="col-md-6 mb-2">        
+                         <label class="fS14 mb-1">Customer Billing Cycle <span  class="mandatory-color">*</span></label>
+                         <div>
+                            <ng-select [items]="customerbillingcycles" #billingCycle name="billingCycle" 
+                                 bindLabel="cyclename"
+                                 bindValue="cycleid" 
+                                 placeholder="Select Cycle"
+                                 [(ngModel)]="contractData.billingCycle">
+                             </ng-select>
+                         </div>
+                      </div>
+                      
+                      <div class="col-md-6 mb-2">        
+                         <label class="fS14 mb-1">Credit Limit (In rupees) <span  class="mandatory-color">*</span></label>
+                         <div>
+                            <input autofocus type="text"  name="creditLimit" #creditLimit="ngModel"  required numbersOnly
+                            [ngClass]="{'input-box-style2-error': creditLimit.invalid && (creditLimit.dirty || creditLimit.touched)}" 
+                            class="form-control" placeholder="" [(ngModel)]="contractData.creditLimit" maxlength="20">
+                         </div>
+                      </div>
+                      
+                      <div class="col-md-12 mb-2">
+                         <label class="fS14 mb-1">Contract Type <span  class="mandatory-color">*</span></label>
+                         <select  class="form-control form-select" name="contractType" 
+                            #contractType="ngModel"  required [ngClass]="{'input-box-style2-error': contractType.invalid && (contractType.dirty || contractType.touched)}"  
+                            [(ngModel)]="contractData.contractType" >
+                            <option  value="1">Transportation</option>
+                            <option  value="2">Warehouse</option>
+                            <option  value="3">Warehouse & Transportation</option>
+                         </select>
+                      </div>
+          
+ 
+                    </div>
+                  </form>
+  
+                  <div class="mt-2 me-4 d-flex justify-content-end">   
+                    <div class="row text-center mt-4">
+                     <div class="">
+                        <div class="form-group">
+                         <button type="button"  class="btn btn-secondary footerbtncss mx-2" name="cancel" value="Cancel" (click)="closeContractsModel()">Clear</button>
+                         <button type="button"   class="btn btn-primary footerbtncss" name="signin" (click)="updateCustomerContract()">Submit</button>
+                      </div>
+                     </div>
+                    </div>
+                  </div> 
+                  
+              </div>
+                              
+            </div>
+          </div>
+          
+        </div>
+         
+      </div>  
+    </div>
+  </div> 
+  
+ <div *ngIf="showPartsDialog" class="modal" tabindex="-1" role="dialog" style="display: block !important;" id="showPartsDialog">  
+   <div class="modal-dialog   modal-dialog-centered" role="document"    > 
+     <div class="bgDlg"></div> 
+     <div class="modal-content customheight">
+       <div class="modal-header loginCusto">
+         <h5 class="modal-title fontsize16"> 
+          Parts
+         </h5>
+         <button (click)="closePartsModel()" type="button" class="btn float-end modalclosebtn" data-dismiss="modal" data-target="#showPartsDialog"> X  </button>
+          
+       </div>
+       <div class="modal-body"  >
+          
+         <div class="row">
+ 
+           <div class="col-md-12">
+             <div class="text-left" >
+               <form #form="ngForm" autocomplete="off" >
+                <div class="col-md-12">
+                   <div class="fS14 mb-1" >Part</div>
+                   <ng-select [items]="partmaster"
+                      bindLabel="partno"
+                      bindValue="partid" 
+                      placeholder="Select Part No."
+                      [(ngModel)]="partData.partId">
+                   </ng-select>
+                </div>
+ 
+                <div class="col-md-12 mt-1" *ngIf="this.masterData.barCodeConfigId==0">
+                   <div class="fS14 mb-1" >Customer Part Code</div>
+                   <input autofocus type="text"  name="customerPartCode" #customerPartCode="ngModel"  required
+                   [ngClass]="{'input-box-style2-error': customerPartCode.invalid && (customerPartCode.dirty || customerPartCode.touched)}" 
+                   class="form-control" placeholder="" [(ngModel)]="partData.customerPartCode" maxlength="14">
+                </div>
+ 
+                <div class="col-md-12 mt-1">
+                   <div class="fS14 mb-1" >Line Space</div>
+                   <ng-select [items]="customerlinespace" #customerlineSpaceId name= "customerlinespace"
+                      bindLabel="linespacecode"
+                      bindValue="linespaceid" 
+                      placeholder="Select Linespace"
+                      [(ngModel)]="partData.customerlineSpaceId">
+                </ng-select>
+                </div>
+                <div class="col-md-12 mt-1">
+                   <div class="fS14 mb-1" >Qty Handle Per Month</div>
+                   <input autofocus type="number"  name="maxQty" #maxQty="ngModel"  required numbersOnly
+                   [ngClass]="{'input-box-style2-error': maxQty.invalid && (maxQty.dirty || maxQty.touched)}" 
+                   class="form-control" placeholder="" [(ngModel)]="partData.maxQty" maxlength="10">
+                </div>
+ 
+                   
+               
+               </form>
+                   <div class="mt-4 me-4 d-flex justify-content-end">   
+                     <div class="row text-center mt-4">
+                     <div class="">
+                        <div class="form-group transback">
+      
+                           <button type="button"  class="btn btn-secondary footerbtncss mx-2" name="cancel" value="Cancel" (click)="closePartsModel()">Cancel</button>
+                           <button type="button"   class="btn btn-primary footerbtncss" name="signin" (click)="updateCustomerPartsLineMap()">Ok</button>
+                        </div>
+                     </div>
+                     </div>
+                  </div>
+             </div>
+                             
+           </div>
+         </div>
+         
+       </div>
+        
+     </div>  
+   </div>
+ </div> 
+
+
+  <div *ngIf="showLineRackDialog" class="modal" tabindex="-1" role="dialog" style="display: block !important;" id="showLineRackDialog">  
+   <div class="modal-dialog   modal-dialog-centered model-xl" role="document"> 
+     <div class="bgDlg"></div> 
+     <div class="modal-content customheight">
+       <div class="modal-header loginCusto">
+         <h5 class="modal-title fontsize16"> 
+          Line Rack
+         </h5>
+         <button (click)="closeRackModel()" type="button" class="btn float-end modalclosebtn" data-dismiss="modal">X</button>
+          
+       </div>
+       <div class="modal-body"  >
+          
+         <div class="row">
+ 
+           <div class="col-md-12">
+             <div class="text-left" >
+               <form #form="ngForm" autocomplete="off" >
+                  <div class="col-md-12">
+                     <div class="fS14 mb-1" >Line Rack</div>
+                     <ng-select [items]="linerackmaster" #lineRackId
+                        bindLabel="linerackcode"
+                        bindValue="linerackid" 
+                        placeholder="Select Linerack"
+                        [(ngModel)]="rackData.lineRackId">
+                     </ng-select>
+                  </div>
+               </form>
+                   <div class="mt-4 me-4 d-flex justify-content-end">   
+                     <div class="row text-center mt-4">
+                     <div class="">
+                        <div class="form-group transback">
+                           <button type="button"  class="btn btn-secondary footerbtncss mx-2" name="cancel" value="Cancel" (click)="closeRackModel()">Cancel</button>
+                           <button type="button"  class="btn btn-primary footerbtncss" name="rackallocation" (click)="updateCustomerLineRackMap()">Ok</button>
+                        </div>
+                     </div>
+                     </div>
+                  </div>
+             </div>        
+           </div>
+         </div>
+         
+       </div>
+        
+     </div>  
+   </div>
+ </div> 
+ 
+  <div *ngIf="showDocumentsDialog" class="modal" tabindex="-1" role="dialog" style="display: block !important;" id="showDocumentsDialog">  
+    <div class="modal-dialog   modal-dialog-centered" role="document"    > 
+      <div class="bgDlg"></div> 
+      <div class="modal-content customheight">
+         
+        <div class="modal-header loginCusto">
+          <h5 class="modal-title fontsize16"> 
+            Customer Documents
+          </h5>
+          <button (click)="closeDocumentsModel()" type="button" class="btn float-end modalclosebtn" data-dismiss="modal"> X  </button>
+           
+        </div>
+        <div class="modal-body"  >
+           
+          <div class="row">
+  
+            <div class="col-md-12">
+              <div class="text-left">
+                <form  #form="ngForm" autocomplete="off" >
+                   <div class="row mt-2">
+ 
+                      <div class="col-md-12 mb-2">
+                         <div class="fS14 mb-1">Document Number <span  class="mandatory-color">*</span></div>
+                         <div>
+                            <input autofocus type="text" id="documentNo" name="documentNo" #documentNo="ngModel"  required
+                            [ngClass]="{'input-box-style2-error': documentNo.invalid && (documentNo.dirty || documentNo.touched)}" 
+                            class="form-control"  [(ngModel)]="documentData.documentNo" maxlength="20">
+                         </div>
+                      </div>
+                      
+                      <div class="col-md-12 mb-2">        
+                         <label class="fS14 mb-1">Document Type <span  class="mandatory-color">*</span></label>
+                         <div>
+                            <ng-select [items]="documenttypes" #documentType name="documentType" 
+                                 bindLabel="documentname"
+                                 bindValue="documenttypeid" 
+                                 placeholder="Select Type"
+                                 [(ngModel)]="documentData.documentType">
+                             </ng-select>
+                         </div>
+                      </div>
+ 
+                      <!-- <div class="col-md-12 mb-2">
+                         <div class="fS14 mb-1">Document Path <span  class="mandatory-color">*</span></div>
+                         <div>
+                            <input autofocus type="text" id="documentPath" name="documentPath" #documentPath="ngModel"  required
+                            [ngClass]="{'input-box-style2-error': documentPath.invalid && (documentPath.dirty || documentPath.touched)}" 
+                            class="form-control"  [(ngModel)]="documentData.documentPath" maxlength="20">
+                         </div>
+                      </div> -->
+                      
+                      <div class="col-md-6 mb-2">
+                         <div class="fS14 mb-1">Valid From <span  class="mandatory-color">*</span></div>
+                         <div>
+                            <input autofocus type="date" id="validFrom" name="validFrom" #validFrom="ngModel"  required
+                            [ngClass]="{'input-box-style2-error': validFrom.invalid && (validFrom.dirty || validFrom.touched)}" 
+                            class="form-control"  [(ngModel)]="documentData.validFrom" maxlength="100">
+                         </div>
+                      </div>
+              
+                      <div class="col-md-6 mb-2">
+                         <div class="fS14 mb-1">Valid To <span  class="mandatory-color">*</span></div>
+                         <div>
+                            <input autofocus type="date" id="validTo" name="validTo" #validTo="ngModel"  required
+                            [ngClass]="{'input-box-style2-error': validTo.invalid && (validTo.dirty || validTo.touched)}" 
+                            class="form-control"  [(ngModel)]="documentData.validTo" maxlength="100">
+                         </div>
+                      </div>
+                      
+                      <div class="col-md-12 mb-2 mt-2">
+                         <div class="fS14 mb-1">Document Path <span  class="mandatory-color">*</span></div>
+                         <div>
+                            <input type="file" name="documentPath" class="file-input"  #fileUpload (change)="docChangeEvent($event)">
+                         </div>
+                      </div>
+                      <div class="col-md-12 mb-2 mt-2">
+                         <div>
+                            <img alt="img" [src]="docPreview" class="preview profileImg">
+                         </div>
+                      </div>
+ 
+                    </div>
+                  </form>
+  
+                  <div class="mt-2 me-4 d-flex justify-content-end">   
+                    <div class="row text-center mt-4">
+                     <div class="">
+                        <div class="form-group">
+                         <button type="button"  class="btn btn-secondary footerbtncss mx-2" name="cancel" value="Cancel" (click)="closeDocumentsModel()">Clear</button>
+                         <button type="button"   class="btn btn-primary footerbtncss" name="signin" (click)="updateCustomerDocument()">Submit</button>
+                      </div>
+                     </div>
+                    </div>
+                  </div> 
+                  
+              </div>
+                              
+            </div>
+          </div>
+          
+        </div>
+         
+      </div>  
+    </div>
+  </div> 
+ 
+  <div *ngIf="showSoftwaresDialog" class="modal" tabindex="-1" role="dialog" style="display: block !important;" id="showSoftwaresDialog">  
+    <div class="modal-dialog   modal-dialog-centered" role="document"    > 
+      <div class="bgDlg"></div> 
+      <div class="modal-content customheight">
+         
+        <div class="modal-header loginCusto">
+          <h5 class="modal-title fontsize16">
+            Customer Softwares
+          </h5>
+          <button (click)="closeSoftwaresModel()" type="button" class="btn float-end modalclosebtn" data-dismiss="modal"> X </button>
+           
+        </div>
+        <div class="modal-body"  >
+           
+          <div class="row">
+  
+            <div class="col-md-12">
+              <div class="text-left">
+                <form  #form="ngForm" autocomplete="off" >
+                   <div class="row mt-2">
+ 
+                      <div class="col-md-12 mb-2">
+                         <div class="fS14 mb-1">Software Name <span  class="mandatory-color">*</span></div>
+                         <div>
+                            <input autofocus type="text" id="softwareName" name="softwareName" #softwareName="ngModel"  required
+                            [ngClass]="{'input-box-style2-error': softwareName.invalid && (softwareName.dirty || softwareName.touched)}" 
+                            class="form-control"  [(ngModel)]="softwareData.softwareName" maxlength="150">
+                         </div>
+                      </div>
+                      <div class="col-md-12 mb-2">
+                         <div class="fS14 mb-1">Software Url <span  class="mandatory-color">*</span></div>
+                         <div>
+                            <input autofocus type="text" id="softwareUrl" name="softwareUrl" #softwareUrl="ngModel"  required
+                            [ngClass]="{'input-box-style2-error': softwareUrl.invalid && (softwareUrl.dirty || softwareUrl.touched)}" 
+                            class="form-control"  [(ngModel)]="softwareData.softwareUrl" maxlength="250">
+                         </div>
+                      </div>
+                      <div class="col-md-12 mb-2">
+                         <div class="fS14 mb-1">Software User Name <span  class="mandatory-color">*</span></div>
+                         <div>
+                            <input autofocus type="text" id="softwareUserName" name="softwareUserName" #softwareUserName="ngModel"  required
+                            [ngClass]="{'input-box-style2-error': softwareUserName.invalid && (softwareUserName.dirty || softwareUserName.touched)}" 
+                            class="form-control"  [(ngModel)]="softwareData.softwareUserName" maxlength="200">
+                         </div>
+                      </div>
+                      <div class="col-md-12 mb-2">
+                         <div class="fS14 mb-1">Software Password <span  class="mandatory-color">*</span></div>
+                         <div>
+                            <input autofocus type="password" id="softwarePassword" name="softwarePassword" #softwarePassword="ngModel"  required
+                            [ngClass]="{'input-box-style2-error': softwarePassword.invalid && (softwarePassword.dirty || softwarePassword.touched)}" 
+                            class="form-control"  [(ngModel)]="softwareData.softwarePassword" maxlength="200">
+                         </div>
+                      </div>
+          
+ 
+                    </div>
+                  </form>
+  
+                  <div class="mt-2 me-4 d-flex justify-content-end">   
+                    <div class="row text-center mt-4">
+                     <div class="">
+                        <div class="form-group">
+                         <button type="button" class="btn btn-secondary footerbtncss mx-2" name="cancel" value="Cancel" (click)="closeSoftwaresModel()">Clear</button>
+                         <button type="button" class="btn btn-primary footerbtncss" name="signin" (click)="updateCustomerSoftware()">Submit</button>
+                      </div>
+                     </div>
+                    </div>
+                  </div> 
+                  
+              </div>
+                              
+            </div>
+          </div>
+          
+        </div>
+         
+      </div>  
+    </div>
+  </div> 
+ 
+  <div *ngIf="showAddressDialog" class="modal" tabindex="-1" role="dialog" style="display: block !important;" id="showAddressDialog">  
+    <div class="modal-dialog   modal-dialog-centered" role="document"    > 
+      <div class="bgDlg"></div> 
+      <div class="modal-content customheight">
+         
+        <div class="modal-header loginCusto">
+          <h5 class="modal-title fontsize16">
+            Customer Address
+          </h5>
+          <button (click)="closeAddressModel()" type="button" class="btn float-end modalclosebtn" data-dismiss="modal"> X </button>
+           
+        </div>
+        <div class="modal-body"  >
+           
+          <div class="row">
+  
+            <div class="col-md-12">
+              <div class="text-left">
+                <form  #form="ngForm" autocomplete="off" >
+                   <div class="row mt-2">
+                         <div class="col-md-12">        
+                            <label class="fS14 mb-1">Address <span class="mandatory-color">*</span></label>
+                            <div>
+                            <input autofocus type="text"  name="caAddress" #caAddress="ngModel"  required
+                               [ngClass]="{'input-box-style2-error': caAddress.invalid && (caAddress.dirty || caAddress.touched)}" 
+                               class="form-control" placeholder="" [(ngModel)]="addressData.caAddress" maxlength="255">
+                            </div>
+                         </div>
+ 
+                         <div class="col-md-6">        
+                            <label class="fS14 mb-1">City <span  class="mandatory-color">*</span></label>
+                            <div>
+                               <input autofocus type="text"  name="caCity" #caCity="ngModel"  required
+                               [ngClass]="{'input-box-style2-error': caCity.invalid && (caCity.dirty || caCity.touched)}" 
+                               class="form-control" placeholder="" [(ngModel)]="addressData.caCity" maxlength="50">
+                            </div>
+                         </div>
+ 
+                         <div class="col-md-6">        
+                            <label class="fS14 mb-1">District <span  class="mandatory-color">*</span></label>
+                            <div>
+                               <input autofocus type="text"  name="caDistrict" #caDistrict="ngModel"  required
+                               [ngClass]="{'input-box-style2-error': caDistrict.invalid && (caDistrict.dirty || caDistrict.touched)}" 
+                               class="form-control" placeholder="" [(ngModel)]="addressData.caDistrict" maxlength="50">
+                            </div>
+                         </div>
+ 
+                         <div class="col-md-12">        
+                            <label class="fS14 mb-1"> State <span  class="mandatory-color">*</span></label>
+                            <div>
+                               <input autofocus type="text"  name="caState" #caState="ngModel"  required
+                               [ngClass]="{'input-box-style2-error': caState.invalid && (caState.dirty || caState.touched)}" 
+                               class="form-control" placeholder="" [(ngModel)]="addressData.caState" maxlength="50">
+                            </div>
+                         </div>   
+                         <div class="col-md-6">        
+                            <label class="fS14 mb-1">Latitude </label>
+                            <div>
+                               <input autofocus type="text"  name="caLat" #caLat="ngModel" 
+                               [ngClass]="{'input-box-style2-error': caLat.invalid && (caLat.dirty || caLat.touched)}" 
+                               class="form-control" placeholder="" [(ngModel)]="addressData.caLat" maxlength="50">
+                            </div>
+                         </div>
+ 
+                         <div class="col-md-6">        
+                            <label class="fS14 mb-1">Longitude </label>
+                            <div>
+                               <input autofocus type="text"  name="caLang" #caLang="ngModel" 
+                               [ngClass]="{'input-box-style2-error': caLang.invalid && (caLang.dirty || caLang.touched)}" 
+                               class="form-control" placeholder="" [(ngModel)]="addressData.caLang" maxlength="50">
+                            </div>
+                         </div>
+                         <div class="col-md-12">        
+                            <label class="fS14 mb-1">GST No. <span  class="mandatory-color">*</span></label>
+                            <div>
+                               <input autofocus type="text"  name="caGstIn" #caGstIn="ngModel" required
+                               [ngClass]="{'input-box-style2-error': caGstIn.invalid && (caGstIn.dirty || caGstIn.touched)}" 
+                               class="form-control" placeholder="" [(ngModel)]="addressData.caGstIn" maxlength="20">
+                            </div>
+                         </div>
+                         <div class="col-md-12">        
+                            <label class="fS14 mb-1">Email</label>
+                            <div>
+                               <input autofocus type="email"  name="caEmail" #caEmail="ngModel" 
+                               [ngClass]="{'input-box-style2-error': caEmail.invalid && (caEmail.dirty || caEmail.touched)}" 
+                               class="form-control" placeholder="" [(ngModel)]="addressData.caEmail" maxlength="255">
+                            </div>
+                         </div> 
+ 
+                         <div class="col-md-6">        
+                            <label class="fS14 mb-1">Pincode </label>
+                            <div>
+                               <input autofocus type="text"  name="caPincode" #caPincode="ngModel" 
+                               [ngClass]="{'input-box-style2-error': caPincode.invalid && (caPincode.dirty || caPincode.touched)}" 
+                               class="form-control" placeholder="" [(ngModel)]="addressData.caPincode" maxlength="6" minlength="6">
+                            </div>
+                         </div>   
+ 
+                         <div class="col-md-6">        
+                            <label class="fS14 mb-1">Mobile</label>
+                            <div>
+                               <input autofocus type="text"  name="caPhoneNo" #caPhoneNo="ngModel"  numbersOnly  
+                               [ngClass]="{'input-box-style2-error': caPhoneNo.invalid && (caPhoneNo.dirty || caPhoneNo.touched)}" 
+                               class="form-control" placeholder="" [(ngModel)]="addressData.caPhoneNo" maxlength="10">
+                            </div>
+                         </div>  
+ 
+                         <div class="col-md-12">        
+                            <label class="fS14 mb-1">Website</label>
+                            <div>
+                               <input autofocus type="text"  name="caWebsite" #caWebsite="ngModel"  
+                               [ngClass]="{'input-box-style2-error': caWebsite.invalid && (caWebsite.dirty || caWebsite.touched)}" 
+                               class="form-control" placeholder="" [(ngModel)]="addressData.caWebsite" maxlength="150">
+                            </div>
+                         </div>  
+ 
+                         <div class="col-md-12">        
+                            <label class="fS14 mb-1">Address Type</label>
+                            <div>
+                               <input autofocus type="text"  name="caAddressType" #caAddressType="ngModel"   
+                               [ngClass]="{'input-box-style2-error': caAddressType.invalid && (caAddressType.dirty || caAddressType.touched)}" 
+                               class="form-control" placeholder="" [(ngModel)]="addressData.caAddressType" maxlength="100">
+                            </div>
+                         </div>
+ 
+                    </div>
+                  </form>
+  
+                  <div class="mt-2 me-4 d-flex justify-content-end">   
+                    <div class="row text-center mt-4">
+                     <div class="">
+                        <div class="form-group">
+                         <button type="button" class="btn btn-secondary footerbtncss mx-2" name="cancel" value="Cancel" (click)="closeAddressModel()">Clear</button>
+                         <button type="button" class="btn btn-primary footerbtncss" name="signin" (click)="updateCustomerAddress()">Submit</button>
+                      </div>
+                     </div>
+                    </div>
+                  </div> 
+                  
+              </div>
+                              
+            </div>
+          </div>
+          
+        </div>
+         
+      </div>  
+    </div>
+  </div> 
+ 
+  <div *ngIf="showManpowersDialog" class="modal" tabindex="-1" role="dialog" style="display: block !important;" id="showManpowersDialog">  
+    <div class="modal-dialog modal-dialog-centered" role="document" > 
+      <div class="bgDlg"></div> 
+      <div class="modal-content customheight">
+         
+        <div class="modal-header loginCusto">
+          <h5 class="modal-title fontsize16">
+            Customer Manpowers
+          </h5>
+          <button (click)="closeManpowersModel()" type="button" class="btn float-end modalclosebtn" data-dismiss="modal"> X </button>
+           
+        </div>
+        <div class="modal-body"  >
+           
+          <div class="row">
+  
+            <div class="col-md-12">
+              <div class="text-left">
+                <form  #form="ngForm" autocomplete="off" >
+                   <div class="row mt-2">
+ 
+                      <div class="col-md-12 mb-2">
+                         <div class="fS14 mb-1">Manpower Details <span  class="mandatory-color">*</span></div>
+                         <div>
+                            <input autofocus type="text" id="manpowerDetail" name="manpowerDetail" #manpowerDetail="ngModel"  required
+                            [ngClass]="{'input-box-style2-error': manpowerDetail.invalid && (manpowerDetail.dirty || manpowerDetail.touched)}" 
+                            class="form-control"  [(ngModel)]="manpowerData.manpowerDetail" maxlength="150">
+                         </div>
+                      </div>
+                      <div class="col-md-12 mb-2">
+                         <div class="fS14 mb-1">Shift A <span  class="mandatory-color">*</span></div>
+                         <div>
+                            <input autofocus type="text" id="shiftA" name="shiftA" #shiftA="ngModel"  required numbersOnly
+                            [ngClass]="{'input-box-style2-error': shiftA.invalid && (shiftA.dirty || shiftA.touched)}" 
+                            class="form-control"  [(ngModel)]="manpowerData.shiftA" maxlength="5">
+                         </div>
+                      </div>
+                      <div class="col-md-12 mb-2">
+                         <div class="fS14 mb-1">Shift B <span  class="mandatory-color">*</span></div>
+                         <div>
+                            <input autofocus type="text" id="shiftB" name="shiftB" #shiftB="ngModel"  required numbersOnly
+                            [ngClass]="{'input-box-style2-error': shiftB.invalid && (shiftB.dirty || shiftB.touched)}" 
+                            class="form-control"  [(ngModel)]="manpowerData.shiftB" maxlength="5">
+                         </div>
+                      </div>
+                      <div class="col-md-12 mb-2">
+                         <div class="fS14 mb-1" >Category</div>
+                         <ng-select [items]="manpowercategories" #categoryId
+                            bindLabel="categoryname"
+                            bindValue="categoryid" 
+                            placeholder="Select Category"
+                            [(ngModel)]="manpowerData.categoryId">
+                         </ng-select>
+                      </div>
+                      <!-- <div class="col-md-12 mb-2">
+                         <div class="fS14 mb-1">Total Head <span  class="mandatory-color">*</span></div>
+                         <div>
+                            <input readonly autofocus type="text" id="totalHead" name="totalHead" #totalHead="ngModel"  required
+                            [ngClass]="{'input-box-style2-error': totalHead.invalid && (totalHead.dirty || totalHead.touched)}" 
+                            class="form-control"  [(ngModel)]="manpowerData.totalHead" maxlength="5">
+                         </div>
+                      </div> -->
+          
+ 
+                    </div>
+                  </form>
+  
+                  <div class="mt-2 me-4 d-flex justify-content-end">   
+                    <div class="row text-center mt-4">
+                     <div class="">
+                        <div class="form-group">
+                         <button type="button" class="btn btn-secondary footerbtncss mx-2" name="cancel" value="Cancel" (click)="closeManpowersModel()">Clear</button>
+                         <button type="button" class="btn btn-primary footerbtncss" name="signin" (click)="updateCustomerManpower()">Submit</button>
+                      </div>
+                     </div>
+                    </div>
+                  </div> 
+                  
+              </div>
+                              
+            </div>
+          </div>
+          
+        </div>
+         
+      </div>  
+    </div>
+  </div> 
+  <div *ngIf="showCellDetailsDialog" class="modal" tabindex="-1" role="dialog" style="display: block !important;" id="showCellDetailsDialog">  
+   <div class="modal-dialog modal-dialog-centered cell-large" role="document"> 
+     <div class="bgDlg"></div> 
+     <div class="modal-content customheight">
+       <div class="modal-header loginCusto">
+         <h5 class="modal-title fontsize16"> 
+          Line Rack
+         </h5>
+         <button (click)="closeCellDetailsModel()" type="button" class="btn float-end modalclosebtn" data-dismiss="modal">X</button>
+          
+       </div>
+       <div class="modal-body"  >
+          
+         <div class="row mb-2">
+ 
+           <div class="col-md-12">
+             <div class="text-left" >
+               <form #form="ngForm" autocomplete="off" >
+                  <div class="row mb-2">
+                 <div class="col-md-4">
+                   <div class="fS14 mb-1" >Start Row</div>
+                   <input autofocus type="text"  name="startrow" #startrow="ngModel"  required 
+                    [ngClass]="{'input-box-style2-error': startrow.invalid && (startrow.dirty || startrow.touched)}" 
+                    class="form-control" placeholder="" [(ngModel)]="cellData.startRow" maxlength="50">
+                </div>
+                <div class="col-md-4">
+                 <div class="fS14 mb-1" >End Row</div>
+                 <input autofocus type="text"  name="endrow" #endRow="ngModel"  required 
+                  [ngClass]="{'input-box-style2-error': endRow.invalid && (endRow.dirty || endRow.touched)}" 
+                  class="form-control" placeholder="" [(ngModel)]="cellData.endRow" maxlength="50">
+              </div>
+              <div class="col-md-4">
+                 <div class="fS14 mb-1" >Usage</div>
+                 <ng-select [items]="usageTypes" #usagetype
+                    bindLabel="usagename"
+                    bindValue="usageid" 
+                    placeholder="Select Usage"
+                    [(ngModel)]="cellData.lineUsageId" (change)="onChangeUsageType($event)">
+                 </ng-select>
+              </div>
+            </div>
+            <div class="row mb-2">
+              <div class="col-md-4">
+               <div class="fS14 mb-1" >Start Cell</div>
+               <input autofocus type="text"  name="startCell" #startCell="ngModel"  required 
+                [ngClass]="{'input-box-style2-error': startCell.invalid && (startCell.dirty || startCell.touched)}" 
+                class="form-control" placeholder="" [(ngModel)]="cellData.startCell" maxlength="50">
+            </div>
+            <div class="col-md-4">
+             <div class="fS14 mb-1" >End Cell</div>
+             <input autofocus type="text"  name="endCell" #endCell="ngModel"  required 
+              [ngClass]="{'input-box-style2-error': endCell.invalid && (endCell.dirty || endCell.touched)}" 
+              class="form-control" placeholder="" [(ngModel)]="cellData.endCell" maxlength="50">
+          </div>
+          <div class="col-md-4">
+            <div class="fS14 mb-1" >Color Code</div>
+            <input autofocus type="text"  name="colorCode" #colorCode="ngModel" required readonly
+            [ngClass]="{'input-box-style2-error': colorCode.invalid && (colorCode.dirty || colorCode.touched)}" 
+            class="form-control" placeholder="" [(ngModel)]="cellData.colorCode" maxlength="50">
+          </div>
+         </div>
+         <div class="row mb-2">
+               
+            <div class="col-md-4">
+               <div class="fS14 mb-1" >Type</div>
+                  <select  class="form-control form-select" name="spaceOccupation" 
+                     #spaceOccupation="ngModel"    
+                     [(ngModel)]="cellData.spaceOccupation" >
+                     <option  value="1">Single Part</option>
+                     <option  value="2">Multiple Part</option>
+                     <option  value="3">Free Space</option>
+                  </select>
+              </div>
+              <div class="col-md-4" >
+                  <div class="fS14 mb-1" >Part</div>
+                  <ng-select [items]="customerPartMapDetails" #partmap
+                     bindLabel="partno"
+                     bindValue="partid" 
+                     placeholder="Select Part"
+                     [(ngModel)]="cellData.partId">
+                  </ng-select>
+               </div>
+               <div class="col-md-4" >
+                    <div class="fS14 mb-1" >&nbsp;</div>
+                    <div class="col-md-1"><button type="button"  class="btn btn-primary footerbtncss" name="rackallocation" (click)="addSelectedPart()">Add</button></div>
+               </div>
+         </div>
+              <div class="col-md-12 mb-2" >
+              <table class="tab table table-hover w-100">
+               <thead class="sticky-top top-0">
+                <tr class="trBack">    
+                     <th>Part Name</th>
+                     <th>Part No</th>
+                     <th>Actions</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr *ngFor="let prt of selectedPartDetails;index as i">
+                     <td class="py-2">{{ prt.partdescription }}</td>
+                     <td class="py-2">{{ prt.partno }}</td>
+                     <td class="py-2"><img src="assets/dist/img/delete.png" alt="" class="mb-2 ms-1"
+                           (click)="removeSelectedPart(i)"></td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+             <div class="row mb-2">
+               <div class="col-md-4" >
+                <div class="fS14 mb-1" >Part Space Name</div>
+                <input autofocus type="text"  name="partSpaceName" #partSpaceName="ngModel"  required
+                [ngClass]="{'input-box-style2-error': partSpaceName.invalid && (partSpaceName.dirty || partSpaceName.touched)}" 
+                class="form-control" placeholder="" [(ngModel)]="cellData.partSpaceName" maxlength="50" >
+              </div>
+              <div class="col-md-4" >
+               <div class="fS14 mb-1" >FIFO Order</div>
+               <input autofocus type="text"  name="fifoOrder" #fifoOrder="ngModel"  required
+               [ngClass]="{'input-box-style2-error': fifoOrder.invalid && (fifoOrder.dirty || fifoOrder.touched)}" 
+               class="form-control" placeholder="" [(ngModel)]="cellData.fifoOrder" maxlength="50">
+             </div>
+             <div class="col-md-4" >
+               <div class="fS14 mb-1" *ngIf="cellData.lineUsageId==7" >MAX Pallets</div>
+               <div class="fS14 mb-1" *ngIf="cellData.lineUsageId!=7" >MAX BINs</div>
+               <input autofocus type="text"  name="maxbins" #maxbins="ngModel"  required
+               [ngClass]="{'input-box-style2-error': maxbins.invalid && (maxbins.dirty || maxbins.touched)}" 
+               class="form-control" placeholder="" [(ngModel)]="cellData.maxBins" maxlength="50" >
+             </div>
+            </div>
+            </form>
+                   <div class="mt-4 me-4 d-flex justify-content-end">   
+                     <div class="row text-center mt-4">
+                     <div class="">
+                        <div class="form-group transback">
+                           <button type="button"  class="btn btn-secondary footerbtncss mx-2" name="cancel" value="Cancel" (click)="closeCellDetailsModel()">Cancel</button>
+                           <button type="button"  class="btn btn-primary footerbtncss" name="rackallocation" (click)="updateLineCellDetail()">Ok</button>
+                        </div>
+                     </div>
+                     </div>
+                  </div>
+             </div>        
+           </div>
+         </div>
+         
+       </div>
+        
+     </div>  
+   </div>
+ </div> 

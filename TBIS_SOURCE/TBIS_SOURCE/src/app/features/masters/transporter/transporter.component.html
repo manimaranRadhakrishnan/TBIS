@@ -1,0 +1,584 @@
+
+
+<div  class="container">
+     <div class="table-wrapper px-0 shadow">
+             <div class="table-title title-fixed">
+                <div class="row">
+                   <div class="col-sm-6">
+                      <div class="table-head ms-2">
+                      <div class="row">
+                         <div *ngIf="action!='view'" class="col-1 cursor" (click)="cancelAdd()">
+                            <i class="bi bi-arrow-left"></i>
+                         </div>
+                         <div *ngIf="action=='view'" class="col-1 cursor">
+                         </div>
+                         <div class="col-6 p-0">
+                           Transporter
+                         </div>
+                      </div>
+                      
+                         </div>
+                   </div>
+                   <div *ngIf="action=='view'" class="col-sm-6">
+                      <div class="d-grid gap-2 d-md-flex justify-content-md-end align-items-center">
+                         <a class="btn btn-success addcss" (click)="addNew()">
+                            <i class="bi bi-plus-square"></i><span>New Transporter</span>
+                         </a>
+                      </div>
+                   </div>
+                
+                </div>
+             </div>
+             <div *ngIf="action!='view'"> 
+                <div class="table-content title-content">
+                      <div class="pt-0">
+                            <form class="p-3" method="post" autocomplete="off" #frm="ngForm">  
+                               <div class="p-0 row">
+                                  <nav>
+                                     <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                       <button class="nav-link active" id="nav-transport-tab" data-bs-toggle="tab" data-bs-target="#nav-transport" type="button" role="tab" aria-controls="nav-transport" aria-selected="true">Transporter Info</button>
+                                       <button class="nav-link" id="nav-vehicle-tab" data-bs-toggle="tab" data-bs-target="#nav-vehicle" type="button" role="tab" aria-controls="nav-vehicle" aria-selected="false">Vehicle Attachment</button>
+                                       <button class="nav-link" id="nav-document-tab" data-bs-toggle="tab" data-bs-target="#nav-document" type="button" role="tab" aria-controls="nav-document" aria-selected="false">Transporter Documents</button>
+                                       <button class="nav-link" id="nav-vdocument-tab" data-bs-toggle="tab" data-bs-target="#nav-vdocument" type="button" role="tab" aria-controls="nav-vdocument" aria-selected="false">Vehicle Documents</button>
+                                     </div>
+                                   </nav>
+                                   <div class="tab-content" id="nav-tabContent">
+                                    <div class="tab-pane fade show active" id="nav-transport" role="tabpanel" aria-labelledby="nav-transport-tab">
+                                       
+                                    <div>  
+                                     <div class="mb-3 row">
+                                        <div class="row g-0 badge-bg mt-2 mb-2">
+                                           <div class="col-1 mt-1 left-badge"></div>
+                                           <div class="ms-3 col-6 mt-2 badge-title">Transporter Details</div>
+                                        </div>
+       
+                                       <div class="col-md-4">        
+                                          <label class="fS14 mb-1">Transporter Name <span  class="mandatory-color">*</span></label>
+                                          <div>
+                                              <input autofocus type="text"  name="transporterName" #transporterName="ngModel"  required
+                                              [ngClass]="{'input-box-style2-error': transporterName.invalid && (transporterName.dirty || transporterName.touched)}" 
+                                              class="form-control" placeholder="" [(ngModel)]="masterData.transporterName" maxlength="30">
+                                          </div>
+                                       </div>
+                                       <div class="col-md-4">        
+                                          <label class="fS14 mb-1">Transporter Code <span  class="mandatory-color">*</span></label>
+                                          <div>
+                                              <input autofocus type="text"  name="transporterCode" #transporterCode="ngModel"  required
+                                              [ngClass]="{'input-box-style2-error': transporterCode.invalid && (transporterCode.dirty || transporterCode.touched)}" 
+                                              class="form-control" placeholder="" [(ngModel)]="masterData.transporterCode" maxlength="10">
+                                          </div>
+                                       </div>
+                                       <div class="col-md-4">
+                                          <label class="fS14 mb-1">Status<span  class="mandatory-color">*</span></label>
+                                          <select  class="form-control form-select" name="isActive" 
+                                              #isActive="ngModel"  required [ngClass]="{'input-box-style2-error': isActive.invalid && (isActive.dirty || isActive.touched)}"  
+                                              [(ngModel)]="masterData.isActive" >
+                                              <option  value="true">Active</option>
+                                              <option  value="false">InActive</option>
+                                          </select>
+                                      </div>
+
+                                     </div> 
+                                       <div class="row mb-3">
+                                           <div class="row g-0 badge-bg mt-2 mb-2">
+                                              <div class="col-1 mt-1 left-badge"></div>
+                                              <div class="ms-3 col-6 mt-2 badge-title">Address Details</div>
+                                           </div>
+                                             <div class="col-md-3">        
+                                                <label class="fS14 mb-1">Address <span class="mandatory-color">*</span></label>
+                                                <div>
+                                                <input autofocus type="text"  name="address" #address="ngModel"  required
+                                                   [ngClass]="{'input-box-style2-error': address.invalid && (address.dirty || address.touched)}" 
+                                                   class="form-control" placeholder="" [(ngModel)]="masterData.address" maxlength="255">
+                                                </div>
+                                             </div>
+               
+                                             <div class="col-md-3">        
+                                                <label class="fS14 mb-1">City <span  class="mandatory-color">*</span></label>
+                                                <div>
+                                                   <input autofocus type="text"  name="city" #city="ngModel"  required
+                                                   [ngClass]="{'input-box-style2-error': city.invalid && (city.dirty || city.touched)}" 
+                                                   class="form-control" placeholder="" [(ngModel)]="masterData.city" maxlength="50">
+                                                </div>
+                                             </div>
+               
+                                             <div class="col-md-3">        
+                                                <label class="fS14 mb-1">District <span  class="mandatory-color">*</span></label>
+                                                <div>
+                                                   <input autofocus type="text"  name="district" #district="ngModel"  required
+                                                   [ngClass]="{'input-box-style2-error': district.invalid && (district.dirty || district.touched)}" 
+                                                   class="form-control" placeholder="" [(ngModel)]="masterData.district" maxlength="50">
+                                                </div>
+                                             </div>
+               
+                                             <div class="col-md-3">        
+                                                <label class="fS14 mb-1">State <span  class="mandatory-color">*</span></label>
+                                                <div>
+                                                   <input autofocus type="text"  name="state" #state="ngModel"  required
+                                                   [ngClass]="{'input-box-style2-error': state.invalid && (state.dirty || state.touched)}" 
+                                                   class="form-control" placeholder="" [(ngModel)]="masterData.state" maxlength="50">
+                                                </div>
+                                             </div>
+                                        </div>
+                                        <div class="row">     
+                                             <div class="col-md-3">        
+                                                <label class="fS14 mb-1">Latitude </label>
+                                                <div>
+                                                   <input autofocus type="text"  name="lat" #lat="ngModel"  required
+                                                   [ngClass]="{'input-box-style2-error': lat.invalid && (lat.dirty || lat.touched)}" 
+                                                   class="form-control" placeholder="" [(ngModel)]="masterData.lat" maxlength="50">
+                                                </div>
+                                             </div>
+               
+                                             <div class="col-md-3">        
+                                                <label class="fS14 mb-1">Longitude </label>
+                                                <div>
+                                                   <input autofocus type="text"  name="lang" #lang="ngModel"  required
+                                                   [ngClass]="{'input-box-style2-error': lang.invalid && (lang.dirty || lang.touched)}" 
+                                                   class="form-control" placeholder="" [(ngModel)]="masterData.lang" maxlength="50">
+                                                </div>
+                                             </div>
+                                             <div class="col-md-3">        
+                                               <label class="fS14 mb-1">GST No. <span  class="mandatory-color">*</span></label>
+                                               <div>
+                                                  <input autofocus type="text"  name="gstIn" #gstIn="ngModel"  required
+                                                  [ngClass]="{'input-box-style2-error': gstIn.invalid && (gstIn.dirty || gstIn.touched)}" 
+                                                  class="form-control" placeholder="" [(ngModel)]="masterData.gstIn" maxlength="20">
+                                               </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                              <div class="fS14 mb-1">Location <span  class="mandatory-color">*</span></div>      
+                                              <ng-select [items]="locations" #locationId name="locationId"
+                                                  bindLabel="locationname" 
+                                                  bindValue="locationid" 
+                                                  placeholder="Select Location"
+                                                  [(ngModel)]="masterData.locationId">
+                                              </ng-select>
+                                            </div>
+                                       </div>
+                                       <div class="row">
+                                          <div class="mt-4 me-4 d-flex justify-content-end">   
+                                             <div class="row text-center mt-4">
+                                             <div class="">
+                                                <div class="form-group transback">
+                                                   <button type="button" class="btn btn-secondary footerbtncss mx-2" name="cancel" value="Cancel" (click)="cancelAdd()">Clear</button>
+                                                   <button type="button" class="btn btn-primary footerbtncss" name="signin" (click)="updateTransporter()">Submit</button>
+                                                </div>
+                                             </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>  
+                                    
+                                    </div>
+                                     <div class="tab-pane fade" id="nav-vehicle" role="tabpanel" aria-labelledby="nav-vehicle-tab">
+                     
+                                        <div class="container p-0" id="vehiclelist">
+                                         <div class="row g-0 badge-bg mt-2 mb-2 h-100">
+                                            <div class="col-6 badge-title d-flex align-items-center">
+                                               <span class="left-badge me-3 d-block h-100"></span>
+                                               <span>Vehicle Attachment</span>
+                                            </div>
+                                            <div class="col-6 d-flex" *ngIf="masterData.vechicleId>0">
+                                               <button  type="button" class="btn btn-secondary footerbtncss me-2 ms-auto my-1"
+                                                  name="cancel" value="Cancel" (click)="showVehicles()">Add Vehicles</button>
+                                            </div>
+                                         </div>
+          
+                                          <div class="card shadow-lg position-relative">
+                                              <div class="p-4">
+                                                <report creportid="71" defaultparam="transporterid" [defaultparamvalue]="this.masterData.vechicleId" #vehicleattachmentreport (onEditClcked)="doVehicleAction($event)"   [events]="eventsSubject.asObservable()" [groupreport]="0"></report>
+                                             </div>
+                                          </div>
+                                        </div>
+                                      </div>
+ 
+                                      <div class="tab-pane fade" id="nav-document" role="tabpanel" aria-labelledby="nav-document-tab">
+                     
+                                        <div class="container p-0" id="documentlist">
+                                         <div class="row g-0 badge-bg mt-2 mb-2 h-100">
+                                            <div class="col-6 badge-title d-flex align-items-center">
+                                               <span class="left-badge me-3 d-block h-100"></span>
+                                               <span>Transporter Documents</span>
+                                            </div>
+                                            <div class="col-6 d-flex" *ngIf="masterData.vechicleId>0">
+                                               <button  type="button" class="btn btn-secondary footerbtncss me-2 ms-auto my-1"
+                                                  name="cancel" value="Cancel" (click)="showDocuments()">Add Documents</button>
+                                            </div>
+                                         </div>
+                                          <div class="card shadow-lg position-relative">
+                                              <div class="p-4">
+                                                <report creportid="72" extraparams="entityid={{masterData.vechicleId}}&entitytypeid=2"  #transportdocumentreport (onEditClcked)="doTransportDocumentAction($event)"   [events]="eventsSubject.asObservable()" [groupreport]="0"></report>
+                                             </div>
+                                          </div>
+                                        </div>
+                                      </div>
+
+                                      <div class="tab-pane fade" id="nav-vdocument" role="tabpanel" aria-labelledby="nav-vdocument-tab">
+                     
+                                        <div class="container p-0" id="vdocumentlist">
+                                         <div class="row g-0 badge-bg mt-2 mb-2 h-100">
+                                            <div class="col-6 badge-title d-flex align-items-center">
+                                               <span class="left-badge me-3 d-block h-100"></span>
+                                               <span>Vehicle Documents</span>
+                                            </div>
+                                            <div class="col-6 d-flex" *ngIf="transportvehicleslist.length>0">
+                                               <button  type="button" class="btn btn-secondary footerbtncss me-2 ms-auto my-1"
+                                                  name="cancel" value="Cancel" (click)="showVDocuments()">Add Documents</button>
+                                            </div>
+                                         </div>
+                                          <div class="card shadow-lg position-relative">
+                                              <div class="p-4">
+                                                <report creportid="73" extraparams="entityid={{masterData.vechicleId}}&entitytypeid=3"  #vehicledocumentreport (onEditClcked)="doVehicleDocumentAction($event)"   [events]="eventsSubject.asObservable()" [groupreport]="0"></report>
+                                             </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    
+                                   </div>
+                               </div>   
+                            </form>
+                      </div>
+                </div>
+             </div>
+             <div *ngIf="action=='view'">
+                <div class="p-4">
+                    <report creportid="59" #report (onEditClcked)="doAction($event)"   [events]="eventsSubject.asObservable()" [groupreport]="0"></report>
+                 </div>
+             </div>
+    </div>
+ </div>
+    
+
+ <div *ngIf="showVehiclesDialog" class="modal" tabindex="-1" role="dialog" style="display: block !important;" id="showVehiclesDialog">  
+    <div class="modal-dialog   modal-dialog-centered" role="document"    > 
+      <div class="bgDlg"></div> 
+      <div class="modal-content customheight">
+         
+        <div class="modal-header loginCusto">
+          <h5 class="modal-title fontsize16"> 
+            Transporter vehicles
+          </h5>
+          <button (click)="closeVehiclesModel()" type="button" class="btn float-end modalclosebtn" data-dismiss="modal"> X  </button>
+           
+        </div>
+        <div class="modal-body"  >
+           
+          <div class="row">
+  
+            <div class="col-md-12">
+              <div class="text-left">
+                <form  #form="ngForm" autocomplete="off" >
+                  <div class="row mt-2">
+
+                     <div class="col-md-6 mb-2">        
+                        <label class="fS14 mb-1">Vehicle No<span  class="mandatory-color">*</span></label>
+                        <div>
+                            <input autofocus type="text"  name="vehicleNo" #vehicleNo="ngModel"  required alphaNumericOnly
+                            [ngClass]="{'input-box-style2-error': vehicleNo.invalid && (vehicleNo.dirty || vehicleNo.touched)}" 
+                            class="form-control" placeholder="" [(ngModel)]="vehicleData.vehicleNo" maxlength="15">
+                        </div>
+                     </div>
+                     
+                     <div class="col-md-6 mb-2">
+                        <div class="fS14 mb-1">Vehicle Size <span  class="mandatory-color">*</span></div>      
+                        <ng-select [items]="vehicletypemasters" #vehicleSize name="vehicleSize" required 
+                            bindLabel="vehicletypename"  (ngModelChange)="onChangeVehicleTypes($event)"
+                            bindValue="vehicletypeid" 
+                            placeholder="Select Vehicle Size"
+                            [(ngModel)]="vehicleData.vehicleSize">
+                        </ng-select>
+                      </div>
+
+                     <div class="col-md-6 mb-2">        
+                        <label class="fS14 mb-1">Capacity (in Tons)</label>
+                        <div>
+                          <input autofocus type="text"  name="vehicleCapacity" #vehicleCapacity="ngModel" readonly numbersOnly
+                           class="form-control" placeholder="" [(ngModel)]="vehicleData.vehicleCapacity" maxlength="5">
+                        </div>
+                     </div>
+                     
+                     <div class="col-md-6 mb-2">
+                        <label class="fS14 mb-1">Vehicle Axles<span  class="mandatory-color">*</span></label>
+                        <select  class="form-control form-select" name="vehicleAxix" #vehicleAxix="ngModel" readonly
+                           [(ngModel)]="vehicleData.vehicleAxix" >
+                           <option value="1">SINGLE AXLE</option>
+                           <option value="2">MULTI AXLE</option>
+                        </select>
+                     </div>
+                     <div class="col-md-6 mb-2">        
+                        <label class="fS14 mb-1"> Height (in M) </label>
+                        <div>
+                          <input autofocus type="text"  name="vehicleHeight" #vehicleHeight="ngModel" readonly numbersOnly
+                           class="form-control" placeholder="" [(ngModel)]="vehicleData.vehicleHeight" maxlength="10">
+                        </div>
+                     </div>
+                
+                     <div class="col-md-6 mb-2">        
+                        <label class="fS14 mb-1"> Width (in M) </label> 
+                        <div>
+                          <input autofocus type="text"  name="vehicleWidth" #vehicleWidth="ngModel" readonly numbersOnly
+                           class="form-control" placeholder="" [(ngModel)]="vehicleData.vehicleWidth" maxlength="10">
+                        </div>
+                     </div>
+          
+                     <div class="col-md-6 mb-2">        
+                      <label class="fS14 mb-1"> Length (in M) </label>
+                      <div>
+                        <input autofocus type="text"  name="vehicleLength" #vehicleLength="ngModel" readonly  numbersOnly
+                         class="form-control" placeholder="" [(ngModel)]="vehicleData.vehicleLength" maxlength="10">
+                      </div>
+                     </div>
+                  </div>
+               </form>
+  
+                  <div class="mt-2 me-4 d-flex justify-content-end">   
+                    <div class="row text-center mt-4">
+                     <div class="">
+                        <div class="form-group">
+                         <button type="button"  class="btn btn-secondary footerbtncss mx-2" name="cancel" value="Cancel" (click)="closeVehiclesModel()">Clear</button>
+                         <button type="button"   class="btn btn-primary footerbtncss" name="signin" (click)="updateTransportVehicle()">Submit</button>
+                      </div>
+                     </div>
+                    </div>
+                  </div> 
+                  
+              </div>
+                              
+            </div>
+          </div>
+          
+        </div>
+         
+      </div>  
+    </div>
+</div> 
+ 
+  <div *ngIf="showDocumentsDialog" class="modal" tabindex="-1" role="dialog" style="display: block !important;" id="showDocumentsDialog">  
+    <div class="modal-dialog   modal-dialog-centered" role="document"    > 
+      <div class="bgDlg"></div> 
+      <div class="modal-content customheight">
+         
+        <div class="modal-header loginCusto">
+          <h5 class="modal-title fontsize16"> 
+            Transporter Documents
+          </h5>
+          <button (click)="closeDocumentsModel()" type="button" class="btn float-end modalclosebtn" data-dismiss="modal"> X  </button>
+           
+        </div>
+        <div class="modal-body"  >
+           
+          <div class="row">
+  
+            <div class="col-md-12">
+              <div class="text-left">
+                <form  #form="ngForm" autocomplete="off" >
+                   <div class="row mt-2">
+
+                     <!-- <div class="col-md-12 mb-2">
+                        <label class="fS14 mb-1">Entity Type <span  class="mandatory-color">*</span></label>
+                        <select  class="form-control form-select" name="entityType" (ngModelChange)="onChangeEntity($event)"
+                           #entityType="ngModel"  required [ngClass]="{'input-box-style2-error': entityType.invalid && (entityType.dirty || entityType.touched)}"  
+                           [(ngModel)]="documentData.entityType" >
+                           <option  value="1">Transporter</option>
+                           <option  value="2">Vehicle</option>
+                        </select>
+                     </div> -->
+
+                     <!-- <div class="col-md-12 mb-2" *ngIf="isVehicleDisabled">        
+                        <label class="fS14 mb-1">Vehicle No<span  class="mandatory-color">*</span></label>
+                        <div>
+                           <ng-select [items]="transportvehicleslist" #tVehicleId name="tVehicleId" 
+                                bindLabel="vehicleno" (ngModelChange)="onChangeVehicle($event)"
+                                bindValue="vehicleid" 
+                                placeholder="Select Vehicle"
+                                [(ngModel)]="documentData.tVehicleId">
+                            </ng-select>
+                        </div>
+                     </div> -->
+ 
+                      <div class="col-md-12 mb-2">
+                         <div class="fS14 mb-1">Document Number <span  class="mandatory-color">*</span></div>
+                         <div>
+                            <input autofocus type="text" id="documentNo" name="documentNo" #documentNo="ngModel"  required
+                            [ngClass]="{'input-box-style2-error': documentNo.invalid && (documentNo.dirty || documentNo.touched)}" 
+                            class="form-control"  [(ngModel)]="documentData.documentNo" maxlength="20">
+                         </div>
+                      </div>
+                      
+                      <div class="col-md-12 mb-2">        
+                         <label class="fS14 mb-1">Document Type <span  class="mandatory-color">*</span></label>
+                         <div>
+                            <ng-select [items]="documenttypes" #documentType name="documentType" 
+                                 bindLabel="documentname"
+                                 bindValue="documenttypeid" 
+                                 placeholder="Select Type"
+                                 [(ngModel)]="documentData.documentType">
+                             </ng-select>
+                         </div>
+                      </div>
+                      
+                      <div class="col-md-6 mb-2">
+                         <div class="fS14 mb-1">Valid From <span  class="mandatory-color">*</span></div>
+                         <div>
+                            <input autofocus type="date" id="validFrom" name="validFrom" #validFrom="ngModel"  required
+                            [ngClass]="{'input-box-style2-error': validFrom.invalid && (validFrom.dirty || validFrom.touched)}" 
+                            class="form-control"  [(ngModel)]="documentData.validFrom" maxlength="100">
+                         </div>
+                      </div>
+              
+                      <div class="col-md-6 mb-2">
+                         <div class="fS14 mb-1">Valid To <span  class="mandatory-color">*</span></div>
+                         <div>
+                            <input autofocus type="date" id="validTo" name="validTo" #validTo="ngModel"  required
+                            [ngClass]="{'input-box-style2-error': validTo.invalid && (validTo.dirty || validTo.touched)}" 
+                            class="form-control"  [(ngModel)]="documentData.validTo" maxlength="100">
+                         </div>
+                      </div>
+                      
+                      <div class="col-md-12 mb-2 mt-2">
+                         <div class="fS14 mb-1">Document Path <span  class="mandatory-color">*</span></div>
+                         <div>
+                            <input type="file" name="documentPath" class="file-input"  #fileUpload (change)="docChangeEvent($event)">
+                         </div>
+                      </div>
+                      <div class="col-md-12 mb-2 mt-2">
+                         <div>
+                            <img alt="img" [src]="docPreview" class="preview profileImg">
+                         </div>
+                      </div>
+                    </div>
+                  </form>
+  
+                  <div class="mt-2 me-4 d-flex justify-content-end">   
+                    <div class="row text-center mt-4">
+                     <div class="">
+                        <div class="form-group">
+                         <button type="button" class="btn btn-secondary footerbtncss mx-2" name="cancel" value="Cancel" (click)="closeDocumentsModel()">Clear</button>
+                         <button type="button" class="btn btn-primary footerbtncss" name="signin" (click)="updateTransportDocument()">Submit</button>
+                      </div>
+                     </div>
+                    </div>
+                  </div> 
+              </div>        
+            </div>
+          </div>
+        </div>
+      </div>  
+    </div>
+  </div> 
+
+  <div *ngIf="showVDocumentsDialog" class="modal" tabindex="-1" role="dialog" style="display: block !important;" id="showVDocumentsDialog">  
+   <div class="modal-dialog   modal-dialog-centered" role="vdocument"    > 
+     <div class="bgDlg"></div> 
+     <div class="modal-content customheight">
+        
+       <div class="modal-header loginCusto">
+         <h5 class="modal-title fontsize16"> 
+           Vehicle Documents
+         </h5>
+         <button (click)="closeVDocumentsModel()" type="button" class="btn float-end modalclosebtn" data-dismiss="modal"> X  </button>
+          
+       </div>
+       <div class="modal-body"  >
+          
+         <div class="row">
+ 
+           <div class="col-md-12">
+             <div class="text-left">
+               <form  #form="ngForm" autocomplete="off" >
+                  <div class="row mt-2">
+
+                    <!-- <div class="col-md-12 mb-2">
+                       <label class="fS14 mb-1">Entity Type <span  class="mandatory-color">*</span></label>
+                       <select  class="form-control form-select" name="entityType" (ngModelChange)="onChangeEntity($event)"
+                          #entityType="ngModel"  required [ngClass]="{'input-box-style2-error': entityType.invalid && (entityType.dirty || entityType.touched)}"  
+                          [(ngModel)]="documentData.entityType" >
+                          <option  value="1">Transporter</option>
+                          <option  value="2">Vehicle</option>
+                       </select>
+                    </div> -->
+
+                    <div class="col-md-12 mb-2" *ngIf="isVehicleDisabled">        
+                       <label class="fS14 mb-1">Vehicle No<span  class="mandatory-color">*</span></label>
+                       <div>
+                          <ng-select [items]="transportvehicleslist" #tVehicleId name="tVehicleId" 
+                               bindLabel="vehicleno" (ngModelChange)="onChangeVehicle($event)"
+                               bindValue="vehicleid" 
+                               placeholder="Select Vehicle"
+                               [(ngModel)]="vdocumentData.tVehicleId">
+                           </ng-select>
+                       </div>
+                    </div>
+
+                     <div class="col-md-12 mb-2">
+                        <div class="fS14 mb-1">Document Number <span  class="mandatory-color">*</span></div>
+                        <div>
+                           <input autofocus type="text" id="documentNo" name="documentNo" #documentNo="ngModel"  required
+                           [ngClass]="{'input-box-style2-error': documentNo.invalid && (documentNo.dirty || documentNo.touched)}" 
+                           class="form-control"  [(ngModel)]="vdocumentData.documentNo" maxlength="20">
+                        </div>
+                     </div>
+                     
+                     <div class="col-md-12 mb-2">        
+                        <label class="fS14 mb-1">Document Type <span  class="mandatory-color">*</span></label>
+                        <div>
+                           <ng-select [items]="documenttypes" #documentType name="documentType" 
+                                bindLabel="documentname"
+                                bindValue="documenttypeid" 
+                                placeholder="Select Type"
+                                [(ngModel)]="vdocumentData.documentType">
+                            </ng-select>
+                        </div>
+                     </div>
+                     
+                     <div class="col-md-6 mb-2">
+                        <div class="fS14 mb-1">Valid From <span  class="mandatory-color">*</span></div>
+                        <div>
+                           <input autofocus type="date" id="validFrom" name="validFrom" #validFrom="ngModel"  required
+                           [ngClass]="{'input-box-style2-error': validFrom.invalid && (validFrom.dirty || validFrom.touched)}" 
+                           class="form-control"  [(ngModel)]="vdocumentData.validFrom" maxlength="100">
+                        </div>
+                     </div>
+             
+                     <div class="col-md-6 mb-2">
+                        <div class="fS14 mb-1">Valid To <span  class="mandatory-color">*</span></div>
+                        <div>
+                           <input autofocus type="date" id="validTo" name="validTo" #validTo="ngModel"  required
+                           [ngClass]="{'input-box-style2-error': validTo.invalid && (validTo.dirty || validTo.touched)}" 
+                           class="form-control"  [(ngModel)]="vdocumentData.validTo" maxlength="100">
+                        </div>
+                     </div>
+                     
+                     <div class="col-md-12 mb-2 mt-2">
+                        <div class="fS14 mb-1">Document Path <span  class="mandatory-color">*</span></div>
+                        <div>
+                           <input type="file" name="documentPath" class="file-input"  #fileUpload (change)="vdocChangeEvent($event)">
+                        </div>
+                     </div>
+                     <div class="col-md-12 mb-2 mt-2">
+                        <div>
+                           <img alt="img" [src]="vdocPreview" class="preview profileImg">
+                        </div>
+                     </div>
+                   </div>
+                 </form>
+ 
+                 <div class="mt-2 me-4 d-flex justify-content-end">   
+                   <div class="row text-center mt-4">
+                    <div class="">
+                       <div class="form-group">
+                        <button type="button" class="btn btn-secondary footerbtncss mx-2" name="cancel" value="Cancel" (click)="closeVDocumentsModel()">Clear</button>
+                        <button type="button" class="btn btn-primary footerbtncss" name="signin" (click)="updateTransportVDocument()">Submit</button>
+                     </div>
+                    </div>
+                   </div>
+                 </div> 
+             </div>        
+           </div>
+         </div>
+       </div>
+     </div>  
+   </div>
+ </div> 
+

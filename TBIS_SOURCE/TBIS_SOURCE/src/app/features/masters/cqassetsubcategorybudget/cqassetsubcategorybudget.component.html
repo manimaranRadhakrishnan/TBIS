@@ -1,0 +1,127 @@
+
+<div  class="container">
+  <div class="table-wrapper px-0 shadow">
+     <div class="table-title title-fixed">
+       <div class="row">
+         <div class="col-sm-6">
+           <div class="table-head ms-2">
+             <div class="row">
+               <div *ngIf="action!='view'" class="col-1 cursor" (click)="cancelAdd()">
+                 <i class="bi bi-arrow-left"></i>
+               </div>
+               <div *ngIf="action=='view'" class="col-1 cursor">
+               </div>
+               <div class="col-6 p-0">
+                 Asset Sub-Category Budget
+               </div>
+             </div>
+             
+              </div>
+         </div>
+         <div *ngIf="action=='view'" class="col-sm-6">
+           <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+             <a class="btn btn-success addcss" (click)="addNew()">
+               <i class="bi bi-plus-square"></i><span>New Asset Sub-Category Budget</span>
+             </a>
+             <a><i class="bi bi-three-dots-vertical mt-1"></i></a>
+           </div>
+         </div>
+       </div>
+     </div>
+        <div class="table-content title-content">
+           <div *ngIf="action!='view'">  
+        
+        <div class="pt-0">
+  
+         <form class="p-3" method="post" autocomplete="off" #frm="ngForm">  
+           <div class="row g-0 badge-bg mt-2">
+              <div class="col-1 mt-1 left-badge"></div>
+              <div class="ms-3 col-6 mt-2 badge-title">Asset Sub-Category Budget</div>
+            </div>
+           <div class="row mt-3">
+            
+
+            <div class="col-md-3">
+              <div class="fS14 mb-1" >Asset Sub-Category </div>      
+              <ng-select [items]="assetsubcategorylist" #cwascId name="cwascId"
+                  bindLabel="cwasc_name" 
+                  bindValue="cwasc_id" 
+                  placeholder="Select Asset Sub-Category"
+                  [(ngModel)]="masterData.cwascId">
+              </ng-select>
+            </div>
+
+            <div class="col-md-3">
+              <div class="fS14 mb-1" >Warehouse </div>      
+              <ng-select [items]="werehouseslist" #cwascbWarehouseId name="cwascbWarehouseId"
+                  bindLabel="warehousename" 
+                  bindValue="warehousid" 
+                  placeholder="Select Warehouse"
+                  [(ngModel)]="masterData.cwascbWarehouseId">
+              </ng-select>
+            </div>
+
+              <div class="col-md-3">        
+                <label class="fS14 mb-1">Budget <span  class="mandatory-color">*</span></label>
+                <div>
+                  <input autofocus type="text"  name="cwascbBudget" #cwascbBudget="ngModel"  required
+                    [ngClass]="{'input-box-style2-error': cwascbBudget.invalid && (cwascbBudget.dirty || cwascbBudget.touched)}" 
+                    class="form-control" placeholder="" [(ngModel)]="masterData.cwascbBudget" maxlength="150">
+                </div>
+              </div>
+
+              <div class="col-md-3">        
+                <label class="fS14 mb-1">Budget Used <span  class="mandatory-color">*</span></label>
+                <div>
+                  <input autofocus type="text"  name="cwascbBudgetUsed" #cwascbBudgetUsed="ngModel"  required
+                    [ngClass]="{'input-box-style2-error': cwascbBudgetUsed.invalid && (cwascbBudgetUsed.dirty || cwascbBudgetUsed.touched)}" 
+                    class="form-control" placeholder="" [(ngModel)]="masterData.cwascbBudgetUsed" maxlength="15">
+                </div>
+              </div>
+              </div>
+              <div class="row mt-3">
+        
+              <div class="col-md-3">
+                  <label class="fS14 mb-1">Is Sysytem<span  class="mandatory-color">*</span></label>
+                  <select  class="form-control form-select" name="cwascbIsSystem" 
+                      #cwascbIsSystem="ngModel"  required [ngClass]="{'input-box-style2-error': cwascbIsSystem.invalid && (cwascbIsSystem.dirty || cwascbIsSystem.touched)}"  
+                      [(ngModel)]="masterData.cwascbIsSystem" >
+                      <option  value="true">Yes</option>
+                      <option  value="false">No</option>
+                    </select>
+              </div>
+        
+              <div class="col-md-3">
+                <label class="fS14 mb-1">Active<span  class="mandatory-color">*</span></label>
+                <select  class="form-control form-select" name="active" 
+                    #active="ngModel"  required [ngClass]="{'input-box-style2-error': active.invalid && (active.dirty || active.touched)}"  
+                    [(ngModel)]="masterData.active" >
+                    <option  value="true">Active</option>
+                    <option  value="false">InActive</option>
+                  </select>
+              </div>
+          </div>
+       </form>
+   <div class="mt-4 me-4 d-flex justify-content-end">   
+     <div class="row text-center mt-4">
+      <div class="">
+         <div class="form-group transback">
+          <button  type="button"  class="btn btn-secondary footerbtncss mx-2" name="cancel" value="Cancel" (click)="cancelAdd()">Clear</button>
+          <button type="button"   class="btn btn-primary footerbtncss" name="signin" (click)="updateAssetSubCategoryBudgetMaster()">Submit</button>
+       </div>
+      </div>
+     </div>
+   </div>  
+  </div>
+
+</div>
+     <div *ngIf="action=='view'">
+       <div class="p-4">
+        <report creportid="110" #report (onEditClcked)="doAction($event)"   [events]="eventsSubject.asObservable()" [groupreport]="0"></report>
+     </div>
+     </div>
+</div>
+</div>
+</div>
+
+  

@@ -1,0 +1,39 @@
+<div  class="container">
+     <div class="table-wrapper px-0 shadow">
+       <div class="table-title title-fixed">
+        <div class="row d-flex alig-items-right">
+          <div class="col-sm-6">
+            <div class="table-head ms-2">
+              <div class="row">
+                <div *ngIf="action=='view'" class="col-1 cursor">
+                </div>
+                <div class="col-6 p-0">
+                   {{reportName}}
+                </div>
+              </div>
+             </div>
+          </div>
+          <div class="col-3 ms-auto d-flex align-items-center">
+            <mat-date-range-input [formGroup]="dateFilter" [rangePicker]="rangePicker" [comparisonStart]="masterData.start"
+              [comparisonEnd]="masterData.end" >
+              <input matStartDate placeholder="Start date" #dstart formControlName="start">
+              <input matEndDate placeholder="End date" #dend formControlName="end" (dateChange)="refreshData(dstart.value,dend.value)">
+            </mat-date-range-input>
+            <mat-datepicker-toggle matIconSuffix [for]="rangePicker"></mat-datepicker-toggle>
+            <mat-date-range-picker #rangePicker></mat-date-range-picker>
+            <i (click)="refreshReport()" class="btn btn-success ">GO</i>
+          </div>
+        </div>
+       </div>
+       <div class="table-content title-content">
+             <div *ngIf="action=='view'">
+               <div class="p-4">
+               <report creportid="{{reportId}}" fromdate="{{fromdate}}" todate="{{todate}}" #reportdata [events]="eventsSubject.asObservable()" [groupreport]="0"></report>
+             </div>
+             </div>
+       </div>
+     </div>
+ </div>
+ 
+  
+  

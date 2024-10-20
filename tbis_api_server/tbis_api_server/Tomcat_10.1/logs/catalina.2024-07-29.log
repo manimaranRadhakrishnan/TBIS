@@ -1,0 +1,210 @@
+29-Jul-2024 10:27:19.207 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.1.9
+29-Jul-2024 10:27:19.211 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          May 9 2023 14:30:05 UTC
+29-Jul-2024 10:27:19.212 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.1.9.0
+29-Jul-2024 10:27:19.212 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+29-Jul-2024 10:27:19.212 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+29-Jul-2024 10:27:19.213 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+29-Jul-2024 10:27:19.213 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk-17
+29-Jul-2024 10:27:19.213 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           17.0.9+11-LTS-201
+29-Jul-2024 10:27:19.213 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+29-Jul-2024 10:27:19.213 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1
+29-Jul-2024 10:27:19.213 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1
+29-Jul-2024 10:27:19.228 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\logging.properties
+29-Jul-2024 10:27:19.228 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+29-Jul-2024 10:27:19.228 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+29-Jul-2024 10:27:19.228 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+29-Jul-2024 10:27:19.229 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+29-Jul-2024 10:27:19.229 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+29-Jul-2024 10:27:19.229 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+29-Jul-2024 10:27:19.229 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+29-Jul-2024 10:27:19.230 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+29-Jul-2024 10:27:19.230 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1
+29-Jul-2024 10:27:19.230 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1
+29-Jul-2024 10:27:19.230 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\temp
+29-Jul-2024 10:27:19.262 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [C:\Program Files\Java\jdk-17\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Python312\Scripts\;C:\Python312\;C:\Program Files\Microsoft\jdk-11.0.16.101-hotspot\bin;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Python\Python37\Scripts\;C:\Program Files\Python\Python37\;C:\Users\ASUS\Scripts\;C:\Users\ASUS\;C:\Program Files\Microsoft MPI\Bin\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\OpenSSH\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files\Microsoft SQL Server\150\DTS\Binn\;C:\Users\ASUS\Lib\site-packages\pip;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Program Files\gettext-iconv\bin;C:\Program Files\PuTTY\;C:\Program Files\Java\jdk-17\bin;C:\Program Files\GTK3-Runtime Win64\bin;C:\ProgramData\chocolatey\bin;C:\Users\ASUS\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\apache-maven-3.8.8-bin\apache-maven-3.8.8\bin;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\ASUS\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Azure Data Studio\bin;C:\Users\ASUS\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\PyCharm Community Edition 2021.2.3\bin;;D:\CHAKRAS\Drivers\flutter\bin;C:\Users\ASUS\AppData\Local\GitHubDesktop\bin;C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe;C:\ProgramData\ASUS\GitHubDesktop\bin;C:\Users\ASUS\AppData\Roaming\npm;C:\Program Files\JetBrains\DataGrip 2023.2.3\bin;;C:\Users\ASUS\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\src\flutter\bin;;.]
+29-Jul-2024 10:27:19.470 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8282"]
+29-Jul-2024 10:27:19.493 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [444] milliseconds
+29-Jul-2024 10:27:19.529 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+29-Jul-2024 10:27:19.530 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.9]
+29-Jul-2024 10:27:19.556 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml]
+29-Jul-2024 10:27:19.569 WARNING [main] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/tbis] in deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml] has been ignored
+29-Jul-2024 10:27:22.760 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+29-Jul-2024 10:27:24.264 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml] has finished in [4,707] ms
+29-Jul-2024 10:27:24.265 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\webapps\docs]
+29-Jul-2024 10:27:24.520 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+29-Jul-2024 10:27:24.522 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\webapps\docs] has finished in [257] ms
+29-Jul-2024 10:27:24.523 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\webapps\manager]
+29-Jul-2024 10:27:24.771 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+29-Jul-2024 10:27:24.777 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\webapps\manager] has finished in [253] ms
+29-Jul-2024 10:27:24.777 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\webapps\ROOT]
+29-Jul-2024 10:27:25.000 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+29-Jul-2024 10:27:25.002 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\webapps\ROOT] has finished in [225] ms
+29-Jul-2024 10:27:25.003 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\webapps\tbisapp]
+29-Jul-2024 10:27:25.208 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+29-Jul-2024 10:27:25.211 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\webapps\tbisapp] has finished in [208] ms
+29-Jul-2024 10:27:25.215 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8282"]
+29-Jul-2024 10:27:25.238 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [5745] milliseconds
+29-Jul-2024 10:30:19.437 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/tbis]
+29-Jul-2024 10:30:19.476 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml]
+29-Jul-2024 10:30:19.477 WARNING [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/tbis] in deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml] has been ignored
+29-Jul-2024 10:30:22.175 INFO [Catalina-utility-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+29-Jul-2024 10:30:23.319 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml] has finished in [3,843] ms
+29-Jul-2024 10:30:34.158 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/tbis]
+29-Jul-2024 10:30:34.180 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml]
+29-Jul-2024 10:30:34.181 WARNING [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/tbis] in deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml] has been ignored
+29-Jul-2024 10:30:35.187 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.1.9
+29-Jul-2024 10:30:35.192 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          May 9 2023 14:30:05 UTC
+29-Jul-2024 10:30:35.192 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.1.9.0
+29-Jul-2024 10:30:35.192 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+29-Jul-2024 10:30:35.192 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+29-Jul-2024 10:30:35.193 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+29-Jul-2024 10:30:35.193 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk-17
+29-Jul-2024 10:30:35.193 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           17.0.9+11-LTS-201
+29-Jul-2024 10:30:35.193 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+29-Jul-2024 10:30:35.193 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1
+29-Jul-2024 10:30:35.193 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1
+29-Jul-2024 10:30:35.207 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\logging.properties
+29-Jul-2024 10:30:35.207 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+29-Jul-2024 10:30:35.207 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+29-Jul-2024 10:30:35.207 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+29-Jul-2024 10:30:35.208 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+29-Jul-2024 10:30:35.208 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+29-Jul-2024 10:30:35.208 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+29-Jul-2024 10:30:35.209 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+29-Jul-2024 10:30:35.209 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+29-Jul-2024 10:30:35.209 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1
+29-Jul-2024 10:30:35.209 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1
+29-Jul-2024 10:30:35.210 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\temp
+29-Jul-2024 10:30:35.225 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [C:\Program Files\Java\jdk-17\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Python312\Scripts\;C:\Python312\;C:\Program Files\Microsoft\jdk-11.0.16.101-hotspot\bin;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Python\Python37\Scripts\;C:\Program Files\Python\Python37\;C:\Users\ASUS\Scripts\;C:\Users\ASUS\;C:\Program Files\Microsoft MPI\Bin\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\OpenSSH\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files\Microsoft SQL Server\150\DTS\Binn\;C:\Users\ASUS\Lib\site-packages\pip;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Program Files\gettext-iconv\bin;C:\Program Files\PuTTY\;C:\Program Files\Java\jdk-17\bin;C:\Program Files\GTK3-Runtime Win64\bin;C:\ProgramData\chocolatey\bin;C:\Users\ASUS\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\apache-maven-3.8.8-bin\apache-maven-3.8.8\bin;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\ASUS\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Azure Data Studio\bin;C:\Users\ASUS\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\PyCharm Community Edition 2021.2.3\bin;;D:\CHAKRAS\Drivers\flutter\bin;C:\Users\ASUS\AppData\Local\GitHubDesktop\bin;C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe;C:\ProgramData\ASUS\GitHubDesktop\bin;C:\Users\ASUS\AppData\Roaming\npm;C:\Program Files\JetBrains\DataGrip 2023.2.3\bin;;C:\Users\ASUS\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\src\flutter\bin;;.]
+29-Jul-2024 10:30:35.445 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8282"]
+29-Jul-2024 10:30:35.460 SEVERE [main] org.apache.catalina.util.LifecycleBase.handleSubClassException Failed to initialize component [Connector[HTTP/1.1-8282]]
+	org.apache.catalina.LifecycleException: Protocol handler initialization failed
+		at org.apache.catalina.connector.Connector.initInternal(Connector.java:1018)
+		at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:136)
+		at org.apache.catalina.core.StandardService.initInternal(StandardService.java:549)
+		at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:136)
+		at org.apache.catalina.core.StandardServer.initInternal(StandardServer.java:999)
+		at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:136)
+		at org.apache.catalina.startup.Catalina.load(Catalina.java:747)
+		at org.apache.catalina.startup.Catalina.load(Catalina.java:769)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+		at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+		at org.apache.catalina.startup.Bootstrap.load(Bootstrap.java:307)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:477)
+	Caused by: java.net.BindException: Address already in use: bind
+		at java.base/sun.nio.ch.Net.bind0(Native Method)
+		at java.base/sun.nio.ch.Net.bind(Net.java:555)
+		at java.base/sun.nio.ch.ServerSocketChannelImpl.netBind(ServerSocketChannelImpl.java:337)
+		at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:294)
+		at org.apache.tomcat.util.net.NioEndpoint.initServerSocket(NioEndpoint.java:247)
+		at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:202)
+		at org.apache.tomcat.util.net.AbstractEndpoint.bindWithCleanup(AbstractEndpoint.java:1256)
+		at org.apache.tomcat.util.net.AbstractEndpoint.init(AbstractEndpoint.java:1269)
+		at org.apache.coyote.AbstractProtocol.init(AbstractProtocol.java:622)
+		at org.apache.coyote.http11.AbstractHttp11Protocol.init(AbstractHttp11Protocol.java:77)
+		at org.apache.catalina.connector.Connector.initInternal(Connector.java:1016)
+		... 13 more
+29-Jul-2024 10:30:35.461 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [442] milliseconds
+29-Jul-2024 10:30:35.496 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+29-Jul-2024 10:30:35.497 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.9]
+29-Jul-2024 10:30:35.516 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml]
+29-Jul-2024 10:30:35.529 WARNING [main] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/tbis] in deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml] has been ignored
+29-Jul-2024 10:30:36.553 INFO [Catalina-utility-2] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+29-Jul-2024 10:30:37.815 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml] has finished in [3,635] ms
+29-Jul-2024 10:30:38.519 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+29-Jul-2024 10:30:40.022 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml] has finished in [4,505] ms
+29-Jul-2024 10:30:40.023 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\webapps\docs]
+29-Jul-2024 10:30:40.252 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+29-Jul-2024 10:30:40.254 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\webapps\docs] has finished in [232] ms
+29-Jul-2024 10:30:40.254 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\webapps\manager]
+29-Jul-2024 10:30:40.493 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+29-Jul-2024 10:30:40.498 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\webapps\manager] has finished in [244] ms
+29-Jul-2024 10:30:40.498 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\webapps\ROOT]
+29-Jul-2024 10:30:40.745 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+29-Jul-2024 10:30:40.748 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\webapps\ROOT] has finished in [249] ms
+29-Jul-2024 10:30:40.748 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\webapps\tbisapp]
+29-Jul-2024 10:30:40.969 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+29-Jul-2024 10:30:40.971 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\webapps\tbisapp] has finished in [223] ms
+29-Jul-2024 10:30:40.976 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [5513] milliseconds
+29-Jul-2024 10:53:58.068 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.1.9
+29-Jul-2024 10:53:58.074 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          May 9 2023 14:30:05 UTC
+29-Jul-2024 10:53:58.074 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.1.9.0
+29-Jul-2024 10:53:58.075 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+29-Jul-2024 10:53:58.075 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+29-Jul-2024 10:53:58.075 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+29-Jul-2024 10:53:58.075 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk-17
+29-Jul-2024 10:53:58.075 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           17.0.9+11-LTS-201
+29-Jul-2024 10:53:58.075 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+29-Jul-2024 10:53:58.075 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1
+29-Jul-2024 10:53:58.075 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1
+29-Jul-2024 10:53:58.089 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\logging.properties
+29-Jul-2024 10:53:58.089 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+29-Jul-2024 10:53:58.090 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+29-Jul-2024 10:53:58.090 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+29-Jul-2024 10:53:58.090 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+29-Jul-2024 10:53:58.090 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+29-Jul-2024 10:53:58.090 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+29-Jul-2024 10:53:58.091 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+29-Jul-2024 10:53:58.091 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+29-Jul-2024 10:53:58.091 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1
+29-Jul-2024 10:53:58.091 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1
+29-Jul-2024 10:53:58.092 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\temp
+29-Jul-2024 10:53:58.109 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [C:\Program Files\Java\jdk-17\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Python312\Scripts\;C:\Python312\;C:\Program Files\Microsoft\jdk-11.0.16.101-hotspot\bin;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Python\Python37\Scripts\;C:\Program Files\Python\Python37\;C:\Users\ASUS\Scripts\;C:\Users\ASUS\;C:\Program Files\Microsoft MPI\Bin\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\OpenSSH\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files\Microsoft SQL Server\150\DTS\Binn\;C:\Users\ASUS\Lib\site-packages\pip;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Program Files\gettext-iconv\bin;C:\Program Files\PuTTY\;C:\Program Files\Java\jdk-17\bin;C:\Program Files\GTK3-Runtime Win64\bin;C:\ProgramData\chocolatey\bin;C:\Users\ASUS\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\apache-maven-3.8.8-bin\apache-maven-3.8.8\bin;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\ASUS\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Azure Data Studio\bin;C:\Users\ASUS\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\PyCharm Community Edition 2021.2.3\bin;;D:\CHAKRAS\Drivers\flutter\bin;C:\Users\ASUS\AppData\Local\GitHubDesktop\bin;C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe;C:\ProgramData\ASUS\GitHubDesktop\bin;C:\Users\ASUS\AppData\Roaming\npm;C:\Program Files\JetBrains\DataGrip 2023.2.3\bin;;C:\Users\ASUS\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\src\flutter\bin;;.]
+29-Jul-2024 10:53:58.320 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8282"]
+29-Jul-2024 10:53:58.335 SEVERE [main] org.apache.catalina.util.LifecycleBase.handleSubClassException Failed to initialize component [Connector[HTTP/1.1-8282]]
+	org.apache.catalina.LifecycleException: Protocol handler initialization failed
+		at org.apache.catalina.connector.Connector.initInternal(Connector.java:1018)
+		at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:136)
+		at org.apache.catalina.core.StandardService.initInternal(StandardService.java:549)
+		at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:136)
+		at org.apache.catalina.core.StandardServer.initInternal(StandardServer.java:999)
+		at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:136)
+		at org.apache.catalina.startup.Catalina.load(Catalina.java:747)
+		at org.apache.catalina.startup.Catalina.load(Catalina.java:769)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+		at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+		at org.apache.catalina.startup.Bootstrap.load(Bootstrap.java:307)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:477)
+	Caused by: java.net.BindException: Address already in use: bind
+		at java.base/sun.nio.ch.Net.bind0(Native Method)
+		at java.base/sun.nio.ch.Net.bind(Net.java:555)
+		at java.base/sun.nio.ch.ServerSocketChannelImpl.netBind(ServerSocketChannelImpl.java:337)
+		at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:294)
+		at org.apache.tomcat.util.net.NioEndpoint.initServerSocket(NioEndpoint.java:247)
+		at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:202)
+		at org.apache.tomcat.util.net.AbstractEndpoint.bindWithCleanup(AbstractEndpoint.java:1256)
+		at org.apache.tomcat.util.net.AbstractEndpoint.init(AbstractEndpoint.java:1269)
+		at org.apache.coyote.AbstractProtocol.init(AbstractProtocol.java:622)
+		at org.apache.coyote.http11.AbstractHttp11Protocol.init(AbstractHttp11Protocol.java:77)
+		at org.apache.catalina.connector.Connector.initInternal(Connector.java:1016)
+		... 13 more
+29-Jul-2024 10:53:58.336 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [432] milliseconds
+29-Jul-2024 10:53:58.369 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+29-Jul-2024 10:53:58.369 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.9]
+29-Jul-2024 10:53:58.392 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml]
+29-Jul-2024 10:53:58.405 WARNING [main] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/tbis] in deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml] has been ignored
+29-Jul-2024 10:54:01.618 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+29-Jul-2024 10:54:03.133 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\conf\Catalina\localhost\tbis.xml] has finished in [4,740] ms
+29-Jul-2024 10:54:03.133 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\webapps\docs]
+29-Jul-2024 10:54:03.371 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+29-Jul-2024 10:54:03.373 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\webapps\docs] has finished in [240] ms
+29-Jul-2024 10:54:03.374 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\webapps\manager]
+29-Jul-2024 10:54:03.622 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+29-Jul-2024 10:54:03.627 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\webapps\manager] has finished in [254] ms
+29-Jul-2024 10:54:03.628 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\webapps\ROOT]
+29-Jul-2024 10:54:03.843 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+29-Jul-2024 10:54:03.845 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\webapps\ROOT] has finished in [218] ms
+29-Jul-2024 10:54:03.845 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\webapps\tbisapp]
+29-Jul-2024 10:54:04.048 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+29-Jul-2024 10:54:04.050 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [D:\LIVE PROJECTS\ITBIS\tbis_api_server\Tomcat_10.1\webapps\tbisapp] has finished in [205] ms
+29-Jul-2024 10:54:04.054 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [5717] milliseconds
+29-Jul-2024 11:51:16.626 INFO [Catalina-utility-2] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/tbis] has started
+29-Jul-2024 11:51:19.486 INFO [Catalina-utility-2] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+29-Jul-2024 11:51:20.690 INFO [Catalina-utility-2] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/tbis] is completed
+29-Jul-2024 11:55:54.462 INFO [Catalina-utility-1] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/tbis] has started
+29-Jul-2024 11:55:58.111 INFO [Catalina-utility-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+29-Jul-2024 11:56:00.042 INFO [Catalina-utility-1] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/tbis] is completed

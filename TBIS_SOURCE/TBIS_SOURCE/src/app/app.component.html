@@ -1,0 +1,14 @@
+<div *ngIf="isLoading|async" class="splash">
+  <div class="color-line"></div>
+  <div class="splash-title">
+    <img alt="loading" src="assets/dist/img/loading-bars.svg" width="64" height="64" />
+  </div>
+  
+</div>
+<div class="wrapper">
+    <app-sidenav (onToggleSideNav)="onToggleSideNav($event)" *ngIf="isLogIn"></app-sidenav>
+    <app-body [collapsed]="isSideNavCollapsed" [screenWidth]="screenWidth" [isLogIn] ="isLogIn" [isOnline]="isOnline"></app-body> 
+    <div class="h-100">
+        <app-confirm-dialog></app-confirm-dialog>
+    </div>
+</div>

@@ -1,0 +1,132 @@
+<div  class="container">
+    <div class="table-wrapper px-0 shadow">
+      <div class="table-title title-fixed">
+        <div class="row">
+           <div class="col-sm-6">
+              <div class="table-head ms-2">
+              <div class="row">
+                 <div *ngIf="action!='view'" class="col-1 cursor" (click)="cancelAdd()">
+                    <i class="bi bi-arrow-left"></i>
+                 </div>
+                 <div *ngIf="action=='view'" class="col-1 cursor">
+                 </div>
+                 <div class="col-12 mx-4 p-0">
+                  Short Haul Vehicle Allocation
+                 </div>
+              </div>
+              
+                 </div>
+           </div>
+        
+        </div>
+      </div>
+      <div> 
+      <div class="table-content title-content">
+        <div class="pt-0">
+               <nav>
+                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                   <button class="nav-link active" id="nav-info-tab" data-bs-toggle="tab" data-bs-target="#nav-info" type="button" role="tab" aria-controls="nav-info" aria-selected="true">Picklist Info</button>
+                   <button class="nav-link" id="nav-parts-tab" data-bs-toggle="tab" data-bs-target="#nav-parts" type="button" role="tab" aria-controls="nav-parts" aria-selected="false">Vehicle Assigned Details</button>
+                 </div>
+               </nav>
+               <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="nav-info" role="tabpanel" aria-labelledby="nav-info-tab">
+                 
+                  <div class="p-4">
+                    <report creportid="85" #report (onEditClcked)="doAction($event)"   [events]="eventsSubject.asObservable()" [groupreport]="0"></report>
+                   </div>              
+                </div>
+                <div class="tab-pane fade" id="nav-parts" role="tabpanel" aria-labelledby="nav-parts-tab">
+                  <div class="row px-2">
+                    <div class="p-1"> 
+                     <div class="row px-3 mb-2">   
+                       <div class="row g-0 badge-bg">
+                          <div class="col-1 mt-1 left-badge"></div>
+                          <div class="ms-3 col-6 mt-2 badge-title">PickList Vehicle Details</div>
+                       </div>
+                   
+                <div class="card shadow-lg position-relative ">
+                    <report creportid="95" #selectedreport [events]="eventsSubject.asObservable()" [groupreport]="0"></report>
+
+                </div>
+
+                    </div>
+                    </div>
+                  </div>
+                  <div class="row px-3">
+                    <div class="mt-2 me-4 d-flex justify-content-end">   
+                      <div class="row text-center mt-4">
+                      <div class="">
+                          <div class="form-group transback">
+                            <button *ngIf="action!='show'" type="button"   class="btn btn-primary footerbtncss" name="confirm" (click)="updatePickLists()">Submit</button>
+                        </div>
+                      </div>
+                      </div>
+                    </div> 
+                  </div>
+                </div>
+              </div>    
+          </div>
+      </div>
+      </div>
+  </div>
+</div>    
+
+<div *ngIf="showVehicleDlg" class="modal" tabindex="-1" role="dialog" style="display: block !important;" id="showDocumentsDialog">  
+  <div class="modal-dialog  modal-lg" role="document"    > 
+    <div class="bgDlg"></div> 
+    <div class="modal-content">
+       
+      <div class="modal-header loginCusto">
+        <h5 class="modal-title fontsize16"> 
+          Vehicle Details
+        </h5>
+        <button (click)="closeVehicleDlgModel()" type="button" class="btn float-end modalclosebtn" data-dismiss="modal"> X  </button>
+         
+      </div>
+      <div class="modal-body"  >
+         
+        <div class="row">
+
+          <div class="col-md-12">
+            <div class="text-left">
+              <form  #form="ngForm" autocomplete="off" >
+                <div class="row mb-2">
+                    <div class="col-md-3 mb-2">        
+                      <label class="fS14 mb-1">Vehicle No<span  class="mandatory-color">*</span></label>
+                      <div>
+                         <ng-select [items]="shorthaulvehicleslist" #tVehicleId name="tVehicleId" 
+                              bindLabel="vehicleno"
+                              bindValue="vehicleno" 
+                              placeholder="Select Vehicle"
+                              [(ngModel)]="shorthaul.assignVehicleNo">
+                          </ng-select>
+                      </div>
+                   </div>
+                   <div class="col-md-6 mb-2"> </div>
+                   <div class="col-md-3 mb-2">        
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end align-items-center">
+                      <a class="btn btn-success addcss" (click)="vehicleAssign(doActionPicklistId)">
+                       <i class="bi bi-plus-square"></i><span>Vehicle Assign</span>
+                      </a>
+                    </div>
+                    </div>
+                </div>
+
+                  <div class="card shadow-lg position-relative">
+                  <report creportid="83" #selectedreport defaultparam="picklistid" [defaultparamvalue]=doActionPicklistId [events]="eventsSubject.asObservable()" [groupreport]="0"></report>
+                  </div>
+              </form>
+                
+            </div>
+                            
+          </div>
+        </div>
+        
+      </div>
+       
+    </div>  
+  </div>
+</div> 
+
+

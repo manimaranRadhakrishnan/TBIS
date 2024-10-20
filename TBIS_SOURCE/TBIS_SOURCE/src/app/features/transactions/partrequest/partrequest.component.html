@@ -1,0 +1,214 @@
+<div  class="container">
+   <div class="table-wrapper px-0 shadow">
+       <div class="table-title title-fixed">
+         <div class="row">
+           <div class="col-sm-6">
+             <div class="table-head ms-2">
+               <div class="row">
+                 <div *ngIf="action!='view'" class="col-1 cursor" (click)="cancelAdd()">
+                   <i class="bi bi-arrow-left"></i>
+                 </div>
+                 <div *ngIf="action=='view'" class="col-1 cursor">
+                 </div>
+                 <div class="col-6 p-0">
+                   Part Request
+                 </div>
+               </div>
+               
+                </div>
+           </div>
+           <div *ngIf="action =='view'" class="col-sm-6">
+             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+               <a class="btn btn-success addcss" (click)="addNew()">
+                 <i class="bi bi-plus-square"></i><span>New Request</span>
+               </a>
+             </div>
+           </div>
+         </div>
+       </div>
+          <div class="table-content title-content">
+              <div *ngIf="action!='view'">  
+              <div class="row g-0 badge-bg mt-2">
+                <div class="col-1 mt-1 left-badge"></div>
+               <div class="ms-3 col-6 mt-2 badge-title">Part Request Entry</div>
+              </div>
+            <div class="pt-0">
+              <form class="p-3" method="post" autocomplete="off" #frm="ngForm">  
+               <div class="row mt-3">   
+                <div class="col-md-2">        
+                  <label class="fS14 mb-1"> Vehicle No <span  class="mandatory-color">*</span></label>
+                  <div *ngIf="action=='add'">
+                    <ng-select [items]="vehicleDet" name="vechicleNo" #vechicleId  [tabIndex]="1" [autofocus]="true" (change)="getTransId(masterData.vechicleNo)"
+                    bindLabel="lable" 
+                    bindValue="lable" 
+                    placeholder="Select Vehicle"
+                    [(ngModel)]="masterData.vechicleNo">
+                  </ng-select>
+                  </div>
+                  <div *ngIf="action!='add'">
+                    <input  type="text"  name="vechicleNo" #vechicleNo="ngModel"  required  disabled="true"
+                     class="form-control" placeholder="" [(ngModel)]="masterData.vechicleNo" maxlength="12">
+                  </div>
+               </div>
+               <div class="col-md-2">        
+                <label class="fS14 mb-1">Transit Type</label>
+                <div *ngIf="action=='add'">
+                  <select class="form-select" name="asnStatus" #asnStatus aria-label="Default select example" [tabIndex]="2" [autofocus]="true"
+                     [(ngModel)]="masterData.asnStatus">
+                     <option  value="2">Regular</option>
+                     <option  value="4">Addtional</option>
+                     </select>
+                 </div>
+                 <div *ngIf="action!='add'">
+                  <input  type="text"  name="asnStatus" #asnStatus="ngModel"    disabled="true"
+                   class="form-control" placeholder="" [(ngModel)]="masterData.asnStatus" maxlength="12">
+                </div>
+                </div>
+               <div class="col-md-2" *ngIf="action=='add' && masterData.asnStatus==4 ">
+                  <label class="fS14 mb-1">Vendor</label>
+                  <div>
+                    <ng-select [items]="customers" [tabIndex]="3" [autofocus]="true" name="customerId" #customerId 
+                    bindLabel="customername" 
+                    bindValue="customerId" 
+                    placeholder="Select Vendor"
+                    [(ngModel)]="masterData.customerId">
+                     </ng-select>
+                   </div>
+               </div>
+               
+               
+               
+               <div class="col-md-2">        
+                <label class="fS14 mb-1">Entry Time <span  class="mandatory-color">*</span></label>
+                <div  *ngIf="action=='add'">
+                  <input  type="text"  name="gateInDateTime" #gateInDateTime="ngModel"  required  [tabIndex]="4" [autofocus]="true"
+                   [ngClass]="{'input-box-style2-error': gateInDateTime.invalid && (gateInDateTime.dirty || gateInDateTime.touched)}" 
+                   class="form-control" placeholder="" [(ngModel)]="masterData.gateInDateTime" maxlength="20">
+                </div>
+                <div *ngIf="action!='add'">
+                  <input  type="text"  name="gateInDateTime" #gateInDateTime="ngModel"  required [disabled]="true" 
+                   class="form-control" placeholder="" [(ngModel)]="masterData.gateInDateTime" maxlength="20">
+                </div>
+
+               </div>
+               <div class="col-md-2">        
+                <label class="fS14 mb-1">Empty BIN</label>
+                <div *ngIf="action=='add'">
+                  <input  type="text"  name="returnPack" #returnPack="ngModel"  maxlength="5" numbersOnly  [disabled]="isDisabled" [tabIndex]="5" [autofocus]="true"
+                   [ngClass]="{'input-box-style2-error': returnPack.invalid && (returnPack.dirty || returnPack.touched)}" 
+                   class="form-control" placeholder="" [(ngModel)]="masterData.returnPack">
+                </div>
+                <div *ngIf="action!='add'">
+                  <input  type="text"  name="returnPack" #returnPack="ngModel"  maxlength="5" numbersOnly  [disabled]="true"
+                   class="form-control" placeholder="" [(ngModel)]="masterData.returnPack">
+                </div>
+                </div>
+             
+                <div class="col-md-2">        
+                    <label class="fS14 mb-1">Empty Trolley</label>
+                    <div *ngIf="action=='add'">
+                      <input  type="text"  name="returnPackQty" #returnPackQty="ngModel" numbersOnly  [disabled]="isDisabled" [tabIndex]="6" [autofocus]="true"
+                      [ngClass]="{'input-box-style2-error': returnPackQty.invalid && (returnPackQty.dirty || returnPackQty.touched)}" 
+                      class="form-control" placeholder="" [(ngModel)]="masterData.returnPackQty" maxlength="5">
+                    </div>
+                    <div *ngIf="action!='add'">
+                      <input  type="text"  name="returnPackQty" #returnPackQty="ngModel" numbersOnly  [disabled]="true" 
+                      class="form-control" placeholder="" [(ngModel)]="masterData.returnPackQty" maxlength="5">
+                    </div>
+                </div>
+                </div>
+           
+             
+            
+              <div class="mt-4 me-4 d-flex justify-content-end" *ngIf="masterData.transId<=0">   
+                <div class="row text-center mt-4">
+                 <div class="">
+                    <div class="form-group" style="background:transparent;">
+                     <button tabindex="6" style="margin-left:10px;" type="button"  class="btn btn-secondary footerbtncss mx-2" name="cancel" value="Cancel" (click)="cancelAdd()">Clear</button>
+                     <button  tabindex="7" type="button"   class="btn btn-primary footerbtncss" name="signin" (click)="updateVechicleEntry()">Submit</button>
+                  </div>
+                 </div>
+                </div>
+              </div> 
+               <div class="row mt-3" *ngIf="masterData.transId>0">   
+                <div class="col-md-3">        
+                    <label class="fS14 mb-1"> Scan Your Card <span  class="mandatory-color">*</span></label>
+                    <div>
+                      <input autofocus type="text"  tabindex="8"  #scannedValueCtl  [attr.disabled]="(this.masterData.transId==undefined || this.masterData.transId=='')?true:null"
+                       class="form-control" placeholder="" [(ngModel)]="scannedValue" maxlength="100" (keydown)="parseAndAddCard($event)">
+                    </div>
+                 </div>
+                 
+                 <div class="col-md-3">        
+                    <label class="fS14 mb-1">Total Card Scanned <span  class="mandatory-color">*</span></label>
+                    <div>
+                      <input autofocus type="text"  name="totalCardScanned" #totalCardScanned="ngModel"  disabled="true"
+                       [ngClass]="{'input-box-style2-error': totalCardScanned.invalid && (totalCardScanned.dirty || totalCardScanned.touched)}" 
+                       class="form-control" placeholder="" [(ngModel)]="masterData.totalCardScanned" maxlength="100">
+                    </div>
+                 </div>
+               </div>
+             </form>
+      
+            <div class="row g-0 p-4"  *ngIf="masterData.transId>0 || masterData.asnId>0|| action=='show'">
+              <div class="row g-0 badge-bg mt-2">
+                <div class="col-1 mt-1 left-badge"></div>
+              <div class="ms-3 col-6 mt-2 badge-title">Part Request Details</div>
+          </div>
+            <div class="card shadow-lg position-relative" style="border: 1px solid #e3e3e3;height:250px;overflow-y: scroll;">
+              <table class="tab table table-hover w-100">
+                <thead class="sticky-top top-0">
+                  <tr style="background: #f7f7ff;">                      
+                            <th>Sl.No</th>
+                            <th>Vendor Code</th>
+                            <th>Vendor Name</th>
+                            <th>User Location</th>
+                            <th>Part No</th>
+                            <th>Part Desc</th>
+                            <th>Qty</th>
+                            <th *ngIf="action=='show'">Status</th>
+                            <th *ngIf="action!='show'">Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let scannedDetail of savedCardDetails;index as i">
+                            <td [ngClass]="{'mandatory-color':scannedDetail.customerPartId==0}">{{ scannedDetail.serialNo }}</td>
+                            <td [ngClass]="{'mandatory-color':scannedDetail.vendorId==0}">{{ scannedDetail.vendorCode }}</td>
+                            <td>{{ scannedDetail.vendorName }}</td>
+                            <td>{{ scannedDetail.userLocation }}</td>
+                            <td [ngClass]="{'mandatory-color':scannedDetail.partId==0}">{{ scannedDetail.partNo }}</td>
+                            <td>{{ scannedDetail.partName }}</td>
+                            <td>{{ scannedDetail.qty }}</td>
+                            <td *ngIf="action=='show'">{{ scannedDetail.ackStatus }}</td>
+                            <td *ngIf="action!='show'"><img src="assets/dist/img/delete.png" alt="" class="mb-2 ms-1" (click)="removeScannedValue(i)"></td>
+                          </tr>
+                        </tbody>
+                      </table>   
+                    </div>             
+                    <div class="mt-4 me-4 d-flex justify-content-end">   
+                      <div class="row text-center mt-4">
+                      <div class="">
+                          <div class="form-group" style="background:transparent;">
+                            <button style="margin-left:10px;" type="button"  class="btn btn-secondary footerbtncss mx-2" name="cancel" value="Cancel" (click)="cancelAdd()" >Clear</button>
+                          <button *ngIf="action!='show'" type="button"   class="btn btn-primary footerbtncss" name="confirm" (click)="updateAsn()">Submit</button>
+                        </div>
+                      </div>
+                      </div>
+                    </div> 
+                  
+            </div>  
+
+
+
+            
+           </div>
+  
+    </div>
+          <div *ngIf="action=='view'">
+            <div class="p-4">
+            <report creportid="55" defaultparam="status" defaultparamvalue="2" #report (onEditClcked)="doAction($event)"   [events]="eventsSubject.asObservable()" [groupreport]="0"></report>
+          </div>
+          </div>
+    </div>
+  </div>
+  </div>

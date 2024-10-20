@@ -1,0 +1,52 @@
+
+<div  class=""  *ngIf="action!='view'">
+
+    <div class="position-relative">
+       <span class="containerBorderIcBg containerBorderTxtAli">Wms Document Type - Add </span>
+       <div class="containerBorderHead1"></div>    
+    </div>
+    <form method="post" autocomplete="off" #frm="ngForm">  
+    <div class="row mt-4">       
+
+
+      <div class="col-md-3">        
+         <label class="fS14 mb-1"> Document Name <span  class="mandatory-color">*</span></label>
+         <div>
+           <input autofocus type="text"  name="documentName" #documentName="ngModel"  required
+            [ngClass]="{'input-box-style2-error': documentName.invalid && (documentName.dirty || documentName.touched)}" 
+            class="form-control" placeholder="" [(ngModel)]="masterData.documentName" maxlength="50">
+         </div>
+      </div>
+        
+
+      <div class="col-md-3">
+         <label class="fS14 mb-1">Active<span  class="mandatory-color">*</span></label>
+         <select  class="form-control form-select" name="IsActive" 
+             #IsActive="ngModel"  required [ngClass]="{'input-box-style2-error': IsActive.invalid && (IsActive.dirty || IsActive.touched)}"  
+             [(ngModel)]="masterData.IsActive" >
+             <option  value="Active">Active</option>
+             <option  value="InActive">InActive</option>
+           </select>
+            </div>
+
+           
+
+ </div>
+</form>
+ <div class="mt-4 d-flex justify-content-end">   
+   <div class="row text-center mt-4">
+    <div class="">
+       <div class="form-group" style="background:transparent;">
+        <button style="margin-left:10px;" type="button"  class="btn btn-primary buttonStyle2 mx-2" name="cancel" value="Cancel" (click)="cancelAdd()">Clear</button>
+        <button type="button"   class="btn btn-primary buttonStyle1" name="signin" (click)="updateWmsDocumentType()">Submit</button>
+     </div>
+    </div>
+   </div>
+ </div>   
+
+   </div>
+   <!-- <div *ngIf="action=='view'">
+      <report creportid="8" #report (someEvent)="doAction($event)"   [events]="eventsSubject.asObservable()" [groupreport]="0"></report>
+    </div> -->
+ 
+

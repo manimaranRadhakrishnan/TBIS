@@ -1,0 +1,584 @@
+
+<div  class="container">
+    <h4 class="text-white">Stock Movement</h4>
+    <div class="table-wrapper px-0 shadow">
+      <div class="table-title title-fixed">
+        <div class="row">
+          <div class="col-sm-6">
+             <div class="table-head ms-2">
+             <div class="row">
+                <!-- <div *ngIf="action!='view'" class="col-1 cursor">
+                   <i class="bi bi-arrow-left"></i>
+                </div>
+                <div *ngIf="action=='view'" class="col-1 cursor">
+                </div> -->
+                <div class="col-6 p-0">
+                 Stock Movement
+                </div>
+             </div>
+             
+                </div>
+          </div>
+          <div *ngIf="action=='view'" class="col-sm-6">
+             <div class="d-grid gap-2 d-md-flex justify-content-md-end align-items-center" *ngIf="userRoleId=='3'">
+              
+             </div>
+          </div>
+       
+       </div>
+      </div>
+      <div *ngIf="action!='view'"> 
+      <div class="table-content title-content">
+        <div class="pt-0">
+               <nav>
+                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                   <button class="nav-link" [ngClass]="showTab==1 ? 'active' : ''"  id="nav-info-tab" data-bs-toggle="tab" data-bs-target="#nav-info" type="button" role="tab" aria-controls="nav-info" aria-selected="true" (click)="moveParts(1)">Stock Movement Info</button>
+                   <button class="nav-link" [ngClass]="showTab==2 ? 'active' : ''" id="nav-parts-tab" data-bs-toggle="tab" data-bs-target="#nav-parts" type="button" role="tab" aria-controls="nav-parts" aria-selected="false" (click)="moveParts(2)">Parts Details</button>
+                   <button class="nav-link" [ngClass]="showTab==3 ? 'active' : ''" id="nav-space-tab" data-bs-toggle="tab"  type="button" role="tab" aria-controls="nav-space" aria-selected="false" >Space Details</button>
+                   <button class="nav-link" [ngClass]="showTab==4 ? 'active' : ''" id="nav-barcode-tab" data-bs-toggle="tab"  type="button" role="tab" aria-controls="nav-barcode" aria-selected="false" >Customer Barcode</button>
+                   <button class="nav-link" [ngClass]="showTab==5 ? 'active' : ''" id="nav-exbarcode-tab" data-bs-toggle="tab"  type="button" role="tab" aria-controls="nav-exbarcode" aria-selected="false" >Bad Quality Bins</button>
+                 </div>
+               </nav>
+               <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade" [ngClass]="showTab==1 ? 'show active' : ''"  id="nav-info" role="tabpanel" aria-labelledby="nav-info-tab">
+                    <div class="row px-2">
+                       <form class="p-1" method="post" autocomplete="off" #frm="ngForm"> 
+                        <div class="row px-3 mb-2">   
+                          <div class="row g-0 badge-bg mt-0 mb-2">
+                            <div class="col-1 mt-1 left-badge"></div>
+                            <div class="ms-3 col-6 mt-2 badge-title">Movement Information</div>
+                         </div>
+                          <div class="col-md-2">        
+                            <label class="fS14 mb-1">Date<span  class="mandatory-color">*</span></label>
+                            <div>
+                              <input autofocus type="date"  tabindex="1"  #supplyDate  name="supplyDate" disabled="true"
+                               class="form-control" placeholder=""  [(ngModel)]="masterData.supplyDate">
+                            </div>
+                         </div>
+                        
+                         <div class="col-md-2">        
+                          <label class="fS14 mb-1">Move From<span  class="mandatory-color">*</span></label>
+                          <div>
+                            <select  class="form-control form-select" name="moveFrom"  [ngStyle]="savedCardDetails.length>0?{'pointer-events': 'none'}:{}"
+                            [(ngModel)]="masterData.moveFromId" (change)="moveFromSelected()" >
+                              <option *ngFor="let e of fromUsageTypes" [value]="e.usageid">{{e.usagename}}</option>
+                            </select>
+                          </div>
+                         </div>
+                        
+                         <div class="col-md-2">        
+                          <label class="fS14 mb-1">Move To<span class="mandatory-color">*</span></label>
+                          <div>
+                            <select  class="form-control form-select" name="moveTo" [ngStyle]="savedCardDetails.length>0?{'pointer-events': 'none'}:{}"
+                            [(ngModel)]="masterData.moveToId" (change)="moveToSelected()" >
+                            <option value="0">Select</option>
+                              <option *ngFor="let e of toUsageTypes" [value]="e.usageid">{{e.usagename}}</option>
+                            </select>
+                          </div>
+                         </div>
+
+                         <div class="col-md-2">        
+                          <label class="fS14 mb-1">Processed By</label>
+                          <div>
+                          <ng-select [items]="employeeDetails" #employeeId name="employeeId" 
+                              bindLabel="em_name"
+                              bindValue="userid" 
+                              placeholder="Select Staff"
+                              [(ngModel)]="masterData.processById">
+                          </ng-select>
+                          </div>
+                       </div>
+                         
+                     
+                        </div>
+                        <div class="row px-3 mb-2">
+                          <div class="row g-0 badge-bg mt-0 mb-2">
+                             <div class="col-1 mt-1 left-badge"></div>
+                             <div class="ms-3 col-6 mt-2 badge-title">Movement Type</div>
+                          </div>
+                          <div class="col-md-4">        
+                            <label class="fS14 mb-1">Customer</label>
+                            <div>
+                                <ng-select [items]="customerDetails" #customerId name="customerId" 
+                                bindLabel="customername" [readonly]="savedCardDetails.length>0"
+                                bindValue="customerId" 
+                                placeholder="Select Customer"
+                                [(ngModel)]="masterData.customerId" (change)="onSelectCustomer(masterData.customerId)">
+                            </ng-select>
+                              
+                            </div>
+                         </div>
+                         <div class="col-md-4" style="display: none;">        
+                          <label class="fS14 mb-1">Part</label>
+                          <div>
+
+                        <ng-select [items]="customerPartDetails" #customerPart 
+                        bindLabel="customerpartcode"
+                        bindValue="partid" 
+                        placeholder="Parts"
+                        [(ngModel)]="masterData.partid" (change)="onSelectPart(masterData.partid)">
+                     </ng-select>
+                      </div>
+                      </div>
+                        </div>
+                        <div class="row px-3">
+                          <div class="mt-2 me-4 d-flex justify-content-end">   
+                            <div class="row text-center mt-4">
+                            <div class="">
+                                <div class="form-group transback">
+                                  <button  type="button"  class="btn btn-secondary footerbtncss mx-2" name="cancel" value="Cancel" (click)="moveParts(2)" >Next</button>
+                              </div>
+                            </div>
+                            </div>
+                          </div> 
+                        </div>
+                       
+                      </form>
+                    </div>
+                </div>
+                <div class="tab-pane fade" [ngClass]="showTab==2 ? 'show active' : ''" id="nav-parts" role="tabpanel" aria-labelledby="nav-parts-tab">
+                  <div class="row px-2">
+                    <div class="p-1"> 
+                     <div class="row px-3 mb-2">   
+                       <div class="row g-0 badge-bg">
+                          <div class="col-1 mt-1 left-badge"></div>
+                          <div class="ms-3 col-6 mt-2 badge-title">Stock Movement Part Details</div>
+                       </div>
+        <div class="card shadow-lg position-relative ofCont">
+          <table class="tab table w-100">
+                    <thead class="sticky-top top-0">
+                      <tr *ngIf="action!='show'">                      
+                        <th class="t-w-150" id="tpartNo">Scan</th>
+                        <th class="t-w-200" id="tpartDesc">
+                          <input autofocus type="text" #scannedValueCtl 
+                                   class="t-form-control" placeholder="" [(ngModel)]="scannedValue" (keydown)="parseAndAddCard($event)">
+                        </th>
+                        <th class="t-w-100" id="tpartasnqty">BIN Scanned</th>
+                        <th class="t-w-50" id="tpartansbin"></th>
+                        <th class="t-w-100" id="tpartasnpallet"></th>
+                        <th class="t-w-50" id="treceiveqty"></th>
+                        <th class="t-w-75" id="treceivebin"></th>
+                        <th class="t-w-75" id="treceivepallet"></th>
+                        <th class="t-w-75"></th>
+                        <th class="t-w-75"></th>
+                        <th class="t-w-75" *ngIf="masterData.moveFromId==4 && selectedCustomer.barcodeconfigid!='1'"></th>
+                        <th class="t-w-75" *ngIf="masterData.moveFromId==4 && selectedCustomer.barcodeconfigid=='1'"></th>
+                        <!-- <th></th> -->
+                      </tr>
+                     <tr class="trBack">
+                        <!-- <th class="t-w-25" *ngIf="masterData.moveFromId==4">Row</th>                       -->
+                        <th class="t-w-150">Part No</th>
+                        <th class="t-w-200">Part Desc</th>
+                        <th class="t-w-75">QTY</th>
+                        <th class="t-w-75">BIN</th>
+                        <th class="t-w-75" *ngIf="masterData.moveFromId==4">Opening Qty</th>
+                        <th class="t-w-75" *ngIf="masterData.moveFromId==4">Good Qty</th>
+                        <th class="t-w-75" *ngIf="masterData.moveFromId==4">NG Qty</th>
+                        <th class="t-w-75" *ngIf="masterData.moveFromId==4">Hold Qty</th>
+                        <th class="t-w-75" *ngIf="masterData.moveFromId==4">Outward Bin</th>
+                        <th class="t-w-75" *ngIf="masterData.moveFromId==4">Space Details</th>
+                        <th class="t-w-75" *ngIf="masterData.moveFromId==4 && selectedCustomer.barcodeconfigid!='1'">Customer Barcode</th>
+                        <th class="t-w-75" *ngIf="masterData.moveFromId==4 && selectedCustomer.barcodeconfigid=='1'">Bad Quality Bins</th>
+                      </tr>
+                      
+                    </thead>
+                    <tbody>
+                      <!-- <tr>                      
+                            <td class="t-w-150">
+                                <input autofocus type="text"  tabindex="1"  #partCode  name="partCode"
+                                class="t-form-control" placeholder=""  [(ngModel)]="masterData.partCode">
+                            </td>
+                            <td class="t-w-200">Part Desc</td>
+                            <td class="t-w-75">
+                                <input autofocus type="text"  tabindex="2"  #moveQty  name="moveQty"
+                                class="t-form-control" placeholder=""  [(ngModel)]="masterData.moveQty">
+                            </td>
+                            <td class="t-w-75"><span class="td-lable">&nbsp;</span></td>
+                            <td class="t-w-75"><span class="td-lable">&nbsp;</span></td>
+                            <td class="t-w-75"><span class="td-lable">&nbsp;</span></td>
+                            <td class="t-w-75"><span class="td-lable">&nbsp;</span></td>
+                            <td class="t-w-75"><span class="td-lable">&nbsp;</span></td>
+                            <td class="t-w-75"><span class="td-lable">&nbsp;</span></td>
+                            <td class="t-w-75"><span class="td-lable">&nbsp;</span></td>
+                      </tr>  -->
+                      <tr *ngFor="let scannedDetail of savedCardDetails;index as i">
+                        <!-- <td *ngIf="masterData.moveFromId==4">{{i+1}}</td> -->
+                        <td>{{ scannedDetail.partNo }}</td>
+                        <td>{{ scannedDetail.partName }}</td>
+                        <td>{{ scannedDetail.qty }}</td>
+                        <td>{{ scannedDetail.requestedBinQty }}</td>
+                        <td *ngIf="masterData.moveFromId==4">
+                          <input autofocus type="text"  tabindex="2"  name="openingHoldQty" disabled
+                          class="t-form-control" placeholder=""  [(ngModel)]="scannedDetail.openingHoldQty">
+                        </td>
+                        <td *ngIf="masterData.moveFromId==4">
+                          <input autofocus type="text"  tabindex="2"  name="goodQty"
+                          class="t-form-control" placeholder=""  [(ngModel)]="scannedDetail.goodQty" (keyup)="onChangeQuantity($event,i)">
+                        </td>
+                        <td *ngIf="masterData.moveFromId==4">
+                          <input autofocus type="text"  tabindex="2"  name="badQty"
+                          class="t-form-control" placeholder=""  [(ngModel)]="scannedDetail.badQty" (keyup)="onChangeQuantity($event,i)">
+                        </td>
+                        <td *ngIf="masterData.moveFromId==4">
+                          <input autofocus type="text"  tabindex="2"  name="holdQty" disabled
+                          class="t-form-control" placeholder=""  [(ngModel)]="scannedDetail.holdQty">
+                        </td>
+                        <td *ngIf="masterData.moveFromId==4 && !showFinalPart">
+                          <input autofocus type="text"  tabindex="2"  name="outwardBin"
+                          class="t-form-control" placeholder=""  [(ngModel)]="scannedDetail.outwardBin">
+                        </td>
+                        <td *ngIf="masterData.moveFromId==4 && showFinalPart"></td>
+                        <td *ngIf="masterData.moveFromId==4 && !showFinalPart"><img src="assets/dist/img/view.png"  alt="" class="mb-2 ms-1" (click)="showSpaceAllocation(i)"></td>  
+                        <td *ngIf="masterData.moveFromId==4 && !showFinalPart && selectedCustomer.barcodeconfigid!='1' && (scannedDetail.outwardBin>=1 )"><i class="bi bi-qr-code" (click)="showCustomerBarCode(i)"></i></td>  
+                        <td *ngIf="masterData.moveFromId==4 && !showFinalPart && selectedCustomer.barcodeconfigid=='1'"><i class="bi bi-qr-code-scan" (click)="showBadQualtiyBinScan(i)"></i></td>  
+                      </tr>
+                    </tbody>
+                    <tfoot  *ngIf="showFinalPart">
+                      <tr><td colspan="9" class="trBack"><div class="row px-3">
+                        <div class="mt-2 me-4 d-flex justify-content-end">   
+                          <div class="row text-center mt-4">
+                          <div class="">
+                              <div class="form-group transback">
+                                <button type="button"   class="btn btn-primary footerbtncss" name="donescan" (click)="calculateFinalProduct()">Done Scanning</button>
+                            </div>
+                          </div>
+                          </div>
+                        </div> 
+                      </div>
+                    </td></tr>
+                      <tr><td colspan="9" class="trBack">Final Product</td></tr>
+                      <tr *ngFor="let scannedDetail of finalPartDetails;index as i">
+                        <td>{{ scannedDetail.partNo }}</td>
+                        <td>{{ scannedDetail.partName }}</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                          <td>{{ scannedDetail.goodQty }}</td>
+                          <td>{{ scannedDetail.badQty }}</td>
+                        <td>
+                        </td>
+                        <td>{{ scannedDetail.outwardBin }}</td>
+                        <td><img src="assets/dist/img/view.png"  alt="" class="mb-2 ms-1" (click)="showFinalPartSpaceAllocation(i)"></td>                        
+                        <td *ngIf="selectedCustomer.barcodeconfigid!='1'"><i class="bi bi-qr-code" (click)="showCustomerBarCode(i)"></i></td>  
+                      </tr>
+                    </tfoot>
+                  </table>   
+                </div>
+
+                    </div>
+                    </div>
+                  </div>
+                  <div class="row px-3">
+                    <div class="mt-2 me-4 d-flex justify-content-end">   
+                      <div class="row text-center mt-4">
+                      <div class="">
+                          <div class="form-group transback">
+                            <button type="button"   class="btn btn-primary footerbtncss" name="confirm" (click)="updateStockTransfer()">Submit</button>
+                        </div>
+                      </div>
+                      </div>
+                    </div> 
+                  </div>
+                </div>
+                <div class="tab-pane fade" [ngClass]="showTab==3 ? 'show active' : ''" id="nav-space" role="tabpanel" aria-labelledby="nav-space-tab">
+                  <div class="row px-2">
+                    <div class="p-1"> 
+                     <div class="row px-3 mb-2">   
+                       <div class="row g-0 badge-bg">
+                          <div class="col-1 mt-1 left-badge"></div>
+                          <div class="ms-3 col-6 mt-2 badge-title">
+                            <div class="row">
+                            <div class="col-1 cursor" (click)="moveParts(2)">
+                              <i class="bi bi-arrow-left"></i>
+                           </div>          
+                           <div class="col-6">
+                            Space Details
+                          </div>
+                        </div>
+                          </div>                          
+                       </div>
+                       <div class="row px-3 mb-2">
+                        <div class="row g-0 badge-bg mt-0 mb-2">
+                           <div class="col-1 mt-1 left-badge"></div>
+                           <div class="ms-3 col-6 mt-2 badge-title">Part Details</div>
+                        </div>
+                        <div class="row">
+                         <div class="col-md-3">        
+                          <label class="fS14 mb-1">Part No</label>
+                          <div>
+                            <input autofocus type="text"  name="partNo" disabled
+                             class="form-control" placeholder="" [(ngModel)]="selectedPartDetail.partNo">
+                          </div>
+                         </div>
+                         <div class="col-md-3">        
+                          <label class="fS14 mb-1">Part Name</label>
+                          <div>
+                            <input autofocus type="text" name="partName" disabled
+                             class="form-control" placeholder="" [(ngModel)]="selectedPartDetail.partName">
+                          </div>
+                         </div>
+                         <div class="col-md-3">        
+                          <label class="fS14 mb-1">BINs</label>
+                          <div>
+                            <input autofocus type="text"  name="requestedQty"  disabled
+                            class="form-control" placeholder="" [(ngModel)]="selectedPartDetail.requestedBinQty">
+                          </div>
+                         </div>
+                         <div class="col-md-3">        
+                          <label class="fS14 mb-1">Qty</label>
+                          <div>
+                            <input autofocus type="text" name="asnQty"  disabled
+                            class="form-control" placeholder="" [(ngModel)]="selectedPartDetail.qty">
+                          </div>
+                         </div> 
+                        </div>
+                      </div>
+
+                        <div class="card shadow-lg position-relative ofCont">
+                          <table class="table">
+                          <thead class="sticky-top top-0">
+                            <tr class="trBack">                      
+                                <th class="t-w-200">Code</th>
+                                <th class="t-w-75">Line</th>
+                                <th class="t-w-75">Rack</th>
+                                <th class="t-w-75">Compartment</th>
+                                <th class="t-w-75">Move To</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr *ngFor="let spaceDetail of spaceAllocationDetails;index as i">
+                                <td class="t-w-200">{{ spaceDetail.scanData }}</td>
+                                <td class="t-w-75">
+                                  <span *ngIf="!spaceDetail.moveToOverflowLocation">
+                                    {{ spaceDetail.lineSpaceConfig.partSpaceName}}
+                                    <br/>
+                                  {{ spaceDetail.lineSpaceConfig.fromLineNo}}-{{ spaceDetail.lineSpaceConfig.toLineNo}}
+                                  {{ spaceDetail.lineSpaceConfig.fromCol}}-{{ spaceDetail.lineSpaceConfig.toCol}}
+                                  </span>
+                                </td>
+                                <td class="t-w-75">
+                                    <span *ngIf="!spaceDetail.moveToOverflowLocation">
+                                      {{ spaceDetail.lineSpaceConfig.lineRackCode}}
+                                      </span>
+                                </td>
+                                <td class="t-w-75">
+                                  <span *ngIf="!spaceDetail.moveToOverflowLocation">
+                                    {{ spaceDetail.lineSpaceConfig.lineRackCompartmentName}}
+                                    </span>
+                                </td>
+                                <td class="t-w-75">
+                                  <span *ngIf="spaceDetail.moveToOverflowLocation">
+                                    Overflow Location
+                                    </span>
+                                    <span *ngIf="!spaceDetail.moveToOverflowLocation">
+                                      {{spaceDetail.lineSpaceConfig.lineUsageName}}
+                                      </span>  
+                                  </td>                                
+                              </tr>
+                            </tbody>
+                          </table>   
+                        </div>                              
+                    </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane fade" [ngClass]="showTab==4 ? 'show active' : ''" id="nav-barcode" role="tabpanel" aria-labelledby="nav-barcode-tab">
+                  <div class="row px-2">
+                    <div class="p-1"> 
+                     <div class="row px-3 mb-2">   
+                       <div class="row g-0 badge-bg">
+                          <div class="col-1 mt-1 left-badge"></div>
+                          <div class="ms-3 col-6 mt-2 badge-title">
+                            <div class="row">
+                            <div class="col-1 cursor" (click)="moveParts(2)">
+                              <i class="bi bi-arrow-left"></i>
+                           </div>          
+                           <div class="col-6">
+                            Scan Customer Barcode
+                          </div>
+                        </div>
+                          </div>                          
+                       </div>
+                       <div class="row px-3 mb-2">
+                        <div class="row g-0 badge-bg mt-0 mb-2">
+                           <div class="col-1 mt-1 left-badge"></div>
+                           <div class="ms-3 col-6 mt-2 badge-title">Part Details</div>
+                        </div>
+                        <div class="row">
+                         <div class="col-md-3">        
+                          <label class="fS14 mb-1">Part No</label>
+                          <div>
+                            <input autofocus type="text"  name="partNo" disabled
+                             class="form-control" placeholder="" [(ngModel)]="selectedPartDetail.partNo">
+                          </div>
+                         </div>
+                         <div class="col-md-3">        
+                          <label class="fS14 mb-1">Part Name</label>
+                          <div>
+                            <input autofocus type="text" name="partName" disabled
+                             class="form-control" placeholder="" [(ngModel)]="selectedPartDetail.partName">
+                          </div>
+                         </div>
+                         <div class="col-md-3">        
+                          <label class="fS14 mb-1">BINs</label>
+                          <div>
+                            <input autofocus type="text"  name="requestedQty"  disabled
+                            class="form-control" placeholder="" [(ngModel)]="selectedPartDetail.outwardBin">
+                          </div>
+                         </div>
+                         <div class="col-md-3">        
+                          <label class="fS14 mb-1">Qty</label>
+                          <div>
+                            <input autofocus type="text" name="asnQty"  disabled
+                            class="form-control" placeholder="" [(ngModel)]="selectedPartDetail.qty">
+                          </div>
+                         </div> 
+                        </div>
+                        <div class="row">
+                          <div class="col-md-3">        
+                           <label class="fS14 mb-1">Scan Code</label>
+                           <div>
+                             <input autofocus type="text"  name="scanBarCode"
+                              class="form-control" placeholder="" [(ngModel)]="barCodeValue" (keydown)="parseAndAddBarCode($event)">
+                           </div>
+                          </div> 
+                          <div class="col-md-3">        
+                           <label class="fS14 mb-1">Scanned Bin</label>
+                           <div *ngIf="!showFinalPart">
+                            <input *ngIf="selectedPartDetail.customerBarCodes" autofocus type="text" disabled class="form-control" placeholder="" value="{{selectedPartDetail.customerBarCodes.length}}" >
+                           </div>
+                           <div *ngIf="showFinalPart">
+                            <input *ngIf="finalPartDetails[0].customerBarCodes" autofocus type="text" disabled class="form-control" placeholder="" value="{{finalPartDetails[0].customerBarCodes.length}}" >
+                           </div>
+                          </div> 
+                         </div>
+                      </div>
+
+                        <div class="card shadow-lg position-relative ofCont">
+                          <table class="table">
+                          <thead class="sticky-top top-0">
+                            <tr class="trBack">                      
+                                <th class="t-w-200">Bin</th>
+                                <th class="t-w-75">Code</th>
+                              </tr>
+                            </thead>
+                            <tbody *ngIf="!showFinalPart" >
+                              <tr *ngFor="let barCode of selectedPartDetail.customerBarCodes;index as i">
+                                <td class="t-w-200">{{ barCode.binNo }}</td>
+                                <td class="t-w-200">{{ barCode.barCode }}</td>
+                              </tr>
+                            </tbody>
+                            <tbody *ngIf="showFinalPart" >
+                              <tr *ngFor="let barCode of finalPartDetails[0].customerBarCodes;index as i">
+                                <td class="t-w-200">{{ barCode.binNo }}</td>
+                                <td class="t-w-200">{{ barCode.barCode }}</td>
+                              </tr>
+                            </tbody>
+                          </table>   
+                        </div>                              
+                    </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane fade" [ngClass]="showTab==5 ? 'show active' : ''" id="nav-exbarcode" role="tabpanel" aria-labelledby="nav-exbarcode-tab">
+                  <div class="row px-2">
+                    <div class="p-1"> 
+                     <div class="row px-3 mb-2">   
+                       <div class="row g-0 badge-bg">
+                          <div class="col-1 mt-1 left-badge"></div>
+                          <div class="ms-3 col-6 mt-2 badge-title">
+                            <div class="row">
+                            <div class="col-1 cursor" (click)="moveParts(2)">
+                              <i class="bi bi-arrow-left"></i>
+                           </div>          
+                           <div class="col-6">
+                            Scan Bad Quality Bin Barcode
+                          </div>
+                        </div>
+                          </div>                          
+                       </div>
+                       <div class="row px-3 mb-2">
+                        <div class="row g-0 badge-bg mt-0 mb-2">
+                           <div class="col-1 mt-1 left-badge"></div>
+                           <div class="ms-3 col-6 mt-2 badge-title">Part Details</div>
+                        </div>
+                        <div class="row">
+                         <div class="col-md-3">        
+                          <label class="fS14 mb-1">Part No</label>
+                          <div>
+                            <input autofocus type="text"  name="partNo" disabled
+                             class="form-control" placeholder="" [(ngModel)]="selectedPartDetail.partNo">
+                          </div>
+                         </div>
+                         <div class="col-md-3">        
+                          <label class="fS14 mb-1">Part Name</label>
+                          <div>
+                            <input autofocus type="text" name="partName" disabled
+                             class="form-control" placeholder="" [(ngModel)]="selectedPartDetail.partName">
+                          </div>
+                         </div>
+                         <div class="col-md-3">        
+                          <label class="fS14 mb-1">BINs</label>
+                          <div>
+                            <input autofocus type="text"  name="requestedQty"  disabled
+                            class="form-control" placeholder="" [(ngModel)]="selectedPartDetail.outwardBin">
+                          </div>
+                         </div>
+                         <div class="col-md-3">        
+                          <label class="fS14 mb-1">Total Qty</label>
+                          <div>
+                            <input autofocus type="text" name="asnQty"  disabled
+                            class="form-control" placeholder="" [(ngModel)]="selectedPartDetail.qty">
+                          </div>
+                         </div> 
+                        </div>
+                        <div class="row">
+                          <div class="col-md-3">        
+                           <label class="fS14 mb-1">Scan Code</label>
+                           <div>
+                             <input autofocus type="text"  name="scanBarCode"
+                              class="form-control" placeholder="" [(ngModel)]="excludedBarCodeValue" (keydown)="parseAndAddExcludedBarCode($event)">
+                           </div>
+                          </div> 
+                          <div class="col-md-3">        
+                           <label class="fS14 mb-1">Scanned Bin</label>
+                           <div *ngIf="!showFinalPart">
+                            <input *ngIf="selectedPartDetail.excludedBarCodes" autofocus type="text" disabled class="form-control" placeholder="" value="{{selectedPartDetail.excludedBarCodes.length}}" >
+                           </div>
+                          </div> 
+                         </div>
+                      </div>
+
+                        <div class="card shadow-lg position-relative ofCont">
+                          <table class="table">
+                          <thead class="sticky-top top-0">
+                            <tr class="trBack">                      
+                                <th class="t-w-200">Sl.No</th>
+                                <th class="t-w-75">Code</th>
+                                <th class="t-w-75">Remove</th>
+                              </tr>
+                            </thead>
+                            <tbody *ngIf="!showFinalPart" >
+                              <tr *ngFor="let barCode of selectedPartDetail.excludedBarCodes;index as i">
+                                <td class="t-w-200">{{ barCode.binNo }}</td>
+                                <td class="t-w-200">{{ barCode.barCode }}</td>
+                                <td><img src="assets/dist/img/delete.png"  alt="" class="mb-2 ms-1" (click)="removeExcludedBarCode(i)"></td>                        
+                              </tr>
+                            </tbody>                            
+                          </table>   
+                        </div>                              
+                    </div>
+                    </div>
+                  </div>
+                </div>
+              </div>    
+          </div>
+      </div>
+      </div>
+      <div *ngIf="action=='view'">
+      <div class="p-4">
+      <report creportid="55" defaultparam="status" [defaultparamvalue]=rptParam #report (onEditClcked)="doAction($event)"   [events]="eventsSubject.asObservable()" [groupreport]="0"></report>
+    </div>
+     </div>
+  </div>
+</div>    

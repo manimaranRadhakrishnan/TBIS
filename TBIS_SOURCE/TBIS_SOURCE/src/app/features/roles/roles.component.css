@@ -1,0 +1,8 @@
+.mat-tree-node, .mat-nested-tree-node {
+ font-size: 13px !important;
+}
+
+.mat-tree-node {
+    min-height: 36px !important;
+    height: 36px !important;
+}

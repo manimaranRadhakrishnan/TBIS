@@ -1,0 +1,357 @@
+
+<div  class="container">
+   <div class="table-wrapper px-0 shadow">
+      <div class="table-title title-fixed">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="table-head ms-2">
+              <div class="row">
+                <div *ngIf="action!='view'" class="col-1 cursor" (click)="cancelAdd()">
+                  <i class="bi bi-arrow-left"></i>
+                </div>
+                <div *ngIf="action=='view'" class="col-1 cursor">
+                </div>
+                <div class="col-6 p-0">
+                   SubLocation
+                </div>
+              </div>
+              
+               </div>
+          </div>
+          <div *ngIf="action=='view'" class="col-sm-6">
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+              <a class="btn btn-success addcss" (click)="addNew()">
+                <i class="bi bi-plus-square"></i><span>New Sublocation</span>
+              </a>
+              <a><i class="bi bi-three-dots-vertical mt-1"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+         <div class="table-content title-content">
+            <div *ngIf="action!='view'">  
+         
+         <div class="pt-0">
+          <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+              <button class="nav-link active" id="nav-info-tab" data-bs-toggle="tab" data-bs-target="#nav-info" type="button" role="tab" aria-controls="nav-info" aria-selected="true">SubLocation Info</button>
+              <button class="nav-link" id="nav-parts-tab" data-bs-toggle="tab" data-bs-target="#nav-parts" type="button" role="tab" aria-controls="nav-parts" aria-selected="false">Area Details</button>
+            </div>
+          </nav>
+          <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="nav-info" role="tabpanel" aria-labelledby="nav-info-tab">
+
+          <form class="p-3" method="post" autocomplete="off" #frm="ngForm">  
+            <div class="row g-0 badge-bg mt-2">
+              <div class="col-1 mt-1 left-badge"></div>
+             <div class="ms-3 col-6 mt-2 badge-title">SubLocation Details</div>
+          </div>
+            <div class="row mt-3">    
+              <div class="col-md-3">
+                <div class="fS14 mb-1" >Warehouse <span  class="mandatory-color">*</span></div>      
+                <ng-select [items]="werehouse" #warehouseId name="warehouseId"
+                    bindLabel="warehousename" 
+                    bindValue="warehousid" 
+                    placeholder="Select Warehouse"
+                    [(ngModel)]="masterData.warehouseId">
+                </ng-select>
+              </div>   
+              <div class="col-md-3">        
+                <label class="fS14 mb-1">Name<span  class="mandatory-color">*</span></label>
+                <div>
+                  <input autofocus type="text"  name="subLocationName" #subLocationName="ngModel"  required
+                   [ngClass]="{'input-box-style2-error': subLocationName.invalid && (subLocationName.dirty || subLocationName.touched)}" 
+                   class="form-control" placeholder="" [(ngModel)]="masterData.subLocationName" maxlength="50">
+                </div>
+              </div>
+              <div class="col-md-2">        
+                <label class="fS14 mb-1">Short Code<span  class="mandatory-color">*</span></label>
+                <div>
+                <input autofocus type="text"  name="subLocationShortCode" #subLocationShortCode="ngModel"  required
+                    [ngClass]="{'input-box-style2-error': subLocationShortCode.invalid && (subLocationShortCode.dirty || subLocationShortCode.touched)}" 
+                    class="form-control" placeholder="" [(ngModel)]="masterData.subLocationShortCode" maxlength="3">
+                </div>
+              </div>
+              <div class="col-md-2">        
+                <label class="fS14 mb-1">Height (in meters)<span  class="mandatory-color">*</span></label>
+                <div>
+                <input autofocus type="number"  name="slHeight" #slHeight="ngModel"  required
+                [ngClass]="{'input-box-style2-error': slHeight.invalid && (slHeight.dirty || slHeight.touched)}" 
+                class="form-control" placeholder="Height in cm" [(ngModel)]="masterData.slHeight" maxlength="12">
+                </div>
+              </div>
+              <div class="col-md-2">
+                <label class="fS14 mb-1">Active<span  class="mandatory-color">*</span></label>
+                <select  class="form-control form-select" name="active" 
+                    #active="ngModel"  required [ngClass]="{'input-box-style2-error': active.invalid && (active.dirty || active.touched)}"  
+                    [(ngModel)]="masterData.active" >
+                    <option  value="true">Active</option>
+                    <option  value="false">InActive</option>
+                  </select>
+              </div>
+              
+            </div>
+            <div class="row g-0 badge-bg mt-2">
+              <div class="col-1 mt-1 left-badge"></div>
+              <div class="ms-3 col-6 mt-2 badge-title">Area Details</div>
+            </div>
+
+            <div class="row mt-3" >
+              <div class="col-md-3">        
+                <label class="fS14 mb-1">Unit Length (in meters)<span  class="mandatory-color">*</span></label>
+                <div>
+                <input autofocus type="number"  name="uLength" #uLength="ngModel"  required
+                [ngClass]="{'input-box-style2-error': uLength.invalid && (uLength.dirty || uLength.touched)}" 
+                class="form-control" placeholder="Length" [(ngModel)]="masterData.uLength" min="1.000" max="99.999">
+                </div>
+              </div>
+              <div class="col-md-3">        
+                <label class="fS14 mb-1"> Unit Width (in meters) <span  class="mandatory-color">*</span></label>
+                <div>
+                <input autofocus type="number"  name="uWidth" #uWidth="ngModel"  required 
+                [ngClass]="{'input-box-style2-error': uWidth.invalid && (uWidth.dirty || uWidth.touched)}" 
+                class="form-control" placeholder="Width" [(ngModel)]="masterData.uWidth"  min="1.000" max="99.999">
+              </div>
+             </div>
+             
+          
+          <div class="col-md-3">
+            <label class="fS14 mb-1">Rows<span  class="mandatory-color">*</span></label>
+            <div>
+              <input autofocus type="number"  name="slRows" #slRows="ngModel"  required
+              [ngClass]="{'input-box-style2-error': slRows.invalid && (slRows.dirty || slRows.touched)}" 
+              class="form-control" placeholder="Rows" [(ngModel)]="masterData.slRows" min="1" max="9999">
+              </div>
+          </div>
+          <div class="col-md-3">
+            <label class="fS14 mb-1">Columns<span  class="mandatory-color">*</span></label>
+            <div>
+              <input autofocus type="number"  name="slColumns" #slColumns="ngModel"  required
+              [ngClass]="{'input-box-style2-error': slColumns.invalid && (slColumns.dirty || slColumns.touched)}" 
+              class="form-control" placeholder="Height in cm" [(ngModel)]="masterData.slColumns" min ="1" max="9999">
+              </div>
+          </div>
+          </div>
+
+            <div class="row mt-3" >
+              <div class="col-md-3" style="display: none;">        
+                <label class="fS14 mb-1"> Width (in meters) <span  class="mandatory-color">*</span></label>
+                <div>
+                <input autofocus type="number"  name="slWidth" #slWidth="ngModel" disabled="true"
+                [ngClass]="{'input-box-style2-error': slWidth.invalid && (slWidth.dirty || slWidth.touched)}" 
+                class="form-control" placeholder="Width in cm" [(ngModel)]="masterData.slWidth" maxlength="12">
+              </div>
+             </div>
+              <div class="col-md-3" style="display: none;">        
+                <label class="fS14 mb-1">Length (in meters)<span  class="mandatory-color">*</span></label>
+                <div>
+                <input autofocus type="number"  name="slLength" #slLength="ngModel"  disabled="true"
+                [ngClass]="{'input-box-style2-error': slLength.invalid && (slLength.dirty || slLength.touched)}" 
+                class="form-control" placeholder="Length in cm" [(ngModel)]="masterData.slLength" maxlength="12">
+                </div>
+              </div>
+              <div class="col-md-3">        
+                <label class="fS14 mb-1">Area In M2</label>
+                <div>
+                <input autofocus type="text"  name="areaInM2" #areaInM2="ngModel"  disabled="true"
+                class="form-control" placeholder="" [(ngModel)]="masterData.areaInM2" maxlength="50">
+                </div>
+              </div>
+              <div class="col-md-3">        
+                <label class="fS14 mb-1">Area In M3</label>
+                <div>
+                <input autofocus type="text"  name="areaInM3" #areaInM3="ngModel"  disabled="true"
+                class="form-control" placeholder="" [(ngModel)]="masterData.areaInM3" maxlength="50">
+                </div>
+              </div>
+          
+          
+          </div>
+          <div class="mt-2 me-4 d-flex justify-content-end">   
+            <div class="row text-center mt-4">
+             <div class="">
+                <div class="form-group transback">
+                 <button  type="button"  class="btn btn-secondary footerbtncss mx-2" name="cancel" value="Cancel" (click)="cancelAdd()">Clear</button>
+                 <button type="button"   class="btn btn-primary footerbtncss" name="signin" (click)="updateSubLocation()">Submit</button>
+              </div>
+             </div>
+            </div>
+          </div>  
+          <div class="row mt-3" style="display: none;"> 
+         
+          <div class="col-md-3" >        
+            <label class="fS14 mb-1">Storage Area</label>
+            <div>
+            <input autofocus type="text"  name="customerStorageArea" #customerStorageArea="ngModel"  disabled="true"
+            class="form-control" placeholder="" [(ngModel)]="masterData.customerStorageArea" maxlength="50">
+            </div>
+          </div>
+          
+        </div>
+        </form>
+        </div>
+        <div class="tab-pane fade" id="nav-parts" role="tabpanel" aria-labelledby="nav-parts-tab">
+          <div class="tablescrollcontent">
+            <table class="table">
+              <tbody>
+                  <tr *ngFor="let row of spaceDetails">
+                    <td class="t-w-150 spacemaster" *ngFor="let col of row.columns" [style.background-color]="col.isChecked?'#888':col.colorCode" 
+                    (mousedown)="down(col,$event)" (mouseenter)="onMouseEnter($event)"
+                    (mouseover)="over(col,$event)" data-bs-toggle="tooltip" data-bs-placement="top" title="{{col.customerName}}&#013;{{col.lineUsageName}}&#013;{{col.partName}}"
+                    (mouseup)="up(col,$event)" 
+                    ondragstart="return false;" ondrop="return false;" (contextmenu)="showCustomerDetail(col,$event)">
+                    <span>{{col.spaceName}}</span>
+                    </td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="row mt-4">
+            <div class="col-md-3 d-flex">
+               <div class="color-pallet me-4" style="background-color: #ffffff"></div>Not Mapped
+            </div>
+            <div class="col-md-3 d-flex">
+               <div class="color-pallet me-4" style="background-color: #F3A1B3"></div>Receving/Staging
+            </div>
+            <div class="col-md-3 d-flex">
+               <div class="color-pallet me-4" style="background-color: #E4C9F1"></div>Empty Bin Storage
+            </div>
+            <div class="col-md-3 d-flex">
+               <div class="color-pallet me-4" style="background-color: #FFE32F"></div>Preparation/Assembly
+            </div>
+         </div>
+         <div class="row mt-2">
+            <div class="col-md-3 d-flex">
+               <div class="color-pallet me-4" style="background-color: #29B82F"></div>Fork Lift Movement
+            </div>
+            <div class="col-md-3 d-flex">
+               <div class="color-pallet me-4" style="background-color: #A7E8E8"></div>Overflow Storage
+            </div>
+            <div class="col-md-3 d-flex">
+               <div class="color-pallet me-4" style="background-color: #C9F4C1"></div>Before Inspection
+            </div>
+            <div class="col-md-3 d-flex">
+               <div class="color-pallet me-4" style="background-color: #369225"></div>FG Part Storage
+            </div>
+         </div>
+         <div class="row mt-2">
+            <div class="col-md-3 d-flex">
+               <div class="color-pallet me-4" style="background-color: #EE1313"></div>NG Area
+            </div>
+            <div class="col-md-3 d-flex">
+               <div class="color-pallet me-4" style="background-color: #F3ACF1"></div>Hold Area
+            </div>
+            <div class="col-md-3 d-flex">
+               <div class="color-pallet me-4" style="background-color: #F3DA74"></div>Document Storage
+            </div>
+            <div class="col-md-3 d-flex">
+               <div class="color-pallet me-4" style="background-color: #335BFF"></div>Office Area
+            </div>
+         </div>
+         <div class="row mt-2">
+            <div class="col-md-3 d-flex">
+               <div class="color-pallet me-4" style="background-color: #F8F4E1"></div>Customer Area
+            </div>
+            <div class="col-md-3 d-flex">
+               <div class="color-pallet me-4" style="background-color: #543310"></div>Not For Usage
+            </div>
+         </div>
+        </div>
+        </div>
+   
+   </div>
+
+</div>
+      <div *ngIf="action=='view'">
+        <div class="p-4">
+         <report creportid="50" #report (onEditClcked)="doAction($event)"   [events]="eventsSubject.asObservable()" [groupreport]="0"></report>
+      </div>
+      </div>
+</div>
+</div>
+</div>
+
+<div *ngIf="showCellDetailsDialog" class="modal" tabindex="-1" role="dialog" style="display: block !important;" id="showCellDetailsDialog">  
+  <div class="modal-dialog   modal-dialog-centered" role="document"> 
+    <div class="bgDlg"></div> 
+    <div class="modal-content customheight">
+      <div class="modal-header loginCusto">
+        <h5 class="modal-title fontsize16"> 
+         Space Details
+        </h5>
+        <button (click)="closeCellDetailsModel()" type="button" class="btn float-end modalclosebtn" data-dismiss="modal">X</button>
+         
+      </div>
+      <div class="modal-body"  >
+         
+        <div class="row">
+            <div class="text-left " >
+              <form #form="ngForm" class="row" autocomplete="off" >
+                <div class="col-md-6 mb-2">
+                  <div class="fS14 mb-1" >Start Row</div>
+                  <input autofocus type="text"  name="startrow" #startrow="ngModel"  required 
+                   [ngClass]="{'input-box-style2-error': startrow.invalid && (startrow.dirty || startrow.touched)}" 
+                   class="form-control" placeholder="" [(ngModel)]="cellData.startRow" maxlength="50">
+               </div>
+               <div class="col-md-6 mb-2">
+                <div class="fS14 mb-1" >End Row</div>
+                <input autofocus type="text"  name="endrow" #endRow="ngModel"  required 
+                 [ngClass]="{'input-box-style2-error': endRow.invalid && (endRow.dirty || endRow.touched)}" 
+                 class="form-control" placeholder="" [(ngModel)]="cellData.endRow" maxlength="50">
+             </div>
+             <div class="col-md-6 mb-2">
+              <div class="fS14 mb-1" >Start Cell</div>
+              <input autofocus type="text"  name="startCell" #startCell="ngModel"  required 
+               [ngClass]="{'input-box-style2-error': startCell.invalid && (startCell.dirty || startCell.touched)}" 
+               class="form-control" placeholder="" [(ngModel)]="cellData.startCell" maxlength="50">
+           </div>
+           <div class="col-md-6 mb-2">
+            <div class="fS14 mb-1" >End Cell</div>
+            <input autofocus type="text"  name="endCell" #endCell="ngModel"  required 
+             [ngClass]="{'input-box-style2-error': endCell.invalid && (endCell.dirty || endCell.touched)}" 
+             class="form-control" placeholder="" [(ngModel)]="cellData.endCell" maxlength="50">
+         </div>
+
+           <div class="col-md-6 mb-2">
+                  <div class="fS14 mb-1" >Usage</div>
+                  <ng-select [items]="usageTypes" #usagetype
+                     bindLabel="usagename"
+                     bindValue="usageid" 
+                     placeholder="Select Usage"
+                     [(ngModel)]="cellData.lineUsageId" (change)="onChangeUsageType($event)">
+                  </ng-select>
+               </div>
+                <div class="col-md-6 mb-2">
+                  <div class="fS14 mb-1" >Color Code</div>
+                  <input autofocus type="text"  name="colorCode" #colorCode="ngModel"  required
+                  [ngClass]="{'input-box-style2-error': colorCode.invalid && (colorCode.dirty || colorCode.touched)}" 
+                  class="form-control" placeholder="" [(ngModel)]="cellData.colorCode" maxlength="50">
+                </div>
+               <div class="col-md-12" *ngIf="cellData.lineUsageId==13">
+                <div class="fS14 mb-1" >Customer</div>
+                <ng-select [items]="customers" #customer
+                   bindLabel="customername"
+                   bindValue="customerId" 
+                   placeholder="Select Customer"
+                   [(ngModel)]="cellData.customerid">
+                </ng-select>
+             </div>
+                </form>
+                  <div class="mt-4 me-4 d-flex justify-content-end">   
+                    <div class="row text-center mt-4">
+                    <div class="">
+                       <div class="form-group transback">
+                          <button type="button"  class="btn btn-secondary footerbtncss mx-2" name="cancel" value="Cancel" (click)="closeCellDetailsModel()">Cancel</button>
+                          <button type="button"  class="btn btn-primary footerbtncss" name="rackallocation" (click)="updateLineCellDetail()">Ok</button>
+                       </div>
+                    </div>
+                    </div>
+                 </div>
+            </div> 
+        </div>
+        
+      </div>
+       
+    </div>  
+  </div>
+</div> 

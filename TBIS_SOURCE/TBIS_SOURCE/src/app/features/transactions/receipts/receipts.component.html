@@ -1,0 +1,162 @@
+<div  class="container">
+   <div class="table-wrapper px-0 shadow">
+       <div class="table-title title-fixed">
+         <div class="row">
+           <div class="col-sm-6">
+             <div class="table-head ms-2">
+               <div class="row">
+                 <div *ngIf="action!='view'" class="col-1 cursor" (click)="cancelAdd()">
+                   <i class="bi bi-arrow-left"></i>
+                 </div>
+                 <div *ngIf="action=='view'" class="col-1 cursor">
+                 </div>
+                 <div class="col-6 p-0">
+                 Goods Receipts
+                 </div>
+               </div>
+               
+                </div>
+           </div>
+           <div *ngIf="action =='view'" class="col-sm-6" style="display: none;">
+             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+               <a class="btn btn-success addcss">
+                 <i class="bi bi-plus-square"></i><span>New Receipts</span>
+               </a>
+               <a><i class="bi bi-three-dots-vertical mt-1"></i></a>
+             </div>
+           </div>
+         </div>
+       </div>
+            <div class="table-content title-content">
+              <div *ngIf="action!='view'">  
+              <div class="row g-0 badge-bg mt-2">
+                <div class="col-1 mt-1 left-badge"></div>
+               <div class="ms-3 col-6 mt-2 badge-title">GRN Details</div>
+            </div>
+            <div class="pt-0">
+      
+              <form class="p-3" method="post" autocomplete="off" #frm="ngForm">  
+               <div class="row mt-3">   
+                <div class="col-md-3">        
+                  <label class="fS14 mb-1"> ASN No <span  class="mandatory-color">*</span></label>
+                  <div>
+                    <input autofocus type="text"  name="asnNo" #asnNo="ngModel"  disabled="true"
+                     class="form-control" placeholder="" [(ngModel)]="masterData.asnNo" maxlength="100">
+                  </div>
+               </div>
+                <div class="col-md-3">        
+                    <label class="fS14 mb-1">Vehicle No</label>
+                    <div>
+                      <input autofocus type="text"  name="vechicleNo" #vechicleNo="ngModel"  disabled="true"
+                       class="form-control" placeholder="" [(ngModel)]="masterData.vechicleNo" maxlength="100">
+                    </div>
+                 </div>
+                 <div class="col-md-2">        
+                  <label class="fS14 mb-1">Date</label>
+                  <div>
+                    <input autofocus type="text"  name="supplyDate" #supplyDate="ngModel"  disabled="true"
+                     class="form-control" placeholder="" [(ngModel)]="masterData.supplyDate" maxlength="100">
+                  </div>
+               </div>
+                 <div class="col-md-2">        
+                    <label class="fS14 mb-1">Empty BIN </label>
+                    <div>
+                      <input autofocus type="text"  name="returnPackQty" #driverName="ngModel"  disabled="true"
+                       class="form-control" placeholder="" [(ngModel)]="masterData.returnPackQty" maxlength="100">
+                    </div>
+                 </div>
+                 
+                 <div class="col-md-2">        
+                    <label class="fS14 mb-1">Empty Trolly</label>
+                    <div>
+                      <input autofocus type="text"  name="returnPack" #driverMobile="ngModel"  disabled="true"
+                       class="form-control" placeholder="" [(ngModel)]="masterData.returnPack" maxlength="20">
+                    </div>
+                 </div>
+               </div>
+              <div class="row mt-3">
+                  <div class="col-md-3" *ngIf="action!='show'">        
+                    <label class="fS14 mb-1"> Scan Your Card <span  class="mandatory-color">*</span></label>
+                    <div>
+                      <input autofocus type="text"   #scannedValueCtl name="scannedValue"
+                       class="form-control" placeholder="" [(ngModel)]="scannedValue" maxlength="100" (keydown)="parseAndAddCard($event)">
+                    </div>
+                 </div>
+                 <div class="col-md-3" *ngIf="action!='show'">        
+                  <label class="fS14 mb-1">Total Card Scanned <span  class="mandatory-color">*</span></label>
+                  <div>
+                    <input autofocus type="text"  name="totalCardScanned" #totalCardScanned="ngModel"  disabled="true"
+                     [ngClass]="{'input-box-style2-error': totalCardScanned.invalid && (totalCardScanned.dirty || totalCardScanned.touched)}" 
+                     class="form-control" placeholder="" [(ngModel)]="masterData.totalCardScanned" maxlength="100">
+                  </div>
+               </div>
+               <div class="col-md-3" *ngIf="action=='show'">        
+                  <label class="fS14 mb-1">Card Issued : <span  class="mandatory-color">{{masterData.cardsIssued}}</span></label>
+              </div>
+              <div class="col-md-3" >        
+                <label class="fS14 mb-1">Card Acknowledged : <span  class="mandatory-color">{{masterData.cardsAcknowledged}}</span></label>
+              </div>
+              <div class="col-md-3"> 
+                  <label class="fS14 mb-1">Card Dispatched : <span  class="mandatory-color">{{masterData.cardsDispatched}}</span></label>
+              </div> 
+              <div class="col-md-3" *ngIf="action=='show'">         
+                <label class="fS14 mb-1">Card Received : <span  class="mandatory-color">{{masterData.cardsReceived}}</span></label>
+              </div>
+               </div>
+            </form>
+           <div class="row g-0 badge-bg mt-2">
+            <div class="col-1 mt-1 left-badge"></div>
+           <div class="ms-3 col-6 mt-2 badge-title">Part Receipt Details</div>
+        </div>
+        <div class="card shadow-lg position-relative" style="border: 1px solid #e3e3e3;height:250px;overflow-y: scroll;">
+          <table class="tab table table-hover w-100">
+            <thead class="sticky-top top-0">
+              <tr style="background: #f7f7ff;">                         
+                <th>Sl.No</th>
+                <th>Vendor Code</th>
+                <th>Vendor Name</th>
+                <th>User Location</th>
+                <th>Part No</th>
+                <th>Part Desc</th>
+                <th>Qty</th>
+                <th>Received Qty</th>
+                <th>Short/Excess</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let scannedDetail of savedCardDetails;index as i">
+                <td>{{ scannedDetail.serialNo }}</td>
+                <td>{{ scannedDetail.vendorCode }}</td>
+                <td>{{ scannedDetail.vendorName }}</td>
+                <td>{{ scannedDetail.userLocation }}</td>
+                <td>{{ scannedDetail.partNo }}</td>
+                <td>{{ scannedDetail.partName }}</td>
+                <td>{{ scannedDetail.qty }}</td>
+                <td  *ngIf="action!='show'"><input autofocus type="text"  class="form-control small" placeholder="" [(ngModel)]="scannedDetail.receivedQty" maxlength="4"></td>
+                <td  *ngIf="action=='show'">{{scannedDetail.receivedQty}}</td>
+                <td >{{ scannedDetail.receivedQty-scannedDetail.qty}}</td>
+              </tr>
+            </tbody>
+          </table>     
+        </div>           
+          <div class="mt-4 me-4 d-flex justify-content-end">   
+            <div class="row text-center mt-4">
+             <div class="">
+                <div class="form-group" style="background:transparent;">
+                  <button style="margin-left:10px;" type="button"  class="btn btn-secondary footerbtncss mx-2" name="cancel" value="Cancel" (click)="cancelAdd()">Clear</button>
+                 <button *ngIf="action!='show'" type="button" class="btn btn-primary footerbtncss" name="confirm" (click)="updateReceipts()">Submit</button>
+              </div>
+             </div>
+            </div>
+          </div> 
+          </div>
+  
+    </div>
+          <div *ngIf="action=='view'">
+            <div class="p-4">
+            <report creportid="55" defaultparam="status" defaultparamvalue="6,10" #report (onEditClcked)="doAction($event)"   [events]="eventsSubject.asObservable()" [groupreport]="0"></report>
+          </div>
+          </div>
+    </div>
+  </div>
+  </div>

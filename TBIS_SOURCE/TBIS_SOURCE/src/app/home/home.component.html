@@ -1,0 +1,442 @@
+<div  class="container">
+  <h4 class="text-white">Dashboard</h4>
+    <div class="table-wrapper px-0 shadow">
+      <div class="p-3">
+        <div class="row d-flex alig-items-right">
+            <div class="col-md-2 align-items-center">
+              <div>
+                <ng-select [items]="locations" #locationId name="locationId"
+                  bindLabel="locationname" 
+                  bindValue="locationid" 
+                  placeholder="Select Location"
+                  [(ngModel)]="masterData.locationId">
+                </ng-select>
+              </div>
+            </div>
+            <div class="col-md-2 align-items-center">
+              <div>
+                <ng-select [items]="locations" #subLocationId name="subLocationId"
+                  bindLabel="locationname" 
+                  bindValue="locationid" 
+                  placeholder="Select Sub-Location"
+                  [(ngModel)]="masterData.subLocationId">
+                </ng-select>
+              </div>
+            </div>
+            <div class="col-md-2 align-items-center">
+              <div>
+                  <ng-select [items]="customerDetails" #customerId name="customerId" 
+                    bindLabel="customername"
+                    bindValue="customerId" 
+                    placeholder="Select Customer"
+                    [(ngModel)]="masterData.customerId">
+                  </ng-select>
+              </div>
+            </div>
+          <div class="col-2  d-flex align-items-center">
+            <mat-date-range-input [formGroup]="dateFilter" [rangePicker]="rangePicker" [comparisonStart]="masterData.start"
+              [comparisonEnd]="masterData.end" >
+              <input matStartDate placeholder="Start date" #dstart formControlName="start">
+              <input matEndDate placeholder="End date" #dend formControlName="end" (dateChange)="refreshData(dstart.value,dend.value)">
+            </mat-date-range-input>
+            <mat-datepicker-toggle matIconSuffix [for]="rangePicker"></mat-datepicker-toggle>
+            <mat-date-range-picker #rangePicker></mat-date-range-picker>
+          </div>
+        </div>
+
+        <div class="row" style="font-size:small;">
+          <div class="col">
+            <div class="card h-100 rounded shadow-lg vertical-card-left-border">
+                <div class="card-header border-0 text-uppercase text-white fw-bold bg-primary">
+                  <i class="bi bi-truck-flatbed me-2 text-white"></i>Long Haul
+                </div>
+                <div class="card-body mt-2">
+                  <ul class="list-group list-group-flush">
+                      <li class="list-group-item">
+                          <div class="d-flex justify-content-between align-items-center">
+                              <div>
+                                  <div class="d-inline-block font-weight-medium">Requested</div>
+                              </div><span class="badge bg-primary text-white">{{longHaul.totalRequested}}</span>
+                          </div>
+                      </li>
+                      <li class="list-group-item">
+                          <div class="d-flex justify-content-between align-items-center">
+                              <div>
+                                  <div class="d-inline-block font-weight-medium">Alloted</div>
+                              </div><span class="badge bg-primary text-white">{{longHaul.totalAlloted}}</span>
+                          </div>
+                      </li>
+                      <li class="list-group-item">
+                          <div class="d-flex justify-content-between align-items-center">
+                              <div>
+                                  <div class="d-inline-block font-weight-medium">Trips</div>
+                              </div><span class="badge bg-primary text-white">{{longHaul.totalTrips}}</span>
+                          </div>
+                      </li>
+                      <li class="list-group-item">
+                          <div class="d-flex justify-content-between align-items-center">
+                              <div>
+                                  <div class="d-inline-block font-weight-medium">Delay's</div>
+                              </div><span class="badge bg-primary text-white">{{longHaul.totalDelays}}</span>
+                          </div>
+                      </li>
+                    </ul>
+                </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100 rounded shadow-lg vertical-card-left-border">
+                <div class="card-header border-0 text-uppercase text-white fw-bold bg-primary">
+                  <i class="bi bi-truck me-2 text-white"></i>Short Haul
+                </div>
+                <div class="card-body mt-2">
+                  <ul class="list-group list-group-flush">
+                      <li class="list-group-item">
+                          <div class="d-flex justify-content-between align-items-center">
+                              <div>
+                                  <div class="d-inline-block font-weight-medium">Requested</div>
+                              </div><span class="badge bg-primary text-white">{{shortHaul.totalRequested}}</span>
+                          </div>
+                      </li>
+                      <li class="list-group-item">
+                          <div class="d-flex justify-content-between align-items-center">
+                              <div>
+                                  <div class="d-inline-block font-weight-medium">Alloted</div>
+                              </div><span class="badge bg-primary text-white">{{shortHaul.totalAlloted}}</span>
+                          </div>
+                      </li>
+                      <li class="list-group-item">
+                          <div class="d-flex justify-content-between align-items-center">
+                              <div>
+                                  <div class="d-inline-block font-weight-medium">Trips</div>
+                              </div><span class="badge bg-primary text-white">{{shortHaul.totalTrips}}</span>
+                          </div>
+                      </li>
+                      <li class="list-group-item">
+                          <div class="d-flex justify-content-between align-items-center">
+                              <div>
+                                  <div class="d-inline-block font-weight-medium">Delay's</div>
+                              </div><span class="badge bg-primary text-white">{{shortHaul.totalDelays}}</span>
+                          </div>
+                      </li>
+                    </ul>
+                </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100 rounded shadow-lg vertical-card-left-border">
+                <div class="card-header border-0 text-uppercase text-white fw-bold bg-primary">
+                  <i class="bi bi-sign-turn-slight-right me-2 text-white"></i>Asn
+                </div>
+                <div class="card-body mt-2">
+                  <ul class="list-group list-group-flush">
+                      <li class="list-group-item">
+                          <div class="d-flex justify-content-between align-items-center">
+                              <div>
+                                  <div class="d-inline-block font-weight-medium">Customer Count</div>
+                              </div><span class="badge bg-primary text-white">{{asnData.totalCustomers}}</span>
+                          </div>
+                      </li>
+                      <li class="list-group-item">
+                          <div class="d-flex justify-content-between align-items-center">
+                              <div>
+                                  <div class="d-inline-block font-weight-medium">Trips</div>
+                              </div><span class="badge bg-primary text-white">{{asnData.totalTrips}}</span>
+                          </div>
+                      </li>
+                      <li class="list-group-item">
+                          <div class="d-flex justify-content-between align-items-center">
+                              <div>
+                                  <div class="d-inline-block font-weight-medium">TAT</div>
+                              </div><span class="badge bg-primary text-white">{{asnData.totalTats}}</span>
+                          </div>
+                      </li>
+                      <li class="list-group-item">
+                          <div class="d-flex justify-content-between align-items-center">
+                              <div>
+                                  <div class="d-inline-block font-weight-medium">Abnormalities</div>
+                              </div><span class="badge bg-primary text-white">{{asnData.totalAbnormalities}}</span>
+                          </div>
+                      </li>
+                    </ul>
+                </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100 rounded shadow-lg vertical-card-left-border">
+                <div class="card-header border-0 text-uppercase text-white fw-bold bg-primary">
+                  <i class="bi bi-boxes me-2 text-white"></i>Delivery
+                </div>
+                <div class="card-body mt-2">
+                  <ul class="list-group list-group-flush">
+                      <li class="list-group-item">
+                          <div class="d-flex justify-content-between align-items-center">
+                              <div>
+                                  <div class="d-inline-block font-weight-medium">End Customer</div>
+                              </div><span class="badge bg-primary text-white">{{deliveryData.totalCustomers}}</span>
+                          </div>
+                      </li>
+                      <li class="list-group-item">
+                          <div class="d-flex justify-content-between align-items-center">
+                              <div>
+                                  <div class="d-inline-block font-weight-medium">Trips</div>
+                              </div><span class="badge bg-primary text-white">{{deliveryData.totalTrips}}</span>
+                          </div>
+                      </li>
+                      <li class="list-group-item">
+                          <div class="d-flex justify-content-between align-items-center">
+                              <div>
+                                  <div class="d-inline-block font-weight-medium">TAT</div>
+                              </div><span class="badge bg-primary text-white">{{deliveryData.totalTats}}</span>
+                          </div>
+                      </li>
+                      <li class="list-group-item">
+                          <div class="d-flex justify-content-between align-items-center">
+                              <div>
+                                  <div class="d-inline-block font-weight-medium">Abnormalities</div>
+                              </div><span class="badge bg-primary text-white">{{deliveryData.totalAbnormalities}}</span>
+                          </div>
+                      </li>
+                    </ul>
+                </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100 rounded shadow-lg vertical-card-left-border">
+                <div class="card-header border-0 text-uppercase text-white fw-bold bg-primary">
+                  <i class="bi bi-box-seam me-2 text-white"></i>Overflow
+                </div>
+                <div class="card-body mt-2">
+                  <ul class="list-group list-group-flush" *ngFor="let od of overflowData;index as i">
+                      <li class="list-group-item">
+                          <div class="d-flex justify-content-between align-items-center">
+                              <div>
+                                  <div class="d-inline-block font-weight-medium">{{od.customerName}}</div>
+                              </div><span class="badge bg-primary text-white">{{od.totalCount}}</span>
+                          </div>
+                      </li>
+                    </ul>
+                </div>
+            </div>
+          </div>
+          <!-- <div class="col">
+            <div class="card h-100 rounded shadow-lg vertical-card-left-border">
+                <div class="card-header border-0 text-uppercase text-white fw-bold bg-primary">
+                  <i class="bi bi-boxes me-2 text-white"></i>Stock
+                </div>
+                <div class="card-body mt-2">
+                  <nav class="list-group list-group-flush">
+                      <li class="list-group-item">
+                          <div class="d-flex justify-content-between align-items-center">
+                              <div>
+                                  <div class="d-inline-block font-weight-medium">Process Movement</div>
+                              </div><span class="badge bg-primary text-white">400</span>
+                          </div>
+                      </li>
+                      <li class="list-group-item">
+                          <div class="d-flex justify-content-between align-items-center">
+                              <div>
+                                  <div class="d-inline-block font-weight-medium">NG Movement</div>
+                              </div><span class="badge bg-primary text-white">400</span>
+                          </div>
+                      </li>
+                      <li class="list-group-item">
+                          <div class="d-flex justify-content-between align-items-center">
+                              <div>
+                                  <div class="d-inline-block font-weight-medium">Good Movement</div>
+                              </div><span class="badge bg-primary text-white">400</span>
+                          </div>
+                      </li>
+                      <li class="list-group-item">
+                          <div class="d-flex justify-content-between align-items-center">
+                              <div>
+                                  <div class="d-inline-block font-weight-medium">Overflow Movement</div>
+                              </div><span class="badge bg-primary text-white">400</span>
+                          </div>
+                      </li>
+                  </nav>
+                </div>
+            </div>
+          </div> -->
+        </div>
+
+      </div>
+      <div class="p-2">
+        <div class="row mt-3">
+          <div class="col-md-6 col-sm-6">
+            <div class="container p-0" id="contactlist">
+              <div class="row g-0 badge-bg mt-1 mb-1">
+                <div class="col-6 badge-title d-flex align-items-center">
+                  <span class="left-badge me-3 d-block h-100"></span>
+                  <span>ASN Details</span>
+                </div>
+                <div class="col-6 d-flex">
+                </div>
+            </div>
+
+            <div class="card shadow-lg position-relative" style="border: 1px solid #e3e3e3;height:250px;overflow-y: scroll;">
+
+              <table class="tab table table-hover w-100">
+                <thead class="sticky-top">
+                  <tr style="background: #f7f7ff;">
+                    <th>Date</th>
+                    <th>ASN No</th>
+                    <th>Customer Name</th>
+                    <th>Status</th>
+                    <th>Time</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let asnd of asnDashboardData;index as i">
+                    <td>{{ asnd.supplydate }}</td>
+                    <td>{{ asnd.asnno }}</td>
+                    <td>{{ asnd.customername }}</td>
+                    <td>{{ asnd.statusname }}</td>
+                    <td>{{ asnd.supplytime }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+
+        </div>
+          </div>
+          <div class="col-md-6 col-sm-6">
+            <div class="container p-0" id="contactlist">
+              <div class="row g-0 badge-bg mt-1 mb-1">
+                <div class="col-6 badge-title d-flex align-items-center">
+                  <span class="left-badge me-3 d-block h-100"></span>
+                  <span>Delivery Details</span>
+                </div>
+                <div class="col-6 d-flex">
+                </div>
+            </div>
+            <div class="card shadow-lg position-relative" style="border: 1px solid #e3e3e3;height:250px;overflow-y: scroll;">
+              <table class="tab table table-hover w-100">
+                <thead class="sticky-top">
+                  <tr style="background: #f7f7ff;">
+                    <th>End Customer</th>
+                    <th>Customer</th>
+                    <th>Sch Date</th>
+                    <th>Sch Time</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let partDet of detailData.partDetail;index as i">
+                    <td>{{ partDet.partNo }}</td>
+                    <td>{{ partDet.partName }}</td>
+                    <td>{{ partDet.totalAsn }}</td>
+                    <td>{{ partDet.totalPending }}</td>
+                    <td>{{ partDet.totalPending }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+        </div>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-md-6 col-sm-6">
+            <div class="row g-0 badge-bg mt-1 mb-1">
+              <div class="col-6 badge-title d-flex align-items-center">
+                <span class="left-badge me-3 d-block h-100"></span>
+                <span>Dock Status</span>
+              </div>
+              <div class="col-6 d-flex">
+              </div>
+          </div>
+            <div class="card shadow-lg position-relative" style="border: 1px solid #e3e3e3;height:250px;overflow-y: scroll;">
+              <table class="tab table table-hover w-100">
+                <thead class="sticky-top">
+                  <tr style="background: #f7f7ff;">
+                    <th>Dock #</th>
+                    <th>Customer</th>
+                    <th>Truck No</th>
+                    <th>Load/Unload</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let custDetail of detailData.vendorDetail;index as i">
+                    <td>{{ custDetail.customerName }}</td>
+                    <td>{{ custDetail.totalAsn }}</td>
+                    <td>{{ custDetail.totalAccepted }}</td>
+                    <td>{{ custDetail.totalDispatch }}</td>
+                    <td>{{ custDetail.totalReceipts }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-6">
+            <div class="row g-0 badge-bg mt-1 mb-1">
+              <div class="col-6 badge-title d-flex align-items-center">
+                <span class="left-badge me-3 d-block h-100"></span>
+                <span>Space Allocation</span>
+              </div>
+              <div class="col-6 d-flex">
+              </div>
+          </div>
+            <div class="card shadow-lg position-relative" style="border: 1px solid #e3e3e3;height:250px;overflow-y: scroll;">
+              <table class="tab table table-hover w-100">
+                <thead class="sticky-top">
+                  <tr style="background: #f7f7ff;">
+                    <th>Customer</th>
+                    <th>Location</th>
+                    <th>Alloted</th>
+                    <th>Used</th>
+                    <th>Overflow</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let custDetail of detailData.vendorDetail;index as i">
+                    <td>{{ custDetail.customerName }}</td>
+                    <td>{{ custDetail.totalAsn }}</td>
+                    <td>{{ custDetail.totalAccepted }}</td>
+                    <td>{{ custDetail.totalDispatch }}</td>
+                    <td>{{ custDetail.totalReceipts }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-md-12 col-sm-12">
+            <div class="row g-0 badge-bg mt-1 mb-1">
+              <div class="col-6 badge-title d-flex align-items-center">
+                <span class="left-badge me-3 d-block h-100"></span>
+                <span>Picklist Status</span>
+              </div>
+              <div class="col-6 d-flex">
+              </div>
+          </div>
+            <div class="card shadow-lg position-relative" style="border: 1px solid #e3e3e3;height:250px;overflow-y: scroll;">
+              <table class="tab table table-hover w-100">
+                <thead class="sticky-top">
+                  <tr style="background: #f7f7ff;">
+                    <th>Customer</th>
+                    <th>Supply Date</th>
+                    <th>Supply Time</th>
+                    <th>Plant Name</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let pd of picklistdashboarddata;index as i">
+                    <td>{{ pd.customername }}</td>
+                    <td>{{ pd.supplydate }}</td>
+                    <td>{{ pd.supplytime }}</td>
+                    <td>{{ pd.plantname }}</td>
+                    <td>{{ pd.statusname }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+   

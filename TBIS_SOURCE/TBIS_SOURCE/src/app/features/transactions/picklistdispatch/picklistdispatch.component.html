@@ -1,0 +1,194 @@
+
+<div  class="container">
+    <div class="table-wrapper px-0 shadow">
+       <div class="table-title title-fixed">
+         <!-- <div class="row">
+           <div class="col-sm-6">
+             <div class="table-head ms-2">
+               <div class="row">
+                 <div *ngIf="action!='view'" class="col-1 cursor" (click)="cancelAdd()">
+                   <i class="bi bi-arrow-left"></i>
+                 </div>
+                 <div class="col-6 p-0">
+                  Goods Outward
+                 </div>
+               </div>
+               
+                </div>
+           </div>
+         </div> -->
+         
+         <div class="row">
+          <div class="col-sm-6">
+             <div class="table-head ms-2">
+             <div class="row">
+                <div *ngIf="action!='view'" class="col-1 cursor" (click)="cancelAdd()">
+                  <i class="bi bi-arrow-left"></i>
+                </div>
+               <div  class="col-1 cursor">
+               </div>
+                <div class="col-6 p-0">
+                  Goods Outward
+                </div>
+             </div>
+                </div>
+          </div>
+          <div  class="col-sm-6">
+             <div class="d-grid gap-2 d-md-flex justify-content-md-end align-items-center">
+                <a class="btn btn-success addcss" (click)="openGateEntryDlg()">
+                  <i class="bi bi-plus-square"></i><span>Upload Gate Entry</span>
+                </a>
+                <a class="btn btn-success addcss" (click)="openSrvDlg()">
+                  <i class="bi bi-plus-square"></i><span>Upload SRV</span>
+                </a>
+             </div>
+          </div>
+          </div>
+
+       </div>
+          <div class="table-content title-content">
+       <div *ngIf="action=='view'">
+         <div class="p-4">
+          <report creportid="87" #report (onEditClcked)="doAction($event)"   [events]="eventsSubject.asObservable()" [groupreport]="0"></report>
+       </div>
+       </div>
+ </div>
+ </div>
+ </div>
+ 
+ <div *ngIf="showGoodsVehicleDlg" class="modal" tabindex="-1" role="dialog" style="display: block !important;" id="showGoodsVehicleDlg">  
+    <div class="modal-dialog  modal-lg" role="document"    > 
+      <div class="bgDlg"></div> 
+      <div class="modal-content">
+         
+        <div class="modal-header loginCusto">
+          <h5 class="modal-title fontsize16"> 
+            Assigned Vehicle Picklist
+          </h5>
+          <button (click)="closeVehicleDlgModel()" type="button" class="btn float-end modalclosebtn" data-dismiss="modal"> X  </button>
+           
+        </div>
+        <div class="modal-body"  >
+           
+          <div class="row">
+  
+            <div class="col-md-12">
+              <div class="text-left">
+                <form  #form="ngForm" autocomplete="off" >
+                    <div class="card shadow-lg position-relative">
+                    <report creportid="88" #selectedreport defaultparam="vehicleno" [defaultparamvalue]=doActionVehicleNo [events]="eventsSubject.asObservable()" [groupreport]="0"></report>
+                    </div>
+                </form>
+                  
+              </div>
+                              
+            </div>
+          </div>
+          
+        </div>
+         
+      </div>  
+    </div>
+  </div>
+  <div *ngIf="showGateEntryDlg" class="modal" tabindex="-1" role="dialog" style="display: block !important;" id="showDocumentsDialog">  
+    <div class="modal-dialog   modal-dialog-centered" role="document"    > 
+      <div class="bgDlg"></div> 
+      <div class="modal-content customheight">
+         
+        <div class="modal-header loginCusto">
+          <h5 class="modal-title fontsize16"> 
+            Gate Entry
+          </h5>
+          <button (click)="closeGateEntryModel()" type="button" class="btn float-end modalclosebtn" data-dismiss="modal"> X  </button>
+           
+        </div>
+        <div class="modal-body"  >
+           
+          <div class="row">
+  
+            <div class="col-md-12">
+              <div class="text-left">
+                <form  #form="ngForm" autocomplete="off" >
+                   <div class="row mt-2">
+                       
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end align-items-center">
+                      <label class="fS14 mb-1">Upload File</label>
+                      <div>
+                       <input type="file" name="file" class="file-input"  #fileUpload (change)="fileChangeGateEvent($event)">
+                      </div>    
+                    </div>
+                    </div>
+                  </form>
+  
+                  <div class="mt-2 me-4 d-flex justify-content-end">   
+                    <div class="row text-center mt-4">
+                     <div class="">
+                        <div class="form-group">
+                         <button type="button"  class="btn btn-secondary footerbtncss mx-2" name="cancel" value="Cancel" (click)="closeGateEntryModel()">Clear</button>
+                         
+                      </div>
+                     </div>
+                    </div>
+                  </div> 
+                  
+              </div>
+                              
+            </div>
+          </div>
+          
+        </div>
+         
+      </div>  
+    </div>
+  </div> 
+  <div *ngIf="showSrvDlg" class="modal" tabindex="-1" role="dialog" style="display: block !important;" id="showDocumentsDialog">  
+    <div class="modal-dialog   modal-dialog-centered" role="document"    > 
+      <div class="bgDlg"></div> 
+      <div class="modal-content customheight">
+         
+        <div class="modal-header loginCusto">
+          <h5 class="modal-title fontsize16"> 
+            SRV Generated
+          </h5>
+          <button (click)="closeSrvModel()" type="button" class="btn float-end modalclosebtn" data-dismiss="modal"> X  </button>
+           
+        </div>
+        <div class="modal-body"  >
+           
+          <div class="row">
+  
+            <div class="col-md-12">
+              <div class="text-left">
+                <form  #form="ngForm" autocomplete="off" >
+                   <div class="row mt-2">
+                       
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end align-items-center">
+                      <label class="fS14 mb-1">Upload File</label>
+                      <div>
+                       <input type="file" name="file" class="file-input"  #fileUpload (change)="fileChangeSrvEvent($event)">
+                      </div>    
+                    </div>
+                    </div>
+                  </form>
+  
+                  <div class="mt-2 me-4 d-flex justify-content-end">   
+                    <div class="row text-center mt-4">
+                     <div class="">
+                        <div class="form-group">
+                         <button type="button"  class="btn btn-secondary footerbtncss mx-2" name="cancel" value="Cancel" (click)="closeSrvModel()">Clear</button>
+                         
+                      </div>
+                     </div>
+                    </div>
+                  </div> 
+                  
+              </div>
+                              
+            </div>
+          </div>
+          
+        </div>
+         
+      </div>  
+    </div>
+  </div>  
